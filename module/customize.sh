@@ -1,4 +1,5 @@
 #!/system/bin/sh
+export MODULE_HOT_INSTALL_REQUEST="true"
 MODDIR="$MODPATH" . "$MODPATH/utils.sh"
 
 ui_print ""
@@ -149,7 +150,7 @@ ui_print "* Mounting $PKG_NAME"
 mkdir -p "/data/adb/rvhc"
 mv -f "$MODPATH/base.apk" "$RVPATH"
 
-if ! op=$(mm mount -o bind "$RVPATH" "$BASEPATH/base.apk" 2>&1); then
+if ! op=$(su -M -c mount -o bind "$RVPATH" "$BASEPATH/base.apk" 2>&1); then
 	ui_print "ERROR: Mount failed!"
 	ui_print "$op"
 fi
@@ -170,8 +171,7 @@ if [ "$KSU" ]; then
 	if [ "$UID" ]; then
 		if ! OP=$("${MODPATH:?}/bin/$ARCH/ksu_profile" "$UID" "$PKG_NAME" 2>&1); then
 			ui_print "  $OP"
-			ui_print "* Because you are using a fork of KernelSU, "
-			ui_print "  * you need to go to your root manager app and"
+			ui_print "  * In your root manager app,"
 			ui_print "    disable 'Unmount modules' for $PKG_NAME"
 		fi
 	else
