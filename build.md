@@ -1,7 +1,7 @@
-moviebox-morphe (arm64-v8a): 3.0.16.0709.03  
-moviebox-morphe (arm-v7a): 3.0.16.0709.03  
-moviebox-morphe-androidtv (arm64-v8a): 1.1.5.0711.03  
-moviebox-morphe-androidtv (arm-v7a): 1.1.5.0711.03  
+google-photos-revanced (arm64-v8a): 7.86.0.953689094  
+google-photos-revanced (arm-v7a): 7.86.0.953689094  
+google-photos-morphe (arm64-v8a): 7.86.0.953689094  
+google-photos-morphe (arm-v7a): 7.86.0.953689094  
 
 **Notes:**  
 • Install [MicroG-RE](https://github.com/MorpheApp/MicroG-RE/releases/latest) or [MicroG](https://github.com/ReVanced/GmsCore/releases/latest), required for Google APKs.  
@@ -9,6 +9,10 @@ moviebox-morphe-androidtv (arm-v7a): 1.1.5.0711.03
 
 [GitHub](https://github.com/nullcpy/rvb) | [Group](https://t.me/rvb27) | [Donate](https://fahim-ahmed05.github.io/donate) | [Website](https://nullcpy.github.io)
   
+CLI: ReVanced/revanced-cli-6.0.0-all.jar  
+Patches: Raudrobot/patches-6.1.0.rvp  
+[Changelog](https://github.com/Raudrobot/revanced-patches/releases/tag/6.1.0-patches)
+
 CLI: MorpheApp/morphe-desktop-1.12.0-all.jar  
-Patches: rushiranpise/patches-1.15.1.mpp  
-[Changelog](https://github.com/rushiranpise/morphe-patches/releases/tag/v1.15.1)  
+Patches: RookieEnough/patches-1.0.4.mpp  
+[Changelog](https://github.com/RookieEnough/De-ReVanced/releases/tag/v1.0.4)  
