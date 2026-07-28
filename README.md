@@ -1273,7 +1273,7 @@ Patches: [arandomhooman/patches-1.43.4.mpp](https://github.com/arandomhooman/hoo
   
 <blockquote>
 
-[Release 2026-07-28](https://github.com/nullcpy/rvb/releases/tag/260104)<br>
+[Release 2026-07-28](https://github.com/m4mental/my-rvb-builder/releases/tag/260002)<br>
 Patches: [rushiranpise/patches-1.15.1.mpp](https://github.com/rushiranpise/morphe-patches/releases/tag/v1.15.1)
 - GmsCore support (MicroG)
 - Unlock VIP
@@ -1285,7 +1285,7 @@ Patches: [rushiranpise/patches-1.15.1.mpp](https://github.com/rushiranpise/morph
   
 <blockquote>
 
-[Release 2026-07-28](https://github.com/nullcpy/rvb/releases/tag/260104)<br>
+[Release 2026-07-28](https://github.com/m4mental/my-rvb-builder/releases/tag/260002)<br>
 Patches: [rushiranpise/patches-1.15.1.mpp](https://github.com/rushiranpise/morphe-patches/releases/tag/v1.15.1)
 - GmsCore support (MicroG)
 - Unlock VIP
