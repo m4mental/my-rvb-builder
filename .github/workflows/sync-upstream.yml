@@ -2,8 +2,8 @@ name: Sync Upstream Code
 
 on:
   schedule:
-    - cron: '0 */12 * * *' # हर 12 घंटे में ऑटोमैटिक सिंक
-  workflow_dispatch:      # यह लाइन आपको manual button देती है
+    - cron: '0 * * * *' # हर 1 घंटे (घंटे की शुरुआत) में ऑटोमैटिक रन होगा
+  workflow_dispatch:      # मैन्युअल रन बटन
 
 permissions:
   contents: write
@@ -22,10 +22,8 @@ jobs:
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email 'github-actions[bot]@users.noreply.github.com'
-          # Upstream remote सेट करें
           git remote add upstream https://github.com/nullcpy/rvb.git || git remote set-url upstream https://github.com/nullcpy/rvb.git
           git fetch upstream
           git checkout main
-          # ओरिजिनल repo के कोड को merge करें
           git merge upstream/main --no-edit || git merge --strategy-option theirs upstream/main
           git push origin main
