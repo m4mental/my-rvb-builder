@@ -12,7 +12,7 @@ on:
         description: "Select the config file to use"
         required: true
         type: choice
-        default: ".github/configs/config.manual.toml"
+        default: ".github/configs/config.stable.updated.json"
         options:
           - ".github/configs/config.manual.toml"
           - ".github/configs/config.dev.updated.json"
@@ -95,7 +95,12 @@ jobs:
         run: |
           python3 scripts/update-readme.py ${{ steps.version.outputs.NEXT_VER_CODE }} "$GITHUB_REPOSITORY"
 
+      - name: Pull latest main before commit
+        run: |
+          git pull --rebase origin main || true
+
       - name: Commit updated readme
+        continue-on-error: true
         uses: stefanzweifel/git-auto-commit-action@v7
         with:
           branch: main
@@ -115,6 +120,7 @@ jobs:
           prerelease: ${{ steps.context.outputs.IS_PRERELEASE == 'true' }}
 
       - name: Notify telegram
+        continue-on-error: true
         env:
           TG_TOKEN: ${{ secrets.TG_TOKEN }}
           TG_THREAD_ID: ${{ steps.context.outputs.TG_THREAD_ID }}
@@ -125,13 +131,10 @@ jobs:
         run: bash .github/scripts/build_notify_telegram.sh
 
       - name: Update changelog and module update files
-        env:
-          NEXT_VER_CODE: ${{ steps.version.outputs.NEXT_VER_CODE }}
-          GITHUB_SERVER_URL: ${{ github.server_url }}
-          GITHUB_REPOSITORY: ${{ github.repository }}
         run: bash .github/scripts/build_update_changelog.sh
 
       - name: Commit updated build and module update files
+        continue-on-error: true
         uses: stefanzweifel/git-auto-commit-action@v7
         with:
           branch: update
@@ -141,10 +144,11 @@ jobs:
 
       - name: Remove frequently updated apps
         run: |
-          git checkout main
-          bash .github/scripts/build_exclude_from_archive.sh
+          git checkout main || true
+          bash .github/scripts/build_exclude_from_archive.sh || true
 
       - name: Upload to release (Archive)
+        continue-on-error: true
         uses: softprops/action-gh-release@v3
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
