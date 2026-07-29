@@ -19,7 +19,7 @@ jobs:
           fetch-depth: 0
           token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Sync upstream code & auto clean README
+      - name: Fetch upstream code
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email 'github-actions[bot]@users.noreply.github.com'
@@ -30,32 +30,51 @@ jobs:
           # 1. ओरिजिनल Repo से सारे नए ऐप्स और कोड लाएगा
           git checkout upstream/main -- .
 
-          # 2. इनलाइन Python स्क्रिप्ट (बिना किसी फ़ाइल के 100% गारंटी से सफ़ाई करेगी)
-          python3 -c '
+      - name: Clean README using Python Heredoc
+        run: |
+          python3 << 'EOF'
           import re, os
+
           path = "README.md"
           if os.path.exists(path):
               with open(path, "r", encoding="utf-8") as f:
                   c = f.read()
-              c = re.sub(r"<div align=\"center\"><a href=\"https://github.com/Safouene1/support-palestine-banner.*?</div>\s*", "", c, flags=re.DOTALL)
-              c = re.sub(r"<a href=\"https://t.me/[^\"]*\"><img src=\"[^\"]*badge/Group-[^\"]*\"></a>\s*", "", c)
-              c = re.sub(r"<a href=\"https://t.me/[^\"]*\"><img src=\"[^\"]*badge/Channel-[^\"]*\"></a>\s*", "", c)
-              c = re.sub(r"<a href=\"[^\"]*donate[^\"]*\"><img src=\"[^\"]*badge/Donate-[^\"]*\"></a>\s*", "", c)
-              c = re.sub(r"## 🤝 Support the Project.*?(?=---|\Z)", "", c, flags=re.DOTALL)
+
+              # 1. Remove Palestine Banner
+              c = re.sub(r'<div align="center"><a href="https://github.com/Safouene1/support-palestine-banner[\s\S]*?</div>\s*', '', c)
+
+              # 2. Remove Telegram Group, Channel, Donate badges
+              c = re.sub(r'<a href="https://t.me/[^"]*"><img src="[^"]*badge/Group-[^"]*"></a>\s*', '', c)
+              c = re.sub(r'<a href="https://t.me/[^"]*"><img src="[^"]*badge/Channel-[^"]*"></a>\s*', '', c)
+              c = re.sub(r'<a href="[^"]*donate[^"]*"><img src="[^"]*badge/Donate-[^"]*"></a>\s*', '', c)
+
+              # 3. Remove Support the Project section
+              c = re.sub(r'## 🤝 Support the Project[\s\S]*?(?=---|\Z)', '', c)
+
+              # 4. Remove Telegram references
+              c = re.sub(r'or \*\*\[send a message in our Telegram Group\]\([^)]+\)\*\*', '', c)
+              c = re.sub(r'\*\*\[Send a message in our Telegram Group\]\([^)]+\)\*\* or ', '', c)
+
+              # 5. Replace links with m4mental links
               c = c.replace("https://github.com/nullcpy/rvb", "https://github.com/m4mental/my-rvb-builder")
               c = c.replace("https://nullcpy.github.io/", "https://m4mental.github.io/my-rvb-builder/")
               c = c.replace("https://nullcpy.github.io", "https://m4mental.github.io/my-rvb-builder")
-              c = c.replace("nullcpy.rvb", "m4mental.my-rvb-builder")
-              c = c.replace("nullcpy.github.io", "m4mental.github.io.my-rvb-builder")
-              c = re.sub(r"\n{3,}", "\n\n", c)
+
+              # 6. Clean blank lines
+              c = re.sub(r'\n{3,}', '\n\n', c)
+
               with open(path, "w", encoding="utf-8") as f:
                   f.write(c)
-              print("✓ README.md cleaned successfully by Inline Python Cleaner!")
-          '
 
-          # 3. आपकी अपनी Workflows फ़ाइलों को सुरक्षित रखेगा
+              print("==============================================")
+              print("SUCCESS: README.md cleaned for m4mental!")
+              print("==============================================")
+          EOF
+
+      - name: Commit and Push Cleaned README & Upstream Code
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email 'github-actions[bot]@users.noreply.github.com'
           git checkout HEAD -- .github/workflows/ || true
-
-          # 4. कमिट और पुश करेगा
-          git commit -m "Sync upstream code and clean README [skip ci]" || true
+          git commit -m "Sync upstream code & clean README [skip ci]" || true
           git push origin main
