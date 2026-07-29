@@ -103,9 +103,13 @@ jobs:
           echo "$LOG" >> $GITHUB_OUTPUT
           echo "EOF" >> $GITHUB_OUTPUT
 
-      - name: Update readme
+      - name: Update readme with new app versions
         run: |
           python3 scripts/update-readme.py ${{ steps.version.outputs.NEXT_VER_CODE }} "$GITHUB_REPOSITORY" || true
+
+      - name: Clean README using Python Script
+        run: |
+          python3 scripts/clean-readme.py || true
 
       - name: Pull latest main before commit
         run: |
