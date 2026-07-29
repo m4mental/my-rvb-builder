@@ -2,7 +2,7 @@ name: Mirror Releases from Original Repo
 
 on:
   schedule:
-    - cron: '0 */6 * * *' # हर 6 घंटे में ऑटोमैटिक नए बिल्ड्स कॉपी करेगा
+    - cron: '0 */6 * * *' # हर 6 घंटे में ऑटो-सिंक
   workflow_dispatch:      # मैन्युअल रन बटन
 
 permissions:
@@ -15,32 +15,40 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Mirror Releases from nullcpy/rvb
+      - name: Mirror ALL Releases from Beginning with Clean Links
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           set -e
-          echo "Fetching releases from original repo (nullcpy/rvb)..."
+          echo "Fetching ALL releases from the very beginning (nullcpy/rvb)..."
           
-          # ओरिजिनल repo से लेटेस्ट 25 अलग-अलग रिलीज़ेस की लिस्ट लाएगा
-          RELEASES_JSON=$(curl -s "https://api.github.com/repos/nullcpy/rvb/releases?per_page=25")
-          
+          # शुरुआत से लेकर अब तक के सभी रिलीज़ेस की लिस्ट (Page 1, 2, 3) लाएगा
+          P1=$(curl -s "https://api.github.com/repos/nullcpy/rvb/releases?per_page=100&page=1")
+          P2=$(curl -s "https://api.github.com/repos/nullcpy/rvb/releases?per_page=100&page=2")
+          P3=$(curl -s "https://api.github.com/repos/nullcpy/rvb/releases?per_page=100&page=3")
+
+          # सभी पेजों का डेटा मर्ज करेगा
+          RELEASES_JSON=$(jq -s '([.[0][], .[1][], .[2][]] | select(. != null))' <(echo "$P1") <(echo "$P2") <(echo "$P3"))
+
           if ! echo "$RELEASES_JSON" | jq -e '. | type == "array"' >/dev/null; then
-            echo "Failed to fetch releases or rate limited."
+            echo "Failed to fetch releases."
             exit 1
           fi
 
-          # पुराने से नए रिलीज़ेस के क्रम में हर एक बिल्ड को अलग-अलग प्रोसेस करेगा
+          TOTAL_COUNT=$(echo "$RELEASES_JSON" | jq 'length')
+          echo "Found $TOTAL_COUNT total releases from beginning!"
+
+          # सबसे पुराने बिल्ड से लेकर नए बिल्ड के क्रम में प्रोसेस करेगा
           echo "$RELEASES_JSON" | jq -c 'reverse | .[]' | while read -r rel; do
             ORIG_TAG=$(echo "$rel" | jq -r '.tag_name')
             ORIG_TITLE=$(echo "$rel" | jq -r '.name // .tag_name')
-            BODY=$(echo "$rel" | jq -r '.body // "Release mirrored from nullcpy/rvb"')
+            BODY=$(echo "$rel" | jq -r '.body // ""')
             PRERELEASE=$(echo "$rel" | jq -r '.prerelease')
 
             TARGET_TAG="$ORIG_TAG"
             TARGET_TITLE="$ORIG_TITLE"
 
-            # अगर वही बिल्ड नंबर आपकी Repo में पहले से है, तो नंबर +1 बढ़ाकर नया रिलीज़ बनाएगा
+            # अगर टैग पहले से आपकी Repo में है, तो नंबर +1 बढ़ाकर नया रिलीज़ बनाएगा
             if [[ "$ORIG_TAG" =~ ^[0-9]+$ ]]; then
               NUM=$ORIG_TAG
               while gh release view "$TARGET_TAG" >/dev/null 2>&1; do
@@ -57,16 +65,26 @@ jobs:
               done
             fi
 
+            # Description फ़िल्टरिंग:
+            # 1. GitHub लिंक को आपकी Repo से बदलेगा
+            # 2. Website लिंक को आपकी वेबसाइट से बदलेगा
+            # 3. Group और Donate लिंक्स को हटा देगा
+            CLEAN_BODY=$(echo "$BODY" | sed -E \
+              -e 's#\[GitHub\]\([^)]+\)#[GitHub](https://github.com/m4mental/my-rvb-builder)#g' \
+              -e 's#\|[[:space:]]*\[Group\]\([^)]+\)##g' \
+              -e 's#\|[[:space:]]*\[Donate\]\([^)]+\)##g' \
+              -e 's#\[Website\]\([^)]+\)#[Website](https://m4mental.github.io/my-rvb-builder/)#g')
+
             if [ "$ORIG_TAG" != "$TARGET_TAG" ]; then
-              echo "⚠️ Tag $ORIG_TAG already exists. Creating as $TARGET_TAG ($TARGET_TITLE)..."
+              echo "⚠️ Tag $ORIG_TAG exists. Creating as $TARGET_TAG ($TARGET_TITLE)..."
             else
-              echo "🚀 Mirroring Separate Release: $TARGET_TAG ($TARGET_TITLE)..."
+              echo "🚀 Mirroring Release: $TARGET_TAG ($TARGET_TITLE)..."
             fi
 
             RM_DIR="./tmp_assets_$TARGET_TAG"
             mkdir -p "$RM_DIR"
 
-            # उस स्पेसिफिक बिल्ड की फ़ाइलें डाउनलोड करेगा
+            # फ़ाइलें डाउनलोड करेगा
             echo "$rel" | jq -c '.assets[]' | while read -r asset; do
               DL_URL=$(echo "$asset" | jq -r '.browser_download_url')
               FNAME=$(echo "$asset" | jq -r '.name')
@@ -74,16 +92,16 @@ jobs:
               curl -sL "$DL_URL" -o "$RM_DIR/$FNAME"
             done
 
-            # आपकी Repo में उस बिल्ड का अलग रिलीज़ बनाएगा
+            # आपकी Repo में स्वच्छ लिंक्स के साथ रिलीज़ बनाएगा
             if [ -d "$RM_DIR" ] && [ "$(ls -A "$RM_DIR")" ]; then
-              echo "   📤 Uploading $TARGET_TAG as individual release..."
+              echo "   📤 Uploading $TARGET_TAG to your releases..."
               
               PR_FLAG=""
               if [ "$PRERELEASE" = "true" ]; then
                 PR_FLAG="--prerelease"
               fi
 
-              gh release create "$TARGET_TAG" "$RM_DIR"/* --title "$TARGET_TITLE" --notes "$BODY" $PR_FLAG || true
+              gh release create "$TARGET_TAG" "$RM_DIR"/* --title "$TARGET_TITLE" --notes "$CLEAN_BODY" $PR_FLAG || true
             fi
 
             rm -rf "$RM_DIR"
@@ -91,4 +109,4 @@ jobs:
             sleep 2
           done
 
-          echo "🎉 All individual releases mirrored successfully!"
+          echo "🎉 All releases from beginning mirrored successfully!"
