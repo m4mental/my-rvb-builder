@@ -91,9 +91,21 @@ jobs:
         id: get_output
         run: bash .github/scripts/build_get_output.sh
 
+      - name: Clean release notes for m4mental
+        id: clean_notes
+        run: |
+          LOG='${{ steps.get_output.outputs.BUILD_LOG }}'
+          LOG=$(echo "$LOG" | sed -E 's#\[GitHub\]\([^)]+\)#[GitHub](https://github.com/m4mental/my-rvb-builder)#g')
+          LOG=$(echo "$LOG" | sed -E 's#\[Website\]\([^)]+\)#[Website](https://m4mental.github.io/my-rvb-builder/)#g')
+          LOG=$(echo "$LOG" | sed -E 's#\|[[:space:]]*\[Group\]\([^)]+\)##g')
+          LOG=$(echo "$LOG" | sed -E 's#\|[[:space:]]*\[Donate\]\([^)]+\)##g')
+          echo "CLEAN_LOG<<EOF" >> $GITHUB_OUTPUT
+          echo "$LOG" >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
+
       - name: Update readme
         run: |
-          python3 scripts/update-readme.py ${{ steps.version.outputs.NEXT_VER_CODE }} "$GITHUB_REPOSITORY"
+          python3 scripts/update-readme.py ${{ steps.version.outputs.NEXT_VER_CODE }} "$GITHUB_REPOSITORY" || true
 
       - name: Pull latest main before commit
         run: |
@@ -111,7 +123,7 @@ jobs:
       - name: Upload to release
         uses: softprops/action-gh-release@v3
         with:
-          body: ${{ steps.get_output.outputs.BUILD_LOG }}
+          body: ${{ steps.clean_notes.outputs.CLEAN_LOG }}
           token: ${{ secrets.GITHUB_TOKEN }}
           files: ./build/*
           name: Build No. ${{ steps.version.outputs.NEXT_VER_CODE }}
@@ -131,7 +143,7 @@ jobs:
         run: bash .github/scripts/build_notify_telegram.sh
 
       - name: Update changelog and module update files
-        run: bash .github/scripts/build_update_changelog.sh
+        run: bash .github/scripts/build_update_changelog.sh || true
 
       - name: Commit updated build and module update files
         continue-on-error: true
