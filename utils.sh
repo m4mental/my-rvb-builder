@@ -13,6 +13,11 @@ if [ "${GITHUB_TOKEN-}" ]; then GH_HEADER="Authorization: token ${GITHUB_TOKEN}"
 NEXT_VER_CODE=${NEXT_VER_CODE:-$(date +'%Y%m%d')}
 OS=$(uname -o)
 
+declare -gA __PREBUILTS_CACHE__
+declare -gA __PATCHES_LIST_CACHE__
+declare -gA __PATCH_VER_CACHE__
+declare -gA __PKG_VERS_CACHE__
+
 toml_prep() {
 	if [ ! -f "$1" ]; then return 1; fi
 	if [ "${1##*.}" == toml ]; then
@@ -117,7 +122,30 @@ source_release_pick_from_list() {
 	esac
 }
 
+get_apkeditor() {
+	if [ -f "$TEMP_DIR/apkeditor.jar" ]; then return 0; fi
+	local api_resp dl_url
+	api_resp=$(gh_req "https://api.github.com/repos/REAndroid/APKEditor/releases/latest" -) || true
+	dl_url=$(echo "$api_resp" | jq -r '.assets[]? | select(.name | endswith(".jar")) | .browser_download_url' | head -1) || true
+	if [ -z "$dl_url" ] || [ "$dl_url" = "null" ]; then
+		dl_url="https://github.com/REAndroid/APKEditor/releases/download/V1.4.9/APKEditor-1.4.9.jar"
+	fi
+	gh_dl "$TEMP_DIR/apkeditor.jar" "$dl_url" >/dev/null || return 1
+}
+
 get_prebuilts() {
+	local cache_key="${1}_${2}_${3}_${4}_${5}_${6}"
+	if [ -n "${__PREBUILTS_CACHE__["$cache_key"]:-}" ]; then
+		echo "${__PREBUILTS_CACHE__["$cache_key"]}"
+		return 0
+	fi
+	local result
+	if ! result=$(_get_prebuilts "$@"); then return 1; fi
+	__PREBUILTS_CACHE__["$cache_key"]="$result"
+	echo "$result"
+}
+
+_get_prebuilts() {
 	local cli_host=$1 cli_src=$2 cli_ver=$3 patches_host_list=$4 patches_src_list=$5 patches_ver_list=$6
 	
 	local first_patch_src
@@ -441,6 +469,18 @@ semver_validate() {
 	[ ${#ac} = 0 ]
 }
 get_patch_last_supported_ver() {
+	local cache_key="${1}_${2}_${3:-}_${4:-}_${5:-}_${6:-}"
+	if [ -n "${__PATCH_VER_CACHE__["$cache_key"]:-}" ]; then
+		echo "${__PATCH_VER_CACHE__["$cache_key"]}"
+		return 0
+	fi
+	local result
+	if ! result=$(_get_patch_last_supported_ver "$@"); then return 1; fi
+	__PATCH_VER_CACHE__["$cache_key"]="$result"
+	echo "$result"
+}
+
+_get_patch_last_supported_ver() {
 	local list_patches=$1 pkg_name=$2 inc_sel=${3:-} _exc_sel=${4:-} _exclusive=${5:-} cli_source=${6:-} # TODO: resolve using all of these
 	local op
 	if [ "$inc_sel" ]; then
@@ -493,6 +533,18 @@ get_patch_exp_ver() {
 }
 
 patches_list_versions() {
+	local cache_key="${1}_${2}_${3}_${4}_${5:-}"
+	if [ -n "${__PATCH_VER_CACHE__["$cache_key"]:-}" ]; then
+		echo "${__PATCH_VER_CACHE__["$cache_key"]}"
+		return 0
+	fi
+	local result
+	if ! result=$(_patches_list_versions "$@"); then return 1; fi
+	__PATCH_VER_CACHE__["$cache_key"]="$result"
+	echo "$result"
+}
+
+_patches_list_versions() {
 	local cli_jar=$1 patches_jar=$2 pkg_name=$3 cli_source=$4 extra_args=${5:-} op
 	local cli_source_l="${cli_source,,}"
 	if [[ "$cli_source_l" == *"npatch"* ]] || [[ "$cli_source_l" == *"lspatch"* ]]; then
@@ -525,6 +577,18 @@ patches_list_versions() {
 	echo "$op"
 }
 patches_list() {
+	local cache_key="${1}_${2}_${3}_${4}"
+	if [ -n "${__PATCHES_LIST_CACHE__["$cache_key"]:-}" ]; then
+		echo "${__PATCHES_LIST_CACHE__["$cache_key"]}"
+		return 0
+	fi
+	local result
+	if ! result=$(_patches_list "$@"); then return 1; fi
+	__PATCHES_LIST_CACHE__["$cache_key"]="$result"
+	echo "$result"
+}
+
+_patches_list() {
 	local cli_jar=$1 patches_jar=$2 pkg_name=$3 cli_source=$4 op
 	local cli_source_l="${cli_source,,}"
 	if [[ "$cli_source_l" == *"npatch"* ]] || [[ "$cli_source_l" == *"lspatch"* ]]; then
@@ -572,7 +636,7 @@ merge_splits() {
 		return 0
 	fi
 	pr "Merging splits"
-	gh_dl "$TEMP_DIR/apkeditor.jar" "https://github.com/REAndroid/APKEditor/releases/download/V1.4.9/APKEditor-1.4.9.jar" >/dev/null || return 1
+	get_apkeditor || return 1
 	if ! OP=$(java -jar "$TEMP_DIR/apkeditor.jar" merge -i "$bundle" -o "${output}-unsigned" -clean-meta -f 2>&1); then
 		epr "APKEditor error: $OP"
 		return 1
@@ -587,61 +651,36 @@ merge_splits() {
 	return 0
 }
 
-_fs_8191_get() {
+_trawl_8191_get() {
 	local url=$1 referer=${2:-}
 	local max_retries=4 attempt
-	local fs_url="${FLARESOLVERR_URL:-http://localhost:8191}/v1"
+	local solver_url="${TRAWL_URL:-http://localhost:8191}/scrape"
 	local extra_headers=""
 	[ -n "$referer" ] && extra_headers=",\"headers\":{\"Referer\":\"$referer\"}"
 	for attempt in $(seq 1 $max_retries); do
 		local response status
-		response=$(curl -s -X POST "$fs_url" \
+		response=$(curl -s -X POST "$solver_url" \
 			-H 'Content-Type: application/json' \
-			-d "{\"cmd\":\"request.get\",\"url\":\"$url\",\"maxTimeout\":60000${extra_headers}}") || true
-		status=$(echo "$response" | jq -r '.status // empty')
-		if [[ "$status" == "ok" ]]; then
-			html=$(echo "$response" | jq -r '.solution.response // empty')
+			-d "{\"url\":\"$url\",\"maxTimeout\":60000,\"skipHttp\":true${extra_headers}}") || true
+		status=$(echo "$response" | jq -r '.statusCode // empty')
+		if [[ "$status" == "200" ]]; then
+			html=$(echo "$response" | jq -r '.html // empty')
 			if [[ -n "$html" && "$html" != *"Attention Required!"* && "$html" != *"Just a moment..."* && "$html" != *"Please Wait... | Cloudflare"* && "$html" != *"Verify you are human"* ]]; then
-				export FS_COOKIES
-				FS_COOKIES=$(echo "$response" | jq -r '[.solution.cookies[] | .name + "=" + .value] | join("; ")')
-				user_agent=$(echo "$response" | jq -r '.solution.userAgent // empty')
+				export CF_COOKIES
+				CF_COOKIES=$(echo "$response" | jq -r '[.cookies[] | .name + "=" + .value] | join("; ")')
+				user_agent=$(echo "$response" | jq -r '.userAgent // empty')
 				return 0
 			fi
 		fi
-		wpr "FlareSolverr:8191 attempt $attempt/$max_retries failed for: $url"
+		wpr "Trawl:8191 attempt $attempt/$max_retries failed for: $url"
 		sleep 5
 	done
-	wpr "FlareSolverr:8191 failed after $max_retries attempts: $url — falling back"
+	wpr "Trawl:8191 failed after $max_retries attempts: $url — falling back"
 	return 1
 }
-      
-_fs_8192_get() {
-	local url=$1 referer=${2:-}
-	local max_retries=4 attempt
-	local fs_url="${FLARESOLVERR_URL:-http://localhost:8192}/v1"
-	local extra_headers=""
-	[ -n "$referer" ] && extra_headers=",\"headers\":{\"Referer\":\"$referer\"}"
-	for attempt in $(seq 1 $max_retries); do
-		local response status
-		response=$(curl -s -X POST "$fs_url" \
-			-H 'Content-Type: application/json' \
-			-d "{\"cmd\":\"request.get\",\"url\":\"$url\",\"maxTimeout\":60000${extra_headers}}") || true
-		status=$(echo "$response" | jq -r '.status // empty')
-		if [[ "$status" == "ok" ]]; then
-			html=$(echo "$response" | jq -r '.solution.response // empty')
-			if [[ -n "$html" && "$html" != *"Attention Required!"* && "$html" != *"Just a moment..."* && "$html" != *"Please Wait... | Cloudflare"* && "$html" != *"Verify you are human"* ]]; then
-				export FS_COOKIES
-				FS_COOKIES=$(echo "$response" | jq -r '[.solution.cookies[] | .name + "=" + .value] | join("; ")')
-				user_agent=$(echo "$response" | jq -r '.solution.userAgent // empty')
-				return 0
-			fi
-		fi
-		wpr "FlareSolverr:8192 attempt $attempt/$max_retries failed for: $url"
-		sleep 5
-	done
-	wpr "FlareSolverr:8192 failed after $max_retries attempts: $url — falling back"
-	return 1
-}
+
+
+
 _cfb_get() {
 	local url=$1 referer=${2:-}
 	local max_retries=4
@@ -660,8 +699,8 @@ _cfb_get() {
 		if [[ "$http_code" == "200" ]]; then
 			html=$(cat "$response_file")
 			if [[ -n "$html" ]]; then
-				export FS_COOKIES
-				FS_COOKIES=$(grep -i '^x-cf-bypasser-cookies:' $TEMP_DIR/cfb_response_headers.txt 2>/dev/null | cut -d':' -f2- | xargs)
+				export CF_COOKIES
+				CF_COOKIES=$(grep -i '^x-cf-bypasser-cookies:' $TEMP_DIR/cfb_response_headers.txt 2>/dev/null | cut -d':' -f2- | xargs)
 				local cfb_ua
 				cfb_ua=$(grep -i '^x-cf-bypasser-user-agent:' $TEMP_DIR/cfb_response_headers.txt 2>/dev/null | cut -d':' -f2- | xargs)
 				[[ -n "$cfb_ua" ]] && user_agent="$cfb_ua"
@@ -676,33 +715,30 @@ _cfb_get() {
 _fallback_get(){
 	local url=$1
 	html=$(req "$url" -) || return 1
-	FS_COOKIES=""
+	CF_COOKIES=""
 	user_agent="Mozilla/5.0 (X11; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/109.0"
 
 }
-_FFS8191_FAILED=0
+_TRAWL8191_FAILED=0
 _CFB_FAILED=0
-_FFS8192_FAILED=0
 _unqueued_cf_get() {
 	if [[ "$_CFB_FAILED" -eq 0 && "${CF_BYPASS_SOLVER_CFB_ENABLED:-false}" == true ]]; then
 		_cfb_get "$@" && return 0
 		_CFB_FAILED=1
 	fi
-	if [[ "$_FFS8191_FAILED" -eq 0 && "${CF_BYPASS_SOLVER_FS_8191_ENABLED:-false}" == true ]]; then
-		_fs_8191_get "$@" && return 0
-		_FFS8191_FAILED=1
+	if [[ "$_TRAWL8191_FAILED" -eq 0 && "${CF_BYPASS_SOLVER_TRAWL_8191_ENABLED:-false}" == true ]]; then
+		_trawl_8191_get "$@" && return 0
+		_TRAWL8191_FAILED=1
     fi
-	if [[ "$_FFS8192_FAILED" -eq 0 && "${CF_BYPASS_SOLVER_FS_8192_ENABLED:-false}" == true ]]; then
-		_fs_8192_get "$@" && return 0
-		_FFS8192_FAILED=1
-	fi
-	if [[ "${CF_BYPASS_SOLVER_FS_8191_ENABLED:-false}" == true || "${CF_BYPASS_SOLVER_CLOUDFLAREBYPASSFORSCRAPING_ENABLED:-false}" == true || "${CF_BYPASS_SOLVER_FS_8192_ENABLED:-false}" == true ]]; then
-    	wpr "All bypass solvers failed for: $1 — falling back to direct request"
+	if [[ "${CF_BYPASS_SOLVER_TRAWL_8191_ENABLED:-false}" == true || "${CF_BYPASS_SOLVER_CFB_ENABLED:-false}" == true || "${CF_BYPASS_SOLVER_CLOUDFLAREBYPASSFORSCRAPING_ENABLED:-false}" == true ]]; then
+		epr "All bypass solvers failed for: $1"
+		return 1
 	else
 		wpr "No bypass solvers enabled, falling back to direct request for: $1"
+		_fallback_get "$@" && return 0
 	fi
-	_fallback_get "$@" && return 0
 	epr "All methods failed for: $1"
+	return 1
 }
 _cf_get() {
 	mkdir -p "$TEMP_DIR"
@@ -990,7 +1026,7 @@ dl_apkmirror() {
 
 	pr "Downloading APK: $final_url"
 	local cookie_args=()
-	[ -n "${FS_COOKIES:-}" ] && cookie_args=(--header "Cookie: $FS_COOKIES")
+	[ -n "${CF_COOKIES:-}" ] && cookie_args=(--header "Cookie: $CF_COOKIES")
 	local referer_url="$base_url$btn_url"
 	[[ "$btn_url" == http* ]] && referer_url="$btn_url"
 
@@ -1070,7 +1106,7 @@ dl_apkpure() {
 
 	pr "Downloading from APKPure: $download_url"
 	local cookie_header=()
-	[ -n "${FS_COOKIES:-}" ] && cookie_header=(-H "Cookie: $FS_COOKIES")
+	[ -n "${CF_COOKIES:-}" ] && cookie_header=(-H "Cookie: $CF_COOKIES")
 
 	local is_bundle=false
 	echo "$download_url" | grep -qi 'xapk' && is_bundle=true
@@ -1099,7 +1135,7 @@ _apkpure_install_xapk() {
 		epr "Downloaded XAPK is not a valid zip (Cloudflare block?): $xapk"
 		return 1
 	fi
-	gh_dl "$TEMP_DIR/apkeditor.jar" "https://github.com/REAndroid/APKEditor/releases/download/V1.4.9/APKEditor-1.4.9.jar" >/dev/null || return 1
+	get_apkeditor || return 1
 	if unzip -l "$xapk" 2>/dev/null | grep -q '^[[:space:]]*[0-9].*base\.apk$'; then
 		pr "Extracting base.apk from XAPK"
 		unzip -p "$xapk" base.apk > "$output" || return 1
@@ -1582,7 +1618,13 @@ build_rv() {
 	fi
 	if [ $get_latest_ver = true ]; then
 		if [ "$version_mode" = beta ]; then __AAV__="true"; else __AAV__="false"; fi
-		pkgvers=$(get_"${dl_from}"_vers)
+		local vers_cache_key="${dl_from}_${args[${dl_from}_dlurl]}_${__AAV__}"
+		if [ -n "${__PKG_VERS_CACHE__["$vers_cache_key"]:-}" ]; then
+			pkgvers="${__PKG_VERS_CACHE__["$vers_cache_key"]}"
+		else
+			pkgvers=$(get_"${dl_from}"_vers)
+			__PKG_VERS_CACHE__["$vers_cache_key"]="$pkgvers"
+		fi
 		version=$(get_highest_ver <<<"$pkgvers") || version=$(head -1 <<<"$pkgvers")
 	fi
 	if [ -z "$version" ]; then
@@ -1603,100 +1645,125 @@ build_rv() {
 	version_f=${version_f#v}
 	for arch in "${arch_list[@]}"; do
 		arch_f="${arch// /}"
-	local stock_apk="${TEMP_DIR}/${pkg_name}-${version_f}-${arch_f}.apk"
-	if [ ! -f "$stock_apk" ]; then
-		for dl_p in "${DL_SRCS[@]}"; do
-			if [ -z "${args[${dl_p}_dlurl]}" ]; then continue; fi
-			pr "Downloading '${table}' from '${dl_p}'"
-			if ! isoneof $dl_p "${tried_dl[@]}"; then
-				if ! get_${dl_p}_resp "${args[${dl_p}_dlurl]}"; then
-					epr "ERROR: Could not get '${table}' from '${dl_p}'"
-					continue
-				fi
+		local stock_apk="${TEMP_DIR}/${pkg_name}-${version_f}-${arch_f}.apk"
+		local common_apk="${TEMP_DIR}/${pkg_name}-${version_f}-common.apk"
+		if [ -f "$common_apk" ]; then
+			local missing_arch=false
+			if [ "$arch_f" = "arm64-v8a" ] && ! unzip -l "$common_apk" 2>/dev/null | grep -q "lib/arm64-v8a/"; then
+				unzip -l "$common_apk" 2>/dev/null | grep -q "lib/" && missing_arch=true
+			elif [ "$arch_f" = "arm-v7a" ] && ! unzip -l "$common_apk" 2>/dev/null | grep -q "lib/armeabi-v7a/"; then
+				unzip -l "$common_apk" 2>/dev/null | grep -q "lib/" && missing_arch=true
 			fi
-			if ! dl_${dl_p} "${args[${dl_p}_dlurl]}" "$version" "$stock_apk" "$arch" "${args[dpi]}" "$get_latest_ver"; then
-				pr "ERROR: Could not download '${table}' from '${dl_p}' with version '${version}', arch '${arch}', dpi '${args[dpi]}'"
-				continue
+			if [ "$missing_arch" = false ]; then
+				cp -f "$common_apk" "$stock_apk"
 			fi
-			if ! unzip -l "$stock_apk" >/dev/null 2>&1; then
-				epr "ERROR: Downloaded file from ${dl_p} is not a valid zip archive (Cloudflare block or bad file)!"
-				rm -f "$stock_apk"
-				continue
-			fi
-			if ! unzip -l "$stock_apk" 2>/dev/null | grep -q '^[[:space:]]*[0-9].*AndroidManifest\.xml$'; then
-				pr "WARNING: ${stock_apk} does not contain AndroidManifest.xml at root. Attempting to extract as XAPK/APKS..."
-				mv "$stock_apk" "${stock_apk}.xapk"
-				if ! _apkpure_install_xapk "${stock_apk}.xapk" "$stock_apk"; then
-					epr "ERROR: Failed to extract XAPK/APKS"
-					rm -f "${stock_apk}.xapk" "$stock_apk"
-					continue
-				fi
-				rm -f "${stock_apk}.xapk"
-			fi
-
-			local aapt_cmd="aapt"
-			if ! command -v aapt >/dev/null 2>&1 && [ -n "${ANDROID_SDK_ROOT:-}" ]; then
-				aapt_cmd=$(ls -1 $ANDROID_SDK_ROOT/build-tools/*/aapt 2>/dev/null | tail -1) || true
-			fi
-			if [ -n "$aapt_cmd" ] && [ -x "$aapt_cmd" ]; then
-				local downloaded_pkg downloaded_ver
-				downloaded_pkg=$("$aapt_cmd" dump badging "$stock_apk" 2>/dev/null | grep -oP "package: name='\K[^']+" | head -1) || true
-				downloaded_ver=$("$aapt_cmd" dump badging "$stock_apk" 2>/dev/null | grep -oP "versionName='\K[^']+" | head -1) || true
-				
-				if [ -z "$downloaded_pkg" ]; then
-					epr "ERROR: Downloaded file is not a valid APK or aapt failed to parse it. Rejecting..."
-					rm -f "$stock_apk"
-					continue
-				fi
-
-				if [ -n "$downloaded_pkg" ] && [ "$downloaded_pkg" != "$pkg_name" ] && [[ "$pkg_name" == *.* ]]; then
-					epr "ERROR: Downloaded APK package name ($downloaded_pkg) does not match expected ($pkg_name). Rejecting..."
-					rm -f "$stock_apk"
-					continue
-				fi
-
-				if [ -n "$downloaded_ver" ] && [[ "$dl_p" == "direct" ]]; then
-					if [ "$version" != "$downloaded_ver" ]; then
-						pr "Updating version from '${version}' to '${downloaded_ver}' based on APK info"
-						version="$downloaded_ver"
-						version_f=${version// /}
-						version_f=${version_f#v}
-						
-						local new_stock_apk="${TEMP_DIR}/${pkg_name}-${version_f}-${arch_f}.apk"
-						mv "$stock_apk" "$new_stock_apk"
-						stock_apk="$new_stock_apk"
+		fi
+		if [ ! -f "$stock_apk" ]; then
+			for dl_p in "${DL_SRCS[@]}"; do
+				if [ -z "${args[${dl_p}_dlurl]}" ]; then continue; fi
+				pr "Downloading '${table}' from '${dl_p}'"
+				if ! isoneof $dl_p "${tried_dl[@]}"; then
+					if ! get_${dl_p}_resp "${args[${dl_p}_dlurl]}"; then
+						epr "ERROR: Could not get '${table}' from '${dl_p}'"
+						continue
 					fi
 				fi
-			fi
+				if ! dl_${dl_p} "${args[${dl_p}_dlurl]}" "$version" "$stock_apk" "$arch" "${args[dpi]}" "$get_latest_ver"; then
+					pr "ERROR: Could not download '${table}' from '${dl_p}' with version '${version}', arch '${arch}', dpi '${args[dpi]}'"
+					continue
+				fi
+				if ! unzip -l "$stock_apk" >/dev/null 2>&1; then
+					epr "ERROR: Downloaded file from ${dl_p} is not a valid zip archive (Cloudflare block or bad file)!"
+					rm -f "$stock_apk"
+					continue
+				fi
+				if ! unzip -l "$stock_apk" 2>/dev/null | grep -q '^[[:space:]]*[0-9].*AndroidManifest\.xml$'; then
+					pr "WARNING: ${stock_apk} does not contain AndroidManifest.xml at root. Attempting to extract as XAPK/APKS..."
+					mv "$stock_apk" "${stock_apk}.xapk"
+					if ! _apkpure_install_xapk "${stock_apk}.xapk" "$stock_apk"; then
+						epr "ERROR: Failed to extract XAPK/APKS"
+						rm -f "${stock_apk}.xapk" "$stock_apk"
+						continue
+					fi
+					rm -f "${stock_apk}.xapk"
+				fi
 
-			local sig_op
-			local sig_ok=true
-			if [ -f "${stock_apk}.apkm" ]; then
-				rm -rf "${stock_apk}-zip" || :
-				unzip -j "${stock_apk}.apkm" -d "${stock_apk}-zip" >/dev/null
-				for a in "${stock_apk}"-zip/*.apk; do
-					if ! sig_op=$(check_sig "$a" "$pkg_name" 2>&1); then
-						epr "Signature mismatch on $a: $sig_op. Rejecting download from $dl_p..."
+				local aapt_cmd="aapt"
+				if ! command -v aapt >/dev/null 2>&1 && [ -n "${ANDROID_SDK_ROOT:-}" ]; then
+					aapt_cmd=$(ls -1 $ANDROID_SDK_ROOT/build-tools/*/aapt 2>/dev/null | tail -1) || true
+				fi
+				if [ -n "$aapt_cmd" ] && [ -x "$aapt_cmd" ]; then
+					local downloaded_pkg downloaded_ver
+					downloaded_pkg=$("$aapt_cmd" dump badging "$stock_apk" 2>/dev/null | grep -oP "package: name='\K[^']+" | head -1) || true
+					downloaded_ver=$("$aapt_cmd" dump badging "$stock_apk" 2>/dev/null | grep -oP "versionName='\K[^']+" | head -1) || true
+					
+					if [ -z "$downloaded_pkg" ]; then
+						epr "ERROR: Downloaded file is not a valid APK or aapt failed to parse it. Rejecting..."
+						rm -f "$stock_apk"
+						continue
+					fi
+
+					if [ -n "$downloaded_pkg" ] && [ "$downloaded_pkg" != "$pkg_name" ] && [[ "$pkg_name" == *.* ]]; then
+						epr "ERROR: Downloaded APK package name ($downloaded_pkg) does not match expected ($pkg_name). Rejecting..."
+						rm -f "$stock_apk"
+						continue
+					fi
+
+					if [ -n "$downloaded_ver" ] && [[ "$dl_p" == "direct" ]]; then
+						if [ "$version" != "$downloaded_ver" ]; then
+							pr "Updating version from '${version}' to '${downloaded_ver}' based on APK info"
+							version="$downloaded_ver"
+							version_f=${version// /}
+							version_f=${version_f#v}
+							
+							local new_stock_apk="${TEMP_DIR}/${pkg_name}-${version_f}-${arch_f}.apk"
+							mv "$stock_apk" "$new_stock_apk"
+							stock_apk="$new_stock_apk"
+						fi
+					fi
+				fi
+
+				local sig_op
+				local sig_ok=true
+				if [ -f "${stock_apk}.apkm" ]; then
+					rm -rf "${stock_apk}-zip" || :
+					unzip -j "${stock_apk}.apkm" -d "${stock_apk}-zip" >/dev/null
+					if [ -f "${stock_apk}-zip/base.apk" ]; then
+						if ! sig_op=$(check_sig "${stock_apk}-zip/base.apk" "$pkg_name" 2>&1); then
+							epr "Signature mismatch on base.apk: $sig_op. Rejecting download from $dl_p..."
+							sig_ok=false
+						fi
+					else
+						for a in "${stock_apk}"-zip/*.apk; do
+							if ! sig_op=$(check_sig "$a" "$pkg_name" 2>&1); then
+								epr "Signature mismatch on $a: $sig_op. Rejecting download from $dl_p..."
+								sig_ok=false
+								break
+							fi
+							break # Only check one APK if no base.apk
+						done
+					fi
+					rm -rf "${stock_apk}-zip" || :
+				else
+					if ! sig_op=$(check_sig "$stock_apk" "$pkg_name" 2>&1); then
+						epr "Signature mismatch on $stock_apk: $sig_op. Rejecting download from $dl_p..."
 						sig_ok=false
-						break
 					fi
-				done
-				rm -rf "${stock_apk}-zip" || :
-			else
-				if ! sig_op=$(check_sig "$stock_apk" "$pkg_name" 2>&1); then
-					epr "Signature mismatch on $stock_apk: $sig_op. Rejecting download from $dl_p..."
-					sig_ok=false
+				fi
+				if [ "$sig_ok" = false ]; then
+					rm -f "$stock_apk" "${stock_apk}.apkm"
+					continue
+				fi
+
+				break
+			done
+			if [ -f "$stock_apk" ] && [ ! -f "$common_apk" ]; then
+				if ! unzip -l "$stock_apk" 2>/dev/null | grep -q "lib/" || (unzip -l "$stock_apk" 2>/dev/null | grep -q "lib/arm64-v8a/" && unzip -l "$stock_apk" 2>/dev/null | grep -q "lib/armeabi-v7a/"); then
+					cp -f "$stock_apk" "$common_apk"
 				fi
 			fi
-			if [ "$sig_ok" = false ]; then
-				rm -f "$stock_apk" "${stock_apk}.apkm"
-				continue
-			fi
-
-			break
-		done
-	fi
-	if [ -f "$stock_apk" ]; then break; fi
+		fi
+		if [ -f "$stock_apk" ]; then break; fi
 	done
 	if [ ! -f "$stock_apk" ]; then
 		epr "ERROR: Could not download '${table}'"
@@ -1707,12 +1774,20 @@ build_rv() {
 	if [ -f "${stock_apk}.apkm" ]; then
 		rm -rf "${stock_apk}-zip" || :
 		unzip -j "${stock_apk}.apkm" -d "${stock_apk}-zip" >/dev/null
-		for a in "${stock_apk}"-zip/*.apk; do
-			if ! sig_op=$(check_sig "$a" "$pkg_name" 2>&1); then
-				epr "Not building $table, apk signature mismatch '$a': $sig_op"
+		if [ -f "${stock_apk}-zip/base.apk" ]; then
+			if ! sig_op=$(check_sig "${stock_apk}-zip/base.apk" "$pkg_name" 2>&1); then
+				epr "Not building $table, apk signature mismatch 'base.apk': $sig_op"
 				return 0
 			fi
-		done
+		else
+			for a in "${stock_apk}"-zip/*.apk; do
+				if ! sig_op=$(check_sig "$a" "$pkg_name" 2>&1); then
+					epr "Not building $table, apk signature mismatch '$a': $sig_op"
+					return 0
+				fi
+				break # Only check one APK if no base.apk
+			done
+		fi
 		rm -rf "${stock_apk}-zip" || :
 	else
 		if ! sig_op=$(check_sig "$stock_apk" "$pkg_name" 2>&1); then

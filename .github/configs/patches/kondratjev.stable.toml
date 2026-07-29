@@ -1,7 +1,3 @@
-# patches-version = "dev"
-# cli-version = "dev"
-enable-module-update = true
-
 [calorie-counter-morphe]
 enabled = true
 app-name = "calorie-counter"

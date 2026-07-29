@@ -407,6 +407,27 @@ Patches: [rushiranpise/patches-1.15.1.mpp](https://github.com/rushiranpise/morph
 
 ---
 
+### [Calorie Counter](https://play.google.com/store/apps/details?id=com.fatsecret.android)
+
+`com.fatsecret.android`
+
+#### [Morphe (kondratjev)](https://github.com/kondratjev/morphe-patches)
+
+<details>
+<summary id="calorie-counter-morphe">&emsp;<a href="https://nullcpy.github.io/"><img src="https://img.shields.io/badge/version-v11.6.0.1-gray?labelColor=00bb2a&logo=soundcloud&logoColor=white&style=flat"></summary>
+
+<blockquote>
+
+[Release 2026-07-29](https://github.com/nullcpy/rvb/releases/tag/260108)<br>
+Patches: [kondratjev/patches-1.17.0.mpp](https://github.com/kondratjev/morphe-patches/releases/tag/v1.17.0)
+- Disable community tab
+- Disable force update dialog
+- Unlock Premium
+</blockquote>
+</details>
+
+---
+
 ### [Cryptomator](https://play.google.com/store/apps/details?id=org.cryptomator)
 
 `org.cryptomator`
@@ -1273,7 +1294,7 @@ Patches: [arandomhooman/patches-1.43.4.mpp](https://github.com/arandomhooman/hoo
   
 <blockquote>
 
-[Release 2026-07-28](https://github.com/m4mental/my-rvb-builder/releases/tag/260002)<br>
+[Release 2026-07-28](https://github.com/nullcpy/rvb/releases/tag/260104)<br>
 Patches: [rushiranpise/patches-1.15.1.mpp](https://github.com/rushiranpise/morphe-patches/releases/tag/v1.15.1)
 - GmsCore support (MicroG)
 - Unlock VIP
@@ -1285,7 +1306,7 @@ Patches: [rushiranpise/patches-1.15.1.mpp](https://github.com/rushiranpise/morph
   
 <blockquote>
 
-[Release 2026-07-28](https://github.com/m4mental/my-rvb-builder/releases/tag/260002)<br>
+[Release 2026-07-28](https://github.com/nullcpy/rvb/releases/tag/260104)<br>
 Patches: [rushiranpise/patches-1.15.1.mpp](https://github.com/rushiranpise/morphe-patches/releases/tag/v1.15.1)
 - GmsCore support (MicroG)
 - Unlock VIP
@@ -1742,7 +1763,7 @@ Patches: [Raudrobot/patches-6.1.0.rvp](https://github.com/Raudrobot/revanced-pat
   
 <blockquote>
 
-[Release 2026-07-28](https://github.com/m4mental/my-rvb-builder/releases/tag/260005)<br>
+[Release 2026-07-28](https://github.com/nullcpy/rvb/releases/tag/260106)<br>
 Patches: [MorpheApp/patches-1.37.1-dev.1.mpp](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.37.1-dev.1)
 - Custom font
 - Disable modern home
@@ -1768,7 +1789,7 @@ Patches: [MorpheApp/patches-1.37.1-dev.1.mpp](https://github.com/MorpheApp/morph
   
 <blockquote>
 
-[Release 2026-07-28](https://github.com/m4mental/my-rvb-builder/releases/tag/260005)<br>
+[Release 2026-07-28](https://github.com/nullcpy/rvb/releases/tag/260106)<br>
 Patches: [MorpheApp/patches-1.37.1-dev.1.mpp](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.37.1-dev.1)
 - Custom font
 - Disable modern home
@@ -1970,6 +1991,21 @@ Patches: [hoo-dles/patches-1.39.0.mpp](https://github.com/hoo-dles/morphe-patche
 - AMOLED dark theme
 - Disable telemetry
 - Enable SoundCloud Go
+</blockquote>
+</details>
+
+#### [Morphe (kondratjev)](https://github.com/kondratjev/morphe-patches)
+
+<details>
+<summary id="soundcloud-morphe-alt">&emsp;<a href="https://nullcpy.github.io/"><img src="https://img.shields.io/badge/version-v2026.06.25.release-gray?labelColor=FF5500&logo=soundcloud&logoColor=white&style=flat"></summary>
+
+<blockquote>
+
+[Release 2026-07-29](https://github.com/nullcpy/rvb/releases/tag/260108)<br>
+Patches: [kondratjev/patches-1.17.0.mpp](https://github.com/kondratjev/morphe-patches/releases/tag/v1.17.0)
+- Disable analytics
+- Disable consent popup
+- Enable SoundCloud Go+
 </blockquote>
 </details>
 
@@ -2836,7 +2872,7 @@ Patches: [hoo-dles/patches-1.39.0.mpp](https://github.com/hoo-dles/morphe-patche
   
 <blockquote>
 
-[Release 2026-07-28](https://github.com/m4mental/my-rvb-builder/releases/tag/260005)<br>
+[Release 2026-07-28](https://github.com/nullcpy/rvb/releases/tag/260106)<br>
 Patches: [MorpheApp/patches-1.37.1-dev.1.mpp](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.37.1-dev.1)
 - Add to queue
 - Alternative thumbnails
@@ -3686,7 +3722,7 @@ Patches: [wchill/patches-5.16.4.mpp](https://github.com/wchill/rvx-morphed/relea
   
 <blockquote>
 
-[Release 2026-07-28](https://github.com/m4mental/my-rvb-builder/releases/tag/260005)<br>
+[Release 2026-07-28](https://github.com/nullcpy/rvb/releases/tag/260106)<br>
 Patches: [MorpheApp/patches-1.37.1-dev.1.mpp](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.37.1-dev.1)
 - Bypass certificate checks
 - Change header
@@ -3733,7 +3769,7 @@ Patches: [MorpheApp/patches-1.37.1-dev.1.mpp](https://github.com/MorpheApp/morph
   
 <blockquote>
 
-[Release 2026-07-28](https://github.com/m4mental/my-rvb-builder/releases/tag/260005)<br>
+[Release 2026-07-28](https://github.com/nullcpy/rvb/releases/tag/260106)<br>
 Patches: [MorpheApp/patches-1.37.1-dev.1.mpp](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.37.1-dev.1)
 - Bypass certificate checks
 - Change header
