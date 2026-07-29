@@ -67,16 +67,16 @@ jobs:
                       line = re.sub(r'\|[ \t]*\[Group\]\([^)]+\)', '', line)
                       line = re.sub(r'\|[ \t]*\[Donate\]\([^)]+\)', '', line)
                       
-                      # Skip empty HTML paragraph lines
                       if re.sub(r'<[^>]+>', '', line).strip() == '':
                           continue
 
-                  # 4. Replace Links
+                  # 4. Replace Broken Visitor Badge & Replace Links
+                  line = re.sub(r'https://visitor-badge\.laobi\.icu/badge\?page_id=[^\"]*', 'https://hits.seeyoufarm.org/api/count/incr/badge.svg?url=https%3A%2F%2Fm4mental.github.io%2Fmy-rvb-builder&count_bg=%231283C3&title_bg=%23555555&title=Visitors', line)
+                  line = line.replace("github/stars/nullcpy/rvb", "github/stars/m4mental/my-rvb-builder")
+                  line = line.replace("github/downloads/nullcpy/rvb", "github/downloads/m4mental/my-rvb-builder")
                   line = line.replace("https://github.com/nullcpy/rvb", "https://github.com/m4mental/my-rvb-builder")
                   line = line.replace("https://nullcpy.github.io/", "https://m4mental.github.io/my-rvb-builder/")
                   line = line.replace("https://nullcpy.github.io", "https://m4mental.github.io/my-rvb-builder")
-                  line = line.replace("page_id=nullcpy.rvb", "page_id=m4mental.my-rvb-builder")
-                  line = line.replace("page_id=nullcpy.github.io", "page_id=m4mental.github.io.my-rvb-builder")
 
                   clean_lines.append(line)
 
@@ -95,13 +95,7 @@ jobs:
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email 'github-actions[bot]@users.noreply.github.com'
-          
-          # साफ़ की हुई README फ़ाइल को कमिट में स्टेज करेगा
           git add README.md
-          
-          # वर्कफ़्लो फ़ाइलों को सुरक्षित रखेगा
           git checkout HEAD -- .github/workflows/ || true
-          
-          # कमिट करके पुश करेगा
           git commit -m "Sync upstream code & clean README [skip ci]" || true
           git push origin main
