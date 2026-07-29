@@ -2,8 +2,8 @@ name: Sync Upstream Code
 
 on:
   schedule:
-    - cron: '0 * * * *' # हर 1 घंटे में ऑटोमैटिक रन
-  workflow_dispatch:      # मैन्युअल रन बटन
+    - cron: '0 * * * *' # हर 1 घंटे में ऑटो-सिंक
+  workflow_dispatch:      # मैन्युअल बटन
 
 permissions:
   contents: write
@@ -19,7 +19,7 @@ jobs:
           fetch-depth: 0
           token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Sync with original repo (Safely)
+      - name: Sync with original repo (Safely & Clean README)
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email 'github-actions[bot]@users.noreply.github.com'
@@ -27,12 +27,19 @@ jobs:
           git fetch upstream main
           git checkout main
 
-          # 1. ओरिजिनल Repo से सारे नए कोड, स्क्रिप्ट्स और कॉन्फ़िग्स लाएगा
+          # 1. ओरिजिनल Repo से सारे नए कोड, नए ऐप्स और पैचेज लाएगा
           git checkout upstream/main -- .
 
-          # 2. Permission Reject एरर से बचने के लिए Workflows फ़ोल्डर सुरक्षित रखेगा
+          # 2. README फ़ाइल से पैलेस्टाइन बैनर, टेलीग्राम और डोनेट लिंक्स मिटाएगा
+          sed -i -E '/support-palestine-banner/d' README.md || true
+          sed -i -E '/Support the Project/,$d' README.md || true
+          sed -i -E 's#\[Group\]\([^)]+\)##g; s#\[Channel\]\([^)]+\)##g; s#\[Donate\]\([^)]+\)##g' README.md || true
+          sed -i -E 's#https://nullcpy.github.io/?#https://m4mental.github.io/my-rvb-builder/#g' README.md || true
+          sed -i -E 's#https://github.com/nullcpy/rvb#https://github.com/m4mental/my-rvb-builder#g' README.md || true
+
+          # 3. वर्कफ़्लो फ़ाइलों को सुरक्षित रखेगा
           git checkout HEAD -- .github/workflows/ || true
 
-          # 3. नया कोड कमिट करके पुश कर देगा
-          git commit -m "Sync upstream code, scripts and configs [skip ci]" || true
+          # 4. कमिट और पुश करेगा
+          git commit -m "Sync upstream code and clean README [skip ci]" || true
           git push origin main
