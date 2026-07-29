@@ -30,7 +30,7 @@ jobs:
           # 1. ओरिजिनल Repo से सारे नए ऐप्स और कोड लाएगा
           git checkout upstream/main -- .
 
-      - name: Clean README using Python Heredoc
+      - name: Line-by-Line README Cleaner
         run: |
           python3 << 'EOF'
           import re, os
@@ -38,36 +38,56 @@ jobs:
           path = "README.md"
           if os.path.exists(path):
               with open(path, "r", encoding="utf-8") as f:
-                  c = f.read()
+                  lines = f.readlines()
 
-              # 1. Remove Palestine Banner
-              c = re.sub(r'<div align="center"><a href="https://github.com/Safouene1/support-palestine-banner[\s\S]*?</div>\s*', '', c)
+              clean_lines = []
+              skip_support_section = False
 
-              # 2. Remove Telegram Group, Channel, Donate badges
-              c = re.sub(r'<a href="https://t.me/[^"]*"><img src="[^"]*badge/Group-[^"]*"></a>\s*', '', c)
-              c = re.sub(r'<a href="https://t.me/[^"]*"><img src="[^"]*badge/Channel-[^"]*"></a>\s*', '', c)
-              c = re.sub(r'<a href="[^"]*donate[^"]*"><img src="[^"]*badge/Donate-[^"]*"></a>\s*', '', c)
+              for line in lines:
+                  # 1. Skip Palestine Banner
+                  if "support-palestine-banner" in line or "Support Palestine" in line:
+                      continue
 
-              # 3. Remove Support the Project section
-              c = re.sub(r'## 🤝 Support the Project[\s\S]*?(?=---|\Z)', '', c)
+                  # 2. Skip Support the Project section
+                  if "Support the Project" in line or "🤝 Support" in line:
+                      skip_support_section = True
+                      continue
+                  if skip_support_section and (line.startswith("## ") or line.startswith("---") or line.startswith("> [!NOTE]")):
+                      skip_support_section = False
 
-              # 4. Remove Telegram references
-              c = re.sub(r'or \*\*\[send a message in our Telegram Group\]\([^)]+\)\*\*', '', c)
-              c = re.sub(r'\*\*\[Send a message in our Telegram Group\]\([^)]+\)\*\* or ', '', c)
+                  if skip_support_section:
+                      continue
 
-              # 5. Replace links with m4mental links
-              c = c.replace("https://github.com/nullcpy/rvb", "https://github.com/m4mental/my-rvb-builder")
-              c = c.replace("https://nullcpy.github.io/", "https://m4mental.github.io/my-rvb-builder/")
-              c = c.replace("https://nullcpy.github.io", "https://m4mental.github.io/my-rvb-builder")
+                  # 3. Remove Telegram & Donate Badges
+                  if "badge/Group-" in line or "badge/Channel-" in line or "badge/Donate-" in line or "t.me/rvb" in line or "fahim-ahmed05" in line:
+                      line = re.sub(r'<a href="[^"]*t\.me/[^"]*">.*?</a>\s*', '', line)
+                      line = re.sub(r'<a href="[^"]*donate[^"]*">.*?</a>\s*', '', line)
+                      line = re.sub(r'\[Group\]\([^)]+\)', '', line)
+                      line = re.sub(r'\[Donate\]\([^)]+\)', '', line)
+                      line = re.sub(r'\|[ \t]*\[Group\]\([^)]+\)', '', line)
+                      line = re.sub(r'\|[ \t]*\[Donate\]\([^)]+\)', '', line)
+                      
+                      # Skip empty HTML paragraph lines
+                      if re.sub(r'<[^>]+>', '', line).strip() == '':
+                          continue
 
-              # 6. Clean blank lines
-              c = re.sub(r'\n{3,}', '\n\n', c)
+                  # 4. Replace Links
+                  line = line.replace("https://github.com/nullcpy/rvb", "https://github.com/m4mental/my-rvb-builder")
+                  line = line.replace("https://nullcpy.github.io/", "https://m4mental.github.io/my-rvb-builder/")
+                  line = line.replace("https://nullcpy.github.io", "https://m4mental.github.io/my-rvb-builder")
+                  line = line.replace("page_id=nullcpy.rvb", "page_id=m4mental.my-rvb-builder")
+                  line = line.replace("page_id=nullcpy.github.io", "page_id=m4mental.github.io.my-rvb-builder")
+
+                  clean_lines.append(line)
+
+              final_content = "".join(clean_lines)
+              final_content = re.sub(r'\n{3,}', '\n\n', final_content)
 
               with open(path, "w", encoding="utf-8") as f:
-                  f.write(c)
+                  f.write(final_content)
 
               print("==============================================")
-              print("SUCCESS: README.md cleaned for m4mental!")
+              print("SUCCESS: Line-by-Line README.md Cleaned!")
               print("==============================================")
           EOF
 
@@ -75,6 +95,13 @@ jobs:
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email 'github-actions[bot]@users.noreply.github.com'
+          
+          # साफ़ की हुई README फ़ाइल को कमिट में स्टेज करेगा
+          git add README.md
+          
+          # वर्कफ़्लो फ़ाइलों को सुरक्षित रखेगा
           git checkout HEAD -- .github/workflows/ || true
+          
+          # कमिट करके पुश करेगा
           git commit -m "Sync upstream code & clean README [skip ci]" || true
           git push origin main
