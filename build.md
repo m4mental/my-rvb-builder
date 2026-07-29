@@ -9,4 +9,4 @@ discord-xposed (arm-v7a): 339.11-Stable
   
 CLI: 7723mod/jar-v1.0.6-698-release.jar  
 Patches: revenge-mod/app-release.apk  
-[Changelog](https://github.com/revenge-mod/revenge-xposed/releases/tag/1502)  
+[Changelog](https://github.com/revenge-mod/revenge-xposed/releases/tag/1503)  
