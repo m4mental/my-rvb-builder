@@ -1,0 +1,94 @@
+name: Mirror Releases from Original Repo
+
+on:
+  schedule:
+    - cron: '0 */6 * * *' # हर 6 घंटे में ऑटोमैटिक नए बिल्ड्स कॉपी करेगा
+  workflow_dispatch:      # मैन्युअल रन बटन
+
+permissions:
+  contents: write
+
+jobs:
+  mirror:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Mirror Releases from nullcpy/rvb
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -e
+          echo "Fetching releases from original repo (nullcpy/rvb)..."
+          
+          # ओरिजिनल repo से लेटेस्ट 25 अलग-अलग रिलीज़ेस की लिस्ट लाएगा
+          RELEASES_JSON=$(curl -s "https://api.github.com/repos/nullcpy/rvb/releases?per_page=25")
+          
+          if ! echo "$RELEASES_JSON" | jq -e '. | type == "array"' >/dev/null; then
+            echo "Failed to fetch releases or rate limited."
+            exit 1
+          fi
+
+          # पुराने से नए रिलीज़ेस के क्रम में हर एक बिल्ड को अलग-अलग प्रोसेस करेगा
+          echo "$RELEASES_JSON" | jq -c 'reverse | .[]' | while read -r rel; do
+            ORIG_TAG=$(echo "$rel" | jq -r '.tag_name')
+            ORIG_TITLE=$(echo "$rel" | jq -r '.name // .tag_name')
+            BODY=$(echo "$rel" | jq -r '.body // "Release mirrored from nullcpy/rvb"')
+            PRERELEASE=$(echo "$rel" | jq -r '.prerelease')
+
+            TARGET_TAG="$ORIG_TAG"
+            TARGET_TITLE="$ORIG_TITLE"
+
+            # अगर वही बिल्ड नंबर आपकी Repo में पहले से है, तो नंबर +1 बढ़ाकर नया रिलीज़ बनाएगा
+            if [[ "$ORIG_TAG" =~ ^[0-9]+$ ]]; then
+              NUM=$ORIG_TAG
+              while gh release view "$TARGET_TAG" >/dev/null 2>&1; do
+                NUM=$((NUM + 1))
+                TARGET_TAG="$NUM"
+                TARGET_TITLE="Build No. $NUM"
+              done
+            else
+              COUNT=1
+              while gh release view "$TARGET_TAG" >/dev/null 2>&1; do
+                COUNT=$((COUNT + 1))
+                TARGET_TAG="${ORIG_TAG}-${COUNT}"
+                TARGET_TITLE="${ORIG_TITLE} (${COUNT})"
+              done
+            fi
+
+            if [ "$ORIG_TAG" != "$TARGET_TAG" ]; then
+              echo "⚠️ Tag $ORIG_TAG already exists. Creating as $TARGET_TAG ($TARGET_TITLE)..."
+            else
+              echo "🚀 Mirroring Separate Release: $TARGET_TAG ($TARGET_TITLE)..."
+            fi
+
+            RM_DIR="./tmp_assets_$TARGET_TAG"
+            mkdir -p "$RM_DIR"
+
+            # उस स्पेसिफिक बिल्ड की फ़ाइलें डाउनलोड करेगा
+            echo "$rel" | jq -c '.assets[]' | while read -r asset; do
+              DL_URL=$(echo "$asset" | jq -r '.browser_download_url')
+              FNAME=$(echo "$asset" | jq -r '.name')
+              echo "   📥 Downloading $FNAME..."
+              curl -sL "$DL_URL" -o "$RM_DIR/$FNAME"
+            done
+
+            # आपकी Repo में उस बिल्ड का अलग रिलीज़ बनाएगा
+            if [ -d "$RM_DIR" ] && [ "$(ls -A "$RM_DIR")" ]; then
+              echo "   📤 Uploading $TARGET_TAG as individual release..."
+              
+              PR_FLAG=""
+              if [ "$PRERELEASE" = "true" ]; then
+                PR_FLAG="--prerelease"
+              fi
+
+              gh release create "$TARGET_TAG" "$RM_DIR"/* --title "$TARGET_TITLE" --notes "$BODY" $PR_FLAG || true
+            fi
+
+            rm -rf "$RM_DIR"
+            echo "✓ Release $TARGET_TAG successfully created!"
+            sleep 2
+          done
+
+          echo "🎉 All individual releases mirrored successfully!"
