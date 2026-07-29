@@ -469,7 +469,7 @@ Patches: [Paresh-Maheshwari/patches-1.19.0.mpp](https://gitlab.com/Paresh-Mahesh
 
 <blockquote>
 
-[Release 2026-07-29](https://github.com/m4mental/my-rvb-builder/releases/tag/260109)<br>
+[Release 2026-07-29](https://github.com/m4mental/my-rvb-builder/releases/tag/260136)<br>
 Patches: [revenge-mod/app-release.apk](https://github.com/revenge-mod/revenge-xposed/releases/tag/1502)
 </blockquote>
 </details>
