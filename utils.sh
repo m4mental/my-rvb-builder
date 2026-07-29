@@ -56,7 +56,6 @@ abort() {
 	epr "ABORT: ${1-}"
 	rm -rf ./${TEMP_DIR}/*tmp.* ./${TEMP_DIR}/*/*tmp.* ./${TEMP_DIR}/*-temporary-files ./${TEMP_DIR}/*.apk-temporary-files ./*-temporary-files
 	trap - SIGTERM SIGINT EXIT
-	kill -9 -- -$$ 2>/dev/null
 	exit 1
 }
 java() { env -i PATH="$PATH" HOME="$HOME" LANG="${LANG:-en_US.UTF-8}" java --enable-native-access=ALL-UNNAMED "$@"; }
@@ -169,15 +168,17 @@ _get_prebuilts() {
 	rv_rel=$(source_release_api_base "$host" "$src") || return 1
 	if [ "$ver" = "dev" ]; then
 		resp=$({ if [ "$host" = github ]; then gh_req "$rv_rel?per_page=100" -; else req "$rv_rel?per_page=100" -; fi; }) || return 1
-		ver=$(source_release_pick_from_list "$host" dev <<<"$resp" | jq -r '.tag_name') || true
+		release=$(source_release_pick_from_list "$host" dev <<<"$resp") || true
+		ver=$(jq -r '.tag_name' <<<"$release") || true
 		if [ -z "$ver" ] || [ "$ver" = "null" ]; then
 			ver=$(jq -e -r '.[].tag_name' <<<"$resp" | get_highest_ver) || return 1
+			release="" # Clear release if we had to fallback to get_highest_ver
 		fi
 	fi
 	if [ "$ver" = "latest" ]; then
 		resp=$({ if [ "$host" = github ]; then gh_req "$rv_rel?per_page=100" -; else req "$rv_rel?per_page=100" -; fi; }) || return 1
 		release=$(source_release_pick_from_list "$host" latest <<<"$resp") || return 1
-	else
+	elif [ -z "${release:-}" ]; then
 		rv_rel=$(source_release_tag_api "$host" "$src" "$ver") || return 1
 		release=$({ if [ "$host" = github ]; then gh_req "$rv_rel" -; else req "$rv_rel" -; fi; }) || return 1
 	fi
@@ -251,15 +252,17 @@ _get_prebuilts() {
 		rv_rel=$(source_release_api_base "$host" "$src") || return 1
 		if [ "$ver" = "dev" ]; then
 			resp=$({ if [ "$host" = github ]; then gh_req "$rv_rel?per_page=100" -; else req "$rv_rel?per_page=100" -; fi; }) || return 1
-			ver=$(source_release_pick_from_list "$host" dev <<<"$resp" | jq -r '.tag_name') || true
+			release=$(source_release_pick_from_list "$host" dev <<<"$resp") || true
+			ver=$(jq -r '.tag_name' <<<"$release") || true
 			if [ -z "$ver" ] || [ "$ver" = "null" ]; then
 				ver=$(jq -e -r '.[].tag_name' <<<"$resp" | get_highest_ver) || return 1
+				release="" # Clear release if we had to fallback to get_highest_ver
 			fi
 		fi
 		if [ "$ver" = "latest" ]; then
 			resp=$({ if [ "$host" = github ]; then gh_req "$rv_rel?per_page=100" -; else req "$rv_rel?per_page=100" -; fi; }) || return 1
 			release=$(source_release_pick_from_list "$host" latest <<<"$resp") || return 1
-		else
+		elif [ -z "${release:-}" ]; then
 			rv_rel=$(source_release_tag_api "$host" "$src" "$ver") || return 1
 			release=$({ if [ "$host" = github ]; then gh_req "$rv_rel" -; else req "$rv_rel" -; fi; }) || return 1
 		fi
@@ -433,8 +436,12 @@ _req() {
 		if [ -f "$op" ]; then return; fi
 		dlp="$(dirname "$op")/tmp.$(basename "$op")"
 		if [ -f "$dlp" ]; then
-			while [ -f "$dlp" ]; do sleep 1; done
-			return
+			local wait_c=0
+			while [ -f "$dlp" ] && [ $wait_c -lt 300 ]; do 
+				sleep 1
+				wait_c=$((wait_c+1))
+			done
+			if [ -f "$op" ]; then return 0; fi
 		fi
 	fi
 	if ! curl -L -c "$TEMP_DIR/cookie.txt" -b "$TEMP_DIR/cookie.txt" --connect-timeout 10 --retry 1 --fail -s -S "$@" "$ip" -o "$dlp"; then
@@ -552,26 +559,25 @@ _patches_list_versions() {
 		return 0
 	fi
 
-	# Build arg strings for each jar in space-separated patches_jar
-	local IFS=$'\n'
 	local p_jars=($(echo "$patches_jar" | tr ' ' '\n' | grep -v '^$'))
-	unset IFS
-	local p_args_short="" p_args_long=""
-	for j in "${p_jars[@]}"; do
-		p_args_short+="-p '$j' "
-		p_args_long+="--patches '$j' "
-	done
-	# Try long form (--patches) with and without -b, then short form (-p)
-	if ! op=$(eval java -jar "'$cli_jar'" list-versions $p_args_long -f "'$pkg_name'" $extra_args -b 2>&1); then
-		if ! op=$(eval java -jar "'$cli_jar'" list-versions $p_args_long -f "'$pkg_name'" $extra_args 2>&1); then
-			if ! op=$(eval java -jar "'$cli_jar'" list-versions $p_args_short -f "'$pkg_name'" $extra_args -b 2>&1); then
-				if ! op=$(eval java -jar "'$cli_jar'" list-versions $p_args_short -f "'$pkg_name'" $extra_args 2>&1); then
-					if ! op=$(eval java -jar "'$cli_jar'" list-versions $(echo "$patches_jar" | awk '{print $1}') -f "'$pkg_name'" $extra_args 2>&1); then
-						epr "Could not list versions $cli_jar: '$op'"
-						return 1
-					fi
-				fi
-			fi
+	
+	if [[ "$cli_source_l" == *"morphe-desktop"* ]]; then
+		local p_args_morphe=""
+		for j in "${p_jars[@]}"; do
+			p_args_morphe+="--patches '$j' "
+		done
+		if ! op=$(eval java -jar "'$cli_jar'" list-versions $p_args_morphe -f "'$pkg_name'" $extra_args 2>&1); then
+			epr "Could not list versions $cli_jar: '$op'"
+			return 1
+		fi
+	else
+		local p_args_revanced=""
+		for j in "${p_jars[@]}"; do
+			p_args_revanced+="-p '$j' "
+		done
+		if ! op=$(eval java -jar "'$cli_jar'" list-versions -b $p_args_revanced -f "'$pkg_name'" $extra_args 2>&1); then
+			epr "Could not list versions $cli_jar: '$op'"
+			return 1
 		fi
 	fi
 	echo "$op"
@@ -595,27 +601,24 @@ _patches_list() {
 		echo "Name: xposed-module-dummy"
 		return 0
 	fi
-	# Build arg strings for each jar in space-separated patches_jar
-	local IFS=$'\n'
 	local p_jars=($(echo "$patches_jar" | tr ' ' '\n' | grep -v '^$'))
-	unset IFS
-	local p_args_short="" p_args_long="" p_args_pos=""
-	for j in "${p_jars[@]}"; do
-		p_args_short+="-p '$j' "
-		p_args_long+="--patches '$j' "
-		p_args_pos+="'$j' "
-	done
-	# Try positional (morphe-desktop), then --patches with/without -b, then -p
-	if ! op=$(eval java -jar "'$cli_jar'" list-patches --with-packages --with-versions $p_args_pos --filter-package-name "'$pkg_name'" 2>&1); then
-		if ! op=$(eval java -jar "'$cli_jar'" list-patches $p_args_long --packages --versions --options -f "'$pkg_name'" -b 2>&1); then
-			if ! op=$(eval java -jar "'$cli_jar'" list-patches $p_args_long --filter-package-name "'$pkg_name'" --with-versions --with-packages 2>&1); then
-				if ! op=$(eval java -jar "'$cli_jar'" list-patches $p_args_short --packages --versions --options -f "'$pkg_name'" -b 2>&1); then
-					if ! op=$(eval java -jar "'$cli_jar'" list-patches $p_args_short --filter-package-name "'$pkg_name'" --versions --packages -b 2>&1); then
-						epr "Could not get patches list $cli_jar: '$op'"
-						return 1
-					fi
-				fi
-			fi
+	if [[ "$cli_source_l" == *"morphe-desktop"* ]]; then
+		local p_args_morphe=""
+		for j in "${p_jars[@]}"; do
+			p_args_morphe+="--patches '$j' "
+		done
+		if ! op=$(eval java -jar "'$cli_jar'" list-patches $p_args_morphe -f "'$pkg_name'" --with-versions --with-packages 2>&1); then
+			epr "Could not get patches list $cli_jar: '$op'"
+			return 1
+		fi
+	else
+		local p_args_revanced=""
+		for j in "${p_jars[@]}"; do
+			p_args_revanced+="-p '$j' "
+		done
+		if ! op=$(eval java -jar "'$cli_jar'" list-patches -b $p_args_revanced --packages --versions --options -f "'$pkg_name'" 2>&1); then
+			epr "Could not get patches list $cli_jar: '$op'"
+			return 1
 		fi
 	fi
 	echo "$op"
@@ -659,7 +662,7 @@ _trawl_8191_get() {
 	[ -n "$referer" ] && extra_headers=",\"headers\":{\"Referer\":\"$referer\"}"
 	for attempt in $(seq 1 $max_retries); do
 		local response status
-		response=$(curl -s -X POST "$solver_url" \
+		response=$(curl -m 90 -s -X POST "$solver_url" \
 			-H 'Content-Type: application/json' \
 			-d "{\"url\":\"$url\",\"maxTimeout\":60000,\"skipHttp\":true${extra_headers}}") || true
 		status=$(echo "$response" | jq -r '.statusCode // empty')
@@ -1656,6 +1659,9 @@ build_rv() {
 			fi
 			if [ "$missing_arch" = false ]; then
 				cp -f "$common_apk" "$stock_apk"
+				if [ -f "${common_apk}.apkm" ]; then
+					cp -f "${common_apk}.apkm" "${stock_apk}.apkm"
+				fi
 			fi
 		fi
 		if [ ! -f "$stock_apk" ]; then
@@ -1760,6 +1766,9 @@ build_rv() {
 			if [ -f "$stock_apk" ] && [ ! -f "$common_apk" ]; then
 				if ! unzip -l "$stock_apk" 2>/dev/null | grep -q "lib/" || (unzip -l "$stock_apk" 2>/dev/null | grep -q "lib/arm64-v8a/" && unzip -l "$stock_apk" 2>/dev/null | grep -q "lib/armeabi-v7a/"); then
 					cp -f "$stock_apk" "$common_apk"
+					if [ -f "${stock_apk}.apkm" ]; then
+						cp -f "${stock_apk}.apkm" "${common_apk}.apkm"
+					fi
 				fi
 			fi
 		fi
