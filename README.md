@@ -1,36 +1,23 @@
-<div align="center"><a href="https://github.com/Safouene1/support-palestine-banner/blob/master/Markdown-pages/Support.md"><img src="https://raw.githubusercontent.com/Safouene1/support-palestine-banner/master/banner-support.svg" alt="Support Palestine" style="width: 100%;"></a></div>
 
 <div align="center"><h1><img src="https://raw.githubusercontent.com/nullcpy/rvb/a5af1123e55c63119c6b81be894602e2f032fe08/.github/assets/icon.png"> <img src="https://raw.githubusercontent.com/nullcpy/rvb/a5af1123e55c63119c6b81be894602e2f032fe08/.github/assets/icon1.png"><br>ReVanced & Morphe Builder</h1></div>
 
 <p align="center"><b>Automatically builds and publishes APKs & Magisk/KernelSU Modules whenever new patches are released.</b></p>
 
-<p align="center"><a href="https://t.me/rvb27"><img src="https://img.shields.io/badge/Group-26A5E4?style=flat&logo=telegram&logoColor=white"></a> <a href="https://nullcpy.github.io/"><img src="https://img.shields.io/badge/Download-21a378?style=flat&logo=data:image/svg+xml;base64,PHN2ZyBmaWxsPSIjZmZmZmZmIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNNSAyMGgxNHYtMkg1djJ6TTE5IDloLTRWM0g5djZINWw3IDcgNy03eiIvPjwvc3ZnPg==&logoColor=white"></a> <a href="https://t.me/s/rvb28"><img src="https://img.shields.io/badge/Channel-26A5E4?style=flat&logo=telegram&logoColor=white"></a> <a href="https://fahim-ahmed05.github.io/donate"><img src="https://img.shields.io/badge/Donate-ea4335?style=flat&logo=ko-fi&logoColor=white"></p>
+<p align="center"><a href="https://github.com/m4mental/my-rvb-builder"><img src="https://img.shields.io/github/stars/nullcpy/rvb?label=Stars&logo=github&style=social"></a> <a href="https://m4mental.github.io/my-rvb-builder/"><img src="https://img.shields.io/github/downloads/nullcpy/rvb/total?logo=data:image/svg+xml;base64,PHN2ZyBmaWxsPSIjMDAwMDAwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNNSAyMGgxNHYtMkg1djJ6TTE5IDloLTRWM0g5djZINWw3IDcgNy03eiIvPjwvc3ZnPg==&label=Downloads&style=social"></a></p>
 
-<p align="center"><a href="https://github.com/nullcpy/rvb"><img src="https://img.shields.io/github/stars/nullcpy/rvb?label=Stars&logo=github&style=social"></a> <a href="https://nullcpy.github.io/"><img src="https://img.shields.io/github/downloads/nullcpy/rvb/total?logo=data:image/svg+xml;base64,PHN2ZyBmaWxsPSIjMDAwMDAwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNNSAyMGgxNHYtMkg1djJ6TTE5IDloLTRWM0g5djZINWw3IDcgNy03eiIvPjwvc3ZnPg==&label=Downloads&style=social"></a></p>
-
-<p align="center"><a href="https://nullcpy.github.io"><img src="https://visitor-badge.laobi.icu/badge?page_id=nullcpy.github.io&left_text=Website%20Visitors&right_color=%231283c3&format=true&query_only=true"></a> <a href="https://github.com/nullcpy/rvb"><img src="https://visitor-badge.laobi.icu/badge?page_id=nullcpy.rvb&left_text=GitHub%20Visitors&format=true"></a> </p>
+<p align="center"><a href="https://m4mental.github.io/my-rvb-builder"><img src="https://visitor-badge.laobi.icu/badge?page_id=m4mental.github.io.my-rvb-builder&left_text=Website%20Visitors&right_color=%231283c3&format=true&query_only=true"></a> <a href="https://github.com/m4mental/my-rvb-builder"><img src="https://visitor-badge.laobi.icu/badge?page_id=m4mental.my-rvb-builder&left_text=GitHub%20Visitors&format=true"></a> </p>
 
 ---
 
-<p align="center"><a href="https://github.com/nullcpy/rvb/issues"><img src="https://img.shields.io/badge/Issues-2f2f2f?style=flat&logo=github&logoColor=white"></a> <a href="https://github.com/nullcpy/rvb/pulls"><img src="https://img.shields.io/badge/Pull%20Requests-2f2f2f?style=flat&logo=github&logoColor=white"></a> <a href="https://github.com/nullcpy/rvb/discussions"><img src="https://img.shields.io/badge/Discussions-2f2f2f?style=flat&logo=github&logoColor=white"></a> <a href="https://github.com/nullcpy/rvb/actions"><img src="https://img.shields.io/badge/Actions-2f2f2f?style=flat&logo=github&logoColor=white"></a></p>
+<p align="center"><a href="https://github.com/m4mental/my-rvb-builder/issues"><img src="https://img.shields.io/badge/Issues-2f2f2f?style=flat&logo=github&logoColor=white"></a> <a href="https://github.com/m4mental/my-rvb-builder/pulls"><img src="https://img.shields.io/badge/Pull%20Requests-2f2f2f?style=flat&logo=github&logoColor=white"></a> <a href="https://github.com/m4mental/my-rvb-builder/discussions"><img src="https://img.shields.io/badge/Discussions-2f2f2f?style=flat&logo=github&logoColor=white"></a> <a href="https://github.com/m4mental/my-rvb-builder/actions"><img src="https://img.shields.io/badge/Actions-2f2f2f?style=flat&logo=github&logoColor=white"></a></p>
 
 ---
-
-## 🤝 Support the Project
-
-Building, testing, and maintaining these automated workflows takes a significant amount of time. If this builder has saved you time or made your life easier, any support is hugely appreciated!
-
-- **❤️ [Donate](https://fahim-ahmed05.github.io/donate)** if you can.
-- **⭐ Star this repository** (This is a huge help!)
-- **📢 Share the project** with others who might find it useful.
-
-Thank you to everyone who helps keep this project alive!
 
 ---
 
 > [!NOTE]
 >
-> 🌐 **[Visit Download Website](https://nullcpy.github.io/)**
+> 🌐 **[Visit Download Website](https://m4mental.github.io/my-rvb-builder/)**
 >
 > For the best experience, please download from the website. It features:
 >
@@ -44,8 +31,8 @@ Thank you to everyone who helps keep this project alive!
 > All APKs and modules in this repository are 100% automated. If you need help, please direct your feedback to the right place:
 >
 > - 🧩 **Patch Issues:** If a specific feature/mod is broken (e.g., ads are showing), please open an issue in the **respective patch developer's repository**.
-> - 🛠️ **Builder Issues:** If an app fails to build, or the download links are broken, **[open an Issue here on GitHub](https://github.com/nullcpy/rvb/issues/new/choose)** or **[send a message in our Telegram Group](https://t.me/rvb27/306)**.
-> - 💬 **General Help & Requests:** Need help installing, or want to request a new app? **[Send a message in our Telegram Group](https://t.me/rvb27/306)** or **[open an Issue here on GitHub](https://github.com/nullcpy/rvb/issues/new/choose)** or **[open a discussion here on GitHub](https://github.com/nullcpy/rvb/discussions/new?category=general)**.
+> - 🛠️ **Builder Issues:** If an app fails to build, or the download links are broken, **[open an Issue here on GitHub](https://github.com/m4mental/my-rvb-builder/issues/new/choose)** or **[send a message in our Telegram Group](https://t.me/rvb27/306)**.
+> - 💬 **General Help & Requests:** Need help installing, or want to request a new app? **[Send a message in our Telegram Group](https://t.me/rvb27/306)** or **[open an Issue here on GitHub](https://github.com/m4mental/my-rvb-builder/issues/new/choose)** or **[open a discussion here on GitHub](https://github.com/m4mental/my-rvb-builder/discussions/new?category=general)**.
 
 ---
 
@@ -53,7 +40,7 @@ Thank you to everyone who helps keep this project alive!
 
 > These two releases act as a permanent, continuously updated vault, ensuring downloads remain reliably available without interruption.
 
-&emsp;[![Stable](https://img.shields.io/github/downloads/nullcpy/rvb/stable/total?label=Stable&labelColor=7b52ab&color=gray&logo=github&logoColor=white&style=flat)](https://github.com/nullcpy/rvb/releases/tag/stable) [![Beta](https://img.shields.io/github/downloads-pre/nullcpy/rvb/beta/total?label=Beta&labelColor=b33939&color=gray&logo=github&logoColor=white&style=flat)](https://github.com/nullcpy/rvb/releases/tag/beta)
+&emsp;[![Stable](https://img.shields.io/github/downloads/nullcpy/rvb/stable/total?label=Stable&labelColor=7b52ab&color=gray&logo=github&logoColor=white&style=flat)](https://github.com/m4mental/my-rvb-builder/releases/tag/stable) [![Beta](https://img.shields.io/github/downloads-pre/nullcpy/rvb/beta/total?label=Beta&labelColor=b33939&color=gray&logo=github&logoColor=white&style=flat)](https://github.com/m4mental/my-rvb-builder/releases/tag/beta)
 
 ---
 
@@ -81,11 +68,11 @@ Thank you to everyone who helps keep this project alive!
 #### [Morphe (binarymend)](https://github.com/binarymend/morphe-patches)
 
 <details>
-<summary id="acalendar-morphe">&emsp;<a href="https://nullcpy.github.io/"><img src="https://img.shields.io/badge/version-v2.9.6-gray?labelColor=0268a5&logo=android&logoColor=white&style=flat"></summary>
+<summary id="acalendar-morphe">&emsp;<a href="https://m4mental.github.io/my-rvb-builder/"><img src="https://img.shields.io/badge/version-v2.9.6-gray?labelColor=0268a5&logo=android&logoColor=white&style=flat"></summary>
 
 <blockquote>
 
-[Release 2026-06-28](https://github.com/nullcpy/rvb/releases/tag/417)<br>
+[Release 2026-06-28](https://github.com/m4mental/my-rvb-builder/releases/tag/417)<br>
 Patches: [binarymend/patches-1.3.1.mpp](https://github.com/binarymend/morphe-patches/releases/tag/v1.3.1)
 - Unlock aCalendar+
 </blockquote>
@@ -100,11 +87,11 @@ Patches: [binarymend/patches-1.3.1.mpp](https://github.com/binarymend/morphe-pat
 #### [Morphe (hoo-dles)](https://github.com/hoo-dles/morphe-patches)
 
 <details>
-<summary id="adguard-morphe">&emsp;<a href="https://nullcpy.github.io/"><img src="https://img.shields.io/badge/version-v4.12.81-gray?labelColor=68BC71&logo=adguard&logoColor=white&style=flat"></summary>
+<summary id="adguard-morphe">&emsp;<a href="https://m4mental.github.io/my-rvb-builder/"><img src="https://img.shields.io/badge/version-v4.12.81-gray?labelColor=68BC71&logo=adguard&logoColor=white&style=flat"></summary>
 
 <blockquote>
 
-[Release 2026-07-15](https://github.com/nullcpy/rvb/releases/tag/260053)<br>
+[Release 2026-07-15](https://github.com/m4mental/my-rvb-builder/releases/tag/260053)<br>
 Patches: [hoo-dles/patches-1.39.0.mpp](https://github.com/hoo-dles/morphe-patches/releases/tag/v1.39.0)
 - Enable Premium
 </blockquote>
@@ -113,11 +100,11 @@ Patches: [hoo-dles/patches-1.39.0.mpp](https://github.com/hoo-dles/morphe-patche
 #### [Morphe (rushiranpise)](https://github.com/rushiranpise/morphe-patches)
 
 <details>
-<summary id="adguard-morphe-nightly">&emsp;<a href="https://nullcpy.github.io/"><img src="https://img.shields.io/badge/version-v4.14.68-gray?labelColor=68BC71&logo=adguard&logoColor=white&style=flat"></summary>
+<summary id="adguard-morphe-nightly">&emsp;<a href="https://m4mental.github.io/my-rvb-builder/"><img src="https://img.shields.io/badge/version-v4.14.68-gray?labelColor=68BC71&logo=adguard&logoColor=white&style=flat"></summary>
 
 <blockquote>
 
-[Release 2026-07-23](https://github.com/nullcpy/rvb/releases/tag/260085)<br>
+[Release 2026-07-23](https://github.com/m4mental/my-rvb-builder/releases/tag/260085)<br>
 Patches: [rushiranpise/patches-1.15.1.mpp](https://github.com/rushiranpise/morphe-patches/releases/tag/v1.15.1)
 - GmsCore support (MicroG)
 - Unlock Lifetime Premium
@@ -133,11 +120,11 @@ Patches: [rushiranpise/patches-1.15.1.mpp](https://github.com/rushiranpise/morph
 #### [Morphe (hoomans-patches)](https://github.com/arandomhooman/hoomans-morphe-patches)
 
 <details>
-<summary id="adobe-acrobat-morphe">&emsp;<a href="https://nullcpy.github.io/"><img src="https://img.shields.io/badge/version-v26.5.0.45958-gray?labelColor=b30b00&logo=android&logoColor=white&style=flat"></summary>
+<summary id="adobe-acrobat-morphe">&emsp;<a href="https://m4mental.github.io/my-rvb-builder/"><img src="https://img.shields.io/badge/version-v26.5.0.45958-gray?labelColor=b30b00&logo=android&logoColor=white&style=flat"></summary>
 
 <blockquote>
 
-[Release 2026-07-23](https://github.com/nullcpy/rvb/releases/tag/260080)<br>
+[Release 2026-07-23](https://github.com/m4mental/my-rvb-builder/releases/tag/260080)<br>
 Patches: [arandomhooman/patches-1.43.4.mpp](https://github.com/arandomhooman/hoomans-morphe-patches/releases/tag/v1.43.4)
 - Unlock Pro
 </blockquote>
@@ -152,11 +139,11 @@ Patches: [arandomhooman/patches-1.43.4.mpp](https://github.com/arandomhooman/hoo
 #### [ReVanced](https://github.com/revanced/revanced-patches)
 
 <details>
-<summary id="lightroom-revanced">&emsp;<a href="https://nullcpy.github.io/"><img src="https://img.shields.io/badge/version-v9.3.0-gray?labelColor=31A8FF&logo=android&logoColor=white&style=flat"></summary>
+<summary id="lightroom-revanced">&emsp;<a href="https://m4mental.github.io/my-rvb-builder/"><img src="https://img.shields.io/badge/version-v9.3.0-gray?labelColor=31A8FF&logo=android&logoColor=white&style=flat"></summary>
   
 <blockquote>
 
-[Release 2026-05-01](https://github.com/nullcpy/rvb/releases/tag/189)<br>
+[Release 2026-05-01](https://github.com/m4mental/my-rvb-builder/releases/tag/189)<br>
 Patches: [Raudrobot/patches-6.1.0.rvp](https://github.com/Raudrobot/revanced-patches/releases/tag/v6.1.0)
 
 - Disable mandatory login
@@ -174,11 +161,11 @@ Patches: [Raudrobot/patches-6.1.0.rvp](https://github.com/Raudrobot/revanced-pat
 #### [Morphe (De-Vanced)](https://github.com/RookieEnough/De-Vanced)
 
 <details>
-<summary id="photoshop-mix-morphe">&emsp;<a href="https://nullcpy.github.io/"><img src="https://img.shields.io/badge/version-v2.6.346-gray?labelColor=31A8FF&logo=android&logoColor=white&style=flat"></summary>
+<summary id="photoshop-mix-morphe">&emsp;<a href="https://m4mental.github.io/my-rvb-builder/"><img src="https://img.shields.io/badge/version-v2.6.346-gray?labelColor=31A8FF&logo=android&logoColor=white&style=flat"></summary>
   
 <blockquote>
 
-[Release 2026-05-13](https://github.com/nullcpy/rvb/releases/tag/242)<br>
+[Release 2026-05-13](https://github.com/m4mental/my-rvb-builder/releases/tag/242)<br>
 Patches: [RookieEnough/patches-1.0.4.mpp](https://github.com/RookieEnough/De-Vanced/releases/tag/v1.0.4)
 
 - Bypass login
@@ -194,11 +181,11 @@ Patches: [RookieEnough/patches-1.0.4.mpp](https://github.com/RookieEnough/De-Van
 #### [Morphe (rushiranpise)](https://github.com/rushiranpise/morphe-patches)
 
 <details>
-<summary id="accuweather-morphe">&emsp;<a href="https://nullcpy.github.io/"><img src="https://img.shields.io/badge/version-v21.1.13.1.rc-gray?labelColor=f05514&logo=android&logoColor=white&style=flat"></summary>
+<summary id="accuweather-morphe">&emsp;<a href="https://m4mental.github.io/my-rvb-builder/"><img src="https://img.shields.io/badge/version-v21.1.13.1.rc-gray?labelColor=f05514&logo=android&logoColor=white&style=flat"></summary>
   
 <blockquote>
 
-[Release 2026-07-23](https://github.com/nullcpy/rvb/releases/tag/260085)<br>
+[Release 2026-07-23](https://github.com/m4mental/my-rvb-builder/releases/tag/260085)<br>
 Patches: [rushiranpise/patches-1.15.1.mpp](https://github.com/rushiranpise/morphe-patches/releases/tag/v1.15.1)
 - GmsCore support (MicroG)
 - Unlock Premium+
@@ -214,11 +201,11 @@ Patches: [rushiranpise/patches-1.15.1.mpp](https://github.com/rushiranpise/morph
 #### [Morphe (rushiranpise)](https://github.com/rushiranpise/morphe-patches)
 
 <details>
-<summary id="all-document-reader-morphe">&emsp;<a href="https://nullcpy.github.io/"><img src="https://img.shields.io/badge/version-v1.6.4-gray?labelColor=2e7d32&logo=android&logoColor=white&style=flat"></summary>
+<summary id="all-document-reader-morphe">&emsp;<a href="https://m4mental.github.io/my-rvb-builder/"><img src="https://img.shields.io/badge/version-v1.6.4-gray?labelColor=2e7d32&logo=android&logoColor=white&style=flat"></summary>
   
 <blockquote>
 
-[Release 2026-07-23](https://github.com/nullcpy/rvb/releases/tag/260085)<br>
+[Release 2026-07-23](https://github.com/m4mental/my-rvb-builder/releases/tag/260085)<br>
 Patches: [rushiranpise/patches-1.15.1.mpp](https://github.com/rushiranpise/morphe-patches/releases/tag/v1.15.1)
 - GmsCore support (MicroG)
 </blockquote>
@@ -233,11 +220,11 @@ Patches: [rushiranpise/patches-1.15.1.mpp](https://github.com/rushiranpise/morph
 #### [Morphe (hoomans-patches)](https://github.com/arandomhooman/hoomans-morphe-patches)
 
 <details>
-<summary id="at4k-launcher-morphe">&emsp;<a href="https://nullcpy.github.io/"><img src="https://img.shields.io/badge/version-v0.99-gray?labelColor=93b297&logo=android&logoColor=white&style=flat"></summary>
+<summary id="at4k-launcher-morphe">&emsp;<a href="https://m4mental.github.io/my-rvb-builder/"><img src="https://img.shields.io/badge/version-v0.99-gray?labelColor=93b297&logo=android&logoColor=white&style=flat"></summary>
 
 <blockquote>
 
-[Release 2026-07-23](https://github.com/nullcpy/rvb/releases/tag/260080)<br>
+[Release 2026-07-23](https://github.com/m4mental/my-rvb-builder/releases/tag/260080)<br>
 Patches: [arandomhooman/patches-1.43.4.mpp](https://github.com/arandomhooman/hoomans-morphe-patches/releases/tag/v1.43.4)
 - Unlock Premium
 </blockquote>
@@ -252,11 +239,11 @@ Patches: [arandomhooman/patches-1.43.4.mpp](https://github.com/arandomhooman/hoo
 #### [Morphe (BholeyKaBhakt)](https://github.com/BholeyKaBhakt/revanced-patches-xtra)
 
 <details>
-<summary id="automate-morphe">&emsp;<a href="https://nullcpy.github.io/"><img src="https://img.shields.io/badge/version-v1.51.1-gray?labelColor=31A8FF&logo=android&logoColor=white&style=flat"></summary>
+<summary id="automate-morphe">&emsp;<a href="https://m4mental.github.io/my-rvb-builder/"><img src="https://img.shields.io/badge/version-v1.51.1-gray?labelColor=31A8FF&logo=android&logoColor=white&style=flat"></summary>
   
 <blockquote>
 
-[Release 2026-06-22](https://github.com/nullcpy/rvb/releases/tag/382)<br>
+[Release 2026-06-22](https://github.com/m4mental/my-rvb-builder/releases/tag/382)<br>
 Patches: [BholeyKaBhakt/patches-2.12.0.mpp](https://github.com/BholeyKaBhakt/revanced-patches-xtra/releases/tag/v2.12.0)
 
 - Bypass Blocks Limit
@@ -272,11 +259,11 @@ Patches: [BholeyKaBhakt/patches-2.12.0.mpp](https://github.com/BholeyKaBhakt/rev
 #### [Morphe (BholeyKaBhakt)](https://github.com/BholeyKaBhakt/revanced-patches-xtra)
 
 <details>
-<summary id="autosync-morphe">&emsp;<a href="https://nullcpy.github.io/"><img src="https://img.shields.io/badge/version-v7.5.10-gray?labelColor=f2f2f0&logo=android&logoColor=green&style=flat"></summary>
+<summary id="autosync-morphe">&emsp;<a href="https://m4mental.github.io/my-rvb-builder/"><img src="https://img.shields.io/badge/version-v7.5.10-gray?labelColor=f2f2f0&logo=android&logoColor=green&style=flat"></summary>
   
 <blockquote>
 
-[Release 2026-06-22](https://github.com/nullcpy/rvb/releases/tag/382)<br>
+[Release 2026-06-22](https://github.com/m4mental/my-rvb-builder/releases/tag/382)<br>
 Patches: [BholeyKaBhakt/patches-2.12.0.mpp](https://github.com/BholeyKaBhakt/revanced-patches-xtra/releases/tag/v2.12.0)
 
 - Purchase All Items
@@ -294,11 +281,11 @@ Patches: [BholeyKaBhakt/patches-2.12.0.mpp](https://github.com/BholeyKaBhakt/rev
 #### [Morphe (hoomans-patches)](https://github.com/arandomhooman/hoomans-morphe-patches)
 
 <details>
-<summary id="battery-guru-morphe">&emsp;<a href="https://nullcpy.github.io/"><img src="https://img.shields.io/badge/version-v2.4.8.1-gray?labelColor=2c7f87&logo=android&logoColor=white&style=flat"></summary>
+<summary id="battery-guru-morphe">&emsp;<a href="https://m4mental.github.io/my-rvb-builder/"><img src="https://img.shields.io/badge/version-v2.4.8.1-gray?labelColor=2c7f87&logo=android&logoColor=white&style=flat"></summary>
   
 <blockquote>
 
-[Release 2026-06-29](https://github.com/nullcpy/rvb/releases/tag/419)<br>
+[Release 2026-06-29](https://github.com/m4mental/my-rvb-builder/releases/tag/419)<br>
 Patches: [arandomhooman/patches-1.34.0.mpp](https://github.com/arandomhooman/hoomans-morphe-patches/releases/tag/v1.34.0)
 - Unlock PRO
 </blockquote>
@@ -313,11 +300,11 @@ Patches: [arandomhooman/patches-1.34.0.mpp](https://github.com/arandomhooman/hoo
 #### [Morphe (rushiranpise)](https://github.com/rushiranpise/morphe-patches)
 
 <details>
-<summary id="beta-maniac-morphe">&emsp;<a href="https://nullcpy.github.io/"><img src="https://img.shields.io/badge/version-v0.9.4-gray?labelColor=1a73e8&logo=android&logoColor=white&style=flat"></summary>
+<summary id="beta-maniac-morphe">&emsp;<a href="https://m4mental.github.io/my-rvb-builder/"><img src="https://img.shields.io/badge/version-v0.9.4-gray?labelColor=1a73e8&logo=android&logoColor=white&style=flat"></summary>
   
 <blockquote>
 
-[Release 2026-07-23](https://github.com/nullcpy/rvb/releases/tag/260085)<br>
+[Release 2026-07-23](https://github.com/m4mental/my-rvb-builder/releases/tag/260085)<br>
 Patches: [rushiranpise/patches-1.15.1.mpp](https://github.com/rushiranpise/morphe-patches/releases/tag/v1.15.1)
 - GmsCore support (MicroG)
 - Unlock Premium
@@ -333,11 +320,11 @@ Patches: [rushiranpise/patches-1.15.1.mpp](https://github.com/rushiranpise/morph
 #### [Morphe (bufferk)](https://github.com/bufferk/morphe-patches)
 
 <details>
-<summary id="brave-browser-morphe">&emsp;<a href="https://nullcpy.github.io/"><img src="https://img.shields.io/badge/version-v1.92.140-gray?labelColor=ff3901&logo=brave&logoColor=white&style=flat"></summary>
+<summary id="brave-browser-morphe">&emsp;<a href="https://m4mental.github.io/my-rvb-builder/"><img src="https://img.shields.io/badge/version-v1.92.140-gray?labelColor=ff3901&logo=brave&logoColor=white&style=flat"></summary>
   
 <blockquote>
 
-[Release 2026-07-23](https://github.com/nullcpy/rvb/releases/tag/260081)<br>
+[Release 2026-07-23](https://github.com/m4mental/my-rvb-builder/releases/tag/260081)<br>
 Patches: [bufferk/patches-1.8.0.mpp](https://github.com/bufferk/morphe-patches/releases/tag/v1.8.0)
 - Brave Origin
 </blockquote>
@@ -354,11 +341,11 @@ Patches: [bufferk/patches-1.8.0.mpp](https://github.com/bufferk/morphe-patches/r
 #### [Morphe (binarymend)](https://github.com/binarymend/morphe-patches)
 
 <details>
-<summary id="calcnote-morphe">&emsp;<a href="https://nullcpy.github.io/"><img src="https://img.shields.io/badge/version-v2.25.107-gray?labelColor=607D8B&logo=android&logoColor=white&style=flat"></summary>
+<summary id="calcnote-morphe">&emsp;<a href="https://m4mental.github.io/my-rvb-builder/"><img src="https://img.shields.io/badge/version-v2.25.107-gray?labelColor=607D8B&logo=android&logoColor=white&style=flat"></summary>
 
 <blockquote>
 
-[Release 2026-05-01](https://github.com/nullcpy/rvb/releases/tag/189)<br>
+[Release 2026-05-01](https://github.com/m4mental/my-rvb-builder/releases/tag/189)<br>
 Patches: [binarymend/patches-1.3.1.mpp](https://github.com/binarymend/morphe-patches/releases/tag/v1.3.1)
 
 - Unlock CalcNote Pro
@@ -374,11 +361,11 @@ Patches: [binarymend/patches-1.3.1.mpp](https://github.com/binarymend/morphe-pat
 #### [Morphe (hoo-dles)](https://github.com/hoo-dles/morphe-patches)
 
 <details>
-<summary id="camscanner-morphe">&emsp;<a href="https://nullcpy.github.io/"><img src="https://img.shields.io/badge/version-v7.20.0.2606230000-gray?labelColor=00a48a&logo=android&logoColor=white&style=flat"></summary>
+<summary id="camscanner-morphe">&emsp;<a href="https://m4mental.github.io/my-rvb-builder/"><img src="https://img.shields.io/badge/version-v7.20.0.2606230000-gray?labelColor=00a48a&logo=android&logoColor=white&style=flat"></summary>
 
 <blockquote>
 
-[Release 2026-07-15](https://github.com/nullcpy/rvb/releases/tag/260053)<br>
+[Release 2026-07-15](https://github.com/m4mental/my-rvb-builder/releases/tag/260053)<br>
 Patches: [hoo-dles/patches-1.39.0.mpp](https://github.com/hoo-dles/morphe-patches/releases/tag/v1.39.0)
 - Disable telemetry
 - Enable Premium
@@ -394,11 +381,11 @@ Patches: [hoo-dles/patches-1.39.0.mpp](https://github.com/hoo-dles/morphe-patche
 #### [Morphe (rushiranpise)](https://github.com/rushiranpise/morphe-patches)
 
 <details>
-<summary id="warp-morphe">&emsp;<a href="https://nullcpy.github.io/"><img src="https://img.shields.io/badge/version-v6.38.8-gray?labelColor=f1a830&logo=android&logoColor=white&style=flat"></summary>
+<summary id="warp-morphe">&emsp;<a href="https://m4mental.github.io/my-rvb-builder/"><img src="https://img.shields.io/badge/version-v6.38.8-gray?labelColor=f1a830&logo=android&logoColor=white&style=flat"></summary>
 
 <blockquote>
 
-[Release 2026-07-23](https://github.com/nullcpy/rvb/releases/tag/260085)<br>
+[Release 2026-07-23](https://github.com/m4mental/my-rvb-builder/releases/tag/260085)<br>
 Patches: [rushiranpise/patches-1.15.1.mpp](https://github.com/rushiranpise/morphe-patches/releases/tag/v1.15.1)
 - GmsCore support (MicroG)
 - Spoof WARP+ Unlimited UI
@@ -414,11 +401,11 @@ Patches: [rushiranpise/patches-1.15.1.mpp](https://github.com/rushiranpise/morph
 #### [Morphe (kondratjev)](https://github.com/kondratjev/morphe-patches)
 
 <details>
-<summary id="calorie-counter-morphe">&emsp;<a href="https://nullcpy.github.io/"><img src="https://img.shields.io/badge/version-v11.6.0.1-gray?labelColor=00bb2a&logo=soundcloud&logoColor=white&style=flat"></summary>
+<summary id="calorie-counter-morphe">&emsp;<a href="https://m4mental.github.io/my-rvb-builder/"><img src="https://img.shields.io/badge/version-v11.6.0.1-gray?labelColor=00bb2a&logo=soundcloud&logoColor=white&style=flat"></summary>
 
 <blockquote>
 
-[Release 2026-07-29](https://github.com/nullcpy/rvb/releases/tag/260108)<br>
+[Release 2026-07-29](https://github.com/m4mental/my-rvb-builder/releases/tag/260108)<br>
 Patches: [kondratjev/patches-1.17.0.mpp](https://github.com/kondratjev/morphe-patches/releases/tag/v1.17.0)
 - Disable community tab
 - Disable force update dialog
@@ -435,11 +422,11 @@ Patches: [kondratjev/patches-1.17.0.mpp](https://github.com/kondratjev/morphe-pa
 #### [Morphe (joganubaid)](https://github.com/joganubaid/cryptomator-morphe-patches)
 
 <details>
-<summary id="cryptomator-morphe">&emsp;<a href="https://nullcpy.github.io/"><img src="https://img.shields.io/badge/version-v1.12.3.apk-gray?labelColor=607D8B&logo=android&logoColor=white&style=flat"></summary>
+<summary id="cryptomator-morphe">&emsp;<a href="https://m4mental.github.io/my-rvb-builder/"><img src="https://img.shields.io/badge/version-v1.12.3.apk-gray?labelColor=607D8B&logo=android&logoColor=white&style=flat"></summary>
 
 <blockquote>
 
-[Release 2026-05-19](https://github.com/nullcpy/rvb/releases/tag/262)<br>
+[Release 2026-05-19](https://github.com/m4mental/my-rvb-builder/releases/tag/262)<br>
 Patches: [joganubaid/patches-1.1.0.mpp](https://github.com/joganubaid/cryptomator-morphe-patches/releases/tag/v1.1.0)
 
 - Check License No-Op
@@ -456,11 +443,11 @@ Patches: [joganubaid/patches-1.1.0.mpp](https://github.com/joganubaid/cryptomato
 #### [Morphe (paresh-patches)](https://gitlab.com/Paresh-Maheshwari/paresh-patches)
 
 <details>
-<summary id="cricbuzz-morphe">&emsp;<a href="https://nullcpy.github.io/"><img src="https://img.shields.io/badge/version-v16.02.05-gray?labelColor=009270&logo=android&logoColor=white&style=flat"></summary>
+<summary id="cricbuzz-morphe">&emsp;<a href="https://m4mental.github.io/my-rvb-builder/"><img src="https://img.shields.io/badge/version-v16.02.05-gray?labelColor=009270&logo=android&logoColor=white&style=flat"></summary>
   
 <blockquote>
 
-[Release 2026-07-07](https://github.com/nullcpy/rvb/releases/tag/260017)<br>
+[Release 2026-07-07](https://github.com/m4mental/my-rvb-builder/releases/tag/260017)<br>
 Patches: [Paresh-Maheshwari/patches-1.19.0.mpp](https://gitlab.com/Paresh-Maheshwari/paresh-patches/-/releases/v1.19.0)
 - Cricbuzz Disable Ads
 - Cricbuzz Premium
@@ -478,11 +465,11 @@ Patches: [Paresh-Maheshwari/patches-1.19.0.mpp](https://gitlab.com/Paresh-Mahesh
 #### [Xposed (revenge-mod)](https://github.com/revenge-mod/revenge-xposed)
 
 <details>
-<summary id="discord-xposed">&emsp;<a href="https://nullcpy.github.io/"><img src="https://img.shields.io/badge/version-v339.11.Stable-gray?labelColor=5865f2&logo=android&logoColor=white&style=flat"></summary>
+<summary id="discord-xposed">&emsp;<a href="https://m4mental.github.io/my-rvb-builder/"><img src="https://img.shields.io/badge/version-v339.11.Stable-gray?labelColor=5865f2&logo=android&logoColor=white&style=flat"></summary>
 
 <blockquote>
 
-[Release 2026-07-29](https://github.com/nullcpy/rvb/releases/tag/260109)<br>
+[Release 2026-07-29](https://github.com/m4mental/my-rvb-builder/releases/tag/260109)<br>
 Patches: [revenge-mod/app-release.apk](https://github.com/revenge-mod/revenge-xposed/releases/tag/1502)
 </blockquote>
 </details>
@@ -496,11 +483,11 @@ Patches: [revenge-mod/app-release.apk](https://github.com/revenge-mod/revenge-xp
 #### [Morphe (Android TV)](https://github.com/ajstrick81/morphe-androidtv-patches)
 
 <details>
-<summary id="disneyplus-morphe-androidtv">&emsp;<a href="https://nullcpy.github.io/"><img src="https://img.shields.io/badge/version-v26.6.0+rc5.2026.04.21-gray?labelColor=0a7b8d&logo=android&logoColor=white&style=flat"></summary>
+<summary id="disneyplus-morphe-androidtv">&emsp;<a href="https://m4mental.github.io/my-rvb-builder/"><img src="https://img.shields.io/badge/version-v26.6.0+rc5.2026.04.21-gray?labelColor=0a7b8d&logo=android&logoColor=white&style=flat"></summary>
 
 <blockquote>
 
-[Release 2026-07-12](https://github.com/nullcpy/rvb/releases/tag/260036)<br>
+[Release 2026-07-12](https://github.com/m4mental/my-rvb-builder/releases/tag/260036)<br>
 Patches: [ajstrick81/patches-1.10.0.mpp](https://github.com/ajstrick81/morphe-androidtv-patches/releases/tag/v1.11.0)
 - Disney+ Android TV
 </blockquote>
@@ -515,11 +502,11 @@ Patches: [ajstrick81/patches-1.10.0.mpp](https://github.com/ajstrick81/morphe-an
 #### [Morphe (paresh-patches)](https://gitlab.com/Paresh-Maheshwari/paresh-patches)
 
 <details>
-<summary id="document-scanner-morphe">&emsp;<a href="https://nullcpy.github.io/"><img src="https://img.shields.io/badge/version-v6.8.18-gray?labelColor=1A73E8&logo=android&logoColor=white&style=flat"></summary>
+<summary id="document-scanner-morphe">&emsp;<a href="https://m4mental.github.io/my-rvb-builder/"><img src="https://img.shields.io/badge/version-v6.8.18-gray?labelColor=1A73E8&logo=android&logoColor=white&style=flat"></summary>
 
 <blockquote>
 
-[Release 2026-07-07](https://github.com/nullcpy/rvb/releases/tag/260017)<br>
+[Release 2026-07-07](https://github.com/m4mental/my-rvb-builder/releases/tag/260017)<br>
 Patches: [Paresh-Maheshwari/patches-1.19.0.mpp](https://gitlab.com/Paresh-Maheshwari/paresh-patches/-/releases/v1.19.0)
 - Doc Scanner Premium
 </blockquote>
@@ -534,11 +521,11 @@ Patches: [Paresh-Maheshwari/patches-1.19.0.mpp](https://gitlab.com/Paresh-Mahesh
 #### [Morphe (hoo-dles)](https://github.com/hoo-dles/morphe-patches)
 
 <details>
-<summary id="duolingo-morphe">&emsp;<a href="https://nullcpy.github.io/"><img src="https://img.shields.io/badge/version-v6.86.5-gray?labelColor=4DC730&logo=duolingo&logoColor=white&style=flat"></summary>
+<summary id="duolingo-morphe">&emsp;<a href="https://m4mental.github.io/my-rvb-builder/"><img src="https://img.shields.io/badge/version-v6.86.5-gray?labelColor=4DC730&logo=duolingo&logoColor=white&style=flat"></summary>
   
 <blockquote>
 
-[Release 2026-07-15](https://github.com/nullcpy/rvb/releases/tag/260053)<br>
+[Release 2026-07-15](https://github.com/m4mental/my-rvb-builder/releases/tag/260053)<br>
 Patches: [hoo-dles/patches-1.39.0.mpp](https://github.com/hoo-dles/morphe-patches/releases/tag/v1.39.0)
 - Enable Premium
 </blockquote>
@@ -547,11 +534,11 @@ Patches: [hoo-dles/patches-1.39.0.mpp](https://github.com/hoo-dles/morphe-patche
 #### [ReVanced](https://github.com/revanced/revanced-patches)
 
 <details>
-<summary id="duolingo-revanced">&emsp;<a href="https://nullcpy.github.io/"><img src="https://img.shields.io/badge/version-v6.54.5-gray?labelColor=4DC730&logo=duolingo&logoColor=white&style=flat"></summary>
+<summary id="duolingo-revanced">&emsp;<a href="https://m4mental.github.io/my-rvb-builder/"><img src="https://img.shields.io/badge/version-v6.54.5-gray?labelColor=4DC730&logo=duolingo&logoColor=white&style=flat"></summary>
   
 <blockquote>
 
-[Release 2026-05-01](https://github.com/nullcpy/rvb/releases/tag/189)<br>
+[Release 2026-05-01](https://github.com/m4mental/my-rvb-builder/releases/tag/189)<br>
 Patches: [Raudrobot/patches-6.1.0.rvp](https://github.com/Raudrobot/revanced-patches/releases/tag/v6.1.0)
 
 - Disable ads
@@ -570,11 +557,11 @@ Patches: [Raudrobot/patches-6.1.0.rvp](https://github.com/Raudrobot/revanced-pat
 #### [Morphe (paresh-patches)](https://gitlab.com/Paresh-Maheshwari/paresh-patches)
 
 <details>
-<summary id="eyecon-morphe">&emsp;<a href="https://nullcpy.github.io/"><img src="https://img.shields.io/badge/version-v4.2026.04.05.1300-gray?labelColor=00BCD4&logo=android&logoColor=white&style=flat"></summary>
+<summary id="eyecon-morphe">&emsp;<a href="https://m4mental.github.io/my-rvb-builder/"><img src="https://img.shields.io/badge/version-v4.2026.04.05.1300-gray?labelColor=00BCD4&logo=android&logoColor=white&style=flat"></summary>
   
 <blockquote>
 
-[Release 2026-07-07](https://github.com/nullcpy/rvb/releases/tag/260017)<br>
+[Release 2026-07-07](https://github.com/m4mental/my-rvb-builder/releases/tag/260017)<br>
 Patches: [Paresh-Maheshwari/patches-1.19.0.mpp](https://gitlab.com/Paresh-Maheshwari/paresh-patches/-/releases/v1.19.0)
 - Eyecon Premium
 </blockquote>
@@ -591,11 +578,11 @@ Patches: [Paresh-Maheshwari/patches-1.19.0.mpp](https://gitlab.com/Paresh-Mahesh
 #### [Morphe (meta-patches)](https://github.com/MeridianFresco/morphe-meta-patches)
 
 <details>
-<summary id="facebook-morphe">&emsp;<a href="https://nullcpy.github.io/"><img src="https://img.shields.io/badge/version-v490.0.0.63.82-gray?labelColor=1877F2&logo=facebook&logoColor=white&style=flat"></summary>
+<summary id="facebook-morphe">&emsp;<a href="https://m4mental.github.io/my-rvb-builder/"><img src="https://img.shields.io/badge/version-v490.0.0.63.82-gray?labelColor=1877F2&logo=facebook&logoColor=white&style=flat"></summary>
 
 <blockquote>
 
-[Release 2026-05-04](https://github.com/nullcpy/rvb/releases/tag/200)<br>
+[Release 2026-05-04](https://github.com/m4mental/my-rvb-builder/releases/tag/200)<br>
 Patches: [MeridianFresco/patches-1.0.0.mpp](https://github.com/MeridianFresco/morphe-meta-patches/releases/tag/v1.0.0)
 
 - Hide 'Sponsored Stories'
@@ -612,11 +599,11 @@ Patches: [MeridianFresco/patches-1.0.0.mpp](https://github.com/MeridianFresco/mo
 #### [Morphe (paresh-patches)](https://gitlab.com/Paresh-Maheshwari/paresh-patches)
 
 <details>
-<summary id="fing-morphe">&emsp;<a href="https://nullcpy.github.io/"><img src="https://img.shields.io/badge/version-v12.12.0-gray?labelColor=377bfd&logo=android&logoColor=white&style=flat"></summary>
+<summary id="fing-morphe">&emsp;<a href="https://m4mental.github.io/my-rvb-builder/"><img src="https://img.shields.io/badge/version-v12.12.0-gray?labelColor=377bfd&logo=android&logoColor=white&style=flat"></summary>
   
 <blockquote>
 
-[Release 2026-07-07](https://github.com/nullcpy/rvb/releases/tag/260017)<br>
+[Release 2026-07-07](https://github.com/m4mental/my-rvb-builder/releases/tag/260017)<br>
 Patches: [Paresh-Maheshwari/patches-1.19.0.mpp](https://gitlab.com/Paresh-Maheshwari/paresh-patches/-/releases/v1.19.0)
 - Fing Premium
 </blockquote>
@@ -633,11 +620,11 @@ Patches: [Paresh-Maheshwari/patches-1.19.0.mpp](https://gitlab.com/Paresh-Mahesh
 #### [Morphe (hoo-dles)](https://github.com/hoo-dles/morphe-patches)
 
 <details>
-<summary id="github-morphe">&emsp;<a href="https://nullcpy.github.io/"><img src="https://img.shields.io/badge/version-v1.255.0-gray?labelColor=181717&logo=github&logoColor=white&style=flat"></summary>
+<summary id="github-morphe">&emsp;<a href="https://m4mental.github.io/my-rvb-builder/"><img src="https://img.shields.io/badge/version-v1.255.0-gray?labelColor=181717&logo=github&logoColor=white&style=flat"></summary>
   
 <blockquote>
 
-[Release 2026-07-15](https://github.com/nullcpy/rvb/releases/tag/260053)<br>
+[Release 2026-07-15](https://github.com/m4mental/my-rvb-builder/releases/tag/260053)<br>
 Patches: [hoo-dles/patches-1.39.0.mpp](https://github.com/hoo-dles/morphe-patches/releases/tag/v1.39.0)
 - AMOLED dark theme
 </blockquote>
@@ -652,11 +639,11 @@ Patches: [hoo-dles/patches-1.39.0.mpp](https://github.com/hoo-dles/morphe-patche
 #### [Morphe (hoo-dles)](https://github.com/hoo-dles/morphe-patches)
 
 <details>
-<summary id="goodreads-morphe">&emsp;<a href="https://nullcpy.github.io/"><img src="https://img.shields.io/badge/version-v2.75.0Build3-gray?labelColor=ebe2d7&logo=github&logoColor=white&style=flat"></summary>
+<summary id="goodreads-morphe">&emsp;<a href="https://m4mental.github.io/my-rvb-builder/"><img src="https://img.shields.io/badge/version-v2.75.0Build3-gray?labelColor=ebe2d7&logo=github&logoColor=white&style=flat"></summary>
   
 <blockquote>
 
-[Release 2026-07-15](https://github.com/nullcpy/rvb/releases/tag/260053)<br>
+[Release 2026-07-15](https://github.com/m4mental/my-rvb-builder/releases/tag/260053)<br>
 Patches: [hoo-dles/patches-1.39.0.mpp](https://github.com/hoo-dles/morphe-patches/releases/tag/v1.39.0)
 - Disable ads
 </blockquote>
@@ -671,11 +658,11 @@ Patches: [hoo-dles/patches-1.39.0.mpp](https://github.com/hoo-dles/morphe-patche
 #### [Morphe (adobo)](https://github.com/jkennethcarino/adobo)
 
 <details>
-<summary id="gboard-morphe">&emsp;<a href="https://nullcpy.github.io/"><img src="https://img.shields.io/badge/version-v17.1.5.887912998.release-gray?labelColor=4285F4&logo=google&logoColor=white&style=flat"></summary>
+<summary id="gboard-morphe">&emsp;<a href="https://m4mental.github.io/my-rvb-builder/"><img src="https://img.shields.io/badge/version-v17.1.5.887912998.release-gray?labelColor=4285F4&logo=google&logoColor=white&style=flat"></summary>
   
 <blockquote>
 
-[Release 2026-06-14](https://github.com/nullcpy/rvb/releases/tag/351)<br>
+[Release 2026-06-14](https://github.com/m4mental/my-rvb-builder/releases/tag/351)<br>
 Patches: [jkennethcarino/patches-1.2.0.mpp](https://github.com/jkennethcarino/adobo/releases/tag/v1.2.0)
 
 - Always-incognito mode
@@ -693,11 +680,11 @@ Patches: [jkennethcarino/patches-1.2.0.mpp](https://github.com/jkennethcarino/ad
 #### [Morphe (patched-up)](https://github.com/docbt/patched-up)
 
 <details>
-<summary id="google-news-morphe">&emsp;<a href="https://nullcpy.github.io/"><img src="https://img.shields.io/badge/version-v5.163.0.947799485-gray?labelColor=4285F4&logo=googlenews&logoColor=white&style=flat"></summary>
+<summary id="google-news-morphe">&emsp;<a href="https://m4mental.github.io/my-rvb-builder/"><img src="https://img.shields.io/badge/version-v5.163.0.947799485-gray?labelColor=4285F4&logo=googlenews&logoColor=white&style=flat"></summary>
   
 <blockquote>
 
-[Release 2026-07-18](https://github.com/nullcpy/rvb/releases/tag/260058)<br>
+[Release 2026-07-18](https://github.com/m4mental/my-rvb-builder/releases/tag/260058)<br>
 Patches: [docbt/patches-1.10.0.mpp](https://github.com/docbt/patched-up/releases/tag/v1.10.0)
 - Enable CustomTabs
 - GmsCore support
@@ -714,11 +701,11 @@ Patches: [docbt/patches-1.10.0.mpp](https://github.com/docbt/patched-up/releases
 #### [Morphe (De-Vanced)](https://github.com/RookieEnough/De-Vanced)
 
 <details>
-<summary id="google-photos-morphe">&emsp;<a href="https://nullcpy.github.io/"><img src="https://img.shields.io/badge/version-v7.86.0.953689094-gray?labelColor=FBBC04&logo=googlephotos&logoColor=white&style=flat"></summary>
+<summary id="google-photos-morphe">&emsp;<a href="https://m4mental.github.io/my-rvb-builder/"><img src="https://img.shields.io/badge/version-v7.86.0.953689094-gray?labelColor=FBBC04&logo=googlephotos&logoColor=white&style=flat"></summary>
   
 <blockquote>
 
-[Release 2026-07-28](https://github.com/nullcpy/rvb/releases/tag/260105)<br>
+[Release 2026-07-28](https://github.com/m4mental/my-rvb-builder/releases/tag/260105)<br>
 Patches: [RookieEnough/patches-1.0.4.mpp](https://github.com/RookieEnough/De-ReVanced/releases/tag/v1.0.4)
 - Fix selected account persistence
 - GmsCore support
@@ -729,11 +716,11 @@ Patches: [RookieEnough/patches-1.0.4.mpp](https://github.com/RookieEnough/De-ReV
 #### [Morphe (rushiranpise)](https://github.com/rushiranpise/morphe-patches)
 
 <details>
-<summary id="google-photos-morphe-alt">&emsp;<a href="https://nullcpy.github.io/"><img src="https://img.shields.io/badge/version-v7.85.0.952162352-gray?labelColor=FBBC04&logo=googlephotos&logoColor=white&style=flat"></summary>
+<summary id="google-photos-morphe-alt">&emsp;<a href="https://m4mental.github.io/my-rvb-builder/"><img src="https://img.shields.io/badge/version-v7.85.0.952162352-gray?labelColor=FBBC04&logo=googlephotos&logoColor=white&style=flat"></summary>
   
 <blockquote>
 
-[Release 2026-07-26](https://github.com/nullcpy/rvb/releases/tag/260094)<br>
+[Release 2026-07-26](https://github.com/m4mental/my-rvb-builder/releases/tag/260094)<br>
 Patches: [rushiranpise/patches-1.15.1.mpp](https://github.com/rushiranpise/morphe-patches/releases/tag/v1.15.1)
 - AMOLED dark theme
 - Change package name
@@ -747,11 +734,11 @@ Patches: [rushiranpise/patches-1.15.1.mpp](https://github.com/rushiranpise/morph
 #### [ReVanced](https://github.com/revanced/revanced-patches)
 
 <details>
-<summary id="google-photos-revanced">&emsp;<a href="https://nullcpy.github.io/"><img src="https://img.shields.io/badge/version-v7.86.0.953689094-gray?labelColor=FBBC04&logo=googlephotos&logoColor=white&style=flat"></summary>
+<summary id="google-photos-revanced">&emsp;<a href="https://m4mental.github.io/my-rvb-builder/"><img src="https://img.shields.io/badge/version-v7.86.0.953689094-gray?labelColor=FBBC04&logo=googlephotos&logoColor=white&style=flat"></summary>
   
 <blockquote>
 
-[Release 2026-07-28](https://github.com/nullcpy/rvb/releases/tag/260105)<br>
+[Release 2026-07-28](https://github.com/m4mental/my-rvb-builder/releases/tag/260105)<br>
 Patches: [Raudrobot/patches-6.1.0.rvp](https://github.com/Raudrobot/revanced-patches/releases/tag/6.1.0-patches)
 - GmsCore support
 - Spoof features
@@ -767,11 +754,11 @@ Patches: [Raudrobot/patches-6.1.0.rvp](https://github.com/Raudrobot/revanced-pat
 #### [Morphe (De-Vanced)](https://github.com/RookieEnough/De-Vanced)
 
 <details>
-<summary id="google-recorder-morphe">&emsp;<a href="https://nullcpy.github.io/"><img src="https://img.shields.io/badge/version-v4.2.20260118.867906508-gray?labelColor=F44336&logo=google&logoColor=white&style=flat"></summary>
+<summary id="google-recorder-morphe">&emsp;<a href="https://m4mental.github.io/my-rvb-builder/"><img src="https://img.shields.io/badge/version-v4.2.20260118.867906508-gray?labelColor=F44336&logo=google&logoColor=white&style=flat"></summary>
   
 <blockquote>
 
-[Release 2026-05-13](https://github.com/nullcpy/rvb/releases/tag/242)<br>
+[Release 2026-05-13](https://github.com/m4mental/my-rvb-builder/releases/tag/242)<br>
 Patches: [RookieEnough/patches-1.0.4.mpp](https://github.com/RookieEnough/De-Vanced/releases/tag/v1.0.4)
 
 - Remove device restrictions
@@ -781,11 +768,11 @@ Patches: [RookieEnough/patches-1.0.4.mpp](https://github.com/RookieEnough/De-Van
 #### [ReVanced](https://github.com/revanced/revanced-patches)
 
 <details>
-<summary id="google-recorder-revanced">&emsp;<a href="https://nullcpy.github.io/"><img src="https://img.shields.io/badge/version-v4.2.20260118.867906508-gray?labelColor=F44336&logo=google&logoColor=white&style=flat"></summary>
+<summary id="google-recorder-revanced">&emsp;<a href="https://m4mental.github.io/my-rvb-builder/"><img src="https://img.shields.io/badge/version-v4.2.20260118.867906508-gray?labelColor=F44336&logo=google&logoColor=white&style=flat"></summary>
   
 <blockquote>
 
-[Release 2026-05-01](https://github.com/nullcpy/rvb/releases/tag/189)<br>
+[Release 2026-05-01](https://github.com/m4mental/my-rvb-builder/releases/tag/189)<br>
 Patches: [Raudrobot/patches-6.1.0.rvp](https://github.com/Raudrobot/revanced-patches/releases/tag/v6.1.0)
 
 - Remove device restrictions
@@ -803,11 +790,11 @@ Patches: [Raudrobot/patches-6.1.0.rvp](https://github.com/Raudrobot/revanced-pat
 #### [Morphe (Android TV)](https://github.com/ajstrick81/morphe-androidtv-patches)
 
 <details>
-<summary id="hbomax-morphe-androidtv">&emsp;<a href="https://nullcpy.github.io/"><img src="https://img.shields.io/badge/version-v7.7.0.78-gray?labelColor=141b25&logo=android&logoColor=white&style=flat"></summary>
+<summary id="hbomax-morphe-androidtv">&emsp;<a href="https://m4mental.github.io/my-rvb-builder/"><img src="https://img.shields.io/badge/version-v7.7.0.78-gray?labelColor=141b25&logo=android&logoColor=white&style=flat"></summary>
 
 <blockquote>
 
-[Release 2026-07-22](https://github.com/nullcpy/rvb/releases/tag/260074)<br>
+[Release 2026-07-22](https://github.com/m4mental/my-rvb-builder/releases/tag/260074)<br>
 Patches: [ajstrick81/patches-1.13.0.mpp](https://github.com/ajstrick81/morphe-androidtv-patches/releases/tag/v1.14.0)
 </blockquote>
 </details>
@@ -821,11 +808,11 @@ Patches: [ajstrick81/patches-1.13.0.mpp](https://github.com/ajstrick81/morphe-an
 #### [Morphe (hoo-dles)](https://github.com/hoo-dles/morphe-patches)
 
 <details>
-<summary id="hellochinese-morphe">&emsp;<a href="https://nullcpy.github.io/"><img src="https://img.shields.io/badge/version-v7.10.20-gray?labelColor=4DC730&logo=android&logoColor=white&style=flat"></summary>
+<summary id="hellochinese-morphe">&emsp;<a href="https://m4mental.github.io/my-rvb-builder/"><img src="https://img.shields.io/badge/version-v7.10.20-gray?labelColor=4DC730&logo=android&logoColor=white&style=flat"></summary>
 
 <blockquote>
 
-[Release 2026-07-15](https://github.com/nullcpy/rvb/releases/tag/260053)<br>
+[Release 2026-07-15](https://github.com/m4mental/my-rvb-builder/releases/tag/260053)<br>
 Patches: [hoo-dles/patches-1.39.0.mpp](https://github.com/hoo-dles/morphe-patches/releases/tag/v1.39.0)
 - Enable Premium
 </blockquote>
@@ -840,11 +827,11 @@ Patches: [hoo-dles/patches-1.39.0.mpp](https://github.com/hoo-dles/morphe-patche
 #### [Morphe (rushiranpise)](https://github.com/rushiranpise/morphe-patches)
 
 <details>
-<summary id="hola-vpn-morphe">&emsp;<a href="https://nullcpy.github.io/"><img src="https://img.shields.io/badge/version-vAARCH64_1.248.400-gray?labelColor=ff6401&logo=android&logoColor=white&style=flat"></summary>
+<summary id="hola-vpn-morphe">&emsp;<a href="https://m4mental.github.io/my-rvb-builder/"><img src="https://img.shields.io/badge/version-vAARCH64_1.248.400-gray?labelColor=ff6401&logo=android&logoColor=white&style=flat"></summary>
 
 <blockquote>
 
-[Release 2026-07-23](https://github.com/nullcpy/rvb/releases/tag/260085)<br>
+[Release 2026-07-23](https://github.com/m4mental/my-rvb-builder/releases/tag/260085)<br>
 Patches: [rushiranpise/patches-1.15.1.mpp](https://github.com/rushiranpise/morphe-patches/releases/tag/v1.15.1)
 - GmsCore support (MicroG)
 - Unlock Premium
@@ -862,11 +849,11 @@ Patches: [rushiranpise/patches-1.15.1.mpp](https://github.com/rushiranpise/morph
 #### [Morphe (hoo-dles)](https://github.com/hoo-dles/morphe-patches)
 
 <details>
-<summary id="icon-packer-morphe">&emsp;<a href="https://nullcpy.github.io/"><img src="https://img.shields.io/badge/version-v1.21.0.release-gray?labelColor=000000&logo=android&logoColor=white&style=flat"></summary>
+<summary id="icon-packer-morphe">&emsp;<a href="https://m4mental.github.io/my-rvb-builder/"><img src="https://img.shields.io/badge/version-v1.21.0.release-gray?labelColor=000000&logo=android&logoColor=white&style=flat"></summary>
   
 <blockquote>
 
-[Release 2026-07-15](https://github.com/nullcpy/rvb/releases/tag/260053)<br>
+[Release 2026-07-15](https://github.com/m4mental/my-rvb-builder/releases/tag/260053)<br>
 Patches: [hoo-dles/patches-1.39.0.mpp](https://github.com/hoo-dles/morphe-patches/releases/tag/v1.39.0)
 - Unlock premium features
 </blockquote>
@@ -881,11 +868,11 @@ Patches: [hoo-dles/patches-1.39.0.mpp](https://github.com/hoo-dles/morphe-patche
 #### [Morphe (adobo)](https://github.com/jkennethcarino/adobo)
 
 <details>
-<summary id="imdb-morphe">&emsp;<a href="https://nullcpy.github.io/"><img src="https://img.shields.io/badge/version-v9.3.2-gray?labelColor=f5c518&logo=imdb&logoColor=black&style=flat"></summary>
+<summary id="imdb-morphe">&emsp;<a href="https://m4mental.github.io/my-rvb-builder/"><img src="https://img.shields.io/badge/version-v9.3.2-gray?labelColor=f5c518&logo=imdb&logoColor=black&style=flat"></summary>
 
 <blockquote>
 
-[Release 2026-06-14](https://github.com/nullcpy/rvb/releases/tag/351)<br>
+[Release 2026-06-14](https://github.com/m4mental/my-rvb-builder/releases/tag/351)<br>
 Patches: [jkennethcarino/patches-1.2.0.mpp](https://github.com/jkennethcarino/adobo/releases/tag/v1.2.0)
 
 - Remove IMDb's ads, trackers, and analytics
@@ -901,11 +888,11 @@ Patches: [jkennethcarino/patches-1.2.0.mpp](https://github.com/jkennethcarino/ad
 #### [Morphe (Brosssh)](https://github.com/brosssh/morphe-patches)
 
 <details>
-<summary id="instagram-morphe">&emsp;<a href="https://nullcpy.github.io/"><img src="https://img.shields.io/badge/version-v435.0.0.37.76-gray?labelColor=E4405F&logo=instagram&logoColor=white&style=flat"></summary>
+<summary id="instagram-morphe">&emsp;<a href="https://m4mental.github.io/my-rvb-builder/"><img src="https://img.shields.io/badge/version-v435.0.0.37.76-gray?labelColor=E4405F&logo=instagram&logoColor=white&style=flat"></summary>
 
 <blockquote>
 
-[Release 2026-07-16](https://github.com/nullcpy/rvb/releases/tag/260054)<br>
+[Release 2026-07-16](https://github.com/m4mental/my-rvb-builder/releases/tag/260054)<br>
 Patches: [brosssh/patches-2.8.1.mpp](https://github.com/brosssh/morphe-patches/releases/tag/v2.8.1)
 - Bypass signature check
 - Disable Reels scrolling
@@ -924,11 +911,11 @@ Patches: [brosssh/patches-2.8.1.mpp](https://github.com/brosssh/morphe-patches/r
 #### [Morphe (Piko)](https://github.com/crimera/piko)
 
 <details>
-<summary id="instagram-morphe-piko">&emsp;<a href="https://nullcpy.github.io/"><img src="https://img.shields.io/badge/version-v439.0.0.37.89-gray?labelColor=E4405F&logo=instagram&logoColor=white&style=flat"></summary>
+<summary id="instagram-morphe-piko">&emsp;<a href="https://m4mental.github.io/my-rvb-builder/"><img src="https://img.shields.io/badge/version-v439.0.0.37.89-gray?labelColor=E4405F&logo=instagram&logoColor=white&style=flat"></summary>
 
 <blockquote>
 
-[Release 2026-07-27](https://github.com/nullcpy/rvb/releases/tag/260102)<br>
+[Release 2026-07-27](https://github.com/m4mental/my-rvb-builder/releases/tag/260102)<br>
 Patches: [crimera/patches-3.9.0-dev.2.mpp](https://github.com/crimera/piko/releases/tag/v3.9.0-dev.2)
 - Add settings
 - Allow user network certificate
@@ -989,11 +976,11 @@ Patches: [crimera/patches-3.9.0-dev.2.mpp](https://github.com/crimera/piko/relea
 #### [ReVanced](https://github.com/revanced/revanced-patches)
 
 <details>
-<summary id="instagram-revanced">&emsp;<a href="https://nullcpy.github.io/"><img src="https://img.shields.io/badge/version-v423.0.0.47.66-gray?labelColor=E4405F&logo=instagram&logoColor=white&style=flat"></summary>
+<summary id="instagram-revanced">&emsp;<a href="https://m4mental.github.io/my-rvb-builder/"><img src="https://img.shields.io/badge/version-v423.0.0.47.66-gray?labelColor=E4405F&logo=instagram&logoColor=white&style=flat"></summary>
   
 <blockquote>
 
-[Release 2026-04-23](https://github.com/nullcpy/rvb/releases/tag/145)<br>
+[Release 2026-04-23](https://github.com/m4mental/my-rvb-builder/releases/tag/145)<br>
 Patches: [Raudrobot/patches-6.1.0.rvp](https://github.com/Raudrobot/revanced-patches/releases/tag/v6.1.0)
 
 - Disable analytics
@@ -1007,11 +994,11 @@ Patches: [Raudrobot/patches-6.1.0.rvp](https://github.com/Raudrobot/revanced-pat
 #### [ReVanced (ReVancedExperiments)](https://github.com/Aunali321/ReVancedExperiments)
 
 <details>
-<summary id="instagram-revanced-exp">&emsp;<a href="https://nullcpy.github.io/"><img src="https://img.shields.io/badge/version-v426.0.0.37.68-gray?labelColor=E4405F&logo=instagram&logoColor=white&style=flat"></summary>
+<summary id="instagram-revanced-exp">&emsp;<a href="https://m4mental.github.io/my-rvb-builder/"><img src="https://img.shields.io/badge/version-v426.0.0.37.68-gray?labelColor=E4405F&logo=instagram&logoColor=white&style=flat"></summary>
   
 <blockquote>
 
-[Release 2026-05-14](https://github.com/nullcpy/rvb/releases/tag/245)<br>
+[Release 2026-05-14](https://github.com/m4mental/my-rvb-builder/releases/tag/245)<br>
 Patches: [Aunali321/patches-2.0.0.rvp](https://github.com/Aunali321/ReVancedExperiments/releases/tag/v2.0.0)
 
 - Disable signature check
@@ -1031,11 +1018,11 @@ Patches: [Aunali321/patches-2.0.0.rvp](https://github.com/Aunali321/ReVancedExpe
 #### [Morphe (hoomans-patches)](https://github.com/arandomhooman/hoomans-morphe-patches)
 
 <details>
-<summary id="inshot-morphe">&emsp;<a href="https://nullcpy.github.io/"><img src="https://img.shields.io/badge/version-v2.214.1539-gray?labelColor=ff523f&logo=android&logoColor=white&style=flat"></summary>
+<summary id="inshot-morphe">&emsp;<a href="https://m4mental.github.io/my-rvb-builder/"><img src="https://img.shields.io/badge/version-v2.214.1539-gray?labelColor=ff523f&logo=android&logoColor=white&style=flat"></summary>
   
 <blockquote>
 
-[Release 2026-07-23](https://github.com/nullcpy/rvb/releases/tag/260080)<br>
+[Release 2026-07-23](https://github.com/m4mental/my-rvb-builder/releases/tag/260080)<br>
 Patches: [arandomhooman/patches-1.43.4.mpp](https://github.com/arandomhooman/hoomans-morphe-patches/releases/tag/v1.43.4)
 - Unlock Pro
 </blockquote>
@@ -1050,11 +1037,11 @@ Patches: [arandomhooman/patches-1.43.4.mpp](https://github.com/arandomhooman/hoo
 #### [Morphe (BholeyKaBhakt)](https://github.com/BholeyKaBhakt/revanced-patches-xtra)
 
 <details>
-<summary id="inshorts-morphe">&emsp;<a href="https://nullcpy.github.io/"><img src="https://img.shields.io/badge/version-v6.12.18-gray?labelColor=f44336&logo=android&logoColor=white&style=flat"></summary>
+<summary id="inshorts-morphe">&emsp;<a href="https://m4mental.github.io/my-rvb-builder/"><img src="https://img.shields.io/badge/version-v6.12.18-gray?labelColor=f44336&logo=android&logoColor=white&style=flat"></summary>
   
 <blockquote>
 
-[Release 2026-06-22](https://github.com/nullcpy/rvb/releases/tag/382)<br>
+[Release 2026-06-22](https://github.com/m4mental/my-rvb-builder/releases/tag/382)<br>
 Patches: [BholeyKaBhakt/patches-2.12.0.mpp](https://github.com/BholeyKaBhakt/revanced-patches-xtra/releases/tag/v2.12.0)
 
 - Remove Ads
@@ -1072,11 +1059,11 @@ Patches: [BholeyKaBhakt/patches-2.12.0.mpp](https://github.com/BholeyKaBhakt/rev
 #### [Morphe (brosssh)](https://github.com/brosssh/morphe-patches)
 
 <details>
-<summary id="komoot-morphe">&emsp;<a href="https://nullcpy.github.io/"><img src="https://img.shields.io/badge/version-v2026.26.7-gray?labelColor=4f6814&logo=android&logoColor=white&style=flat"></summary>
+<summary id="komoot-morphe">&emsp;<a href="https://m4mental.github.io/my-rvb-builder/"><img src="https://img.shields.io/badge/version-v2026.26.7-gray?labelColor=4f6814&logo=android&logoColor=white&style=flat"></summary>
 
 <blockquote>
 
-[Release 2026-07-16](https://github.com/nullcpy/rvb/releases/tag/260054)<br>
+[Release 2026-07-16](https://github.com/m4mental/my-rvb-builder/releases/tag/260054)<br>
 Patches: [brosssh/patches-2.8.1.mpp](https://github.com/brosssh/morphe-patches/releases/tag/v2.8.1)
 - Unlock Premium features
 </blockquote>
@@ -1092,11 +1079,11 @@ Patches: [brosssh/patches-2.8.1.mpp](https://github.com/brosssh/morphe-patches/r
 #### [Morphe (paresh-patches)](https://gitlab.com/Paresh-Maheshwari/paresh-patches)
 
 <details>
-<summary id="lumina-wallpapers-morphe">&emsp;<a href="https://nullcpy.github.io/"><img src="https://img.shields.io/badge/version-v1.0.2.3-gray?labelColor=fbcf2e&logo=android&logoColor=white&style=flat"></summary>
+<summary id="lumina-wallpapers-morphe">&emsp;<a href="https://m4mental.github.io/my-rvb-builder/"><img src="https://img.shields.io/badge/version-v1.0.2.3-gray?labelColor=fbcf2e&logo=android&logoColor=white&style=flat"></summary>
   
 <blockquote>
 
-[Release 2026-07-07](https://github.com/nullcpy/rvb/releases/tag/260017)<br>
+[Release 2026-07-07](https://github.com/m4mental/my-rvb-builder/releases/tag/260017)<br>
 Patches: [Paresh-Maheshwari/patches-1.19.0.mpp](https://gitlab.com/Paresh-Maheshwari/paresh-patches/-/releases/v1.19.0)
 - Lumina Premium
 </blockquote>
@@ -1113,11 +1100,11 @@ Patches: [Paresh-Maheshwari/patches-1.19.0.mpp](https://gitlab.com/Paresh-Mahesh
 #### [Morphe (paresh-patches)](https://gitlab.com/Paresh-Maheshwari/paresh-patches)
 
 <details>
-<summary id="macrodroid-morphe">&emsp;<a href="https://nullcpy.github.io/"><img src="https://img.shields.io/badge/version-v5.62.11-gray?labelColor=34495E&logo=android&logoColor=white&style=flat"></summary>
+<summary id="macrodroid-morphe">&emsp;<a href="https://m4mental.github.io/my-rvb-builder/"><img src="https://img.shields.io/badge/version-v5.62.11-gray?labelColor=34495E&logo=android&logoColor=white&style=flat"></summary>
   
 <blockquote>
 
-[Release 2026-07-07](https://github.com/nullcpy/rvb/releases/tag/260017)<br>
+[Release 2026-07-07](https://github.com/m4mental/my-rvb-builder/releases/tag/260017)<br>
 Patches: [Paresh-Maheshwari/patches-1.19.0.mpp](https://gitlab.com/Paresh-Maheshwari/paresh-patches/-/releases/v1.19.0)
 - MacroDroid Premium
 </blockquote>
@@ -1132,11 +1119,11 @@ Patches: [Paresh-Maheshwari/patches-1.19.0.mpp](https://gitlab.com/Paresh-Mahesh
 #### [Morphe (bufferk)](https://github.com/bufferk/morphe-patches)
 
 <details>
-<summary id="medium-morphe">&emsp;<a href="https://nullcpy.github.io/"><img src="https://img.shields.io/badge/version-v4.5.1302097-gray?labelColor=000000&logo=android&logoColor=white&style=flat"></summary>
+<summary id="medium-morphe">&emsp;<a href="https://m4mental.github.io/my-rvb-builder/"><img src="https://img.shields.io/badge/version-v4.5.1302097-gray?labelColor=000000&logo=android&logoColor=white&style=flat"></summary>
   
 <blockquote>
 
-[Release 2026-07-18](https://github.com/nullcpy/rvb/releases/tag/260064)<br>
+[Release 2026-07-18](https://github.com/m4mental/my-rvb-builder/releases/tag/260064)<br>
 Patches: [bufferk/patches-1.8.0.mpp](https://github.com/bufferk/morphe-patches/releases/tag/v1.8.0)
 - Freedium
 </blockquote>
@@ -1151,11 +1138,11 @@ Patches: [bufferk/patches-1.8.0.mpp](https://github.com/bufferk/morphe-patches/r
 #### [Morphe (hoo-dles)](https://github.com/hoo-dles/morphe-patches)
 
 <details>
-<summary id="merriam-webster-dictionary-morphe">&emsp;<a href="https://nullcpy.github.io/"><img src="https://img.shields.io/badge/version-v5.5.0-gray?labelColor=B30000&logo=android&logoColor=white&style=flat"></summary>
+<summary id="merriam-webster-dictionary-morphe">&emsp;<a href="https://m4mental.github.io/my-rvb-builder/"><img src="https://img.shields.io/badge/version-v5.5.0-gray?labelColor=B30000&logo=android&logoColor=white&style=flat"></summary>
 
 <blockquote>
 
-[Release 2026-07-15](https://github.com/nullcpy/rvb/releases/tag/260053)<br>
+[Release 2026-07-15](https://github.com/m4mental/my-rvb-builder/releases/tag/260053)<br>
 Patches: [hoo-dles/patches-1.39.0.mpp](https://github.com/hoo-dles/morphe-patches/releases/tag/v1.39.0)
 - Enable Premium
 </blockquote>
@@ -1170,11 +1157,11 @@ Patches: [hoo-dles/patches-1.39.0.mpp](https://github.com/hoo-dles/morphe-patche
 #### [Morphe (De-Vanced)](https://github.com/RookieEnough/De-Vanced)
 
 <details>
-<summary id="messenger-morphe">&emsp;<a href="https://nullcpy.github.io/"><img src="https://img.shields.io/badge/version-v552.0.0.44.65-gray?labelColor=00B2FF&logo=messenger&logoColor=white&style=flat"></summary>
+<summary id="messenger-morphe">&emsp;<a href="https://m4mental.github.io/my-rvb-builder/"><img src="https://img.shields.io/badge/version-v552.0.0.44.65-gray?labelColor=00B2FF&logo=messenger&logoColor=white&style=flat"></summary>
   
 <blockquote>
 
-[Release 2026-05-13](https://github.com/nullcpy/rvb/releases/tag/242)<br>
+[Release 2026-05-13](https://github.com/m4mental/my-rvb-builder/releases/tag/242)<br>
 Patches: [RookieEnough/patches-1.0.4.mpp](https://github.com/RookieEnough/De-Vanced/releases/tag/v1.0.4)
 
 - Disable typing indicator
@@ -1188,11 +1175,11 @@ Patches: [RookieEnough/patches-1.0.4.mpp](https://github.com/RookieEnough/De-Van
 #### [ReVanced](https://github.com/revanced/revanced-patches)
 
 <details>
-<summary id="messenger-revanced">&emsp;<a href="https://nullcpy.github.io/"><img src="https://img.shields.io/badge/version-v558.0.0.46.77-gray?labelColor=00B2FF&logo=messenger&logoColor=white&style=flat"></summary>
+<summary id="messenger-revanced">&emsp;<a href="https://m4mental.github.io/my-rvb-builder/"><img src="https://img.shields.io/badge/version-v558.0.0.46.77-gray?labelColor=00B2FF&logo=messenger&logoColor=white&style=flat"></summary>
   
 <blockquote>
 
-[Release 2026-05-01](https://github.com/nullcpy/rvb/releases/tag/189)<br>
+[Release 2026-05-01](https://github.com/m4mental/my-rvb-builder/releases/tag/189)<br>
 Patches: [Raudrobot/patches-6.1.0.rvp](https://github.com/Raudrobot/revanced-patches/releases/tag/v6.1.0)
 
 - Hide Facebook button
@@ -1210,11 +1197,11 @@ Patches: [Raudrobot/patches-6.1.0.rvp](https://github.com/Raudrobot/revanced-pat
 #### [Morphe (edge-patches)](https://github.com/quantavil/edge-morphe-patches)
 
 <details>
-<summary id="microsoft-edge-morphe">&emsp;<a href="https://nullcpy.github.io/"><img src="https://img.shields.io/badge/version-v150.0.4078.81-gray?labelColor=32c7c7&logo=android&logoColor=white&style=flat"></summary>
+<summary id="microsoft-edge-morphe">&emsp;<a href="https://m4mental.github.io/my-rvb-builder/"><img src="https://img.shields.io/badge/version-v150.0.4078.81-gray?labelColor=32c7c7&logo=android&logoColor=white&style=flat"></summary>
   
 <blockquote>
 
-[Release 2026-07-19](https://github.com/nullcpy/rvb/releases/tag/260068)<br>
+[Release 2026-07-19](https://github.com/m4mental/my-rvb-builder/releases/tag/260068)<br>
 Patches: [quantavil/patches-1.33.0.mpp](https://github.com/quantavil/edge-morphe-patches/releases/tag/v1.33.0)
 - Copilot feature toggle
 - Telemetry elimination
@@ -1230,11 +1217,11 @@ Patches: [quantavil/patches-1.33.0.mpp](https://github.com/quantavil/edge-morphe
 #### [Morphe (De-Vanced)](https://github.com/RookieEnough/De-Vanced)
 
 <details>
-<summary id="microsoft-lens-morphe">&emsp;<a href="https://nullcpy.github.io/"><img src="https://img.shields.io/badge/version-v16.0.19628.20008-gray?labelColor=D83B01&logo=android&logoColor=white&style=flat"></summary>
+<summary id="microsoft-lens-morphe">&emsp;<a href="https://m4mental.github.io/my-rvb-builder/"><img src="https://img.shields.io/badge/version-v16.0.19628.20008-gray?labelColor=D83B01&logo=android&logoColor=white&style=flat"></summary>
   
 <blockquote>
 
-[Release 2026-05-13](https://github.com/nullcpy/rvb/releases/tag/242)<br>
+[Release 2026-05-13](https://github.com/m4mental/my-rvb-builder/releases/tag/242)<br>
 Patches: [RookieEnough/patches-1.0.4.mpp](https://github.com/RookieEnough/De-Vanced/releases/tag/v1.0.4)
 
 - Hide OneDrive migration
@@ -1250,11 +1237,11 @@ Patches: [RookieEnough/patches-1.0.4.mpp](https://github.com/RookieEnough/De-Van
 #### [Morphe (binarymend)](https://github.com/binarymend/morphe-patches)
 
 <details>
-<summary id="moonplus-reader-morphe">&emsp;<a href="https://nullcpy.github.io/"><img src="https://img.shields.io/badge/version-v10.5-gray?labelColor=4285F4&logo=android&logoColor=white&style=flat"></summary>
+<summary id="moonplus-reader-morphe">&emsp;<a href="https://m4mental.github.io/my-rvb-builder/"><img src="https://img.shields.io/badge/version-v10.5-gray?labelColor=4285F4&logo=android&logoColor=white&style=flat"></summary>
   
 <blockquote>
 
-[Release 2026-05-01](https://github.com/nullcpy/rvb/releases/tag/189)<br>
+[Release 2026-05-01](https://github.com/m4mental/my-rvb-builder/releases/tag/189)<br>
 Patches: [binarymend/patches-1.3.1.mpp](https://github.com/binarymend/morphe-patches/releases/tag/v1.3.1)
 
 - Make UI look like Pro
@@ -1271,11 +1258,11 @@ Patches: [binarymend/patches-1.3.1.mpp](https://github.com/binarymend/morphe-pat
 #### [Morphe (hoomans-patches)](https://github.com/arandomhooman/hoomans-morphe-patches)
 
 <details>
-<summary id="money-manager-morphe">&emsp;<a href="https://nullcpy.github.io/"><img src="https://img.shields.io/badge/version-v4.11.1GF-gray?labelColor=ef4643&logo=android&logoColor=white&style=flat"></summary>
+<summary id="money-manager-morphe">&emsp;<a href="https://m4mental.github.io/my-rvb-builder/"><img src="https://img.shields.io/badge/version-v4.11.1GF-gray?labelColor=ef4643&logo=android&logoColor=white&style=flat"></summary>
   
 <blockquote>
 
-[Release 2026-07-23](https://github.com/nullcpy/rvb/releases/tag/260080)<br>
+[Release 2026-07-23](https://github.com/m4mental/my-rvb-builder/releases/tag/260080)<br>
 Patches: [arandomhooman/patches-1.43.4.mpp](https://github.com/arandomhooman/hoomans-morphe-patches/releases/tag/v1.43.4)
 - Unlock Premium
 </blockquote>
@@ -1290,11 +1277,11 @@ Patches: [arandomhooman/patches-1.43.4.mpp](https://github.com/arandomhooman/hoo
 #### [Morphe (rushiranpise)](https://github.com/rushiranpise/morphe-patches)
 
 <details>
-<summary id="moviebox-morphe"><b>Phone</b>&emsp;<a href="https://nullcpy.github.io/"><img src="https://img.shields.io/badge/version-v3.0.16.0709.03-gray?labelColor=10cbb7&logo=android&logoColor=white&style=flat"></summary>
+<summary id="moviebox-morphe"><b>Phone</b>&emsp;<a href="https://m4mental.github.io/my-rvb-builder/"><img src="https://img.shields.io/badge/version-v3.0.16.0709.03-gray?labelColor=10cbb7&logo=android&logoColor=white&style=flat"></summary>
   
 <blockquote>
 
-[Release 2026-07-28](https://github.com/nullcpy/rvb/releases/tag/260104)<br>
+[Release 2026-07-28](https://github.com/m4mental/my-rvb-builder/releases/tag/260104)<br>
 Patches: [rushiranpise/patches-1.15.1.mpp](https://github.com/rushiranpise/morphe-patches/releases/tag/v1.15.1)
 - GmsCore support (MicroG)
 - Unlock VIP
@@ -1302,11 +1289,11 @@ Patches: [rushiranpise/patches-1.15.1.mpp](https://github.com/rushiranpise/morph
 </details>
 
 <details>
-<summary id="moviebox-morphe-androidtv"><b>Android TV</b>&emsp;<a href="https://nullcpy.github.io/"><img src="https://img.shields.io/badge/version-v1.1.5.0711.03-gray?labelColor=10cbb7&logo=android&logoColor=white&style=flat"></summary>
+<summary id="moviebox-morphe-androidtv"><b>Android TV</b>&emsp;<a href="https://m4mental.github.io/my-rvb-builder/"><img src="https://img.shields.io/badge/version-v1.1.5.0711.03-gray?labelColor=10cbb7&logo=android&logoColor=white&style=flat"></summary>
   
 <blockquote>
 
-[Release 2026-07-28](https://github.com/nullcpy/rvb/releases/tag/260104)<br>
+[Release 2026-07-28](https://github.com/m4mental/my-rvb-builder/releases/tag/260104)<br>
 Patches: [rushiranpise/patches-1.15.1.mpp](https://github.com/rushiranpise/morphe-patches/releases/tag/v1.15.1)
 - GmsCore support (MicroG)
 - Unlock VIP
@@ -1322,11 +1309,11 @@ Patches: [rushiranpise/patches-1.15.1.mpp](https://github.com/rushiranpise/morph
 #### [Morphe (hoo-dles)](https://github.com/hoo-dles/morphe-patches)
 
 <details>
-<summary id="myfitnesspal-morphe">&emsp;<a href="https://nullcpy.github.io/"><img src="https://img.shields.io/badge/version-v26.21.1-gray?labelColor=0066ee&logo=android&logoColor=white&style=flat"></summary>
+<summary id="myfitnesspal-morphe">&emsp;<a href="https://m4mental.github.io/my-rvb-builder/"><img src="https://img.shields.io/badge/version-v26.21.1-gray?labelColor=0066ee&logo=android&logoColor=white&style=flat"></summary>
   
 <blockquote>
 
-[Release 2026-07-15](https://github.com/nullcpy/rvb/releases/tag/260053)<br>
+[Release 2026-07-15](https://github.com/m4mental/my-rvb-builder/releases/tag/260053)<br>
 Patches: [hoo-dles/patches-1.39.0.mpp](https://github.com/hoo-dles/morphe-patches/releases/tag/v1.39.0)
 - Enable Premium+
 </blockquote>
@@ -1341,11 +1328,11 @@ Patches: [hoo-dles/patches-1.39.0.mpp](https://github.com/hoo-dles/morphe-patche
 #### [Morphe (paresh-patches)](https://gitlab.com/Paresh-Maheshwari/paresh-patches)
 
 <details>
-<summary id="mxplayer-morphe">&emsp;<a href="https://nullcpy.github.io/"><img src="https://img.shields.io/badge/version-v1.93.4-gray?labelColor=3c8cf0&logo=android&logoColor=white&style=flat"></summary>
+<summary id="mxplayer-morphe">&emsp;<a href="https://m4mental.github.io/my-rvb-builder/"><img src="https://img.shields.io/badge/version-v1.93.4-gray?labelColor=3c8cf0&logo=android&logoColor=white&style=flat"></summary>
   
 <blockquote>
 
-[Release 2026-07-09](https://github.com/nullcpy/rvb/releases/tag/260026)<br>
+[Release 2026-07-09](https://github.com/m4mental/my-rvb-builder/releases/tag/260026)<br>
 Patches: [Paresh-Maheshwari/patches-1.19.0.mpp](https://gitlab.com/Paresh-Maheshwari/paresh-patches/-/releases/v1.19.0)
 - MX Player Pro License
 </blockquote>
@@ -1362,11 +1349,11 @@ Patches: [Paresh-Maheshwari/patches-1.19.0.mpp](https://gitlab.com/Paresh-Mahesh
 #### [Morphe (hoo-dles)](https://github.com/hoo-dles/morphe-patches)
 
 <details>
-<summary id="niagara-launcher-morphe">&emsp;<a href="https://nullcpy.github.io/"><img src="https://img.shields.io/badge/version-v1.16.15-gray?labelColor=00A3FF&logo=android&logoColor=white&style=flat"></summary>
+<summary id="niagara-launcher-morphe">&emsp;<a href="https://m4mental.github.io/my-rvb-builder/"><img src="https://img.shields.io/badge/version-v1.16.15-gray?labelColor=00A3FF&logo=android&logoColor=white&style=flat"></summary>
 
 <blockquote>
 
-[Release 2026-07-15](https://github.com/nullcpy/rvb/releases/tag/260053)<br>
+[Release 2026-07-15](https://github.com/m4mental/my-rvb-builder/releases/tag/260053)<br>
 Patches: [hoo-dles/patches-1.39.0.mpp](https://github.com/hoo-dles/morphe-patches/releases/tag/v1.39.0)
 - Enable Niagara Pro
 </blockquote>
@@ -1381,11 +1368,11 @@ Patches: [hoo-dles/patches-1.39.0.mpp](https://github.com/hoo-dles/morphe-patche
 #### [Morphe (rushiranpise)](https://github.com/rushiranpise/morphe-patches)
 
 <details>
-<summary id="ninja-vpn-morphe">&emsp;<a href="https://nullcpy.github.io/"><img src="https://img.shields.io/badge/version-v1.4.7-gray?labelColor=fcee21&logo=android&logoColor=white&style=flat"></summary>
+<summary id="ninja-vpn-morphe">&emsp;<a href="https://m4mental.github.io/my-rvb-builder/"><img src="https://img.shields.io/badge/version-v1.4.7-gray?labelColor=fcee21&logo=android&logoColor=white&style=flat"></summary>
 
 <blockquote>
 
-[Release 2026-07-24](https://github.com/nullcpy/rvb/releases/tag/260086)<br>
+[Release 2026-07-24](https://github.com/m4mental/my-rvb-builder/releases/tag/260086)<br>
 Patches: [rushiranpise/patches-1.15.1.mpp](https://github.com/rushiranpise/morphe-patches/releases/tag/v1.15.1)
 - GmsCore support (MicroG)
 - Unlock Premium
@@ -1401,11 +1388,11 @@ Patches: [rushiranpise/patches-1.15.1.mpp](https://github.com/rushiranpise/morph
 #### [Morphe (hoo-dles)](https://github.com/hoo-dles/morphe-patches)
 
 <details>
-<summary id="nova-launcher-morphe">&emsp;<a href="https://nullcpy.github.io/"><img src="https://img.shields.io/badge/version-v81042-gray?labelColor=FF6B00&logo=android&logoColor=white&style=flat"></summary>
+<summary id="nova-launcher-morphe">&emsp;<a href="https://m4mental.github.io/my-rvb-builder/"><img src="https://img.shields.io/badge/version-v81042-gray?labelColor=FF6B00&logo=android&logoColor=white&style=flat"></summary>
 
 <blockquote>
 
-[Release 2026-07-15](https://github.com/nullcpy/rvb/releases/tag/260053)<br>
+[Release 2026-07-15](https://github.com/m4mental/my-rvb-builder/releases/tag/260053)<br>
 Patches: [hoo-dles/patches-1.39.0.mpp](https://github.com/hoo-dles/morphe-patches/releases/tag/v1.39.0)
 - Enable Prime
 </blockquote>
@@ -1422,11 +1409,11 @@ Patches: [hoo-dles/patches-1.39.0.mpp](https://github.com/hoo-dles/morphe-patche
 #### [Morphe (hoo-dles)](https://github.com/hoo-dles/morphe-patches)
 
 <details>
-<summary id="pandora-morphe">&emsp;<a href="https://nullcpy.github.io/"><img src="https://img.shields.io/badge/version-v2602.1-gray?labelColor=3668FF&logo=pandora&logoColor=white&style=flat"></summary>
+<summary id="pandora-morphe">&emsp;<a href="https://m4mental.github.io/my-rvb-builder/"><img src="https://img.shields.io/badge/version-v2602.1-gray?labelColor=3668FF&logo=pandora&logoColor=white&style=flat"></summary>
   
 <blockquote>
 
-[Release 2026-07-15](https://github.com/nullcpy/rvb/releases/tag/260053)<br>
+[Release 2026-07-15](https://github.com/m4mental/my-rvb-builder/releases/tag/260053)<br>
 Patches: [hoo-dles/patches-1.39.0.mpp](https://github.com/hoo-dles/morphe-patches/releases/tag/v1.39.0)
 - Disable ads
 - Unlimited skips
@@ -1442,11 +1429,11 @@ Patches: [hoo-dles/patches-1.39.0.mpp](https://github.com/hoo-dles/morphe-patche
 #### [Morphe (Android TV)](https://github.com/ajstrick81/morphe-androidtv-patches)
 
 <details>
-<summary id="peacock-morphe-androidtv">&emsp;<a href="https://nullcpy.github.io/"><img src="https://img.shields.io/badge/version-v7.6.100-gray?labelColor=181818&logo=android&logoColor=white&style=flat"></summary>
+<summary id="peacock-morphe-androidtv">&emsp;<a href="https://m4mental.github.io/my-rvb-builder/"><img src="https://img.shields.io/badge/version-v7.6.100-gray?labelColor=181818&logo=android&logoColor=white&style=flat"></summary>
 
 <blockquote>
 
-[Release 2026-07-22](https://github.com/nullcpy/rvb/releases/tag/260074)<br>
+[Release 2026-07-22](https://github.com/m4mental/my-rvb-builder/releases/tag/260074)<br>
 Patches: [ajstrick81/patches-1.13.0.mpp](https://github.com/ajstrick81/morphe-androidtv-patches/releases/tag/v1.14.0)
 - Disable auto-updates
 - Skip ads
@@ -1462,11 +1449,11 @@ Patches: [ajstrick81/patches-1.13.0.mpp](https://github.com/ajstrick81/morphe-an
 #### [Morphe (Android TV)](https://github.com/ajstrick81/morphe-androidtv-patches)
 
 <details>
-<summary id="plutotv-morphe-androidtv">&emsp;<a href="https://nullcpy.github.io/"><img src="https://img.shields.io/badge/version-v5.66.0.leanback-gray?labelColor=fff200&logo=android&logoColor=white&style=flat"></summary>
+<summary id="plutotv-morphe-androidtv">&emsp;<a href="https://m4mental.github.io/my-rvb-builder/"><img src="https://img.shields.io/badge/version-v5.66.0.leanback-gray?labelColor=fff200&logo=android&logoColor=white&style=flat"></summary>
   
 <blockquote>
 
-[Release 2026-07-28](https://github.com/nullcpy/rvb/releases/tag/260103)<br>
+[Release 2026-07-28](https://github.com/m4mental/my-rvb-builder/releases/tag/260103)<br>
 Patches: [ajstrick81/patches-1.14.0.mpp](https://github.com/ajstrick81/morphe-androidtv-patches/releases/tag/v1.15.0)
 - Disable auto-updates
 - Override certificate pinning
@@ -1483,11 +1470,11 @@ Patches: [ajstrick81/patches-1.14.0.mpp](https://github.com/ajstrick81/morphe-an
 #### [Morphe (De-Vanced)](https://github.com/RookieEnough/De-Vanced)
 
 <details>
-<summary id="photomath-morphe">&emsp;<a href="https://nullcpy.github.io/"><img src="https://img.shields.io/badge/version-v8.47.1-gray?labelColor=DA2323&logo=android&logoColor=white&style=flat"></summary>
+<summary id="photomath-morphe">&emsp;<a href="https://m4mental.github.io/my-rvb-builder/"><img src="https://img.shields.io/badge/version-v8.47.1-gray?labelColor=DA2323&logo=android&logoColor=white&style=flat"></summary>
   
 <blockquote>
 
-[Release 2026-05-13](https://github.com/nullcpy/rvb/releases/tag/242)<br>
+[Release 2026-05-13](https://github.com/m4mental/my-rvb-builder/releases/tag/242)<br>
 Patches: [RookieEnough/patches-1.0.4.mpp](https://github.com/RookieEnough/De-Vanced/releases/tag/v1.0.4)
 
 - Hide update popup
@@ -1505,11 +1492,11 @@ Patches: [RookieEnough/patches-1.0.4.mpp](https://github.com/RookieEnough/De-Van
 #### [Morphe (binarymend)](https://github.com/binarymend/morphe-patches)
 
 <details>
-<summary id="pinterest-morphe">&emsp;<a href="https://nullcpy.github.io/"><img src="https://img.shields.io/badge/version-v14.11.0-gray?labelColor=E60023&logo=pinterest&logoColor=white&style=flat"></summary>
+<summary id="pinterest-morphe">&emsp;<a href="https://m4mental.github.io/my-rvb-builder/"><img src="https://img.shields.io/badge/version-v14.11.0-gray?labelColor=E60023&logo=pinterest&logoColor=white&style=flat"></summary>
   
 <blockquote>
 
-[Release 2026-05-01](https://github.com/nullcpy/rvb/releases/tag/189)<br>
+[Release 2026-05-01](https://github.com/m4mental/my-rvb-builder/releases/tag/189)<br>
 Patches: [binarymend/patches-1.3.1.mpp](https://github.com/binarymend/morphe-patches/releases/tag/v1.3.1)
 
 - Disable Bugsnag Telemetry
@@ -1527,11 +1514,11 @@ Patches: [binarymend/patches-1.3.1.mpp](https://github.com/binarymend/morphe-pat
 #### [Morphe (De-Vanced)](https://github.com/RookieEnough/De-Vanced)
 
 <details>
-<summary id="pixiv-morphe">&emsp;<a href="https://nullcpy.github.io/"><img src="https://img.shields.io/badge/version-v6.141.1-gray?labelColor=0096fa&logo=pinterest&logoColor=white&style=flat"></summary>
+<summary id="pixiv-morphe">&emsp;<a href="https://m4mental.github.io/my-rvb-builder/"><img src="https://img.shields.io/badge/version-v6.141.1-gray?labelColor=0096fa&logo=pinterest&logoColor=white&style=flat"></summary>
   
 <blockquote>
 
-[Release 2026-07-09](https://github.com/nullcpy/rvb/releases/tag/260026)<br>
+[Release 2026-07-09](https://github.com/m4mental/my-rvb-builder/releases/tag/260026)<br>
 Patches: [RookieEnough/patches-1.0.4.mpp](https://github.com/RookieEnough/De-Vanced/releases/tag/v1.0.4)
 - Hide ads
 </blockquote>
@@ -1546,11 +1533,11 @@ Patches: [RookieEnough/patches-1.0.4.mpp](https://github.com/RookieEnough/De-Van
 #### [Morphe (paresh-patches)](https://gitlab.com/Paresh-Maheshwari/paresh-patches)
 
 <details>
-<summary id="plus-messenger-morphe">&emsp;<a href="https://nullcpy.github.io/"><img src="https://img.shields.io/badge/version-v12.7.3.0-gray?labelColor=009688&logo=android&logoColor=white&style=flat"></summary>
+<summary id="plus-messenger-morphe">&emsp;<a href="https://m4mental.github.io/my-rvb-builder/"><img src="https://img.shields.io/badge/version-v12.7.3.0-gray?labelColor=009688&logo=android&logoColor=white&style=flat"></summary>
   
 <blockquote>
 
-[Release 2026-07-07](https://github.com/nullcpy/rvb/releases/tag/260017)<br>
+[Release 2026-07-07](https://github.com/m4mental/my-rvb-builder/releases/tag/260017)<br>
 Patches: [Paresh-Maheshwari/patches-1.19.0.mpp](https://gitlab.com/Paresh-Maheshwari/paresh-patches/-/releases/v1.19.0)
 - Anti-delete messages
 - Anti-disappearing media
@@ -1574,11 +1561,11 @@ Patches: [Paresh-Maheshwari/patches-1.19.0.mpp](https://gitlab.com/Paresh-Mahesh
 #### [Morphe (hoo-dles)](https://github.com/hoo-dles/morphe-patches)
 
 <details>
-<summary id="podcast-addict-morphe">&emsp;<a href="https://nullcpy.github.io/"><img src="https://img.shields.io/badge/version-v2026.4-gray?labelColor=FF9800&logo=podcastaddict&logoColor=white&style=flat"></summary>
+<summary id="podcast-addict-morphe">&emsp;<a href="https://m4mental.github.io/my-rvb-builder/"><img src="https://img.shields.io/badge/version-v2026.4-gray?labelColor=FF9800&logo=podcastaddict&logoColor=white&style=flat"></summary>
   
 <blockquote>
 
-[Release 2026-07-15](https://github.com/nullcpy/rvb/releases/tag/260053)<br>
+[Release 2026-07-15](https://github.com/m4mental/my-rvb-builder/releases/tag/260053)<br>
 Patches: [hoo-dles/patches-1.39.0.mpp](https://github.com/hoo-dles/morphe-patches/releases/tag/v1.39.0)
 - Enable Premium
 - MicroG integration
@@ -1594,11 +1581,11 @@ Patches: [hoo-dles/patches-1.39.0.mpp](https://github.com/hoo-dles/morphe-patche
 #### [Morphe (hoomans-patches)](https://github.com/arandomhooman/hoomans-morphe-patches)
 
 <details>
-<summary id="poweramp-morphe">&emsp;<a href="https://nullcpy.github.io/"><img src="https://img.shields.io/badge/version-vbuild.1025.bundle.play-gray?labelColor=0d2639&logo=android&logoColor=white&style=flat"></summary>
+<summary id="poweramp-morphe">&emsp;<a href="https://m4mental.github.io/my-rvb-builder/"><img src="https://img.shields.io/badge/version-vbuild.1025.bundle.play-gray?labelColor=0d2639&logo=android&logoColor=white&style=flat"></summary>
 
 <blockquote>
 
-[Release 2026-07-23](https://github.com/nullcpy/rvb/releases/tag/260080)<br>
+[Release 2026-07-23](https://github.com/m4mental/my-rvb-builder/releases/tag/260080)<br>
 Patches: [arandomhooman/patches-1.43.4.mpp](https://github.com/arandomhooman/hoomans-morphe-patches/releases/tag/v1.43.4)
 - Unlock Premium
 </blockquote>
@@ -1613,11 +1600,11 @@ Patches: [arandomhooman/patches-1.43.4.mpp](https://github.com/arandomhooman/hoo
 #### [Morphe (hoo-dles)](https://github.com/hoo-dles/morphe-patches)
 
 <details>
-<summary id="prime-video-morphe">&emsp;<a href="https://nullcpy.github.io/"><img src="https://img.shields.io/badge/version-v3.0.452.1047-gray?labelColor=0578ff&logo=android&logoColor=white&style=flat"></summary>
+<summary id="prime-video-morphe">&emsp;<a href="https://m4mental.github.io/my-rvb-builder/"><img src="https://img.shields.io/badge/version-v3.0.452.1047-gray?labelColor=0578ff&logo=android&logoColor=white&style=flat"></summary>
 
 <blockquote>
 
-[Release 2026-07-15](https://github.com/nullcpy/rvb/releases/tag/260053)<br>
+[Release 2026-07-15](https://github.com/m4mental/my-rvb-builder/releases/tag/260053)<br>
 Patches: [hoo-dles/patches-1.39.0.mpp](https://github.com/hoo-dles/morphe-patches/releases/tag/v1.39.0)
 - Enable speed control
 - Rename shared permissions
@@ -1628,11 +1615,11 @@ Patches: [hoo-dles/patches-1.39.0.mpp](https://github.com/hoo-dles/morphe-patche
 #### [Morphe (Android TV)](https://github.com/ajstrick81/morphe-androidtv-patches)
 
 <details>
-<summary id="prime-video-morphe-androidtv">&emsp;<a href="https://nullcpy.github.io/"><img src="https://img.shields.io/badge/version-v6.23.23+v15.5.0.70.armv7a-gray?labelColor=0578ff&logo=android&logoColor=white&style=flat"></summary>
+<summary id="prime-video-morphe-androidtv">&emsp;<a href="https://m4mental.github.io/my-rvb-builder/"><img src="https://img.shields.io/badge/version-v6.23.23+v15.5.0.70.armv7a-gray?labelColor=0578ff&logo=android&logoColor=white&style=flat"></summary>
 
 <blockquote>
 
-[Release 2026-07-22](https://github.com/nullcpy/rvb/releases/tag/260074)<br>
+[Release 2026-07-22](https://github.com/m4mental/my-rvb-builder/releases/tag/260074)<br>
 Patches: [ajstrick81/patches-1.13.0.mpp](https://github.com/ajstrick81/morphe-androidtv-patches/releases/tag/v1.14.0)
 - Disable auto-updates
 - Override certificate pinning
@@ -1651,11 +1638,11 @@ Patches: [ajstrick81/patches-1.13.0.mpp](https://github.com/ajstrick81/morphe-an
 #### [Morphe (hoomans-patches)](https://github.com/arandomhooman/hoomans-morphe-patches)
 
 <details>
-<summary id="projectivy-launcher-morphe">&emsp;<a href="https://nullcpy.github.io/"><img src="https://img.shields.io/badge/version-v4.70-gray?labelColor=f08029&logo=android&logoColor=white&style=flat"></summary>
+<summary id="projectivy-launcher-morphe">&emsp;<a href="https://m4mental.github.io/my-rvb-builder/"><img src="https://img.shields.io/badge/version-v4.70-gray?labelColor=f08029&logo=android&logoColor=white&style=flat"></summary>
 
 <blockquote>
 
-[Release 2026-07-23](https://github.com/nullcpy/rvb/releases/tag/260080)<br>
+[Release 2026-07-23](https://github.com/m4mental/my-rvb-builder/releases/tag/260080)<br>
 Patches: [arandomhooman/patches-1.43.4.mpp](https://github.com/arandomhooman/hoomans-morphe-patches/releases/tag/v1.43.4)
 - Unlock Premium
 </blockquote>
@@ -1670,11 +1657,11 @@ Patches: [arandomhooman/patches-1.43.4.mpp](https://github.com/arandomhooman/hoo
 #### [Morphe (De-Vanced)](https://github.com/RookieEnough/De-Vanced)
 
 <details>
-<summary id="proton-mail-morphe">&emsp;<a href="https://nullcpy.github.io/"><img src="https://img.shields.io/badge/version-v4.15.0-gray?labelColor=6A4DFF&logo=protonmail&logoColor=white&style=flat"></summary>
+<summary id="proton-mail-morphe">&emsp;<a href="https://m4mental.github.io/my-rvb-builder/"><img src="https://img.shields.io/badge/version-v4.15.0-gray?labelColor=6A4DFF&logo=protonmail&logoColor=white&style=flat"></summary>
   
 <blockquote>
 
-[Release 2026-05-13](https://github.com/nullcpy/rvb/releases/tag/242)<br>
+[Release 2026-05-13](https://github.com/m4mental/my-rvb-builder/releases/tag/242)<br>
 Patches: [RookieEnough/patches-1.0.4.mpp](https://github.com/RookieEnough/De-Vanced/releases/tag/v1.0.4)
 
 - Remove 'Sent from' signature
@@ -1685,11 +1672,11 @@ Patches: [RookieEnough/patches-1.0.4.mpp](https://github.com/RookieEnough/De-Van
 #### [ReVanced](https://github.com/revanced/revanced-patches)
 
 <details>
-<summary id="proton-mail-revanced">&emsp;<a href="https://nullcpy.github.io/"><img src="https://img.shields.io/badge/version-v4.15.0-gray?labelColor=6A4DFF&logo=protonmail&logoColor=white&style=flat"></summary>
+<summary id="proton-mail-revanced">&emsp;<a href="https://m4mental.github.io/my-rvb-builder/"><img src="https://img.shields.io/badge/version-v4.15.0-gray?labelColor=6A4DFF&logo=protonmail&logoColor=white&style=flat"></summary>
   
 <blockquote>
 
-[Release 2026-05-01](https://github.com/nullcpy/rvb/releases/tag/189)<br>
+[Release 2026-05-01](https://github.com/m4mental/my-rvb-builder/releases/tag/189)<br>
 Patches: [Raudrobot/patches-6.1.0.rvp](https://github.com/Raudrobot/revanced-patches/releases/tag/v6.1.0)
 
 - Remove 'Sent from' signature
@@ -1706,11 +1693,11 @@ Patches: [Raudrobot/patches-6.1.0.rvp](https://github.com/Raudrobot/revanced-pat
 #### [Morphe (hoo-dles)](https://github.com/hoo-dles/morphe-patches)
 
 <details>
-<summary id="proton-vpn-morphe">&emsp;<a href="https://nullcpy.github.io/"><img src="https://img.shields.io/badge/version-v5.17.72.0-gray?labelColor=6D4AFF&logo=protonvpn&logoColor=white&style=flat"></summary>
+<summary id="proton-vpn-morphe">&emsp;<a href="https://m4mental.github.io/my-rvb-builder/"><img src="https://img.shields.io/badge/version-v5.17.72.0-gray?labelColor=6D4AFF&logo=protonvpn&logoColor=white&style=flat"></summary>
   
 <blockquote>
 
-[Release 2026-07-15](https://github.com/nullcpy/rvb/releases/tag/260053)<br>
+[Release 2026-07-15](https://github.com/m4mental/my-rvb-builder/releases/tag/260053)<br>
 Patches: [hoo-dles/patches-1.39.0.mpp](https://github.com/hoo-dles/morphe-patches/releases/tag/v1.39.0)
 - Remove delay
 - Unlock LAN connections
@@ -1722,11 +1709,11 @@ Patches: [hoo-dles/patches-1.39.0.mpp](https://github.com/hoo-dles/morphe-patche
 #### [Morphe (paresh-patches)](https://gitlab.com/Paresh-Maheshwari/paresh-patches)
 
 <details>
-<summary id="proton-vpn-morphe-paresh">&emsp;<a href="https://nullcpy.github.io/"><img src="https://img.shields.io/badge/version-v5.19.16.0-gray?labelColor=6D4AFF&logo=protonvpn&logoColor=white&style=flat"></summary>
+<summary id="proton-vpn-morphe-paresh">&emsp;<a href="https://m4mental.github.io/my-rvb-builder/"><img src="https://img.shields.io/badge/version-v5.19.16.0-gray?labelColor=6D4AFF&logo=protonvpn&logoColor=white&style=flat"></summary>
   
 <blockquote>
 
-[Release 2026-07-07](https://github.com/nullcpy/rvb/releases/tag/260017)<br>
+[Release 2026-07-07](https://github.com/m4mental/my-rvb-builder/releases/tag/260017)<br>
 Patches: [Paresh-Maheshwari/patches-1.19.0.mpp](https://gitlab.com/Paresh-Maheshwari/paresh-patches/-/releases/v1.19.0)
 - Disable telemetry
 - Proton VPN Premium
@@ -1736,11 +1723,11 @@ Patches: [Paresh-Maheshwari/patches-1.19.0.mpp](https://gitlab.com/Paresh-Mahesh
 #### [ReVanced](https://github.com/revanced/revanced-patches)
 
 <details>
-<summary id="proton-vpn-revanced">&emsp;<a href="https://nullcpy.github.io/"><img src="https://img.shields.io/badge/version-v5.17.72.0-gray?labelColor=6D4AFF&logo=protonvpn&logoColor=white&style=flat"></summary>
+<summary id="proton-vpn-revanced">&emsp;<a href="https://m4mental.github.io/my-rvb-builder/"><img src="https://img.shields.io/badge/version-v5.17.72.0-gray?labelColor=6D4AFF&logo=protonvpn&logoColor=white&style=flat"></summary>
   
 <blockquote>
 
-[Release 2026-05-01](https://github.com/nullcpy/rvb/releases/tag/189)<br>
+[Release 2026-05-01](https://github.com/m4mental/my-rvb-builder/releases/tag/189)<br>
 Patches: [Raudrobot/patches-6.1.0.rvp](https://github.com/Raudrobot/revanced-patches/releases/tag/v6.1.0)
 
 - Remove delay
@@ -1759,11 +1746,11 @@ Patches: [Raudrobot/patches-6.1.0.rvp](https://github.com/Raudrobot/revanced-pat
 #### [Morphe](https://github.com/MorpheApp/morphe-patches)
 
 <details>
-<summary id="reddit-morphe"><b>Default</b>&emsp;<a href="https://nullcpy.github.io/"><img src="https://img.shields.io/badge/version-v2026.14.0-gray?labelColor=FF4500&logo=reddit&logoColor=white&style=flat"></summary>
+<summary id="reddit-morphe"><b>Default</b>&emsp;<a href="https://m4mental.github.io/my-rvb-builder/"><img src="https://img.shields.io/badge/version-v2026.14.0-gray?labelColor=FF4500&logo=reddit&logoColor=white&style=flat"></summary>
   
 <blockquote>
 
-[Release 2026-07-28](https://github.com/nullcpy/rvb/releases/tag/260106)<br>
+[Release 2026-07-28](https://github.com/m4mental/my-rvb-builder/releases/tag/260106)<br>
 Patches: [MorpheApp/patches-1.37.1-dev.1.mpp](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.37.1-dev.1)
 - Custom font
 - Disable modern home
@@ -1785,11 +1772,11 @@ Patches: [MorpheApp/patches-1.37.1-dev.1.mpp](https://github.com/MorpheApp/morph
 </details>
 
 <details>
-<summary id="reddit-morphe-exp"><b>Experimental</b>&emsp;<a href="https://nullcpy.github.io/"><img src="https://img.shields.io/badge/version-v2026.29.0-gray?labelColor=FF4500&logo=reddit&logoColor=white&style=flat"></summary>
+<summary id="reddit-morphe-exp"><b>Experimental</b>&emsp;<a href="https://m4mental.github.io/my-rvb-builder/"><img src="https://img.shields.io/badge/version-v2026.29.0-gray?labelColor=FF4500&logo=reddit&logoColor=white&style=flat"></summary>
   
 <blockquote>
 
-[Release 2026-07-28](https://github.com/nullcpy/rvb/releases/tag/260106)<br>
+[Release 2026-07-28](https://github.com/m4mental/my-rvb-builder/releases/tag/260106)<br>
 Patches: [MorpheApp/patches-1.37.1-dev.1.mpp](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.37.1-dev.1)
 - Custom font
 - Disable modern home
@@ -1813,11 +1800,11 @@ Patches: [MorpheApp/patches-1.37.1-dev.1.mpp](https://github.com/MorpheApp/morph
 #### [Morphe (Adobo)](https://github.com/jkennethcarino/adobo)
 
 <details>
-<summary id="reddit-morphe-adobo"><b>Default</b>&emsp;<a href="https://nullcpy.github.io/"><img src="https://img.shields.io/badge/version-v2026.29.0-gray?labelColor=FF4500&logo=reddit&logoColor=white&style=flat"></summary>
+<summary id="reddit-morphe-adobo"><b>Default</b>&emsp;<a href="https://m4mental.github.io/my-rvb-builder/"><img src="https://img.shields.io/badge/version-v2026.29.0-gray?labelColor=FF4500&logo=reddit&logoColor=white&style=flat"></summary>
   
 <blockquote>
 
-[Release 2026-07-26](https://github.com/nullcpy/rvb/releases/tag/260097)<br>
+[Release 2026-07-26](https://github.com/m4mental/my-rvb-builder/releases/tag/260097)<br>
 Patches: [jkennethcarino/patches-1.3.0-dev.13.mpp](https://github.com/jkennethcarino/adobo/releases/tag/v1.3.0-dev.13)
 - Colorize comment indent lines
 - Disable home screen redirect
@@ -1833,11 +1820,11 @@ Patches: [jkennethcarino/patches-1.3.0-dev.13.mpp](https://github.com/jkennethca
 #### [ReVanced Advanced (Anddea)](https://github.com/anddea/revanced-patches)
 
 <details>
-<summary id="reddit-anddea"><b>Default</b>&emsp;<a href="https://nullcpy.github.io/"><img src="https://img.shields.io/badge/version-v2025.12.1-gray?labelColor=FF4500&logo=reddit&logoColor=white&style=flat"></summary>
+<summary id="reddit-anddea"><b>Default</b>&emsp;<a href="https://m4mental.github.io/my-rvb-builder/"><img src="https://img.shields.io/badge/version-v2025.12.1-gray?labelColor=FF4500&logo=reddit&logoColor=white&style=flat"></summary>
   
 <blockquote>
 
-[Release 2026-05-01](https://github.com/nullcpy/rvb/releases/tag/189)<br>
+[Release 2026-05-01](https://github.com/m4mental/my-rvb-builder/releases/tag/189)<br>
 Patches: [anddea/patches-4.0.0.mpp](https://github.com/anddea/revanced-patches/releases/tag/v4.0.0)
 
 - Disable screenshot popup
@@ -1865,11 +1852,11 @@ Patches: [anddea/patches-4.0.0.mpp](https://github.com/anddea/revanced-patches/r
 #### [Morphe (hoomans-patches)](https://github.com/arandomhooman/hoomans-morphe-patches)
 
 <details>
-<summary id="rumble-morphe">&emsp;<a href="https://nullcpy.github.io/"><img src="https://img.shields.io/badge/version-v3.14.5-gray?labelColor=83c442&logo=android&logoColor=white&style=flat"></summary>
+<summary id="rumble-morphe">&emsp;<a href="https://m4mental.github.io/my-rvb-builder/"><img src="https://img.shields.io/badge/version-v3.14.5-gray?labelColor=83c442&logo=android&logoColor=white&style=flat"></summary>
   
 <blockquote>
 
-[Release 2026-07-23](https://github.com/nullcpy/rvb/releases/tag/260080)<br>
+[Release 2026-07-23](https://github.com/m4mental/my-rvb-builder/releases/tag/260080)<br>
 Patches: [arandomhooman/patches-1.43.4.mpp](https://github.com/arandomhooman/hoomans-morphe-patches/releases/tag/v1.43.4)
 - Unlock Premium
 </blockquote>
@@ -1886,11 +1873,11 @@ Patches: [arandomhooman/patches-1.43.4.mpp](https://github.com/arandomhooman/hoo
 #### [Morphe (paresh-patches)](https://gitlab.com/Paresh-Maheshwari/paresh-patches)
 
 <details>
-<summary id="sdmaid-morphe">&emsp;<a href="https://nullcpy.github.io/"><img src="https://img.shields.io/badge/version-v1.7.3.rc0-gray?labelColor=3DDC84&logo=android&logoColor=white&style=flat"></summary>
+<summary id="sdmaid-morphe">&emsp;<a href="https://m4mental.github.io/my-rvb-builder/"><img src="https://img.shields.io/badge/version-v1.7.3.rc0-gray?labelColor=3DDC84&logo=android&logoColor=white&style=flat"></summary>
   
 <blockquote>
 
-[Release 2026-07-07](https://github.com/nullcpy/rvb/releases/tag/260017)<br>
+[Release 2026-07-07](https://github.com/m4mental/my-rvb-builder/releases/tag/260017)<br>
 Patches: [Paresh-Maheshwari/patches-1.19.0.mpp](https://gitlab.com/Paresh-Maheshwari/paresh-patches/-/releases/v1.19.0)
 - Unlock Pro
 </blockquote>
@@ -1905,11 +1892,11 @@ Patches: [Paresh-Maheshwari/patches-1.19.0.mpp](https://gitlab.com/Paresh-Mahesh
 #### [Morphe (hoo-dles)](https://github.com/hoo-dles/morphe-patches)
 
 <details>
-<summary id="showly-morphe">&emsp;<a href="https://nullcpy.github.io/"><img src="https://img.shields.io/badge/version-v3.70.0-gray?labelColor=ec483b&logo=android&logoColor=white&style=flat"></summary>
+<summary id="showly-morphe">&emsp;<a href="https://m4mental.github.io/my-rvb-builder/"><img src="https://img.shields.io/badge/version-v3.70.0-gray?labelColor=ec483b&logo=android&logoColor=white&style=flat"></summary>
 
 <blockquote>
 
-[Release 2026-07-15](https://github.com/nullcpy/rvb/releases/tag/260053)<br>
+[Release 2026-07-15](https://github.com/m4mental/my-rvb-builder/releases/tag/260053)<br>
 Patches: [hoo-dles/patches-1.39.0.mpp](https://github.com/hoo-dles/morphe-patches/releases/tag/v1.39.0)
 - Enable Premium
 </blockquote>
@@ -1924,11 +1911,11 @@ Patches: [hoo-dles/patches-1.39.0.mpp](https://github.com/hoo-dles/morphe-patche
 #### [Morphe (hoo-dles)](https://github.com/hoo-dles/morphe-patches)
 
 <details>
-<summary id="smart-launcher-6-morphe">&emsp;<a href="https://nullcpy.github.io/"><img src="https://img.shields.io/badge/version-v6.6build002patch1-gray?labelColor=0F1419&logo=android&logoColor=white&style=flat"></summary>
+<summary id="smart-launcher-6-morphe">&emsp;<a href="https://m4mental.github.io/my-rvb-builder/"><img src="https://img.shields.io/badge/version-v6.6build002patch1-gray?labelColor=0F1419&logo=android&logoColor=white&style=flat"></summary>
 
 <blockquote>
 
-[Release 2026-07-15](https://github.com/nullcpy/rvb/releases/tag/260053)<br>
+[Release 2026-07-15](https://github.com/m4mental/my-rvb-builder/releases/tag/260053)<br>
 Patches: [hoo-dles/patches-1.39.0.mpp](https://github.com/hoo-dles/morphe-patches/releases/tag/v1.39.0)
 - Disable signature check
 - Enable Pro
@@ -1944,11 +1931,11 @@ Patches: [hoo-dles/patches-1.39.0.mpp](https://github.com/hoo-dles/morphe-patche
 #### [Morphe (hoo-dles)](https://github.com/hoo-dles/morphe-patches)
 
 <details>
-<summary id="snorelab-morphe">&emsp;<a href="https://nullcpy.github.io/"><img src="https://img.shields.io/badge/version-v2.24.03-gray?labelColor=1a5694&logo=android&logoColor=white&style=flat"></summary>
+<summary id="snorelab-morphe">&emsp;<a href="https://m4mental.github.io/my-rvb-builder/"><img src="https://img.shields.io/badge/version-v2.24.03-gray?labelColor=1a5694&logo=android&logoColor=white&style=flat"></summary>
 
 <blockquote>
 
-[Release 2026-07-23](https://github.com/nullcpy/rvb/releases/tag/260080)<br>
+[Release 2026-07-23](https://github.com/m4mental/my-rvb-builder/releases/tag/260080)<br>
 Patches: [arandomhooman/patches-1.43.4.mpp](https://github.com/arandomhooman/hoomans-morphe-patches/releases/tag/v1.43.4)
 </blockquote>
 </details>
@@ -1962,11 +1949,11 @@ Patches: [arandomhooman/patches-1.43.4.mpp](https://github.com/arandomhooman/hoo
 #### [Morphe (hoo-dles)](https://github.com/hoo-dles/morphe-patches)
 
 <details>
-<summary id="solid-explorer-morphe">&emsp;<a href="https://nullcpy.github.io/"><img src="https://img.shields.io/badge/version-v3.4.1-gray?labelColor=1976D2&logo=android&logoColor=white&style=flat"></summary>
+<summary id="solid-explorer-morphe">&emsp;<a href="https://m4mental.github.io/my-rvb-builder/"><img src="https://img.shields.io/badge/version-v3.4.1-gray?labelColor=1976D2&logo=android&logoColor=white&style=flat"></summary>
   
 <blockquote>
 
-[Release 2026-07-15](https://github.com/nullcpy/rvb/releases/tag/260053)<br>
+[Release 2026-07-15](https://github.com/m4mental/my-rvb-builder/releases/tag/260053)<br>
 Patches: [hoo-dles/patches-1.39.0.mpp](https://github.com/hoo-dles/morphe-patches/releases/tag/v1.39.0)
 - Enable Pro
 - MicroG integration
@@ -1982,11 +1969,11 @@ Patches: [hoo-dles/patches-1.39.0.mpp](https://github.com/hoo-dles/morphe-patche
 #### [Morphe (hoo-dles)](https://github.com/hoo-dles/morphe-patches)
 
 <details>
-<summary id="soundcloud-morphe">&emsp;<a href="https://nullcpy.github.io/"><img src="https://img.shields.io/badge/version-v2026.04.27.release-gray?labelColor=FF5500&logo=soundcloud&logoColor=white&style=flat"></summary>
+<summary id="soundcloud-morphe">&emsp;<a href="https://m4mental.github.io/my-rvb-builder/"><img src="https://img.shields.io/badge/version-v2026.04.27.release-gray?labelColor=FF5500&logo=soundcloud&logoColor=white&style=flat"></summary>
   
 <blockquote>
 
-[Release 2026-07-15](https://github.com/nullcpy/rvb/releases/tag/260053)<br>
+[Release 2026-07-15](https://github.com/m4mental/my-rvb-builder/releases/tag/260053)<br>
 Patches: [hoo-dles/patches-1.39.0.mpp](https://github.com/hoo-dles/morphe-patches/releases/tag/v1.39.0)
 - AMOLED dark theme
 - Disable telemetry
@@ -1997,11 +1984,11 @@ Patches: [hoo-dles/patches-1.39.0.mpp](https://github.com/hoo-dles/morphe-patche
 #### [Morphe (kondratjev)](https://github.com/kondratjev/morphe-patches)
 
 <details>
-<summary id="soundcloud-morphe-alt">&emsp;<a href="https://nullcpy.github.io/"><img src="https://img.shields.io/badge/version-v2026.06.25.release-gray?labelColor=FF5500&logo=soundcloud&logoColor=white&style=flat"></summary>
+<summary id="soundcloud-morphe-alt">&emsp;<a href="https://m4mental.github.io/my-rvb-builder/"><img src="https://img.shields.io/badge/version-v2026.06.25.release-gray?labelColor=FF5500&logo=soundcloud&logoColor=white&style=flat"></summary>
 
 <blockquote>
 
-[Release 2026-07-29](https://github.com/nullcpy/rvb/releases/tag/260108)<br>
+[Release 2026-07-29](https://github.com/m4mental/my-rvb-builder/releases/tag/260108)<br>
 Patches: [kondratjev/patches-1.17.0.mpp](https://github.com/kondratjev/morphe-patches/releases/tag/v1.17.0)
 - Disable analytics
 - Disable consent popup
@@ -2012,11 +1999,11 @@ Patches: [kondratjev/patches-1.17.0.mpp](https://github.com/kondratjev/morphe-pa
 #### [ReVanced](https://github.com/revanced/revanced-patches)
 
 <details>
-<summary id="soundcloud-revanced">&emsp;<a href="https://nullcpy.github.io/"><img src="https://img.shields.io/badge/version-v2025.05.27.release-gray?labelColor=FF5500&logo=soundcloud&logoColor=white&style=flat"></summary>
+<summary id="soundcloud-revanced">&emsp;<a href="https://m4mental.github.io/my-rvb-builder/"><img src="https://img.shields.io/badge/version-v2025.05.27.release-gray?labelColor=FF5500&logo=soundcloud&logoColor=white&style=flat"></summary>
   
 <blockquote>
 
-[Release 2026-05-01](https://github.com/nullcpy/rvb/releases/tag/189)<br>
+[Release 2026-05-01](https://github.com/m4mental/my-rvb-builder/releases/tag/189)<br>
 Patches: [Raudrobot/patches-6.1.0.rvp](https://github.com/Raudrobot/revanced-patches/releases/tag/v6.1.0)
 
 - Disable telemetry
@@ -2034,11 +2021,11 @@ Patches: [Raudrobot/patches-6.1.0.rvp](https://github.com/Raudrobot/revanced-pat
 #### [Morphe (BholeyKaBhakt)](https://github.com/BholeyKaBhakt/revanced-patches-xtra)
 
 <details>
-<summary id="speedtest-morphe">&emsp;<a href="https://nullcpy.github.io/"><img src="https://img.shields.io/badge/version-v7.0.4-gray?labelColor=242639&logo=android&logoColor=white&style=flat"></summary>
+<summary id="speedtest-morphe">&emsp;<a href="https://m4mental.github.io/my-rvb-builder/"><img src="https://img.shields.io/badge/version-v7.0.4-gray?labelColor=242639&logo=android&logoColor=white&style=flat"></summary>
   
 <blockquote>
 
-[Release 2026-06-22](https://github.com/nullcpy/rvb/releases/tag/382)<br>
+[Release 2026-06-22](https://github.com/m4mental/my-rvb-builder/releases/tag/382)<br>
 Patches: [BholeyKaBhakt/patches-2.12.0.mpp](https://github.com/BholeyKaBhakt/revanced-patches-xtra/releases/tag/v2.12.0)
 
 - AdFree Account
@@ -2055,11 +2042,11 @@ Patches: [BholeyKaBhakt/patches-2.12.0.mpp](https://github.com/BholeyKaBhakt/rev
 #### [Morphe (binarymend)](https://github.com/binarymend/morphe-patches)
 
 <details>
-<summary id="symfonium-morphe">&emsp;<a href="https://nullcpy.github.io/"><img src="https://img.shields.io/badge/version-v14.0.0-gray?labelColor=FF5722&logo=android&logoColor=white&style=flat"></summary>
+<summary id="symfonium-morphe">&emsp;<a href="https://m4mental.github.io/my-rvb-builder/"><img src="https://img.shields.io/badge/version-v14.0.0-gray?labelColor=FF5722&logo=android&logoColor=white&style=flat"></summary>
 
 <blockquote>
 
-[Release 2026-05-01](https://github.com/nullcpy/rvb/releases/tag/189)<br>
+[Release 2026-05-01](https://github.com/m4mental/my-rvb-builder/releases/tag/189)<br>
 Patches: [binarymend/patches-1.3.1.mpp](https://github.com/binarymend/morphe-patches/releases/tag/v1.3.1)
 
 - Unlock Symfonium
@@ -2077,11 +2064,11 @@ Patches: [binarymend/patches-1.3.1.mpp](https://github.com/binarymend/morphe-pat
 #### [Morphe (paresh-patches)](https://gitlab.com/Paresh-Maheshwari/paresh-patches)
 
 <details>
-<summary id="telegram-morphe-foss"><b>FOSS</b>&emsp;<a href="https://nullcpy.github.io/"><img src="https://img.shields.io/badge/version-v12.8.3-gray?labelColor=2CA5E0&logo=telegram&logoColor=white&style=flat"></summary>
+<summary id="telegram-morphe-foss"><b>FOSS</b>&emsp;<a href="https://m4mental.github.io/my-rvb-builder/"><img src="https://img.shields.io/badge/version-v12.8.3-gray?labelColor=2CA5E0&logo=telegram&logoColor=white&style=flat"></summary>
   
 <blockquote>
 
-[Release 2026-07-07](https://github.com/nullcpy/rvb/releases/tag/260017)<br>
+[Release 2026-07-07](https://github.com/m4mental/my-rvb-builder/releases/tag/260017)<br>
 Patches: [Paresh-Maheshwari/patches-1.19.0.mpp](https://gitlab.com/Paresh-Maheshwari/paresh-patches/-/releases/v1.19.0)
 - Anti-delete messages
 - Anti-disappearing media
@@ -2099,11 +2086,11 @@ Patches: [Paresh-Maheshwari/patches-1.19.0.mpp](https://gitlab.com/Paresh-Mahesh
 #### [ReVanced (ReVancedExperiments)](https://github.com/Aunali321/ReVancedExperiments)
 
 <details>
-<summary id="telegram-revanced-gplay"><b>Google Play</b>&emsp;<a href="https://nullcpy.github.io/"><img src="https://img.shields.io/badge/version-v12.6.3-gray?labelColor=2CA5E0&logo=telegram&logoColor=white&style=flat"></summary>
+<summary id="telegram-revanced-gplay"><b>Google Play</b>&emsp;<a href="https://m4mental.github.io/my-rvb-builder/"><img src="https://img.shields.io/badge/version-v12.6.3-gray?labelColor=2CA5E0&logo=telegram&logoColor=white&style=flat"></summary>
   
 <blockquote>
 
-[Release 2026-05-04](https://github.com/nullcpy/rvb/releases/tag/201)<br>
+[Release 2026-05-04](https://github.com/m4mental/my-rvb-builder/releases/tag/201)<br>
 Patches: [Aunali321/patches-2.0.0.rvp](https://github.com/Aunali321/ReVancedExperiments/releases/tag/v2.0.0)
 
 - Bypass Integrity
@@ -2116,11 +2103,11 @@ Patches: [Aunali321/patches-2.0.0.rvp](https://github.com/Aunali321/ReVancedExpe
 </details>
 
 <details>
-<summary id="telegram-revanced-foss"><b>FOSS</b>&emsp;<a href="https://nullcpy.github.io/"><img src="https://img.shields.io/badge/version-v12.6.4-gray?labelColor=2CA5E0&logo=telegram&logoColor=white&style=flat"></summary>
+<summary id="telegram-revanced-foss"><b>FOSS</b>&emsp;<a href="https://m4mental.github.io/my-rvb-builder/"><img src="https://img.shields.io/badge/version-v12.6.4-gray?labelColor=2CA5E0&logo=telegram&logoColor=white&style=flat"></summary>
   
 <blockquote>
 
-[Release 2026-05-04](https://github.com/nullcpy/rvb/releases/tag/201)<br>
+[Release 2026-05-04](https://github.com/m4mental/my-rvb-builder/releases/tag/201)<br>
 Patches: [Aunali321/patches-2.0.0.rvp](https://github.com/Aunali321/ReVancedExperiments/releases/tag/v2.0.0)
 
 - Bypass Integrity
@@ -2141,11 +2128,11 @@ Patches: [Aunali321/patches-2.0.0.rvp](https://github.com/Aunali321/ReVancedExpe
 #### [Morphe (rushiranpise)](https://github.com/rushiranpise/morphe-patches)
 
 <details>
-<summary id="terabox-morphe">&emsp;<a href="https://nullcpy.github.io/"><img src="https://img.shields.io/badge/version-v4.20.1-gray?labelColor=226df6&logo=android&logoColor=white&style=flat"></summary>
+<summary id="terabox-morphe">&emsp;<a href="https://m4mental.github.io/my-rvb-builder/"><img src="https://img.shields.io/badge/version-v4.20.1-gray?labelColor=226df6&logo=android&logoColor=white&style=flat"></summary>
   
 <blockquote>
 
-[Release 2026-07-23](https://github.com/nullcpy/rvb/releases/tag/260085)<br>
+[Release 2026-07-23](https://github.com/m4mental/my-rvb-builder/releases/tag/260085)<br>
 Patches: [rushiranpise/patches-1.15.1.mpp](https://github.com/rushiranpise/morphe-patches/releases/tag/v1.15.1)
 - GmsCore support (MicroG)
 - Unlock VIP
@@ -2161,11 +2148,11 @@ Patches: [rushiranpise/patches-1.15.1.mpp](https://github.com/rushiranpise/morph
 #### [Morphe (rushiranpise)](https://github.com/rushiranpise/morphe-patches)
 
 <details>
-<summary id="the-weather-channel-morphe">&emsp;<a href="https://nullcpy.github.io/"><img src="https://img.shields.io/badge/version-v16.14.1-gray?labelColor=003399&logo=android&logoColor=white&style=flat"></summary>
+<summary id="the-weather-channel-morphe">&emsp;<a href="https://m4mental.github.io/my-rvb-builder/"><img src="https://img.shields.io/badge/version-v16.14.1-gray?labelColor=003399&logo=android&logoColor=white&style=flat"></summary>
   
 <blockquote>
 
-[Release 2026-07-23](https://github.com/nullcpy/rvb/releases/tag/260085)<br>
+[Release 2026-07-23](https://github.com/m4mental/my-rvb-builder/releases/tag/260085)<br>
 Patches: [rushiranpise/patches-1.15.1.mpp](https://github.com/rushiranpise/morphe-patches/releases/tag/v1.15.1)
 - GmsCore support (MicroG)
 - Unlock Premium
@@ -2181,11 +2168,11 @@ Patches: [rushiranpise/patches-1.15.1.mpp](https://github.com/rushiranpise/morph
 #### [Morphe (De-Vanced)](https://github.com/RookieEnough/De-Vanced)
 
 <details>
-<summary id="threads-morphe">&emsp;<a href="https://nullcpy.github.io/"><img src="https://img.shields.io/badge/version-v382.0.0.51.85-gray?labelColor=000000&logo=threads&logoColor=white&style=flat"></summary>
+<summary id="threads-morphe">&emsp;<a href="https://m4mental.github.io/my-rvb-builder/"><img src="https://img.shields.io/badge/version-v382.0.0.51.85-gray?labelColor=000000&logo=threads&logoColor=white&style=flat"></summary>
   
 <blockquote>
 
-[Release 2026-05-13](https://github.com/nullcpy/rvb/releases/tag/242)<br>
+[Release 2026-05-13](https://github.com/m4mental/my-rvb-builder/releases/tag/242)<br>
 Patches: [RookieEnough/patches-1.0.4.mpp](https://github.com/RookieEnough/De-Vanced/releases/tag/v1.0.4)
 
 - Hide ads
@@ -2195,11 +2182,11 @@ Patches: [RookieEnough/patches-1.0.4.mpp](https://github.com/RookieEnough/De-Van
 #### [ReVanced](https://github.com/revanced/revanced-patches)
 
 <details>
-<summary id="threads-revanced">&emsp;<a href="https://nullcpy.github.io/"><img src="https://img.shields.io/badge/version-v382.0.0.51.85-gray?labelColor=000000&logo=threads&logoColor=white&style=flat"></summary>
+<summary id="threads-revanced">&emsp;<a href="https://m4mental.github.io/my-rvb-builder/"><img src="https://img.shields.io/badge/version-v382.0.0.51.85-gray?labelColor=000000&logo=threads&logoColor=white&style=flat"></summary>
   
 <blockquote>
 
-[Release 2026-05-01](https://github.com/nullcpy/rvb/releases/tag/189)<br>
+[Release 2026-05-01](https://github.com/m4mental/my-rvb-builder/releases/tag/189)<br>
 Patches: [Raudrobot/patches-6.1.0.rvp](https://github.com/Raudrobot/revanced-patches/releases/tag/v6.1.0)
 
 - Hide ads
@@ -2215,11 +2202,11 @@ Patches: [Raudrobot/patches-6.1.0.rvp](https://github.com/Raudrobot/revanced-pat
 #### [Morphe (paresh-patches)](https://gitlab.com/Paresh-Maheshwari/paresh-patches)
 
 <details>
-<summary id="ticktick-morphe">&emsp;<a href="https://nullcpy.github.io/"><img src="https://img.shields.io/badge/version-v8.0.6.1-gray?labelColor=5C6BC0&logo=android&logoColor=white&style=flat"></summary>
+<summary id="ticktick-morphe">&emsp;<a href="https://m4mental.github.io/my-rvb-builder/"><img src="https://img.shields.io/badge/version-v8.0.6.1-gray?labelColor=5C6BC0&logo=android&logoColor=white&style=flat"></summary>
   
 <blockquote>
 
-[Release 2026-07-07](https://github.com/nullcpy/rvb/releases/tag/260017)<br>
+[Release 2026-07-07](https://github.com/m4mental/my-rvb-builder/releases/tag/260017)<br>
 Patches: [Paresh-Maheshwari/patches-1.19.0.mpp](https://gitlab.com/Paresh-Maheshwari/paresh-patches/-/releases/v1.19.0)
 - TickTick Premium
 </blockquote>
@@ -2234,11 +2221,11 @@ Patches: [Paresh-Maheshwari/patches-1.19.0.mpp](https://gitlab.com/Paresh-Mahesh
 #### [Morphe (icysymmetra)](https://github.com/icysymmetra/tiktok-patches-for-morphe)
 
 <details>
-<summary id="tiktok-morphe">&emsp;<a href="https://nullcpy.github.io/"><img src="https://img.shields.io/badge/version-v43.8.3-gray?labelColor=000000&logo=tiktok&logoColor=white&style=flat"></summary>
+<summary id="tiktok-morphe">&emsp;<a href="https://m4mental.github.io/my-rvb-builder/"><img src="https://img.shields.io/badge/version-v43.8.3-gray?labelColor=000000&logo=tiktok&logoColor=white&style=flat"></summary>
   
 <blockquote>
 
-[Release 2026-07-28](https://github.com/nullcpy/rvb/releases/tag/260107)<br>
+[Release 2026-07-28](https://github.com/m4mental/my-rvb-builder/releases/tag/260107)<br>
 Patches: [icysymmetra/patches-0.4.1.mpp](https://github.com/icysymmetra/tiktok-patches-for-morphe/releases/tag/v0.4.1)
 - Always show publish date
 - Copy comments without username
@@ -2274,11 +2261,11 @@ Patches: [icysymmetra/patches-0.4.1.mpp](https://github.com/icysymmetra/tiktok-p
 #### [Morphe (hoomans-patches)](https://github.com/arandomhooman/hoomans-morphe-patches)
 
 <details>
-<summary id="todoist-morphe">&emsp;<a href="https://nullcpy.github.io/"><img src="https://img.shields.io/badge/version-v12190-gray?labelColor=d83c2c&logo=android&logoColor=white&style=flat"></summary>
+<summary id="todoist-morphe">&emsp;<a href="https://m4mental.github.io/my-rvb-builder/"><img src="https://img.shields.io/badge/version-v12190-gray?labelColor=d83c2c&logo=android&logoColor=white&style=flat"></summary>
 
 <blockquote>
 
-[Release 2026-07-13](https://github.com/nullcpy/rvb/releases/tag/260041)<br>
+[Release 2026-07-13](https://github.com/m4mental/my-rvb-builder/releases/tag/260041)<br>
 Patches: [arandomhooman/patches-1.43.0.mpp](https://github.com/arandomhooman/hoomans-morphe-patches/releases/tag/v1.43.0)
 - Unlock Pro
 </blockquote>
@@ -2293,11 +2280,11 @@ Patches: [arandomhooman/patches-1.43.0.mpp](https://github.com/arandomhooman/hoo
 #### [Morphe (IMXEren)](https://github.com/IMXEren/mix-patches)
 
 <details>
-<summary id="trakt-morphe">&emsp;<a href="https://nullcpy.github.io/"><img src="https://img.shields.io/badge/version-v3.13.0-gray?labelColor=ed1c24&logo=trakt&logoColor=white&style=flat"></summary>
+<summary id="trakt-morphe">&emsp;<a href="https://m4mental.github.io/my-rvb-builder/"><img src="https://img.shields.io/badge/version-v3.13.0-gray?labelColor=ed1c24&logo=trakt&logoColor=white&style=flat"></summary>
 
 <blockquote>
 
-[Release 2026-07-23](https://github.com/nullcpy/rvb/releases/tag/260084)<br>
+[Release 2026-07-23](https://github.com/m4mental/my-rvb-builder/releases/tag/260084)<br>
 Patches: [IMXEren/patches-1.4.1.mpp](https://github.com/IMXEren/mix-patches/releases/tag/v1.4.1)
 - Unlock pro
 </blockquote>
@@ -2312,11 +2299,11 @@ Patches: [IMXEren/patches-1.4.1.mpp](https://github.com/IMXEren/mix-patches/rele
 #### [Morphe (paresh-patches)](https://gitlab.com/Paresh-Maheshwari/paresh-patches)
 
 <details>
-<summary id="truecaller-morphe">&emsp;<a href="https://nullcpy.github.io/"><img src="https://img.shields.io/badge/version-v26.10.6-gray?labelColor=31A8FF&logo=android&logoColor=white&style=flat"></summary>
+<summary id="truecaller-morphe">&emsp;<a href="https://m4mental.github.io/my-rvb-builder/"><img src="https://img.shields.io/badge/version-v26.10.6-gray?labelColor=31A8FF&logo=android&logoColor=white&style=flat"></summary>
   
 <blockquote>
 
-[Release 2026-07-07](https://github.com/nullcpy/rvb/releases/tag/260017)<br>
+[Release 2026-07-07](https://github.com/m4mental/my-rvb-builder/releases/tag/260017)<br>
 Patches: [Paresh-Maheshwari/patches-1.19.0.mpp](https://gitlab.com/Paresh-Maheshwari/paresh-patches/-/releases/v1.19.0)
 - Disable telemetry
 - Disable update check
@@ -2334,11 +2321,11 @@ Patches: [Paresh-Maheshwari/patches-1.19.0.mpp](https://gitlab.com/Paresh-Mahesh
 #### [Morphe (bufferk)](https://github.com/bufferk/morphe-patches)
 
 <details>
-<summary id="truecaller-morphe-alt">&emsp;<a href="https://nullcpy.github.io/"><img src="https://img.shields.io/badge/version-v26.10.6-gray?labelColor=31A8FF&logo=android&logoColor=white&style=flat"></summary>
+<summary id="truecaller-morphe-alt">&emsp;<a href="https://m4mental.github.io/my-rvb-builder/"><img src="https://img.shields.io/badge/version-v26.10.6-gray?labelColor=31A8FF&logo=android&logoColor=white&style=flat"></summary>
   
 <blockquote>
 
-[Release 2026-07-18](https://github.com/nullcpy/rvb/releases/tag/260064)<br>
+[Release 2026-07-18](https://github.com/m4mental/my-rvb-builder/releases/tag/260064)<br>
 Patches: [bufferk/patches-1.8.0.mpp](https://github.com/bufferk/morphe-patches/releases/tag/v1.8.0)
 - Disable analytics
 - Enable premium features
@@ -2359,11 +2346,11 @@ Patches: [bufferk/patches-1.8.0.mpp](https://github.com/bufferk/morphe-patches/r
 #### [Morphe (Android TV)](https://github.com/ajstrick81/morphe-androidtv-patches)
 
 <details>
-<summary id="tubi-morphe-androidtv">&emsp;<a href="https://nullcpy.github.io/"><img src="https://img.shields.io/badge/version-v10.28.5000-gray?labelColor=5301ac&logo=android&logoColor=white&style=flat"></summary>
+<summary id="tubi-morphe-androidtv">&emsp;<a href="https://m4mental.github.io/my-rvb-builder/"><img src="https://img.shields.io/badge/version-v10.28.5000-gray?labelColor=5301ac&logo=android&logoColor=white&style=flat"></summary>
 
 <blockquote>
 
-[Release 2026-07-28](https://github.com/nullcpy/rvb/releases/tag/260103)<br>
+[Release 2026-07-28](https://github.com/m4mental/my-rvb-builder/releases/tag/260103)<br>
 Patches: [ajstrick81/patches-1.14.0.mpp](https://github.com/ajstrick81/morphe-androidtv-patches/releases/tag/v1.15.0)
 - Skip ads
 </blockquote>
@@ -2378,11 +2365,11 @@ Patches: [ajstrick81/patches-1.14.0.mpp](https://github.com/ajstrick81/morphe-an
 #### [Morphe (De-Vanced)](https://github.com/RookieEnough/De-Vanced)
 
 <details>
-<summary id="tumblr-morphe">&emsp;<a href="https://nullcpy.github.io/"><img src="https://img.shields.io/badge/version-v44.5.0.108-gray?labelColor=36465D&logo=tumblr&logoColor=white&style=flat"></summary>
+<summary id="tumblr-morphe">&emsp;<a href="https://m4mental.github.io/my-rvb-builder/"><img src="https://img.shields.io/badge/version-v44.5.0.108-gray?labelColor=36465D&logo=tumblr&logoColor=white&style=flat"></summary>
 
 <blockquote>
 
-[Release 2026-05-13](https://github.com/nullcpy/rvb/releases/tag/242)<br>
+[Release 2026-05-13](https://github.com/m4mental/my-rvb-builder/releases/tag/242)<br>
 Patches: [RookieEnough/patches-1.0.4.mpp](https://github.com/RookieEnough/De-Vanced/releases/tag/v1.0.4)
 
 - Disable Ad-Free Banner
@@ -2403,11 +2390,11 @@ Patches: [RookieEnough/patches-1.0.4.mpp](https://github.com/RookieEnough/De-Van
 #### [ReVanced](https://github.com/revanced/revanced-patches)
 
 <details>
-<summary id="twitch-revanced">&emsp;<a href="https://nullcpy.github.io/"><img src="https://img.shields.io/badge/version-v25.3.0-gray?labelColor=9146FF&logo=twitch&logoColor=white&style=flat"></summary>
+<summary id="twitch-revanced">&emsp;<a href="https://m4mental.github.io/my-rvb-builder/"><img src="https://img.shields.io/badge/version-v25.3.0-gray?labelColor=9146FF&logo=twitch&logoColor=white&style=flat"></summary>
   
 <blockquote>
 
-[Release 2026-05-01](https://github.com/nullcpy/rvb/releases/tag/189)<br>
+[Release 2026-05-01](https://github.com/m4mental/my-rvb-builder/releases/tag/189)<br>
 Patches: [Raudrobot/patches-6.1.0.rvp](https://github.com/Raudrobot/revanced-patches/releases/tag/v6.1.0)
 
 - Auto claim channel points
@@ -2422,11 +2409,11 @@ Patches: [Raudrobot/patches-6.1.0.rvp](https://github.com/Raudrobot/revanced-pat
 #### [Morphe (hoomans-patches)](https://github.com/arandomhooman/hoomans-morphe-patches)
 
 <details>
-<summary id="twitch-morphe">&emsp;<a href="https://nullcpy.github.io/"><img src="https://img.shields.io/badge/version-v29.9.1-gray?labelColor=9146FF&logo=twitch&logoColor=white&style=flat"></summary>
+<summary id="twitch-morphe">&emsp;<a href="https://m4mental.github.io/my-rvb-builder/"><img src="https://img.shields.io/badge/version-v29.9.1-gray?labelColor=9146FF&logo=twitch&logoColor=white&style=flat"></summary>
   
 <blockquote>
 
-[Release 2026-07-23](https://github.com/nullcpy/rvb/releases/tag/260080)<br>
+[Release 2026-07-23](https://github.com/m4mental/my-rvb-builder/releases/tag/260080)<br>
 Patches: [arandomhooman/patches-1.43.4.mpp](https://github.com/arandomhooman/hoomans-morphe-patches/releases/tag/v1.43.4)
 - Auto claim channel points
 - Block live ads
@@ -2446,11 +2433,11 @@ Patches: [arandomhooman/patches-1.43.4.mpp](https://github.com/arandomhooman/hoo
 #### [Morphe (hoo-dles)](https://github.com/hoo-dles/morphe-patches)
 
 <details>
-<summary id="ventusky-morphe">&emsp;<a href="https://nullcpy.github.io/"><img src="https://img.shields.io/badge/version-v53.1-gray?labelColor=1565C0&logo=android&logoColor=white&style=flat"></summary>
+<summary id="ventusky-morphe">&emsp;<a href="https://m4mental.github.io/my-rvb-builder/"><img src="https://img.shields.io/badge/version-v53.1-gray?labelColor=1565C0&logo=android&logoColor=white&style=flat"></summary>
 
 <blockquote>
 
-[Release 2026-07-15](https://github.com/nullcpy/rvb/releases/tag/260053)<br>
+[Release 2026-07-15](https://github.com/m4mental/my-rvb-builder/releases/tag/260053)<br>
 Patches: [hoo-dles/patches-1.39.0.mpp](https://github.com/hoo-dles/morphe-patches/releases/tag/v1.39.0)
 - Enable Premium
 </blockquote>
@@ -2465,11 +2452,11 @@ Patches: [hoo-dles/patches-1.39.0.mpp](https://github.com/hoo-dles/morphe-patche
 #### [Morphe (De-Vanced)](https://github.com/RookieEnough/De-Vanced)
 
 <details>
-<summary id="viber-morphe">&emsp;<a href="https://nullcpy.github.io/"><img src="https://img.shields.io/badge/version-v26.1.2.0-gray?labelColor=665CAC&logo=viber&logoColor=white&style=flat"></summary>
+<summary id="viber-morphe">&emsp;<a href="https://m4mental.github.io/my-rvb-builder/"><img src="https://img.shields.io/badge/version-v26.1.2.0-gray?labelColor=665CAC&logo=viber&logoColor=white&style=flat"></summary>
 
 <blockquote>
 
-[Release 2026-05-13](https://github.com/nullcpy/rvb/releases/tag/242)<br>
+[Release 2026-05-13](https://github.com/m4mental/my-rvb-builder/releases/tag/242)<br>
 Patches: [RookieEnough/patches-1.0.4.mpp](https://github.com/RookieEnough/De-Vanced/releases/tag/v1.0.4)
 
 - Hide Ads
@@ -2485,11 +2472,11 @@ Patches: [RookieEnough/patches-1.0.4.mpp](https://github.com/RookieEnough/De-Van
 #### [Morphe (Android TV)](https://github.com/ajstrick81/morphe-androidtv-patches)
 
 <details>
-<summary id="vix-morphe-androidtv">&emsp;<a href="https://nullcpy.github.io/"><img src="https://img.shields.io/badge/version-v4.46.0_tv-gray?labelColor=0a7b8d&logo=android&logoColor=white&style=flat"></summary>
+<summary id="vix-morphe-androidtv">&emsp;<a href="https://m4mental.github.io/my-rvb-builder/"><img src="https://img.shields.io/badge/version-v4.46.0_tv-gray?labelColor=0a7b8d&logo=android&logoColor=white&style=flat"></summary>
 
 <blockquote>
 
-[Release 2026-07-28](https://github.com/nullcpy/rvb/releases/tag/260103)<br>
+[Release 2026-07-28](https://github.com/m4mental/my-rvb-builder/releases/tag/260103)<br>
 Patches: [ajstrick81/patches-1.14.0.mpp](https://github.com/ajstrick81/morphe-androidtv-patches/releases/tag/v1.15.0)
 - Override certificate pinning
 - Skip ads
@@ -2505,11 +2492,11 @@ Patches: [ajstrick81/patches-1.14.0.mpp](https://github.com/ajstrick81/morphe-an
 #### [Morphe (BholeyKaBhakt)](https://github.com/BholeyKaBhakt/android-patches-xtra)
 
 <details>
-<summary id="vpnify-morphe">&emsp;<a href="https://nullcpy.github.io/"><img src="https://img.shields.io/badge/version-v2.2.9-gray?labelColor=050a38&logo=android&logoColor=white&style=flat"></summary>
+<summary id="vpnify-morphe">&emsp;<a href="https://m4mental.github.io/my-rvb-builder/"><img src="https://img.shields.io/badge/version-v2.2.9-gray?labelColor=050a38&logo=android&logoColor=white&style=flat"></summary>
 
 <blockquote>
 
-[Release 2026-06-30](https://github.com/nullcpy/rvb/releases/tag/434)<br>
+[Release 2026-06-30](https://github.com/m4mental/my-rvb-builder/releases/tag/434)<br>
 Patches: [BholeyKaBhakt/patches-2.12.0.mpp](https://github.com/BholeyKaBhakt/android-patches-xtra/releases/tag/v2.12.0)
 - Unlock Premium
 </blockquote>
@@ -2526,11 +2513,11 @@ Patches: [BholeyKaBhakt/patches-2.12.0.mpp](https://github.com/BholeyKaBhakt/and
 #### [Morphe (hoo-dles)](https://github.com/hoo-dles/morphe-patches)
 
 <details>
-<summary id="wallcraft-morphe">&emsp;<a href="https://nullcpy.github.io/"><img src="https://img.shields.io/badge/version-v3.61.01-gray?labelColor=1E88E5&logo=android&logoColor=white&style=flat"></summary>
+<summary id="wallcraft-morphe">&emsp;<a href="https://m4mental.github.io/my-rvb-builder/"><img src="https://img.shields.io/badge/version-v3.61.01-gray?labelColor=1E88E5&logo=android&logoColor=white&style=flat"></summary>
   
 <blockquote>
 
-[Release 2026-07-15](https://github.com/nullcpy/rvb/releases/tag/260053)<br>
+[Release 2026-07-15](https://github.com/m4mental/my-rvb-builder/releases/tag/260053)<br>
 Patches: [hoo-dles/patches-1.39.0.mpp](https://github.com/hoo-dles/morphe-patches/releases/tag/v1.39.0)
 - Enable Premium
 </blockquote>
@@ -2545,11 +2532,11 @@ Patches: [hoo-dles/patches-1.39.0.mpp](https://github.com/hoo-dles/morphe-patche
 #### [Morphe (rushiranpise)](https://github.com/rushiranpise/morphe-patches)
 
 <details>
-<summary id="waze-morphe">&emsp;<a href="https://nullcpy.github.io/"><img src="https://img.shields.io/badge/version-v5.21.90.800-gray?labelColor=33ccff&logo=adguard&logoColor=white&style=flat"></summary>
+<summary id="waze-morphe">&emsp;<a href="https://m4mental.github.io/my-rvb-builder/"><img src="https://img.shields.io/badge/version-v5.21.90.800-gray?labelColor=33ccff&logo=adguard&logoColor=white&style=flat"></summary>
 
 <blockquote>
 
-[Release 2026-07-23](https://github.com/nullcpy/rvb/releases/tag/260085)<br>
+[Release 2026-07-23](https://github.com/m4mental/my-rvb-builder/releases/tag/260085)<br>
 Patches: [rushiranpise/patches-1.15.1.mpp](https://github.com/rushiranpise/morphe-patches/releases/tag/v1.15.1)
 - Alert Distances
 - AutoZoom
@@ -2576,11 +2563,11 @@ Patches: [rushiranpise/patches-1.15.1.mpp](https://github.com/rushiranpise/morph
 #### [Morphe (rushiranpise)](https://github.com/rushiranpise/morphe-patches)
 
 <details>
-<summary id="windscribe-vpn-morphe">&emsp;<a href="https://nullcpy.github.io/"><img src="https://img.shields.io/badge/version-v4.2.2328-gray?labelColor=031732&logo=android&logoColor=white&style=flat"></summary>
+<summary id="windscribe-vpn-morphe">&emsp;<a href="https://m4mental.github.io/my-rvb-builder/"><img src="https://img.shields.io/badge/version-v4.2.2328-gray?labelColor=031732&logo=android&logoColor=white&style=flat"></summary>
 
 <blockquote>
 
-[Release 2026-07-23](https://github.com/nullcpy/rvb/releases/tag/260085)<br>
+[Release 2026-07-23](https://github.com/m4mental/my-rvb-builder/releases/tag/260085)<br>
 Patches: [rushiranpise/patches-1.15.1.mpp](https://github.com/rushiranpise/morphe-patches/releases/tag/v1.15.1)
 - GmsCore support (MicroG)
 - Unlock Premium
@@ -2596,11 +2583,11 @@ Patches: [rushiranpise/patches-1.15.1.mpp](https://github.com/rushiranpise/morph
 #### [Morphe (De-Vanced)](https://github.com/RookieEnough/De-Vanced)
 
 <details>
-<summary id="rar-morphe">&emsp;<a href="https://nullcpy.github.io/"><img src="https://img.shields.io/badge/version-v7.20.build131-gray?labelColor=FF6B00&logo=android&logoColor=white&style=flat"></summary>
+<summary id="rar-morphe">&emsp;<a href="https://m4mental.github.io/my-rvb-builder/"><img src="https://img.shields.io/badge/version-v7.20.build131-gray?labelColor=FF6B00&logo=android&logoColor=white&style=flat"></summary>
   
 <blockquote>
 
-[Release 2026-05-13](https://github.com/nullcpy/rvb/releases/tag/242)<br>
+[Release 2026-05-13](https://github.com/m4mental/my-rvb-builder/releases/tag/242)<br>
 Patches: [RookieEnough/patches-1.0.4.mpp](https://github.com/RookieEnough/De-Vanced/releases/tag/v1.0.4)
 
 - Hide purchase reminder
@@ -2616,11 +2603,11 @@ Patches: [RookieEnough/patches-1.0.4.mpp](https://github.com/RookieEnough/De-Van
 #### [Morphe (hoo-dles)](https://github.com/hoo-dles/morphe-patches)
 
 <details>
-<summary id="wps-office-morphe">&emsp;<a href="https://nullcpy.github.io/"><img src="https://img.shields.io/badge/version-v18.12.1-gray?labelColor=C03426&logo=android&logoColor=white&style=flat"></summary>
+<summary id="wps-office-morphe">&emsp;<a href="https://m4mental.github.io/my-rvb-builder/"><img src="https://img.shields.io/badge/version-v18.12.1-gray?labelColor=C03426&logo=android&logoColor=white&style=flat"></summary>
   
 <blockquote>
 
-[Release 2026-07-15](https://github.com/nullcpy/rvb/releases/tag/260053)<br>
+[Release 2026-07-15](https://github.com/m4mental/my-rvb-builder/releases/tag/260053)<br>
 Patches: [hoo-dles/patches-1.39.0.mpp](https://github.com/hoo-dles/morphe-patches/releases/tag/v1.39.0)
 - Disable anti-tamper
 - Enable Pro
@@ -2638,11 +2625,11 @@ Patches: [hoo-dles/patches-1.39.0.mpp](https://github.com/hoo-dles/morphe-patche
 #### [Morphe (Piko)](https://github.com/crimera/piko)
 
 <details>
-<summary id="twitter-morphe"><b>Default</b>&emsp;<a href="https://nullcpy.github.io/"><img src="https://img.shields.io/badge/version-v12.11.0.release.0-gray?labelColor=0F1419&logo=x&logoColor=white&style=flat"></summary>
+<summary id="twitter-morphe"><b>Default</b>&emsp;<a href="https://m4mental.github.io/my-rvb-builder/"><img src="https://img.shields.io/badge/version-v12.11.0.release.0-gray?labelColor=0F1419&logo=x&logoColor=white&style=flat"></summary>
   
 <blockquote>
 
-[Release 2026-07-27](https://github.com/nullcpy/rvb/releases/tag/260102)<br>
+[Release 2026-07-27](https://github.com/m4mental/my-rvb-builder/releases/tag/260102)<br>
 Patches: [crimera/patches-3.9.0-dev.2.mpp](https://github.com/crimera/piko/releases/tag/v3.9.0-dev.2)
 - Add ability to copy media link
 - Block redirecting to X Lite
@@ -2718,11 +2705,11 @@ Patches: [crimera/patches-3.9.0-dev.2.mpp](https://github.com/crimera/piko/relea
 </details>
 
 <details>
-<summary id="twitter-morphe-materialu"><b>Material You</b>&emsp;<a href="https://nullcpy.github.io/"><img src="https://img.shields.io/badge/version-v12.11.0.release.0-gray?labelColor=0F1419&logo=x&logoColor=white&style=flat"></summary>
+<summary id="twitter-morphe-materialu"><b>Material You</b>&emsp;<a href="https://m4mental.github.io/my-rvb-builder/"><img src="https://img.shields.io/badge/version-v12.11.0.release.0-gray?labelColor=0F1419&logo=x&logoColor=white&style=flat"></summary>
   
 <blockquote>
 
-[Release 2026-07-27](https://github.com/nullcpy/rvb/releases/tag/260102)<br>
+[Release 2026-07-27](https://github.com/m4mental/my-rvb-builder/releases/tag/260102)<br>
 Patches: [crimera/patches-3.9.0-dev.2.mpp](https://github.com/crimera/piko/releases/tag/v3.9.0-dev.2)
 - Add ability to copy media link
 - Block redirecting to X Lite
@@ -2802,11 +2789,11 @@ Patches: [crimera/patches-3.9.0-dev.2.mpp](https://github.com/crimera/piko/relea
 #### [ReVanced](https://github.com/revanced/revanced-patches)
 
 <details>
-<summary id="twitter-revanced"><b>Default</b>&emsp;<a href="https://nullcpy.github.io/"><img src="https://img.shields.io/badge/version-v10.86.0.release.0-gray?labelColor=0F1419&logo=x&logoColor=white&style=flat"></summary>
+<summary id="twitter-revanced"><b>Default</b>&emsp;<a href="https://m4mental.github.io/my-rvb-builder/"><img src="https://img.shields.io/badge/version-v10.86.0.release.0-gray?labelColor=0F1419&logo=x&logoColor=white&style=flat"></summary>
   
 <blockquote>
 
-[Release 2026-04-23](https://github.com/nullcpy/rvb/releases/tag/145)<br>
+[Release 2026-04-23](https://github.com/m4mental/my-rvb-builder/releases/tag/145)<br>
 Patches: [Raudrobot/patches-6.1.0.rvp](https://github.com/Raudrobot/revanced-patches/releases/tag/v6.1.0)
 
 - Dynamic color
@@ -2826,11 +2813,11 @@ Patches: [Raudrobot/patches-6.1.0.rvp](https://github.com/Raudrobot/revanced-pat
 #### [Morphe (hoo-dles)](https://github.com/hoo-dles/morphe-patches)
 
 <details>
-<summary id="xodo-morphe">&emsp;<a href="https://nullcpy.github.io/"><img src="https://img.shields.io/badge/version-v10.13.0-gray?labelColor=fafcfe&logo=android&logoColor=orange&style=flat"></summary>
+<summary id="xodo-morphe">&emsp;<a href="https://m4mental.github.io/my-rvb-builder/"><img src="https://img.shields.io/badge/version-v10.13.0-gray?labelColor=fafcfe&logo=android&logoColor=orange&style=flat"></summary>
 
 <blockquote>
 
-[Release 2026-04-24](https://github.com/nullcpy/rvb/releases/tag/150)<br>
+[Release 2026-04-24](https://github.com/m4mental/my-rvb-builder/releases/tag/150)<br>
 Patches: [hoo-dles/patches-1.27.0.mpp](https://github.com/hoo-dles/morphe-patches/releases/tag/v1.27.0)
 
 - Disable signature check
@@ -2847,11 +2834,11 @@ Patches: [hoo-dles/patches-1.27.0.mpp](https://github.com/hoo-dles/morphe-patche
 #### [Morphe (hoo-dles)](https://github.com/hoo-dles/morphe-patches)
 
 <details>
-<summary id="xrecorder-morphe">&emsp;<a href="https://nullcpy.github.io/"><img src="https://img.shields.io/badge/version-v2.5.1.1-gray?labelColor=FF6600&logo=android&logoColor=black&style=flat"></summary>
+<summary id="xrecorder-morphe">&emsp;<a href="https://m4mental.github.io/my-rvb-builder/"><img src="https://img.shields.io/badge/version-v2.5.1.1-gray?labelColor=FF6600&logo=android&logoColor=black&style=flat"></summary>
   
 <blockquote>
 
-[Release 2026-07-15](https://github.com/nullcpy/rvb/releases/tag/260053)<br>
+[Release 2026-07-15](https://github.com/m4mental/my-rvb-builder/releases/tag/260053)<br>
 Patches: [hoo-dles/patches-1.39.0.mpp](https://github.com/hoo-dles/morphe-patches/releases/tag/v1.39.0)
 - Enable Pro
 </blockquote>
@@ -2868,11 +2855,11 @@ Patches: [hoo-dles/patches-1.39.0.mpp](https://github.com/hoo-dles/morphe-patche
 #### [Morphe](https://github.com/MorpheApp/morphe-patches)
 
 <details>
-<summary id="youtube-morphe"><b>Default Theme</b>&emsp;<a href="https://nullcpy.github.io/"><img src="https://img.shields.io/badge/version-v21.04.223-gray?labelColor=FF0000&logo=youtube&logoColor=white&style=flat"></summary>
+<summary id="youtube-morphe"><b>Default Theme</b>&emsp;<a href="https://m4mental.github.io/my-rvb-builder/"><img src="https://img.shields.io/badge/version-v21.04.223-gray?labelColor=FF0000&logo=youtube&logoColor=white&style=flat"></summary>
   
 <blockquote>
 
-[Release 2026-07-28](https://github.com/nullcpy/rvb/releases/tag/260106)<br>
+[Release 2026-07-28](https://github.com/m4mental/my-rvb-builder/releases/tag/260106)<br>
 Patches: [MorpheApp/patches-1.37.1-dev.1.mpp](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.37.1-dev.1)
 - Add to queue
 - Alternative thumbnails
@@ -2951,11 +2938,11 @@ Patches: [MorpheApp/patches-1.37.1-dev.1.mpp](https://github.com/MorpheApp/morph
 </details>
 
 <details>
-<summary id="youtube-morphe-nord"><b>Nord Theme</b>&emsp;<a href="https://nullcpy.github.io/"><img src="https://img.shields.io/badge/version-v21.04.223-gray?labelColor=2E3440&logo=youtube&logoColor=88C0D0&style=flat"></summary>
+<summary id="youtube-morphe-nord"><b>Nord Theme</b>&emsp;<a href="https://m4mental.github.io/my-rvb-builder/"><img src="https://img.shields.io/badge/version-v21.04.223-gray?labelColor=2E3440&logo=youtube&logoColor=88C0D0&style=flat"></summary>
   
 <blockquote>
 
-[Release 2026-07-26](https://github.com/nullcpy/rvb/releases/tag/260096)<br>
+[Release 2026-07-26](https://github.com/m4mental/my-rvb-builder/releases/tag/260096)<br>
 Patches: [MorpheApp/patches-1.37.0.mpp](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.37.0)
 - Add to queue
 - Alternative thumbnails
@@ -3034,11 +3021,11 @@ Patches: [MorpheApp/patches-1.37.0.mpp](https://github.com/MorpheApp/morphe-patc
 </details>
 
 <details>
-<summary id="youtube-morphe-mocha"><b>Mocha Theme</b>&emsp;<a href="https://nullcpy.github.io/"><img src="https://img.shields.io/badge/version-v21.04.223-gray?labelColor=1E1E2E&logo=youtube&logoColor=F5E0DC&style=flat"></summary>
+<summary id="youtube-morphe-mocha"><b>Mocha Theme</b>&emsp;<a href="https://m4mental.github.io/my-rvb-builder/"><img src="https://img.shields.io/badge/version-v21.04.223-gray?labelColor=1E1E2E&logo=youtube&logoColor=F5E0DC&style=flat"></summary>
   
 <blockquote>
 
-[Release 2026-07-26](https://github.com/nullcpy/rvb/releases/tag/260096)<br>
+[Release 2026-07-26](https://github.com/m4mental/my-rvb-builder/releases/tag/260096)<br>
 Patches: [MorpheApp/patches-1.37.0.mpp](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.37.0)
 - Add to queue
 - Alternative thumbnails
@@ -3117,11 +3104,11 @@ Patches: [MorpheApp/patches-1.37.0.mpp](https://github.com/MorpheApp/morphe-patc
 </details>
 
 <details>
-<summary id="youtube-morphe-exp"><b>Experimental</b>&emsp;<a href="https://nullcpy.github.io/"><img src="https://img.shields.io/badge/version-v21.29.366-gray?labelColor=FF0000&logo=youtube&logoColor=white&style=flat"></summary>
+<summary id="youtube-morphe-exp"><b>Experimental</b>&emsp;<a href="https://m4mental.github.io/my-rvb-builder/"><img src="https://img.shields.io/badge/version-v21.29.366-gray?labelColor=FF0000&logo=youtube&logoColor=white&style=flat"></summary>
   
 <blockquote>
 
-[Release 2026-07-26](https://github.com/nullcpy/rvb/releases/tag/260096)<br>
+[Release 2026-07-26](https://github.com/m4mental/my-rvb-builder/releases/tag/260096)<br>
 Patches: [MorpheApp/patches-1.37.0.mpp](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.37.0)
 - Add to queue
 - Alternative thumbnails
@@ -3202,11 +3189,11 @@ Patches: [MorpheApp/patches-1.37.0.mpp](https://github.com/MorpheApp/morphe-patc
 #### [ReVanced Advanced (Anddea)](https://github.com/anddea/revanced-patches)
 
 <details>
-<summary id="youtube-anddea"><b>Default Theme</b>&emsp;<a href="https://nullcpy.github.io/"><img src="https://img.shields.io/badge/version-v20.51.39-gray?labelColor=FF0000&logo=youtube&logoColor=white&style=flat"></summary>
+<summary id="youtube-anddea"><b>Default Theme</b>&emsp;<a href="https://m4mental.github.io/my-rvb-builder/"><img src="https://img.shields.io/badge/version-v20.51.39-gray?labelColor=FF0000&logo=youtube&logoColor=white&style=flat"></summary>
   
 <blockquote>
 
-[Release 2026-07-24](https://github.com/nullcpy/rvb/releases/tag/260089)<br>
+[Release 2026-07-24](https://github.com/m4mental/my-rvb-builder/releases/tag/260089)<br>
 Patches: [anddea/patches-4.2.0-dev.8.mpp](https://github.com/anddea/revanced-patches/releases/tag/v4.2.0-dev.8)
 - Alternative thumbnails
 - Ambient mode control
@@ -3275,11 +3262,11 @@ Patches: [anddea/patches-4.2.0-dev.8.mpp](https://github.com/anddea/revanced-pat
 </details>
 
 <details>
-<summary id="youtube-anddea-nord"><b>Nord Theme</b>&emsp;<a href="https://nullcpy.github.io/"><img src="https://img.shields.io/badge/version-v20.51.39-gray?labelColor=2E3440&logo=youtube&logoColor=88C0D0&style=flat"></summary>
+<summary id="youtube-anddea-nord"><b>Nord Theme</b>&emsp;<a href="https://m4mental.github.io/my-rvb-builder/"><img src="https://img.shields.io/badge/version-v20.51.39-gray?labelColor=2E3440&logo=youtube&logoColor=88C0D0&style=flat"></summary>
   
 <blockquote>
 
-[Release 2026-06-16](https://github.com/nullcpy/rvb/releases/tag/357)<br>
+[Release 2026-06-16](https://github.com/m4mental/my-rvb-builder/releases/tag/357)<br>
 Patches: [anddea/patches-4.1.0.mpp](https://github.com/anddea/revanced-patches/releases/tag/v4.1.0)
 
 - Alternative thumbnails
@@ -3348,11 +3335,11 @@ Patches: [anddea/patches-4.1.0.mpp](https://github.com/anddea/revanced-patches/r
 </details>
 
 <details>
-<summary id="youtube-anddea-mocha"><b>Mocha Theme</b>&emsp;<a href="https://nullcpy.github.io/"><img src="https://img.shields.io/badge/version-v20.51.39-gray?labelColor=1E1E2E&logo=youtube&logoColor=F5E0DC&style=flat"></summary>
+<summary id="youtube-anddea-mocha"><b>Mocha Theme</b>&emsp;<a href="https://m4mental.github.io/my-rvb-builder/"><img src="https://img.shields.io/badge/version-v20.51.39-gray?labelColor=1E1E2E&logo=youtube&logoColor=F5E0DC&style=flat"></summary>
   
 <blockquote>
 
-[Release 2026-06-16](https://github.com/nullcpy/rvb/releases/tag/357)<br>
+[Release 2026-06-16](https://github.com/m4mental/my-rvb-builder/releases/tag/357)<br>
 Patches: [anddea/patches-4.1.0.mpp](https://github.com/anddea/revanced-patches/releases/tag/v4.1.0)
 
 - Alternative thumbnails
@@ -3423,11 +3410,11 @@ Patches: [anddea/patches-4.1.0.mpp](https://github.com/anddea/revanced-patches/r
 #### [ReVanced](https://github.com/revanced/revanced-patches)
 
 <details>
-<summary id="youtube-revanced"><b>Default Theme</b>&emsp;<a href="https://nullcpy.github.io/"><img src="https://img.shields.io/badge/version-v20.40.45-gray?labelColor=FF0000&logo=youtube&logoColor=white&style=flat"></summary>
+<summary id="youtube-revanced"><b>Default Theme</b>&emsp;<a href="https://m4mental.github.io/my-rvb-builder/"><img src="https://img.shields.io/badge/version-v20.40.45-gray?labelColor=FF0000&logo=youtube&logoColor=white&style=flat"></summary>
   
 <blockquote>
 
-[Release 2026-05-01](https://github.com/nullcpy/rvb/releases/tag/189)<br>
+[Release 2026-05-01](https://github.com/m4mental/my-rvb-builder/releases/tag/189)<br>
 Patches: [Raudrobot/patches-6.1.0.rvp](https://github.com/Raudrobot/revanced-patches/releases/tag/v6.1.0)
 
 - Add more double tap to seek length options
@@ -3494,11 +3481,11 @@ Patches: [Raudrobot/patches-6.1.0.rvp](https://github.com/Raudrobot/revanced-pat
 </details>
 
 <details>
-<summary id="youtube-revanced-nord"><b>Nord Theme</b>&emsp;<a href="https://nullcpy.github.io/"><img src="https://img.shields.io/badge/version-v20.40.45-gray?labelColor=2E3440&logo=youtube&logoColor=88C0D0&style=flat"></summary>
+<summary id="youtube-revanced-nord"><b>Nord Theme</b>&emsp;<a href="https://m4mental.github.io/my-rvb-builder/"><img src="https://img.shields.io/badge/version-v20.40.45-gray?labelColor=2E3440&logo=youtube&logoColor=88C0D0&style=flat"></summary>
   
 <blockquote>
 
-[Release 2026-05-01](https://github.com/nullcpy/rvb/releases/tag/189)<br>
+[Release 2026-05-01](https://github.com/m4mental/my-rvb-builder/releases/tag/189)<br>
 Patches: [Raudrobot/patches-6.1.0.rvp](https://github.com/Raudrobot/revanced-patches/releases/tag/v6.1.0)
 
 - Add more double tap to seek length options
@@ -3565,11 +3552,11 @@ Patches: [Raudrobot/patches-6.1.0.rvp](https://github.com/Raudrobot/revanced-pat
 </details>
 
 <details>
-<summary id="youtube-revanced-mocha"><b>Mocha Theme</b>&emsp;<a href="https://nullcpy.github.io/"><img src="https://img.shields.io/badge/version-v20.40.45-gray?labelColor=1E1E2E&logo=youtube&logoColor=F5E0DC&style=flat"></summary>
+<summary id="youtube-revanced-mocha"><b>Mocha Theme</b>&emsp;<a href="https://m4mental.github.io/my-rvb-builder/"><img src="https://img.shields.io/badge/version-v20.40.45-gray?labelColor=1E1E2E&logo=youtube&logoColor=F5E0DC&style=flat"></summary>
   
 <blockquote>
 
-[Release 2026-05-01](https://github.com/nullcpy/rvb/releases/tag/189)<br>
+[Release 2026-05-01](https://github.com/m4mental/my-rvb-builder/releases/tag/189)<br>
 Patches: [Raudrobot/patches-6.1.0.rvp](https://github.com/Raudrobot/revanced-patches/releases/tag/v6.1.0)
 
 - Add more double tap to seek length options
@@ -3638,11 +3625,11 @@ Patches: [Raudrobot/patches-6.1.0.rvp](https://github.com/Raudrobot/revanced-pat
 #### [ReVanced Extended (wchill)](https://github.com/wchill/rvx-morphed)
 
 <details>
-<summary id="youtube-rvx"><b>Default Theme</b>&emsp;<a href="https://nullcpy.github.io/"><img src="https://img.shields.io/badge/version-v20.05.46-gray?labelColor=FF0000&logo=youtube&logoColor=white&style=flat"></summary>
+<summary id="youtube-rvx"><b>Default Theme</b>&emsp;<a href="https://m4mental.github.io/my-rvb-builder/"><img src="https://img.shields.io/badge/version-v20.05.46-gray?labelColor=FF0000&logo=youtube&logoColor=white&style=flat"></summary>
   
 <blockquote>
 
-[Release 2026-04-23](https://github.com/nullcpy/rvb/releases/tag/143)<br>
+[Release 2026-04-23](https://github.com/m4mental/my-rvb-builder/releases/tag/143)<br>
 Patches: [wchill/patches-5.16.4.mpp](https://github.com/wchill/rvx-morphed/releases/tag/v5.16.4)
 
 - Alternative thumbnails
@@ -3718,11 +3705,11 @@ Patches: [wchill/patches-5.16.4.mpp](https://github.com/wchill/rvx-morphed/relea
 #### [Morphe](https://github.com/MorpheApp/morphe-patches)
 
 <details>
-<summary id="youtube-music-morphe"><b>Default</b>&emsp;<a href="https://nullcpy.github.io/"><img src="https://img.shields.io/badge/version-v9.15.51-gray?labelColor=FF0000&logo=youtubemusic&logoColor=white&style=flat"></summary>
+<summary id="youtube-music-morphe"><b>Default</b>&emsp;<a href="https://m4mental.github.io/my-rvb-builder/"><img src="https://img.shields.io/badge/version-v9.15.51-gray?labelColor=FF0000&logo=youtubemusic&logoColor=white&style=flat"></summary>
   
 <blockquote>
 
-[Release 2026-07-28](https://github.com/nullcpy/rvb/releases/tag/260106)<br>
+[Release 2026-07-28](https://github.com/m4mental/my-rvb-builder/releases/tag/260106)<br>
 Patches: [MorpheApp/patches-1.37.1-dev.1.mpp](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.37.1-dev.1)
 - Bypass certificate checks
 - Change header
@@ -3765,11 +3752,11 @@ Patches: [MorpheApp/patches-1.37.1-dev.1.mpp](https://github.com/MorpheApp/morph
 </details>
 
 <details>
-<summary id="youtube-music-morphe-exp"><b>Experimental</b>&emsp;<a href="https://nullcpy.github.io/"><img src="https://img.shields.io/badge/version-v9.29.54-gray?labelColor=FF0000&logo=youtubemusic&logoColor=white&style=flat"></summary>
+<summary id="youtube-music-morphe-exp"><b>Experimental</b>&emsp;<a href="https://m4mental.github.io/my-rvb-builder/"><img src="https://img.shields.io/badge/version-v9.29.54-gray?labelColor=FF0000&logo=youtubemusic&logoColor=white&style=flat"></summary>
   
 <blockquote>
 
-[Release 2026-07-28](https://github.com/nullcpy/rvb/releases/tag/260106)<br>
+[Release 2026-07-28](https://github.com/m4mental/my-rvb-builder/releases/tag/260106)<br>
 Patches: [MorpheApp/patches-1.37.1-dev.1.mpp](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.37.1-dev.1)
 - Bypass certificate checks
 - Change header
@@ -3814,11 +3801,11 @@ Patches: [MorpheApp/patches-1.37.1-dev.1.mpp](https://github.com/MorpheApp/morph
 #### [ReVanced Advanced (Anddea)](https://github.com/anddea/revanced-patches)
 
 <details>
-<summary id="youtube-music-anddea"><b>Default Theme</b>&emsp;<a href="https://nullcpy.github.io/"><img src="https://img.shields.io/badge/version-v9.15.51-gray?labelColor=FF0000&logo=youtubemusic&logoColor=white&style=flat"></summary>
+<summary id="youtube-music-anddea"><b>Default Theme</b>&emsp;<a href="https://m4mental.github.io/my-rvb-builder/"><img src="https://img.shields.io/badge/version-v9.15.51-gray?labelColor=FF0000&logo=youtubemusic&logoColor=white&style=flat"></summary>
   
 <blockquote>
 
-[Release 2026-07-24](https://github.com/nullcpy/rvb/releases/tag/260089)<br>
+[Release 2026-07-24](https://github.com/m4mental/my-rvb-builder/releases/tag/260089)<br>
 Patches: [anddea/patches-4.2.0-dev.8.mpp](https://github.com/anddea/revanced-patches/releases/tag/v4.2.0-dev.8)
 - Bitrate default value
 - Bypass image region restrictions
@@ -3861,11 +3848,11 @@ Patches: [anddea/patches-4.2.0-dev.8.mpp](https://github.com/anddea/revanced-pat
 </details>
 
 <details>
-<summary id="youtube-music-anddea-nord"><b>Nord Theme</b>&emsp;<a href="https://nullcpy.github.io/"><img src="https://img.shields.io/badge/version-v8.30.54-gray?labelColor=2E3440&logo=youtubemusic&logoColor=88C0D0&style=flat"></summary>
+<summary id="youtube-music-anddea-nord"><b>Nord Theme</b>&emsp;<a href="https://m4mental.github.io/my-rvb-builder/"><img src="https://img.shields.io/badge/version-v8.30.54-gray?labelColor=2E3440&logo=youtubemusic&logoColor=88C0D0&style=flat"></summary>
   
 <blockquote>
 
-[Release 2026-06-16](https://github.com/nullcpy/rvb/releases/tag/357)<br>
+[Release 2026-06-16](https://github.com/m4mental/my-rvb-builder/releases/tag/357)<br>
 Patches: [anddea/patches-4.1.0.mpp](https://github.com/anddea/revanced-patches/releases/tag/v4.1.0)
 
 - Bitrate default value
@@ -3905,11 +3892,11 @@ Patches: [anddea/patches-4.1.0.mpp](https://github.com/anddea/revanced-patches/r
 </details>
 
 <details>
-<summary id="youtube-music-anddea-mocha"><b>Mocha Theme</b>&emsp;<a href="https://nullcpy.github.io/"><img src="https://img.shields.io/badge/version-v8.30.54-gray?labelColor=1E1E2E&logo=youtubemusic&logoColor=F5E0DC&style=flat"></summary>
+<summary id="youtube-music-anddea-mocha"><b>Mocha Theme</b>&emsp;<a href="https://m4mental.github.io/my-rvb-builder/"><img src="https://img.shields.io/badge/version-v8.30.54-gray?labelColor=1E1E2E&logo=youtubemusic&logoColor=F5E0DC&style=flat"></summary>
   
 <blockquote>
 
-[Release 2026-06-16](https://github.com/nullcpy/rvb/releases/tag/357)<br>
+[Release 2026-06-16](https://github.com/m4mental/my-rvb-builder/releases/tag/357)<br>
 Patches: [anddea/patches-4.1.0.mpp](https://github.com/anddea/revanced-patches/releases/tag/v4.1.0)
 
 - Bitrate default value
@@ -3951,11 +3938,11 @@ Patches: [anddea/patches-4.1.0.mpp](https://github.com/anddea/revanced-patches/r
 #### [ReVanced](https://github.com/revanced/revanced-patches)
 
 <details>
-<summary id="youtube-music-revanced"><b>Default</b>&emsp;<a href="https://nullcpy.github.io/"><img src="https://img.shields.io/badge/version-v8.40.54-gray?labelColor=FF0000&logo=youtubemusic&logoColor=white&style=flat"></summary>
+<summary id="youtube-music-revanced"><b>Default</b>&emsp;<a href="https://m4mental.github.io/my-rvb-builder/"><img src="https://img.shields.io/badge/version-v8.40.54-gray?labelColor=FF0000&logo=youtubemusic&logoColor=white&style=flat"></summary>
   
 <blockquote>
 
-[Release 2026-05-01](https://github.com/nullcpy/rvb/releases/tag/189)<br>
+[Release 2026-05-01](https://github.com/m4mental/my-rvb-builder/releases/tag/189)<br>
 Patches: [Raudrobot/patches-6.1.0.rvp](https://github.com/Raudrobot/revanced-patches/releases/tag/v6.1.0)
 
 - Change miniplayer color
@@ -3983,11 +3970,11 @@ Patches: [Raudrobot/patches-6.1.0.rvp](https://github.com/Raudrobot/revanced-pat
 #### [ReVanced Extended (wchill)](https://github.com/wchill/rvx-morphed)
 
 <details>
-<summary id="youtube-music-rvx"><b>Default Theme</b>&emsp;<a href="https://nullcpy.github.io/"><img src="https://img.shields.io/badge/version-v8.30.54-gray?labelColor=FF0000&logo=youtubemusic&logoColor=white&style=flat"></summary>
+<summary id="youtube-music-rvx"><b>Default Theme</b>&emsp;<a href="https://m4mental.github.io/my-rvb-builder/"><img src="https://img.shields.io/badge/version-v8.30.54-gray?labelColor=FF0000&logo=youtubemusic&logoColor=white&style=flat"></summary>
   
 <blockquote>
 
-[Release 2026-04-23](https://github.com/nullcpy/rvb/releases/tag/143)<br>
+[Release 2026-04-23](https://github.com/m4mental/my-rvb-builder/releases/tag/143)<br>
 Patches: [wchill/patches-5.16.4.mpp](https://github.com/wchill/rvx-morphed/releases/tag/v5.16.4)
 
 - Bitrate default value
