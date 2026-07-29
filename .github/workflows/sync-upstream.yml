@@ -19,7 +19,7 @@ jobs:
           fetch-depth: 0
           token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Sync upstream code & configs
+      - name: Sync upstream code & auto clean README
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email 'github-actions[bot]@users.noreply.github.com'
@@ -27,15 +27,35 @@ jobs:
           git fetch upstream main
           git checkout main
 
-          # 1. ओरिजिनल Repo से सारे नए कोड, ऐप्स और पैचेज लाएगा
+          # 1. ओरिजिनल Repo से सारे नए ऐप्स और कोड लाएगा
           git checkout upstream/main -- .
 
-          # 2. Python Script चलाकर फोटो वाले चारों ख़राब आइटम्स को तुरंत मिटाएगा
-          python3 scripts/clean-readme.py || true
+          # 2. इनलाइन Python स्क्रिप्ट (बिना किसी फ़ाइल के 100% गारंटी से सफ़ाई करेगी)
+          python3 -c '
+          import re, os
+          path = "README.md"
+          if os.path.exists(path):
+              with open(path, "r", encoding="utf-8") as f:
+                  c = f.read()
+              c = re.sub(r"<div align=\"center\"><a href=\"https://github.com/Safouene1/support-palestine-banner.*?</div>\s*", "", c, flags=re.DOTALL)
+              c = re.sub(r"<a href=\"https://t.me/[^\"]*\"><img src=\"[^\"]*badge/Group-[^\"]*\"></a>\s*", "", c)
+              c = re.sub(r"<a href=\"https://t.me/[^\"]*\"><img src=\"[^\"]*badge/Channel-[^\"]*\"></a>\s*", "", c)
+              c = re.sub(r"<a href=\"[^\"]*donate[^\"]*\"><img src=\"[^\"]*badge/Donate-[^\"]*\"></a>\s*", "", c)
+              c = re.sub(r"## 🤝 Support the Project.*?(?=---|\Z)", "", c, flags=re.DOTALL)
+              c = c.replace("https://github.com/nullcpy/rvb", "https://github.com/m4mental/my-rvb-builder")
+              c = c.replace("https://nullcpy.github.io/", "https://m4mental.github.io/my-rvb-builder/")
+              c = c.replace("https://nullcpy.github.io", "https://m4mental.github.io/my-rvb-builder")
+              c = c.replace("nullcpy.rvb", "m4mental.my-rvb-builder")
+              c = c.replace("nullcpy.github.io", "m4mental.github.io.my-rvb-builder")
+              c = re.sub(r"\n{3,}", "\n\n", c)
+              with open(path, "w", encoding="utf-8") as f:
+                  f.write(c)
+              print("✓ README.md cleaned successfully by Inline Python Cleaner!")
+          '
 
-          # 3. Workflows फ़ोल्डर को सुरक्षित रखेगा
+          # 3. आपकी अपनी Workflows फ़ाइलों को सुरक्षित रखेगा
           git checkout HEAD -- .github/workflows/ || true
 
           # 4. कमिट और पुश करेगा
-          git commit -m "Sync upstream code & auto clean README [skip ci]" || true
+          git commit -m "Sync upstream code and clean README [skip ci]" || true
           git push origin main
