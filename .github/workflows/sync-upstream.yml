@@ -2,8 +2,8 @@ name: Sync Upstream Code
 
 on:
   schedule:
-    - cron: '0 * * * *' # हर 1 घंटे में ऑटोमैटिक सिंक
-  workflow_dispatch:      # मैन्युअल बटन
+    - cron: '0 * * * *' # हर 1 घंटे में ऑटोमैटिक रन
+  workflow_dispatch:      # मैन्युअल रन बटन
 
 permissions:
   contents: write
@@ -19,16 +19,20 @@ jobs:
           fetch-depth: 0
           token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Sync with original repo
+      - name: Sync with original repo (Safely)
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email 'github-actions[bot]@users.noreply.github.com'
           git remote add upstream https://github.com/nullcpy/rvb.git || git remote set-url upstream https://github.com/nullcpy/rvb.git
           git fetch upstream main
           git checkout main
-          # Upstream से नया कोड और कॉन्फ़िग्स मर्ज करेगा
-          git merge upstream/main -X theirs --no-edit || (git merge --abort && git checkout upstream/main -- . && git commit -m "Auto resolve conflict" || true)
-          # Workflow Restrictions से बचने के लिए लोकल वर्कफ़्लो सुरक्षित रखेगा
+
+          # 1. ओरिजिनल Repo से सारे नए कोड, स्क्रिप्ट्स और कॉन्फ़िग्स लाएगा
+          git checkout upstream/main -- .
+
+          # 2. Permission Reject एरर से बचने के लिए Workflows फ़ोल्डर सुरक्षित रखेगा
           git checkout HEAD -- .github/workflows/ || true
-          git commit -m "Sync upstream code and configs" || true
+
+          # 3. नया कोड कमिट करके पुश कर देगा
+          git commit -m "Sync upstream code, scripts and configs [skip ci]" || true
           git push origin main
