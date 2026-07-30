@@ -126,6 +126,7 @@ jobs:
 
                           c = re.sub(r'<a[^>]*href="https://t\.me/[^"]*"[^>]*>.*?</a>\s*', '', c, flags=re.DOTALL)
                           c = re.sub(r'<a[^>]*t\.me[^>]*>.*?</a>\s*', '', c, flags=re.DOTALL)
+                          c = re.sub(r'<a[^>]*href="[^"]*automate[^"]*"[^>]*>.*?</a>\s*', '', c, flags=re.DOTALL)
                           c = re.sub(r'<a[^>]*href="[^"]*donate[^"]*"[^>]*>.*?</a>\s*', '', c, flags=re.DOTALL)
                           c = re.sub(r'<a[^>]*ko-fi[^>]*>.*?</a>\s*', '', c, flags=re.DOTALL)
 
@@ -139,7 +140,7 @@ jobs:
                           pass
 
           print("==============================================")
-          print("SUCCESS: Full Website Files (HTML, CSS, JS, JSON) Cleaned!")
+          print("SUCCESS: Full Website Files Cleaned!")
           print("==============================================")
           EOF
 
