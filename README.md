@@ -1763,8 +1763,8 @@ Patches: [Raudrobot/patches-6.1.0.rvp](https://github.com/Raudrobot/revanced-pat
   
 <blockquote>
 
-[Release 2026-07-29](https://github.com/m4mental/my-rvb-builder/releases/tag/260113)<br>
-Patches: [MorpheApp/patches-1.38.0-dev.1.mpp](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.38.0-dev.1)
+[Release 2026-07-30](https://github.com/m4mental/my-rvb-builder/releases/tag/260116)<br>
+Patches: [MorpheApp/patches-1.38.0-dev.2.mpp](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.38.0-dev.2)
 - Custom font
 - Disable modern home
 - Disable screenshot popup
@@ -1789,8 +1789,8 @@ Patches: [MorpheApp/patches-1.38.0-dev.1.mpp](https://github.com/MorpheApp/morph
   
 <blockquote>
 
-[Release 2026-07-29](https://github.com/m4mental/my-rvb-builder/releases/tag/260113)<br>
-Patches: [MorpheApp/patches-1.38.0-dev.1.mpp](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.38.0-dev.1)
+[Release 2026-07-30](https://github.com/m4mental/my-rvb-builder/releases/tag/260116)<br>
+Patches: [MorpheApp/patches-1.38.0-dev.2.mpp](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.38.0-dev.2)
 - Custom font
 - Disable modern home
 - Disable screenshot popup
@@ -2872,8 +2872,8 @@ Patches: [hoo-dles/patches-1.39.0.mpp](https://github.com/hoo-dles/morphe-patche
   
 <blockquote>
 
-[Release 2026-07-29](https://github.com/m4mental/my-rvb-builder/releases/tag/260110)<br>
-Patches: [MorpheApp/patches-1.38.0-dev.1.mpp](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.38.0-dev.1)
+[Release 2026-07-30](https://github.com/m4mental/my-rvb-builder/releases/tag/260116)<br>
+Patches: [MorpheApp/patches-1.38.0-dev.2.mpp](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.38.0-dev.2)
 - Add to queue
 - Alternative thumbnails
 - Ambient mode
@@ -3122,8 +3122,8 @@ Patches: [MorpheApp/patches-1.37.0.mpp](https://github.com/MorpheApp/morphe-patc
   
 <blockquote>
 
-[Release 2026-07-29](https://github.com/m4mental/my-rvb-builder/releases/tag/260110)<br>
-Patches: [MorpheApp/patches-1.38.0-dev.1.mpp](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.38.0-dev.1)
+[Release 2026-07-30](https://github.com/m4mental/my-rvb-builder/releases/tag/260116)<br>
+Patches: [MorpheApp/patches-1.38.0-dev.2.mpp](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.38.0-dev.2)
 - Add to queue
 - Alternative thumbnails
 - Ambient mode
@@ -3724,8 +3724,8 @@ Patches: [wchill/patches-5.16.4.mpp](https://github.com/wchill/rvx-morphed/relea
   
 <blockquote>
 
-[Release 2026-07-29](https://github.com/m4mental/my-rvb-builder/releases/tag/260110)<br>
-Patches: [MorpheApp/patches-1.38.0-dev.1.mpp](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.38.0-dev.1)
+[Release 2026-07-30](https://github.com/m4mental/my-rvb-builder/releases/tag/260116)<br>
+Patches: [MorpheApp/patches-1.38.0-dev.2.mpp](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.38.0-dev.2)
 - Bypass certificate checks
 - Change header
 - Change miniplayer color
@@ -3771,8 +3771,8 @@ Patches: [MorpheApp/patches-1.38.0-dev.1.mpp](https://github.com/MorpheApp/morph
   
 <blockquote>
 
-[Release 2026-07-29](https://github.com/m4mental/my-rvb-builder/releases/tag/260113)<br>
-Patches: [MorpheApp/patches-1.38.0-dev.1.mpp](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.38.0-dev.1)
+[Release 2026-07-30](https://github.com/m4mental/my-rvb-builder/releases/tag/260116)<br>
+Patches: [MorpheApp/patches-1.38.0-dev.2.mpp](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.38.0-dev.2)
 - Bypass certificate checks
 - Change header
 - Change miniplayer color
