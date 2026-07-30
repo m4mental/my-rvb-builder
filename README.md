@@ -807,8 +807,9 @@ Patches: [Raudrobot/patches-6.1.0.rvp](https://github.com/Raudrobot/revanced-pat
 
 <blockquote>
 
-[Release 2026-07-22](https://github.com/m4mental/my-rvb-builder/releases/tag/260074)<br>
-Patches: [ajstrick81/patches-1.13.0.mpp](https://github.com/ajstrick81/morphe-androidtv-patches/releases/tag/v1.14.0)
+[Release 2026-07-30](https://github.com/m4mental/my-rvb-builder/releases/tag/260119)<br>
+Patches: [ajstrick81/patches-1.15.0.mpp](https://github.com/ajstrick81/morphe-androidtv-patches/releases/tag/v1.16.0)
+- HBO Max - Disable Ads
 </blockquote>
 </details>
 
@@ -1446,8 +1447,8 @@ Patches: [hoo-dles/patches-1.39.0.mpp](https://github.com/hoo-dles/morphe-patche
 
 <blockquote>
 
-[Release 2026-07-22](https://github.com/m4mental/my-rvb-builder/releases/tag/260074)<br>
-Patches: [ajstrick81/patches-1.13.0.mpp](https://github.com/ajstrick81/morphe-androidtv-patches/releases/tag/v1.14.0)
+[Release 2026-07-30](https://github.com/m4mental/my-rvb-builder/releases/tag/260118)<br>
+Patches: [ajstrick81/patches-1.15.0.mpp](https://github.com/ajstrick81/morphe-androidtv-patches/releases/tag/v1.16.0)
 - Disable auto-updates
 - Skip ads
 </blockquote>
@@ -1632,9 +1633,11 @@ Patches: [hoo-dles/patches-1.39.0.mpp](https://github.com/hoo-dles/morphe-patche
 
 <blockquote>
 
-[Release 2026-07-22](https://github.com/m4mental/my-rvb-builder/releases/tag/260074)<br>
-Patches: [ajstrick81/patches-1.13.0.mpp](https://github.com/ajstrick81/morphe-androidtv-patches/releases/tag/v1.14.0)
+[Release 2026-07-30](https://github.com/m4mental/my-rvb-builder/releases/tag/260118)<br>
+Patches: [ajstrick81/patches-1.15.0.mpp](https://github.com/ajstrick81/morphe-androidtv-patches/releases/tag/v1.16.0)
+- Bundle native ad-strip hook
 - Disable auto-updates
+- Load native ad-strip hook
 - Override certificate pinning
 - Prime Video extension
 - Skip ads
@@ -2363,7 +2366,7 @@ Patches: [bufferk/patches-1.8.0.mpp](https://github.com/bufferk/morphe-patches/r
 
 <blockquote>
 
-[Release 2026-07-30](https://github.com/m4mental/my-rvb-builder/releases/tag/260117)<br>
+[Release 2026-07-30](https://github.com/m4mental/my-rvb-builder/releases/tag/260118)<br>
 Patches: [ajstrick81/patches-1.15.0.mpp](https://github.com/ajstrick81/morphe-androidtv-patches/releases/tag/v1.16.0)
 - Skip ads
 </blockquote>
