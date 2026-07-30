@@ -1,7 +1,7 @@
-name: Clear All Old Releases
+name: Clear All Old Releases & Drafts
 
 on:
-  workflow_dispatch:      # केवल मैन्युअल रन बटन (Manual Run Only)
+  workflow_dispatch:      # केवल मैन्युअल रन बटन
 
 permissions:
   contents: write
@@ -12,31 +12,34 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
 
-      - name: Delete All Releases and Git Tags
+      - name: Delete ALL Drafts, Releases, and Git Tags
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          echo "Fetching all releases list..."
-          
-          # 1. GitHub Releases और उनसे जुड़े Git Tags दोनों को डिलीट करेगा
-          gh release list --limit 500 | awk '{print $1}' | while read -r tag; do
+          echo "1. Deleting all Draft Releases via GitHub API..."
+          gh api "repos/${{ github.repository }}/releases" --jq '.[] | select(.draft == true) | .id' | while read -r draft_id; do
+            if [ -n "$draft_id" ]; then
+              echo "   🗑️ Deleting Draft ID: $draft_id"
+              gh api -X DELETE "repos/${{ github.repository }}/releases/$draft_id" || true
+            fi
+          done
+
+          echo "2. Deleting all Published Releases and Tags..."
+          gh release list --exclude-drafts=false --limit 500 | awk '{print $1}' | while read -r tag; do
             if [ -n "$tag" ]; then
-              echo "🗑️ Deleting release and tag: $tag"
+              echo "   🗑️ Deleting release and tag: $tag"
               gh release delete "$tag" -y --cleanup-tag || true
             fi
           done
 
-          # 2. बचे हुए किसी भी अन्य Tags को भी पूरी तरह साफ़ करेगा
-          echo "Cleaning up any remaining orphan remote tags..."
+          echo "3. Cleaning up any remaining remote tags..."
           git fetch --tags
           git tag -l | while read -r rtag; do
             if [ -n "$rtag" ]; then
-              echo "🗑️ Deleting remote tag: $rtag"
+              echo "   🗑️ Deleting remote tag: $rtag"
               git push --delete origin "$rtag" || true
             fi
           done
 
-          echo "🎉 All old releases and git tags cleared successfully!"
+          echo "🎉 ALL Drafts, Releases, and Tags cleared 100% successfully!"
