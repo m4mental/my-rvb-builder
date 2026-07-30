@@ -1,4 +1,4 @@
-name: Sync Upstream Code & Website
+name: Sync Upstream Code & Separate Website
 
 on:
   schedule:
@@ -44,11 +44,9 @@ jobs:
               skip_support_section = False
 
               for line in lines:
-                  # 1. Skip Palestine Banner
                   if "support-palestine-banner" in line or "Support Palestine" in line:
                       continue
 
-                  # 2. Skip Support the Project section
                   if "Support the Project" in line or "🤝 Support" in line:
                       skip_support_section = True
                       continue
@@ -58,7 +56,6 @@ jobs:
                   if skip_support_section:
                       continue
 
-                  # 3. Remove Telegram & Donate Badges
                   if "badge/Group-" in line or "badge/Channel-" in line or "badge/Donate-" in line or "t.me/rvb" in line or "fahim-ahmed05" in line:
                       line = re.sub(r'<a href="[^"]*t\.me/[^"]*">.*?</a>\s*', '', line)
                       line = re.sub(r'<a href="[^"]*donate[^"]*">.*?</a>\s*', '', line)
@@ -70,13 +67,12 @@ jobs:
                       if re.sub(r'<[^>]+>', '', line).strip() == '':
                           continue
 
-                  # 4. Replace Links & Visitor Badges
-                  line = re.sub(r'https://visitor-badge\.laobi\.icu/badge\?page_id=[^\"]*', 'https://hits.seeyoufarm.org/api/count/incr/badge.svg?url=https%3A%2F%2Fm4mental.github.io%2Fmy-rvb-builder&count_bg=%231283C3&title_bg=%23555555&title=Visitors', line)
+                  line = re.sub(r'https://visitor-badge\.laobi\.icu/badge\?page_id=[^\"]*', 'https://hits.seeyoufarm.org/api/count/incr/badge.svg?url=https%3A%2F%2Fm4mental.github.io&count_bg=%231283C3&title_bg=%23555555&title=Website+Visitors', line)
                   line = line.replace("github/stars/nullcpy/rvb", "github/stars/m4mental/my-rvb-builder")
                   line = line.replace("github/downloads/nullcpy/rvb", "github/downloads/m4mental/my-rvb-builder")
                   line = line.replace("https://github.com/nullcpy/rvb", "https://github.com/m4mental/my-rvb-builder")
-                  line = line.replace("https://nullcpy.github.io/", "https://m4mental.github.io/my-rvb-builder/")
-                  line = line.replace("https://nullcpy.github.io", "https://m4mental.github.io/my-rvb-builder")
+                  line = line.replace("https://nullcpy.github.io/", "https://m4mental.github.io/")
+                  line = line.replace("https://nullcpy.github.io", "https://m4mental.github.io/")
 
                   clean_lines.append(line)
 
@@ -100,54 +96,64 @@ jobs:
           git commit -m "Sync upstream code & clean README [skip ci]" || true
           git push origin main
 
-      - name: Auto Sync & Clean Website (gh-pages branch)
+      - name: Sync & Push Full Website (HTML, CSS, JS) to m4mental.github.io
+        env:
+          PAT_TOKEN: ${{ secrets.AUTO_SYNC_PAT }}
         run: |
-          git config user.name 'github-actions[bot]'
-          git config user.email 'github-actions[bot]@users.noreply.github.com'
+          if [ -z "$PAT_TOKEN" ]; then
+            echo "PAT Secret not set, skipping website sync."
+            exit 0
+          fi
 
-          echo "Fetching latest official website code from nullcpy.github.io..."
-          mkdir -p ./tmp_website
-          curl -sL https://raw.githubusercontent.com/nullcpy/nullcpy.github.io/main/index.html -o ./tmp_website/index.html
+          echo "Cloning official website repository (nullcpy.github.io)..."
+          mkdir -p ./tmp_site
+          git clone https://github.com/nullcpy/nullcpy.github.io.git ./tmp_site
 
-          # Clean Website: Remove Telegram & Donate buttons, update branding
+          # HTML, CSS, JS, JSON की सभी फाइलों से Telegram और Donate लिंक्स मिटाएगा
           python3 << 'EOF'
           import re, os
 
-          path = "tmp_website/index.html"
-          if os.path.exists(path):
-              with open(path, "r", encoding="utf-8") as f:
-                  c = f.read()
+          site_dir = "tmp_site"
+          for root, dirs, files in os.walk(site_dir):
+              if ".git" in root:
+                  continue
+              for file in files:
+                  if file.endswith((".html", ".js", ".json", ".css")):
+                      fpath = os.path.join(root, file)
+                      try:
+                          with open(fpath, "r", encoding="utf-8") as f:
+                              c = f.read()
 
-              # 1. Remove Telegram links and buttons/icons
-              c = re.sub(r'<a[^>]*href="https://t\.me/[^"]*"[^>]*>.*?</a>\s*', '', c, flags=re.DOTALL)
-              c = re.sub(r'<a[^>]*t\.me[^>]*>.*?</a>\s*', '', c, flags=re.DOTALL)
+                          c = re.sub(r'<a[^>]*href="https://t\.me/[^"]*"[^>]*>.*?</a>\s*', '', c, flags=re.DOTALL)
+                          c = re.sub(r'<a[^>]*t\.me[^>]*>.*?</a>\s*', '', c, flags=re.DOTALL)
+                          c = re.sub(r'<a[^>]*href="[^"]*donate[^"]*"[^>]*>.*?</a>\s*', '', c, flags=re.DOTALL)
+                          c = re.sub(r'<a[^>]*ko-fi[^>]*>.*?</a>\s*', '', c, flags=re.DOTALL)
 
-              # 2. Remove Donate links and buttons/icons
-              c = re.sub(r'<a[^>]*href="[^"]*donate[^"]*"[^>]*>.*?</a>\s*', '', c, flags=re.DOTALL)
-              c = re.sub(r'<a[^>]*ko-fi[^>]*>.*?</a>\s*', '', c, flags=re.DOTALL)
+                          c = c.replace("NullStore", "m4mental store")
+                          c = c.replace("nullcpy/rvb", "m4mental/my-rvb-builder")
+                          c = c.replace("nullcpy.github.io", "m4mental.github.io")
 
-              # 3. Update Branding and Repo URLs
-              c = c.replace("NullStore", "m4mental store")
-              c = c.replace("nullcpy/rvb", "m4mental/my-rvb-builder")
-              c = c.replace("nullcpy.github.io", "m4mental.github.io/my-rvb-builder")
+                          with open(fpath, "w", encoding="utf-8") as f:
+                              f.write(c)
+                      except Exception as e:
+                          pass
 
-              with open(path, "w", encoding="utf-8") as f:
-                  f.write(c)
-
-              print("==============================================")
-              print("SUCCESS: Website cleaned (Telegram & Donate removed)!")
-              print("==============================================")
+          print("==============================================")
+          print("SUCCESS: Full Website Files (HTML, CSS, JS, JSON) Cleaned!")
+          print("==============================================")
           EOF
 
-          # Switch to gh-pages branch and push updated website
-          git fetch origin gh-pages || true
-          git checkout gh-pages || git checkout -b gh-pages
+          # Dedicated Website Repo क्लोन करके सभी फाइलों को ऑटो-पुश करेगा
+          git clone https://m4mental:${PAT_TOKEN}@github.com/m4mental/m4mental.github.io.git site_repo
+          
+          # .git फ़ोल्डर छोड़कर बाकी सभी फाइलों को कॉपी करेगा
+          rsync -av --exclude='.git' ./tmp_site/ ./site_repo/
 
-          cp ./tmp_website/index.html ./index.html
-          rm -rf ./tmp_website
-
-          git add index.html
-          git commit -m "Auto sync and clean m4mental store website [skip ci]" || true
-          git push origin gh-pages || true
-
-          git checkout main
+          cd site_repo
+          git config user.name 'github-actions[bot]'
+          git config user.email 'github-actions[bot]@users.noreply.github.com'
+          git add .
+          git commit -m "Auto sync full website from original [skip ci]" || true
+          git push origin main
+          cd ..
+          rm -rf ./tmp_site ./site_repo
