@@ -13,33 +13,62 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Delete ALL Drafts, Releases, and Git Tags
+      - name: Delete ALL Drafts and Releases via Paginated Python
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          echo "1. Deleting all Draft Releases via GitHub API..."
-          gh api "repos/${{ github.repository }}/releases" --jq '.[] | select(.draft == true) | .id' | while read -r draft_id; do
-            if [ -n "$draft_id" ]; then
-              echo "   🗑️ Deleting Draft ID: $draft_id"
-              gh api -X DELETE "repos/${{ github.repository }}/releases/$draft_id" || true
-            fi
-          done
+          python3 << 'EOF'
+          import subprocess, json
 
-          echo "2. Deleting all Published Releases and Tags..."
-          gh release list --exclude-drafts=false --limit 500 | awk '{print $1}' | while read -r tag; do
-            if [ -n "$tag" ]; then
-              echo "   🗑️ Deleting release and tag: $tag"
-              gh release delete "$tag" -y --cleanup-tag || true
-            fi
-          done
+          repo = "${{ github.repository }}"
+          print(f"Fetching ALL paginated releases and drafts for {repo}...")
 
-          echo "3. Cleaning up any remaining remote tags..."
+          try:
+              # --paginate सभी पेजों के ड्राफ़्ट्स को एक साथ खींचकर लाएगा
+              cmd = ["gh", "api", "--paginate", f"repos/{repo}/releases"]
+              res = subprocess.run(cmd, capture_output=True, text=True, check=True)
+              
+              # JSON सरणी (Array) पार्स करेगा
+              raw_out = res.stdout.strip()
+              if not raw_out:
+                  print("No releases found.")
+                  exit(0)
+
+              # पेजिनेशन रिजल्ट्स को संभालता है
+              if raw_out.startswith("["):
+                  releases = json.loads(raw_out)
+              else:
+                  # मल्टीपल JSON सरणियों को जोड़ता है
+                  releases = []
+                  for line in raw_out.splitlines():
+                      if line.strip():
+                          releases.extend(json.loads(line.strip()))
+
+              if not releases:
+                  print("No releases or drafts found!")
+              else:
+                  print(f"Total found: {len(releases)} releases/drafts. Deleting now...")
+                  for rel in releases:
+                      rel_id = rel['id']
+                      tag = rel.get('tag_name') or 'Draft'
+                      is_draft = rel.get('draft', False)
+                      print(f"🗑️ Deleting Release ID: {rel_id} (Tag: {tag}, Draft: {is_draft})")
+                      subprocess.run(["gh", "api", "-X", "DELETE", f"repos/{repo}/releases/{rel_id}"], check=False)
+                  print("✓ All releases and drafts deleted successfully!")
+          except Exception as e:
+              print(f"Execution Error: {e}")
+          EOF
+
+      - name: Delete All Remote Git Tags
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          echo "Deleting all remaining remote git tags..."
           git fetch --tags
           git tag -l | while read -r rtag; do
             if [ -n "$rtag" ]; then
-              echo "   🗑️ Deleting remote tag: $rtag"
+              echo "🗑️ Deleting remote tag: $rtag"
               git push --delete origin "$rtag" || true
             fi
           done
-
-          echo "🎉 ALL Drafts, Releases, and Tags cleared 100% successfully!"
+          echo "🎉 100% Cleared All Drafts, Releases & Tags!"
