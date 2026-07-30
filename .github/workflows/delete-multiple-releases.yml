@@ -1,0 +1,58 @@
+name: Delete Multiple Specific Releases and Tags
+
+on:
+  workflow_dispatch:
+    inputs:
+      tag_names:
+        description: "Enter Multiple Tags to Delete separated by commas (e.g., 260108, 260109, 260110)"
+        required: true
+        type: string
+
+permissions:
+  contents: write
+
+jobs:
+  delete-multiple:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Delete Multiple Releases & Tags
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          TAG_INPUT: ${{ inputs.tag_names }}
+        run: |
+          TAG_LIST=$(echo "$TAG_INPUT" | tr ',' ' ' | tr '\n' ' ')
+
+          for TAG in $TAG_LIST; do
+            TAG=$(echo "$TAG" | xargs)
+            if [ -z "$TAG" ]; then continue; fi
+
+            echo "=================================================="
+            echo "🗑️ Attempting to delete release & tag: $TAG"
+            echo "=================================================="
+
+            # 1. GitHub Release & Associated Tag डिलीट करेगा
+            if gh release view "$TAG" >/dev/null 2>&1; then
+              gh release delete "$TAG" -y --cleanup-tag || true
+              echo "✓ Deleted GitHub release: $TAG"
+            fi
+
+            # 2. Remote Git Tag डिलीट करेगा
+            git push --delete origin "$TAG" || true
+
+            # 3. Draft Release डिलीट करेगा
+            gh api "repos/${{ github.repository }}/releases" --jq ".[] | select(.tag_name == \"$TAG\" or .name == \"$TAG\" or .name == \"Build No. $TAG\") | .id" | while read -r rel_id; do
+              if [ -n "$rel_id" ]; then
+                echo "🗑️ Deleting draft release ID: $rel_id"
+                gh api -X DELETE "repos/${{ github.repository }}/releases/$rel_id" || true
+              fi
+            done
+
+            echo "✓ Tag $TAG completely deleted!"
+          done
+
+          echo "🎉 All specified releases and tags deleted successfully!"
