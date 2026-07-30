@@ -1,0 +1,86 @@
+name: Mirror Multiple Specific Release Tags
+
+on:
+  workflow_dispatch:
+    inputs:
+      tag_names:
+        description: "Enter Multiple Tags separated by commas (e.g., 260106, 260105, 260104)"
+        required: true
+        type: string
+
+permissions:
+  contents: write
+
+jobs:
+  mirror-multiple:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Mirror Multiple Tags
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          TAG_INPUT: ${{ inputs.tag_names }}
+        run: |
+          set -e
+          # कॉमा, स्पेस या न्यूलाइन से टैग्स अलग करेगा
+          TAG_LIST=$(echo "$TAG_INPUT" | tr ',' ' ' | tr '\n' ' ')
+
+          for TAG in $TAG_LIST; do
+            TAG=$(echo "$TAG" | xargs)
+            if [ -z "$TAG" ]; then continue; fi
+
+            echo "=================================================="
+            echo "🚀 Processing Tag: $TAG"
+            echo "=================================================="
+
+            REL_JSON=$(curl -s "https://api.github.com/repos/nullcpy/rvb/releases/tags/$TAG")
+
+            if ! echo "$REL_JSON" | jq -e '.id' >/dev/null 2>&1; then
+              echo "❌ Release tag '$TAG' not found in original repo (nullcpy/rvb). Skipping."
+              continue
+            fi
+
+            TITLE=$(echo "$REL_JSON" | jq -r '.name // .tag_name')
+            BODY=$(echo "$REL_JSON" | jq -r '.body // ""')
+            PRERELEASE=$(echo "$REL_JSON" | jq -r '.prerelease')
+
+            # Description से Group/Donate लिंक्स हटाएगा
+            CLEAN_BODY=$(echo "$BODY" | sed -E \
+              -e 's#\[GitHub\]\([^)]+\)#[GitHub](https://github.com/m4mental/my-rvb-builder)#g' \
+              -e 's#\|[[:space:]]*\[Group\]\([^)]+\)##g' \
+              -e 's#\|[[:space:]]*\[Donate\]\([^)]+\)##g' \
+              -e 's#\[Website\]\([^)]+\)#[Website](https://m4mental.github.io/my-rvb-builder/)#g')
+
+            RM_DIR="./tmp_assets_$TAG"
+            mkdir -p "$RM_DIR"
+
+            echo "📥 Downloading assets for $TAG..."
+            echo "$REL_JSON" | jq -c '.assets[]' | while read -r asset; do
+              DL_URL=$(echo "$asset" | jq -r '.browser_download_url')
+              FNAME=$(echo "$asset" | jq -r '.name')
+              echo "   Downloading $FNAME..."
+              curl -sL "$DL_URL" -o "$RM_DIR/$FNAME"
+            done
+
+            # आपकी Repo में अगर वह टैग है तो ओवरराइट करेगा
+            if gh release view "$TAG" >/dev/null 2>&1; then
+              echo "Deleting existing local release $TAG to overwrite..."
+              gh release delete "$TAG" -y --cleanup-tag || true
+            fi
+
+            PR_FLAG=""
+            if [ "$PRERELEASE" = "true" ]; then
+              PR_FLAG="--prerelease"
+            fi
+
+            echo "📤 Uploading release $TAG to your repository..."
+            gh release create "$TAG" "$RM_DIR"/* --title "$TITLE" --notes "$CLEAN_BODY" $PR_FLAG || true
+
+            rm -rf "$RM_DIR"
+            echo "✓ Release $TAG mirrored successfully!"
+            sleep 2
+          done
+
+          echo "🎉 All specified tags processed and mirrored!"
