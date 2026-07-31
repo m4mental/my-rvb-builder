@@ -96,7 +96,7 @@ jobs:
           git commit -m "Sync upstream code & clean README [skip ci]" || true
           git push origin main
 
-      - name: Inject P2P Share Button Right Next to GitHub Logo
+      - name: Replace ALL Website Download & Source Links to m4mental
         env:
           PAT_TOKEN: ${{ secrets.AUTO_SYNC_PAT }}
         run: |
@@ -109,132 +109,145 @@ jobs:
           mkdir -p ./tmp_site
           git clone https://github.com/nullcpy/nullcpy.github.io.git ./tmp_site
 
-          # Python Script: Clean Telegram/Donate + Inject P2P Rocket Button Right Next to GitHub Logo
+          # Python Script: ALL Files (index.html, script.js, releases.json) Link Replacer
           python3 << 'EOF'
           import re, os
 
-          path = "tmp_site/index.html"
-          if os.path.exists(path):
-              with open(path, "r", encoding="utf-8") as f:
-                  c = f.read()
+          site_dir = "tmp_site"
+          for root, dirs, files in os.walk(site_dir):
+              if ".git" in root:
+                  continue
+              for file in files:
+                  if file.endswith((".html", ".js", ".json", ".css")):
+                      fpath = os.path.join(root, file)
+                      try:
+                          with open(fpath, "r", encoding="utf-8") as f:
+                              c = f.read()
 
-              # 1. Inject PeerJS Script into <head>
-              peerjs_code = '<script src="https://unpkg.com/peerjs@1.5.2/dist/peerjs.min.js"></script>\n</head>'
-              c = c.replace("</head>", peerjs_code)
+                          # 1. Inject PeerJS Script in head if index.html
+                          if file == "index.html" and "unpkg.com/peerjs" not in c:
+                              c = c.replace("</head>", '<script src="https://unpkg.com/peerjs@1.5.2/dist/peerjs.min.js"></script>\n</head>')
 
-              # 2. Remove Telegram & Donate links
-              c = re.sub(r'<a[^>]*href="https://t\.me/[^"]*"[^>]*>.*?</a>\s*', '', c, flags=re.DOTALL)
-              c = re.sub(r'<a[^>]*t\.me[^>]*>.*?</a>\s*', '', c, flags=re.DOTALL)
-              c = re.sub(r'<a[^>]*href="[^"]*donate[^"]*"[^>]*>.*?</a>\s*', '', c, flags=re.DOTALL)
-              c = re.sub(r'<a[^>]*ko-fi[^>]*>.*?</a>\s*', '', c, flags=re.DOTALL)
+                          # 2. Remove Telegram & Donate links
+                          c = re.sub(r'<a[^>]*href="https://t\.me/[^"]*"[^>]*>.*?</a>\s*', '', c, flags=re.DOTALL)
+                          c = re.sub(r'<a[^>]*t\.me[^>]*>.*?</a>\s*', '', c, flags=re.DOTALL)
+                          c = re.sub(r'<a[^>]*href="[^"]*donate[^"]*"[^>]*>.*?</a>\s*', '', c, flags=re.DOTALL)
+                          c = re.sub(r'<a[^>]*ko-fi[^>]*>.*?</a>\s*', '', c, flags=re.DOTALL)
 
-              # 3. Update Branding and Repo URLs
-              c = c.replace("NullStore", "m4mental store")
-              c = c.replace("nullcpy/rvb", "m4mental/my-rvb-builder")
-              c = c.replace("nullcpy.github.io", "m4mental.github.io")
+                          # 3. Replace ALL Download, Release, API & Website URLs to m4mental
+                          c = c.replace("https://github.com/nullcpy/rvb/releases/download/", "https://github.com/m4mental/my-rvb-builder/releases/download/")
+                          c = c.replace("https://github.com/nullcpy/rvb/releases/tag/", "https://github.com/m4mental/my-rvb-builder/releases/tag/")
+                          c = c.replace("https://github.com/nullcpy/rvb/releases", "https://github.com/m4mental/my-rvb-builder/releases")
+                          c = c.replace("https://github.com/nullcpy/rvb", "https://github.com/m4mental/my-rvb-builder")
+                          c = c.replace("https://api.github.com/repos/nullcpy/rvb", "https://api.github.com/repos/m4mental/my-rvb-builder")
+                          c = c.replace("nullcpy/rvb", "m4mental/my-rvb-builder")
+                          c = c.replace("nullcpy.github.io", "m4mental.github.io")
+                          c = c.replace("NullStore", "m4mental store")
 
-              # 4. Inject P2P Share Rocket Button RIGHT NEXT to GitHub Logo Icon
-              p2p_btn = '<a href="javascript:void(0)" onclick="renderP2PShareUI()" title="P2P File Drop / Share" style="display:inline-flex; align-items:center; justify-content:center; background:#161b22; border:1px solid #30363d; border-radius:10px; width:40px; height:40px; text-decoration:none; margin-left:8px; font-size:1.2rem; cursor:pointer;">🚀</a>'
+                          # 4. Inject P2P Share Rocket Button RIGHT NEXT to GitHub Logo in index.html
+                          if file == "index.html" and "renderP2PShareUI" not in c:
+                              p2p_btn = '<a href="javascript:void(0)" onclick="renderP2PShareUI()" title="P2P File Drop / Share" style="display:inline-flex; align-items:center; justify-content:center; background:#161b22; border:1px solid #30363d; border-radius:10px; width:40px; height:40px; text-decoration:none; margin-left:8px; font-size:1.2rem; cursor:pointer;">🚀</a>'
+                              github_pattern = r'(<a[^>]*href="https://github\.com/m4mental/my-rvb-builder"[^>]*>[\s\S]*?</a>)'
+                              c = re.sub(github_pattern, r'\1\n' + p2p_btn, c, count=1)
 
-              # Target GitHub button URL specifically
-              github_pattern = r'(<a[^>]*href="https://github\.com/m4mental/my-rvb-builder"[^>]*>[\s\S]*?</a>)'
-              c = re.sub(github_pattern, r'\1\n' + p2p_btn, c, count=1)
+                          # 5. Inject P2P JS Engine in index.html
+                          if file == "index.html" and "initP2PPeer" not in c:
+                              p2p_js_engine = """
+                              <script>
+                              let peer = null, peerConn = null, myPinCode = '';
+                              function generatePin() { return Math.floor(1000 + Math.random() * 9000).toString(); }
+                              function initP2PPeer() {
+                                if (peer) return;
+                                myPinCode = 'm4m-' + generatePin();
+                                peer = new Peer(myPinCode, { debug: 1 });
+                                peer.on('open', (id) => {
+                                  const el = document.getElementById('myPinDisplay');
+                                  if (el) el.innerText = myPinCode.replace('m4m-', '');
+                                });
+                                peer.on('connection', (conn) => {
+                                  peerConn = conn;
+                                  setupConnListeners();
+                                });
+                              }
+                              function setupConnListeners() {
+                                const el = document.getElementById('p2pStatus');
+                                if (el) el.innerText = '⚡ Connected to peer device!';
+                                peerConn.on('data', (data) => {
+                                  if (data.file) {
+                                    const blob = new Blob([data.file], { type: data.type || 'application/octet-stream' });
+                                    const url = URL.createObjectURL(blob);
+                                    const el = document.getElementById('p2pStatus');
+                                    if (el) {
+                                      el.innerHTML = `🎉 File received: <b>${data.name}</b><br><br><a href="${url}" download="${data.name}" style="background:#22c55e; color:#fff; padding:10px 18px; border-radius:8px; text-decoration:none; display:inline-block; font-weight:bold;">📥 Save / Download File</a>`;
+                                    }
+                                  }
+                                });
+                              }
+                              function connectToSender() {
+                                const pin = document.getElementById('connectPinInput').value.trim();
+                                if (!pin || pin.length !== 4) { alert('Enter valid 4-digit PIN.'); return; }
+                                const el = document.getElementById('p2pStatus');
+                                if (el) el.innerText = '🔄 Connecting to PIN: ' + pin + '...';
+                                if (!peer) initP2PPeer();
+                                peerConn = peer.connect('m4m-' + pin);
+                                peerConn.on('open', setupConnListeners);
+                              }
+                              function sendP2PFile() {
+                                const fileInput = document.getElementById('p2pFileInput');
+                                if (!fileInput || !fileInput.files[0]) { alert('Select a file.'); return; }
+                                if (!peerConn) { alert('Connect via PIN first.'); return; }
+                                const file = fileInput.files[0];
+                                const el = document.getElementById('p2pStatus');
+                                if (el) el.innerText = `📤 Transferring ${file.name}...`;
+                                const reader = new FileReader();
+                                reader.onload = (e) => {
+                                  peerConn.send({ name: file.name, type: file.type, file: e.target.result });
+                                  if (el) el.innerText = `🎉 Transferred "${file.name}"!`;
+                                };
+                                reader.readAsArrayBuffer(file);
+                              }
+                              function renderP2PShareUI() {
+                                const container = document.getElementById('appGrid') || document.getElementById('appList') || document.querySelector('.app-grid') || document.body;
+                                if (!container) return;
+                                container.innerHTML = `
+                                  <div style="max-width:800px; margin:20px auto; background:#161b22; border:1px solid #30363d; border-radius:16px; padding:24px; text-align:center;">
+                                    <div style="font-size:1.5rem; font-weight:800; color:#2dd4bf; margin-bottom:6px;">🚀 Nothing Warp / P2P File Drop</div>
+                                    <div style="font-size:0.88rem; color:#94a3b8; margin-bottom:20px;">Direct Peer-to-Peer file sharing between Android, iOS, Windows & Mac.<br><b>Zero server uploads • Zero file size limits • Instant Transfer</b></div>
+                                    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:16px;">
+                                      <div style="background:#0d1117; border:1px solid #21262d; border-radius:14px; padding:20px;">
+                                        <div style="font-weight:700; color:#fff;">1. Your Device PIN (Receive Files)</div>
+                                        <div style="font-size:2.2rem; font-weight:800; color:#38bdf8; letter-spacing:4px; background:#161b22; padding:10px; border-radius:10px; border:1px dashed #30363d; margin:10px 0;" id="myPinDisplay">----</div>
+                                      </div>
+                                      <div style="background:#0d1117; border:1px solid #21262d; border-radius:14px; padding:20px;">
+                                        <div style="font-weight:700; color:#fff;">2. Connect & Send (Enter PIN)</div>
+                                        <input type="number" id="connectPinInput" style="width:100%; background:#161b22; border:1px solid #30363d; color:#fff; font-size:1.2rem; text-align:center; padding:10px; border-radius:10px; margin:10px 0;" placeholder="1234">
+                                        <button style="background:#2563eb; color:#fff; border:none; padding:10px; border-radius:10px; font-weight:700; cursor:pointer; width:100%;" onclick="connectToSender()">Connect Device</button>
+                                      </div>
+                                    </div>
+                                    <div style="border:2px dashed #30363d; border-radius:12px; padding:20px; margin-top:15px; cursor:pointer;" onclick="document.getElementById('p2pFileInput').click()">
+                                      <div style="font-size:1.8rem;">📁</div>
+                                      <div style="font-weight:700; color:#f0f6fc;">Click to select file (APK, ZIP, Video, Photo)</div>
+                                      <input type="file" id="p2pFileInput" style="display:none;" onchange="sendP2PFile()">
+                                    </div>
+                                    <div style="margin-top:15px; font-size:0.9rem; font-weight:600; color:#38bdf8;" id="p2pStatus">Status: Waiting for connection...</div>
+                                    <br><button onclick="location.reload()" style="background:#21262d; border:1px solid #30363d; color:#9ca3af; padding:8px 16px; border-radius:8px; cursor:pointer; font-weight:bold;">← Back to App Store</button>
+                                  </div>
+                                `;
+                                initP2PPeer();
+                              }
+                              </script>
+                              </body>
+                              """
+                              c = c.replace("</body>", p2p_js_engine)
 
-              # 5. Inject P2P JS Logic Engine before </body>
-              p2p_js_engine = """
-              <script>
-              let peer = null, peerConn = null, myPinCode = '';
-              function generatePin() { return Math.floor(1000 + Math.random() * 9000).toString(); }
-              function initP2PPeer() {
-                if (peer) return;
-                myPinCode = 'm4m-' + generatePin();
-                peer = new Peer(myPinCode, { debug: 1 });
-                peer.on('open', (id) => {
-                  const el = document.getElementById('myPinDisplay');
-                  if (el) el.innerText = myPinCode.replace('m4m-', '');
-                });
-                peer.on('connection', (conn) => {
-                  peerConn = conn;
-                  setupConnListeners();
-                });
-              }
-              function setupConnListeners() {
-                const el = document.getElementById('p2pStatus');
-                if (el) el.innerText = '⚡ Connected to peer device!';
-                peerConn.on('data', (data) => {
-                  if (data.file) {
-                    const blob = new Blob([data.file], { type: data.type || 'application/octet-stream' });
-                    const url = URL.createObjectURL(blob);
-                    const el = document.getElementById('p2pStatus');
-                    if (el) {
-                      el.innerHTML = `🎉 File received: <b>${data.name}</b><br><br><a href="${url}" download="${data.name}" style="background:#22c55e; color:#fff; padding:10px 18px; border-radius:8px; text-decoration:none; display:inline-block; font-weight:bold;">📥 Save / Download File</a>`;
-                    }
-                  }
-                });
-              }
-              function connectToSender() {
-                const pin = document.getElementById('connectPinInput').value.trim();
-                if (!pin || pin.length !== 4) { alert('Enter valid 4-digit PIN.'); return; }
-                const el = document.getElementById('p2pStatus');
-                if (el) el.innerText = '🔄 Connecting to PIN: ' + pin + '...';
-                if (!peer) initP2PPeer();
-                peerConn = peer.connect('m4m-' + pin);
-                peerConn.on('open', setupConnListeners);
-              }
-              function sendP2PFile() {
-                const fileInput = document.getElementById('p2pFileInput');
-                if (!fileInput || !fileInput.files[0]) { alert('Select a file.'); return; }
-                if (!peerConn) { alert('Connect via PIN first.'); return; }
-                const file = fileInput.files[0];
-                const el = document.getElementById('p2pStatus');
-                if (el) el.innerText = `📤 Transferring ${file.name}...`;
-                const reader = new FileReader();
-                reader.onload = (e) => {
-                  peerConn.send({ name: file.name, type: file.type, file: e.target.result });
-                  if (el) el.innerText = `🎉 Transferred "${file.name}"!`;
-                };
-                reader.readAsArrayBuffer(file);
-              }
-              function renderP2PShareUI() {
-                const container = document.getElementById('appGrid') || document.getElementById('appList') || document.querySelector('.app-grid') || document.body;
-                if (!container) return;
-                container.innerHTML = `
-                  <div style="max-width:800px; margin:20px auto; background:#161b22; border:1px solid #30363d; border-radius:16px; padding:24px; text-align:center;">
-                    <div style="font-size:1.5rem; font-weight:800; color:#2dd4bf; margin-bottom:6px;">🚀 Nothing Warp / P2P File Drop</div>
-                    <div style="font-size:0.88rem; color:#94a3b8; margin-bottom:20px;">Direct Peer-to-Peer file sharing between Android, iOS, Windows & Mac.<br><b>Zero server uploads • Zero file size limits • Instant Transfer</b></div>
-                    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:16px;">
-                      <div style="background:#0d1117; border:1px solid #21262d; border-radius:14px; padding:20px;">
-                        <div style="font-weight:700; color:#fff;">1. Your Device PIN (Receive Files)</div>
-                        <div style="font-size:2.2rem; font-weight:800; color:#38bdf8; letter-spacing:4px; background:#161b22; padding:10px; border-radius:10px; border:1px dashed #30363d; margin:10px 0;" id="myPinDisplay">----</div>
-                      </div>
-                      <div style="background:#0d1117; border:1px solid #21262d; border-radius:14px; padding:20px;">
-                        <div style="font-weight:700; color:#fff;">2. Connect & Send (Enter PIN)</div>
-                        <input type="number" id="connectPinInput" style="width:100%; background:#161b22; border:1px solid #30363d; color:#fff; font-size:1.2rem; text-align:center; padding:10px; border-radius:10px; margin:10px 0;" placeholder="1234">
-                        <button style="background:#2563eb; color:#fff; border:none; padding:10px; border-radius:10px; font-weight:700; cursor:pointer; width:100%;" onclick="connectToSender()">Connect Device</button>
-                      </div>
-                    </div>
-                    <div style="border:2px dashed #30363d; border-radius:12px; padding:20px; margin-top:15px; cursor:pointer;" onclick="document.getElementById('p2pFileInput').click()">
-                      <div style="font-size:1.8rem;">📁</div>
-                      <div style="font-weight:700; color:#f0f6fc;">Click to select file (APK, ZIP, Video, Photo)</div>
-                      <input type="file" id="p2pFileInput" style="display:none;" onchange="sendP2PFile()">
-                    </div>
-                    <div style="margin-top:15px; font-size:0.9rem; font-weight:600; color:#38bdf8;" id="p2pStatus">Status: Waiting for connection...</div>
-                    <br><button onclick="location.reload()" style="background:#21262d; border:1px solid #30363d; color:#9ca3af; padding:8px 16px; border-radius:8px; cursor:pointer; font-weight:bold;">← Back to App Store</button>
-                  </div>
-                `;
-                initP2PPeer();
-              }
-              </script>
-              </body>
-              """
-              c = c.replace("</body>", p2p_js_engine)
+                          with open(fpath, "w", encoding="utf-8") as f:
+                              f.write(c)
+                      except Exception as e:
+                          print(f"Error processing {file}: {e}")
 
-              with open(path, "w", encoding="utf-8") as f:
-                  f.write(c)
-
-              print("==============================================")
-              print("SUCCESS: P2P Share Button Injected Right Next to GitHub Logo!")
-              print("==============================================")
+          print("==============================================")
+          print("SUCCESS: ALL Website Download Links & Source Releases updated to m4mental!")
+          print("==============================================")
           EOF
 
           # Dedicated Website Repo क्लोन करके सभी फाइलों को ऑटो-पुश करेगा
@@ -246,7 +259,7 @@ jobs:
           git config user.name 'github-actions[bot]'
           git config user.email 'github-actions[bot]@users.noreply.github.com'
           git add .
-          git commit -m "Inject P2P Share Rocket button next to GitHub Logo [skip ci]" || true
+          git commit -m "Update website download links and releases to m4mental [skip ci]" || true
           git push origin main
           cd ..
           rm -rf ./tmp_site ./site_repo
