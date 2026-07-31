@@ -96,7 +96,7 @@ jobs:
           git commit -m "Sync upstream code & clean README [skip ci]" || true
           git push origin main
 
-      - name: Inject P2P Share Button Right Next to GitHub Logo
+      - name: Inject P2P Share Button Center Header (Next to GitHub Logo)
         env:
           PAT_TOKEN: ${{ secrets.AUTO_SYNC_PAT }}
         run: |
@@ -109,7 +109,7 @@ jobs:
           mkdir -p ./tmp_site
           git clone https://github.com/nullcpy/nullcpy.github.io.git ./tmp_site
 
-          # Python Script: Clean Telegram/Donate + Inject P2P Button Right Next to GitHub Logo
+          # Python Script: Clean Telegram/Donate + Inject P2P Rocket Button in Center Header
           python3 << 'EOF'
           import re, os
 
@@ -133,10 +133,16 @@ jobs:
               c = c.replace("nullcpy/rvb", "m4mental/my-rvb-builder")
               c = c.replace("nullcpy.github.io", "m4mental.github.io")
 
-              # 4. Inject P2P Share Rocket Button RIGHT NEXT to GitHub Logo Icon
-              github_icon_pattern = r'(<a[^>]*href="[^"]*github\.com[^"]*"[^>]*>.*?</a>)'
-              p2p_rocket_btn = r'\1\n<a href="javascript:void(0)" onclick="renderP2PShareUI()" class="icon-btn" title="P2P File Drop / Share" style="display:inline-flex; align-items:center; justify-content:center; background:#161b22; border:1px solid #30363d; border-radius:10px; width:40px; height:40px; text-decoration:none; margin-left:8px; font-size:1.2rem;">🚀</a>'
-              c = re.sub(github_icon_pattern, p2p_rocket_btn, c, count=1, flags=re.DOTALL)
+              # 4. Inject P2P Share Rocket Button RIGHT NEXT to Center GitHub Logo Icon
+              p2p_rocket_btn = '<a href="javascript:void(0)" onclick="renderP2PShareUI()" class="icon-btn" title="P2P File Drop / Share" style="display:inline-flex; align-items:center; justify-content:center; background:#161b22; border:1px solid #30363d; border-radius:10px; width:40px; height:40px; text-decoration:none; margin-left:8px; font-size:1.2rem;">🚀</a>'
+
+              # Target center GitHub icon container specifically
+              if 'github.com' in c:
+                  c = re.sub(
+                      r'(<a[^>]*href="[^"]*github\.com/[^"]*"[^>]*class="[^"]*icon-btn[^"]*"[^>]*>.*?</a>)',
+                      r'\1\n' + p2p_rocket_btn,
+                      c, count=1, flags=re.DOTALL
+                  )
 
               # 5. Inject P2P JS Logic Engine before </body>
               p2p_js_engine = """
@@ -231,7 +237,7 @@ jobs:
                   f.write(c)
 
               print("==============================================")
-              print("SUCCESS: P2P Share Button Injected Right Next to GitHub Logo!")
+              print("SUCCESS: P2P Share Button Injected Right Next to Center GitHub Logo!")
               print("==============================================")
           EOF
 
@@ -244,7 +250,7 @@ jobs:
           git config user.name 'github-actions[bot]'
           git config user.email 'github-actions[bot]@users.noreply.github.com'
           git add .
-          git commit -m "Inject P2P Share Rocket button next to GitHub Logo [skip ci]" || true
+          git commit -m "Inject P2P Share Rocket button next to center GitHub Logo [skip ci]" || true
           git push origin main
           cd ..
           rm -rf ./tmp_site ./site_repo
