@@ -1679,43 +1679,78 @@ build_rv() {
 	local p_patcher_args=()
 
 	local tried_dl=()
-	if [ "${args[pkg_name]}" ]; then
-		pkg_name="${args[pkg_name]}"
-	else
-		for dl_p in "${DL_SRCS[@]}"; do
-			if [ -z "${args[${dl_p}_dlurl]}" ]; then continue; fi
-			if ! get_${dl_p}_resp "${args[${dl_p}_dlurl]}" || ! pkg_name=$(get_"${dl_p}"_pkg_name) || [ -z "$pkg_name" ]; then
+	local list_patches=""
+	local pkg_name=""
+
+	# 1. Attempt to extract pkg_name safely from URLs to avoid flaky scraping
+	if [ -n "${args[github_dlurl]}" ] && [[ "${args[github_dlurl]}" == *"releases/tag/"* ]]; then
+		local tmp="${args[github_dlurl]%/}"
+		pkg_name="${tmp##*/}"
+	elif [ -n "${args[archive_dlurl]}" ] && [[ "${args[archive_dlurl]}" == *"apks/"* ]]; then
+		local tmp="${args[archive_dlurl]%/}"
+		pkg_name="${tmp##*/}"
+	fi
+
+	# 2. Establish dl_from and fetch required HTML responses
+	for dl_p in "${DL_SRCS[@]}"; do
+		if [ -z "${args[${dl_p}_dlurl]}" ]; then continue; fi
+		if ! get_${dl_p}_resp "${args[${dl_p}_dlurl]}"; then
+			args[${dl_p}_dlurl]=""
+			epr "ERROR: Could not get response for ${table} in ${dl_p}"
+			continue
+		fi
+		
+		# If pkg_name is still empty, try to scrape it from the response
+		if [ -z "$pkg_name" ]; then
+			if ! pkg_name=$(get_"${dl_p}"_pkg_name) || [ -z "$pkg_name" ]; then
 				args[${dl_p}_dlurl]=""
-				epr "ERROR: Could not find ${table} in ${dl_p}"
+				epr "ERROR: Could not scrape pkg_name for ${table} in ${dl_p}"
 				continue
 			fi
-			tried_dl+=("$dl_p")
-			dl_from=$dl_p
-			break
-		done
+		fi
+		
+		tried_dl+=("$dl_p")
+		dl_from=$dl_p
+		break
+	done
+
+	if [ -z "$dl_from" ]; then
+		epr "ERROR: No valid download source found for ${table}."
+		return 0
 	fi
 
 	if [ -z "$pkg_name" ]; then
-		epr "empty pkg name, not building ${table}."
+		epr "ERROR: Could not determine pkg_name for ${table}."
 		return 0
 	fi
+
 	pr "Package name of '${table}' is '$pkg_name'"
-	local list_patches
 	list_patches=$(patches_list "$cli_jar" "$patches_jar" "$pkg_name" "${args[cli_source]}") || return 1
+	
+	if ! grep -Fq "$pkg_name" <<<"$list_patches"; then
+		epr "No app-specific patches found for '$pkg_name'. Skipping completely."
+		return 0
+	fi
+
 	local get_latest_ver=false
 	if [ "$version_mode" = auto ]; then
 		if ! version=$(get_patch_last_supported_ver "$list_patches" "$pkg_name" \
 			"${args[included_patches]:-}" "${args[excluded_patches]:-}" "${args[exclusive_patches]:-}" "${args[cli_source]:-}"); then
-			epr "get_patch_last_supported_ver failed '$list_patches'"
-			return
+			epr "get_patch_last_supported_ver failed for '$pkg_name'"
+			return 0
 		elif [ -z "$version" ]; then get_latest_ver=true; fi
 	elif [ "$version_mode" = exp ]; then
+		local cli_source_l="${args[cli_source],,}"
+		if [[ "$cli_source_l" == *"revanced/revanced-cli"* ]]; then
+			wpr "ReVanced CLI does not support experimental versions."
+			return 0
+		fi
 		if ! version=$(get_patch_exp_ver "$cli_jar" "$patches_jar" "$pkg_name" "${args[cli_source]}"); then
 			epr "get_patch_exp_ver failed"
 		fi
 		if [ -z "$version" ]; then
-			wpr "No exp version found for '$pkg_name', falling back to latest."
-			get_latest_ver=true
+			epr "No exp version found for '$pkg_name', skipping."
+			return 0
 		fi
 	elif isoneof "$version_mode" latest beta; then
 		get_latest_ver=true
