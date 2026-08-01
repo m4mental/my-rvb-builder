@@ -1,4 +1,4 @@
-name: Sync Upstream Code & Separate Website
+name: Master Auto-Sync & Self-Healing Engine
 
 on:
   schedule:
@@ -10,7 +10,7 @@ permissions:
   pull-requests: write
 
 jobs:
-  sync:
+  sync-and-heal:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout main branch
@@ -19,7 +19,7 @@ jobs:
           fetch-depth: 0
           token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Fetch upstream code (main branch)
+      - name: 1. Sync Upstream Code & Scripts
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email 'github-actions[bot]@users.noreply.github.com'
@@ -27,10 +27,10 @@ jobs:
           git fetch upstream main
           git checkout main
 
-          # 1. ओरिजिनल Repo से सारे नए ऐप्स और कोड लाएगा
+          # ओरिजिनल Repo से सारे नए कोड और स्क्रिप्ट्स लाएगा
           git checkout upstream/main -- .
 
-      - name: Line-by-Line README Cleaner
+      - name: 2. Line-by-Line README Cleaner
         run: |
           python3 << 'EOF'
           import re, os
@@ -87,7 +87,7 @@ jobs:
               print("==============================================")
           EOF
 
-      - name: Commit and Push Cleaned README & Upstream Code
+      - name: 3. Commit and Push Cleaned Code
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email 'github-actions[bot]@users.noreply.github.com'
@@ -96,7 +96,77 @@ jobs:
           git commit -m "Sync upstream code & clean README [skip ci]" || true
           git push origin main
 
-      - name: Inject Multi-File P2P Share & Disconnect Feature to Website
+      - name: 4. Self-Healing Release Integrity Check & Auto-Mirror
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -e
+          echo "Checking releases integrity between nullcpy/rvb and m4mental/my-rvb-builder..."
+          
+          RELEASES_JSON=$(curl -s "https://api.github.com/repos/nullcpy/rvb/releases?per_page=20")
+          
+          if ! echo "$RELEASES_JSON" | jq -e '. | type == "array"' >/dev/null; then
+            echo "Skipping release check due to rate limit or API issue."
+            exit 0
+          fi
+
+          echo "$RELEASES_JSON" | jq -c 'reverse | .[]' | while read -r rel; do
+            ORIG_TAG=$(echo "$rel" | jq -r '.tag_name')
+            ORIG_TITLE=$(echo "$rel" | jq -r '.name // .tag_name')
+            BODY=$(echo "$rel" | jq -r '.body // ""')
+            PRERELEASE=$(echo "$rel" | jq -r '.prerelease')
+
+            ORIG_ASSETS=$(echo "$rel" | jq -r '.assets[].name' 2>/dev/null | sort | tr '\n' ' ' | xargs)
+
+            # अगर आपकी Repo में यह टैग है तो फ़ाइलों की तुलना (Match) करेगा
+            if gh release view "$ORIG_TAG" >/dev/null 2>&1; then
+              LOCAL_REL_JSON=$(gh api "repos/${{ github.repository }}/releases/tags/$ORIG_TAG" 2>/dev/null || echo "{}")
+              LOCAL_ASSETS=$(echo "$LOCAL_REL_JSON" | jq -r '.assets[].name' 2>/dev/null | sort | tr '\n' ' ' | xargs || echo "")
+
+              if [ "$ORIG_ASSETS" = "$LOCAL_ASSETS" ]; then
+                continue
+              else
+                echo "⚠️ MISMATCH DETECTED for Tag $ORIG_TAG!"
+                echo "   Original Assets: $ORIG_ASSETS"
+                echo "   Local Assets:    $LOCAL_ASSETS"
+                echo "   Self-Healing: Deleting mismatched release $ORIG_TAG and re-mirroring..."
+                gh release delete "$ORIG_TAG" -y --cleanup-tag || true
+                sleep 2
+              fi
+            fi
+
+            # Clean release notes
+            CLEAN_BODY=$(echo "$BODY" | sed -E \
+              -e 's#\[GitHub\]\([^)]+\)#[GitHub](https://github.com/m4mental/my-rvb-builder)#g' \
+              -e 's#\|[[:space:]]*\[Group\]\([^)]+\)##g' \
+              -e 's#\|[[:space:]]*\[Donate\]\([^)]+\)##g' \
+              -e 's#\[Website\]\([^)]+\)#[Website](https://m4mental.github.io/my-rvb-builder/)#g')
+
+            echo "🚀 Mirroring Missing/Healed Tag: $ORIG_TAG ($ORIG_TITLE)..."
+
+            RM_DIR="./tmp_assets_$ORIG_TAG"
+            mkdir -p "$RM_DIR"
+
+            echo "$rel" | jq -c '.assets[]' | while read -r asset; do
+              DL_URL=$(echo "$asset" | jq -r '.browser_download_url')
+              FNAME=$(echo "$asset" | jq -r '.name')
+              echo "   📥 Downloading $FNAME..."
+              curl -sL "$DL_URL" -o "$RM_DIR/$FNAME"
+            done
+
+            if [ -d "$RM_DIR" ] && [ "$(ls -A "$RM_DIR")" ]; then
+              echo "   📤 Uploading $ORIG_TAG to your releases..."
+              PR_FLAG=""
+              if [ "$PRERELEASE" = "true" ]; then PR_FLAG="--prerelease"; fi
+              gh release create "$ORIG_TAG" "$RM_DIR"/* --title "$ORIG_TITLE" --notes "$CLEAN_BODY" $PR_FLAG || true
+            fi
+
+            rm -rf "$RM_DIR"
+            echo "✓ Tag $ORIG_TAG self-healed successfully!"
+            sleep 2
+          done
+
+      - name: 5. Auto Sync Website, Inject P2P Multi-Share & Disconnect to m4mental.github.io
         env:
           PAT_TOKEN: ${{ secrets.AUTO_SYNC_PAT }}
         run: |
@@ -105,36 +175,30 @@ jobs:
             exit 0
           fi
 
-          echo "Cloning official website repository (nullcpy.github.io)..."
+          echo "Cloning official website repository..."
           mkdir -p ./tmp_site
           git clone https://github.com/nullcpy/nullcpy.github.io.git ./tmp_site
 
-          # Python Script: Clean Telegram/Donate + Inject Multi-File P2P + Disconnect Button
           python3 << 'EOF'
           import re, os
 
           site_dir = "tmp_site"
           for root, dirs, files in os.walk(site_dir):
-              if ".git" in root:
-                  continue
+              if ".git" in root: continue
               for file in files:
                   if file.endswith((".html", ".js", ".json", ".css")):
                       fpath = os.path.join(root, file)
                       try:
-                          with open(fpath, "r", encoding="utf-8") as f:
-                              c = f.read()
+                          with open(fpath, "r", encoding="utf-8") as f: c = f.read()
 
-                          # 1. Inject PeerJS Script into <head> of index.html
                           if file == "index.html" and "unpkg.com/peerjs" not in c:
                               c = c.replace("</head>", '<script src="https://unpkg.com/peerjs@1.5.2/dist/peerjs.min.js"></script>\n</head>')
 
-                          # 2. Remove Telegram & Donate links
                           c = re.sub(r'<a[^>]*href="https://t\.me/[^"]*"[^>]*>.*?</a>\s*', '', c, flags=re.DOTALL)
                           c = re.sub(r'<a[^>]*t\.me[^>]*>.*?</a>\s*', '', c, flags=re.DOTALL)
                           c = re.sub(r'<a[^>]*href="[^"]*donate[^"]*"[^>]*>.*?</a>\s*', '', c, flags=re.DOTALL)
                           c = re.sub(r'<a[^>]*ko-fi[^>]*>.*?</a>\s*', '', c, flags=re.DOTALL)
 
-                          # 3. Deep Replace ALL Download, Release, API, Owner & Repo Variables
                           c = re.sub(r'https?://github\.com/nullcpy/rvb/releases/download/', 'https://github.com/m4mental/my-rvb-builder/releases/download/', c)
                           c = re.sub(r'https?://github\.com/nullcpy/rvb/releases/tag/', 'https://github.com/m4mental/my-rvb-builder/releases/tag/', c)
                           c = re.sub(r'https?://github\.com/nullcpy/rvb/releases', 'https://github.com/m4mental/my-rvb-builder/releases', c)
@@ -150,26 +214,19 @@ jobs:
                           c = c.replace('repo: "rvb"', 'repo: "my-rvb-builder"')
                           c = c.replace("repo: 'rvb'", "repo: 'my-rvb-builder'")
 
-                          # 4. Inject P2P Share Rocket Button RIGHT NEXT to GitHub Logo in index.html
                           if file == "index.html" and "renderP2PShareUI" not in c:
                               p2p_btn = '<a href="javascript:void(0)" onclick="renderP2PShareUI()" title="P2P File Drop / Share" style="display:inline-flex; align-items:center; justify-content:center; background:#161b22; border:1px solid #30363d; border-radius:10px; width:40px; height:40px; text-decoration:none; margin-left:8px; font-size:1.2rem; cursor:pointer;">🚀</a>'
                               github_pattern = r'(<a[^>]*href="https://github\.com/m4mental/my-rvb-builder"[^>]*>[\s\S]*?</a>)'
                               c = re.sub(github_pattern, r'\1\n' + p2p_btn, c, count=1)
 
-                          # 5. Inject P2P Multi-File Engine + Disconnect Button before </body> in index.html
                           if file == "index.html" and "initP2PPeer" not in c:
                               p2p_js_engine = """
                               <script>
-                              // Live Link Interceptor Guard
                               window.addEventListener('click', function(e) {
                                 let target = e.target.closest('a');
                                 if (target && target.href) {
-                                  if (target.href.includes('nullcpy/rvb')) {
-                                    target.href = target.href.replace(/nullcpy\/rvb/g, 'm4mental/my-rvb-builder');
-                                  }
-                                  if (target.href.includes('nullcpy.github.io')) {
-                                    target.href = target.href.replace(/nullcpy\.github\.io/g, 'm4mental.github.io');
-                                  }
+                                  if (target.href.includes('nullcpy/rvb')) target.href = target.href.replace(/nullcpy\/rvb/g, 'm4mental/my-rvb-builder');
+                                  if (target.href.includes('nullcpy.github.io')) target.href = target.href.replace(/nullcpy\.github\.io/g, 'm4mental.github.io');
                                 }
                               }, true);
 
@@ -183,10 +240,7 @@ jobs:
                                   const el = document.getElementById('myPinDisplay');
                                   if (el) el.innerText = myPinCode.replace('m4m-', '');
                                 });
-                                peer.on('connection', (conn) => {
-                                  peerConn = conn;
-                                  setupConnListeners();
-                                });
+                                peer.on('connection', (conn) => { peerConn = conn; setupConnListeners(); });
                               }
                               function setupConnListeners() {
                                 const el = document.getElementById('p2pStatus');
@@ -200,12 +254,10 @@ jobs:
                                     const url = URL.createObjectURL(blob);
                                     const el = document.getElementById('p2pStatus');
                                     let fileBox = document.getElementById('receivedFilesList');
-                                    
                                     if (!fileBox) {
                                       if (el) el.innerHTML = `<b>🎉 Received Files:</b><div id="receivedFilesList" style="margin-top:10px; display:flex; flex-direction:column; gap:8px; align-items:center;"></div>`;
                                       fileBox = document.getElementById('receivedFilesList');
                                     }
-
                                     if (fileBox) {
                                       const link = document.createElement('a');
                                       link.href = url;
@@ -235,26 +287,18 @@ jobs:
                                 peerConn.on('open', setupConnListeners);
                               }
                               function disconnectDevice() {
-                                if (peerConn) {
-                                  peerConn.close();
-                                  peerConn = null;
-                                }
+                                if (peerConn) { peerConn.close(); peerConn = null; }
                                 const el = document.getElementById('p2pStatus');
                                 if (el) el.innerText = '🔌 Disconnected cleanly. Generating new PIN...';
                                 const dcBtn = document.getElementById('disconnectBtn');
                                 if (dcBtn) dcBtn.style.display = 'none';
-
-                                if (peer) {
-                                  peer.destroy();
-                                  peer = null;
-                                }
+                                if (peer) { peer.destroy(); peer = null; }
                                 setTimeout(initP2PPeer, 500);
                               }
                               async function sendP2PFiles() {
                                 const fileInput = document.getElementById('p2pFileInput');
                                 if (!fileInput || !fileInput.files || fileInput.files.length === 0) { alert('Select at least one file.'); return; }
                                 if (!peerConn) { alert('Connect via PIN first.'); return; }
-                                
                                 const files = Array.from(fileInput.files);
                                 const el = document.getElementById('p2pStatus');
 
@@ -265,21 +309,13 @@ jobs:
                                   await new Promise((resolve) => {
                                     const reader = new FileReader();
                                     reader.onload = (e) => {
-                                      peerConn.send({
-                                        name: file.name,
-                                        type: file.type,
-                                        file: e.target.result,
-                                        fileIndex: i + 1,
-                                        totalFiles: files.length
-                                      });
+                                      peerConn.send({ name: file.name, type: file.type, file: e.target.result, fileIndex: i + 1, totalFiles: files.length });
                                       resolve();
                                     };
                                     reader.readAsArrayBuffer(file);
                                   });
-
                                   await new Promise(r => setTimeout(r, 300));
                                 }
-
                                 if (el) el.innerText = `🎉 All ${files.length} file(s) transferred successfully!`;
                               }
                               function renderP2PShareUI() {
@@ -325,20 +361,18 @@ jobs:
                           print(f"Error processing {file}: {e}")
 
           print("==============================================")
-          print("SUCCESS: Multi-File P2P Share & Disconnect Feature Injected!")
+          print("SUCCESS: Master Sync + Self-Healing Releases + P2P Multi-Share Completed!")
           print("==============================================")
           EOF
 
-          # Dedicated Website Repo क्लोन करके सभी फाइलों को ऑटो-पुश करेगा
           git clone https://m4mental:${PAT_TOKEN}@github.com/m4mental/m4mental.github.io.git site_repo
-          
           rsync -av --exclude='.git' ./tmp_site/ ./site_repo/
 
           cd site_repo
           git config user.name 'github-actions[bot]'
           git config user.email 'github-actions[bot]@users.noreply.github.com'
           git add .
-          git commit -m "Inject Multi-File P2P Share and Disconnect Button [skip ci]" || true
+          git commit -m "Auto sync website + self-healing releases [skip ci]" || true
           git push origin main
           cd ..
           rm -rf ./tmp_site ./site_repo
