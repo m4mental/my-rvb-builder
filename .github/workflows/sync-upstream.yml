@@ -96,12 +96,12 @@ jobs:
           git commit -m "Sync upstream code & clean README [skip ci]" || true
           git push origin main
 
-      - name: 4. Self-Healing Releases & In-Place Archive Sync (Max 100 Builds Limit)
+      - name: 4. Differential Archive Sync & Numbered Builds Self-Healing
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           set -e
-          echo "Scanning past releases for self-healing and in-place archive sync..."
+          echo "Scanning past releases for differential sync and self-healing..."
           
           P1=$(curl -s "https://api.github.com/repos/nullcpy/rvb/releases?per_page=100&page=1")
           P2=$(curl -s "https://api.github.com/repos/nullcpy/rvb/releases?per_page=100&page=2")
@@ -120,41 +120,71 @@ jobs:
             BODY=$(echo "$rel" | jq -r '.body // ""')
             PRERELEASE=$(echo "$rel" | jq -r '.prerelease')
 
-            # Clean release notes
             CLEAN_BODY=$(echo "$BODY" | sed -E \
               -e 's#\[GitHub\]\([^)]+\)#[GitHub](https://github.com/m4mental/my-rvb-builder)#g' \
               -e 's#\|[[:space:]]*\[Group\]\([^)]+\)##g' \
               -e 's#\|[[:space:]]*\[Donate\]\([^)]+\)##g' \
               -e 's#\[Website\]\([^)]+\)#[Website](https://m4mental.github.io/my-rvb-builder/)#g')
 
-            # --- SPECIAL HANDLING FOR STABLE & BETA ARCHIVES (In-Place Update Without Deleting Tag) ---
+            # --- DIFFERENTIAL SYNC FOR STABLE & BETA ARCHIVES ---
             if [[ "$ORIG_TAG" == "beta" || "$ORIG_TAG" == "stable" ]]; then
-              echo "🔄 Updating Archive Release '$ORIG_TAG' in-place without deleting tag..."
-              
-              RM_DIR="./tmp_assets_$ORIG_TAG"
-              mkdir -p "$RM_DIR"
+              echo "🔍 Differential Asset Sync for '$ORIG_TAG'..."
 
-              echo "$rel" | jq -c '.assets[]' | while read -r asset; do
-                DL_URL=$(echo "$asset" | jq -r '.browser_download_url')
-                FNAME=$(echo "$asset" | jq -r '.name')
-                curl -sL "$DL_URL" -o "$RM_DIR/$FNAME"
-              done
+              ORIG_FILE_LIST=$(echo "$rel" | jq -r '.assets[].name' 2>/dev/null | sort)
 
               if gh release view "$ORIG_TAG" >/dev/null 2>&1; then
-                # ओवरराइट से इन-प्लेस फ़ाइलें अपडेट करेगा
-                gh release upload "$ORIG_TAG" "$RM_DIR"/* --clobber || true
+                LOCAL_REL_JSON=$(gh api "repos/${{ github.repository }}/releases/tags/$ORIG_TAG" 2>/dev/null || echo "{}")
+                LOCAL_FILE_LIST=$(echo "$LOCAL_REL_JSON" | jq -r '.assets[].name' 2>/dev/null | sort)
+
+                # A. ओरिजिनल Repo से डिलीट हुई फाइलों को आपकी Repo से भी डिलीट करेगा
+                for local_file in $LOCAL_FILE_LIST; do
+                  if ! echo "$ORIG_FILE_LIST" | grep -qx "$local_file"; then
+                    echo "   🗑️ Deleting removed asset: $local_file from $ORIG_TAG"
+                    asset_id=$(echo "$LOCAL_REL_JSON" | jq -r ".assets[] | select(.name == \"$local_file\") | .id")
+                    if [ -n "$asset_id" ]; then
+                      gh api -X DELETE "repos/${{ github.repository }}/releases/assets/$asset_id" || true
+                    fi
+                  fi
+                done
+
+                # B. ओरिजिनल Repo में नई जुड़ी फाइलों को आपकी Repo में ऐड करेगा
+                RM_DIR="./tmp_diff_$ORIG_TAG"
+                mkdir -p "$RM_DIR"
+
+                echo "$rel" | jq -c '.assets[]' | while read -r asset; do
+                  FNAME=$(echo "$asset" | jq -r '.name')
+                  DL_URL=$(echo "$asset" | jq -r '.browser_download_url')
+
+                  if ! echo "$LOCAL_FILE_LIST" | grep -qx "$FNAME"; then
+                    echo "   📥 New file detected! Downloading $FNAME..."
+                    curl -sL "$DL_URL" -o "$RM_DIR/$FNAME"
+                    echo "   📤 Uploading new file $FNAME to $ORIG_TAG..."
+                    gh release upload "$ORIG_TAG" "$RM_DIR/$FNAME" || true
+                    rm -f "$RM_DIR/$FNAME"
+                  fi
+                done
+                rm -rf "$RM_DIR"
+
               else
+                # अगर आर्काइव रिलीज़ आपकी Repo में नहीं है तो पहली बार बनाएगा
+                RM_DIR="./tmp_assets_$ORIG_TAG"
+                mkdir -p "$RM_DIR"
+                echo "$rel" | jq -c '.assets[]' | while read -r asset; do
+                  DL_URL=$(echo "$asset" | jq -r '.browser_download_url')
+                  FNAME=$(echo "$asset" | jq -r '.name')
+                  curl -sL "$DL_URL" -o "$RM_DIR/$FNAME"
+                done
                 PR_FLAG=""
                 if [ "$PRERELEASE" = "true" ]; then PR_FLAG="--prerelease"; fi
                 gh release create "$ORIG_TAG" "$RM_DIR"/* --title "$ORIG_TITLE" --notes "$CLEAN_BODY" $PR_FLAG || true
+                rm -rf "$RM_DIR"
               fi
 
-              rm -rf "$RM_DIR"
-              echo "✓ Archive '$ORIG_TAG' in-place updated successfully!"
+              echo "✓ Archive '$ORIG_TAG' differential sync completed!"
               continue
             fi
 
-            # --- NUMBERED BUILDS HANDLING ---
+            # --- NUMBERED BUILDS SELF-HEALING ---
             ORIG_ASSETS=$(echo "$rel" | jq -r '.assets[].name' 2>/dev/null | sort | tr '\n' ' ' | xargs)
 
             if gh release view "$ORIG_TAG" >/dev/null 2>&1; then
@@ -195,7 +225,7 @@ jobs:
             sleep 2
           done
 
-          # Keep max 100 total releases (oldest numbered releases deleted if > 100)
+          # Max 100 releases rolling limit
           TOTAL_LOCAL=$(gh release list --limit 500 | wc -l)
           if [ "$TOTAL_LOCAL" -gt 100 ]; then
             echo "Maintaining 100 max releases limit. Deleting oldest numbered releases..."
@@ -402,11 +432,10 @@ jobs:
                           print(f"Error processing {file}: {e}")
 
           print("==============================================")
-          print("SUCCESS: Master Sync + Stable/Beta In-Place Sync + Website Sync!")
+          print("SUCCESS: Differential Stable/Beta Sync + Master Sync Completed!")
           print("==============================================")
           EOF
 
-          # x-access-token का उपयोग करके m4mental.github.io में पुश करेगा
           git clone https://x-access-token:${PAT_TOKEN}@github.com/m4mental/m4mental.github.io.git site_repo
           rsync -av --exclude='.git' ./tmp_site/ ./site_repo/
 
@@ -414,7 +443,7 @@ jobs:
           git config user.name 'github-actions[bot]'
           git config user.email 'github-actions[bot]@users.noreply.github.com'
           git add .
-          git commit -m "Auto sync website to m4mental.github.io [skip ci]" || true
+          git commit -m "Differential Archive Sync and Website Update [skip ci]" || true
           git push origin main
           cd ..
           rm -rf ./tmp_site ./site_repo
