@@ -96,15 +96,19 @@ jobs:
           git commit -m "Sync upstream code & clean README [skip ci]" || true
           git push origin main
 
-      - name: 4. Self-Healing Release Integrity Check & Auto-Mirror
+      - name: 4. Deep Self-Healing Release Integrity Check (300 Builds Scan)
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           set -e
-          echo "Checking releases integrity between nullcpy/rvb and m4mental/my-rvb-builder..."
+          echo "Scanning ALL past 300 releases for integrity checks..."
           
-          RELEASES_JSON=$(curl -s "https://api.github.com/repos/nullcpy/rvb/releases?per_page=20")
-          
+          P1=$(curl -s "https://api.github.com/repos/nullcpy/rvb/releases?per_page=100&page=1")
+          P2=$(curl -s "https://api.github.com/repos/nullcpy/rvb/releases?per_page=100&page=2")
+          P3=$(curl -s "https://api.github.com/repos/nullcpy/rvb/releases?per_page=100&page=3")
+
+          RELEASES_JSON=$(jq -s '([.[0][], .[1][], .[2][]] | select(. != null))' <(echo "$P1") <(echo "$P2") <(echo "$P3"))
+
           if ! echo "$RELEASES_JSON" | jq -e '. | type == "array"' >/dev/null; then
             echo "Skipping release check due to rate limit or API issue."
             exit 0
@@ -361,7 +365,7 @@ jobs:
                           print(f"Error processing {file}: {e}")
 
           print("==============================================")
-          print("SUCCESS: Master Sync + Self-Healing Releases + P2P Multi-Share Completed!")
+          print("SUCCESS: Deep Scan 300 Builds Self-Healing Sync Completed!")
           print("==============================================")
           EOF
 
@@ -372,7 +376,7 @@ jobs:
           git config user.name 'github-actions[bot]'
           git config user.email 'github-actions[bot]@users.noreply.github.com'
           git add .
-          git commit -m "Auto sync website + self-healing releases [skip ci]" || true
+          git commit -m "Deep Scan Self-Healing Sync Website [skip ci]" || true
           git push origin main
           cd ..
           rm -rf ./tmp_site ./site_repo
