@@ -96,12 +96,12 @@ jobs:
           git commit -m "Sync upstream code & clean README [skip ci]" || true
           git push origin main
 
-      - name: 4. Deep Self-Healing Release Integrity Check (300 Builds Scan)
+      - name: 4. Self-Healing Releases & In-Place Archive Sync (Max 100 Builds Limit)
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           set -e
-          echo "Scanning ALL past 300 releases for integrity checks..."
+          echo "Scanning past releases for self-healing and in-place archive sync..."
           
           P1=$(curl -s "https://api.github.com/repos/nullcpy/rvb/releases?per_page=100&page=1")
           P2=$(curl -s "https://api.github.com/repos/nullcpy/rvb/releases?per_page=100&page=2")
@@ -120,9 +120,43 @@ jobs:
             BODY=$(echo "$rel" | jq -r '.body // ""')
             PRERELEASE=$(echo "$rel" | jq -r '.prerelease')
 
+            # Clean release notes
+            CLEAN_BODY=$(echo "$BODY" | sed -E \
+              -e 's#\[GitHub\]\([^)]+\)#[GitHub](https://github.com/m4mental/my-rvb-builder)#g' \
+              -e 's#\|[[:space:]]*\[Group\]\([^)]+\)##g' \
+              -e 's#\|[[:space:]]*\[Donate\]\([^)]+\)##g' \
+              -e 's#\[Website\]\([^)]+\)#[Website](https://m4mental.github.io/my-rvb-builder/)#g')
+
+            # --- SPECIAL HANDLING FOR STABLE & BETA ARCHIVES (In-Place Update Without Deleting Tag) ---
+            if [[ "$ORIG_TAG" == "beta" || "$ORIG_TAG" == "stable" ]]; then
+              echo "🔄 Updating Archive Release '$ORIG_TAG' in-place without deleting tag..."
+              
+              RM_DIR="./tmp_assets_$ORIG_TAG"
+              mkdir -p "$RM_DIR"
+
+              echo "$rel" | jq -c '.assets[]' | while read -r asset; do
+                DL_URL=$(echo "$asset" | jq -r '.browser_download_url')
+                FNAME=$(echo "$asset" | jq -r '.name')
+                curl -sL "$DL_URL" -o "$RM_DIR/$FNAME"
+              done
+
+              if gh release view "$ORIG_TAG" >/dev/null 2>&1; then
+                # ओवरराइट से इन-प्लेस फ़ाइलें अपडेट करेगा
+                gh release upload "$ORIG_TAG" "$RM_DIR"/* --clobber || true
+              else
+                PR_FLAG=""
+                if [ "$PRERELEASE" = "true" ]; then PR_FLAG="--prerelease"; fi
+                gh release create "$ORIG_TAG" "$RM_DIR"/* --title "$ORIG_TITLE" --notes "$CLEAN_BODY" $PR_FLAG || true
+              fi
+
+              rm -rf "$RM_DIR"
+              echo "✓ Archive '$ORIG_TAG' in-place updated successfully!"
+              continue
+            fi
+
+            # --- NUMBERED BUILDS HANDLING ---
             ORIG_ASSETS=$(echo "$rel" | jq -r '.assets[].name' 2>/dev/null | sort | tr '\n' ' ' | xargs)
 
-            # अगर आपकी Repo में यह टैग है तो फ़ाइलों की तुलना (Match) करेगा
             if gh release view "$ORIG_TAG" >/dev/null 2>&1; then
               LOCAL_REL_JSON=$(gh api "repos/${{ github.repository }}/releases/tags/$ORIG_TAG" 2>/dev/null || echo "{}")
               LOCAL_ASSETS=$(echo "$LOCAL_REL_JSON" | jq -r '.assets[].name' 2>/dev/null | sort | tr '\n' ' ' | xargs || echo "")
@@ -131,22 +165,13 @@ jobs:
                 continue
               else
                 echo "⚠️ MISMATCH DETECTED for Tag $ORIG_TAG!"
-                echo "   Original Assets: $ORIG_ASSETS"
-                echo "   Local Assets:    $LOCAL_ASSETS"
-                echo "   Self-Healing: Deleting mismatched release $ORIG_TAG and re-mirroring..."
+                echo "   Deleting mismatched release $ORIG_TAG and re-mirroring..."
                 gh release delete "$ORIG_TAG" -y --cleanup-tag || true
                 sleep 2
               fi
             fi
 
-            # Clean release notes
-            CLEAN_BODY=$(echo "$BODY" | sed -E \
-              -e 's#\[GitHub\]\([^)]+\)#[GitHub](https://github.com/m4mental/my-rvb-builder)#g' \
-              -e 's#\|[[:space:]]*\[Group\]\([^)]+\)##g' \
-              -e 's#\|[[:space:]]*\[Donate\]\([^)]+\)##g' \
-              -e 's#\[Website\]\([^)]+\)#[Website](https://m4mental.github.io/my-rvb-builder/)#g')
-
-            echo "🚀 Mirroring Missing/Healed Tag: $ORIG_TAG ($ORIG_TITLE)..."
+            echo "🚀 Mirroring Release Tag: $ORIG_TAG ($ORIG_TITLE)..."
 
             RM_DIR="./tmp_assets_$ORIG_TAG"
             mkdir -p "$RM_DIR"
@@ -170,12 +195,24 @@ jobs:
             sleep 2
           done
 
-      - name: 5. Auto Sync Website, Inject P2P Multi-Share & Disconnect to m4mental.github.io
+          # Keep max 100 total releases (oldest numbered releases deleted if > 100)
+          TOTAL_LOCAL=$(gh release list --limit 500 | wc -l)
+          if [ "$TOTAL_LOCAL" -gt 100 ]; then
+            echo "Maintaining 100 max releases limit. Deleting oldest numbered releases..."
+            gh release list --limit 500 | grep -E '^[0-9]+' | tail -n +95 | awk '{print $1}' | while read -r old_tag; do
+              if [ -n "$old_tag" ]; then
+                echo "Deleting old numbered release: $old_tag"
+                gh release delete "$old_tag" -y --cleanup-tag || true
+              fi
+            done
+          fi
+
+      - name: 5. Auto Sync Website to m4mental.github.io
         env:
           PAT_TOKEN: ${{ secrets.AUTO_SYNC_PAT }}
         run: |
           if [ -z "$PAT_TOKEN" ]; then
-            echo "PAT Secret not set, skipping website sync."
+            echo "⚠️ AUTO_SYNC_PAT secret not found! Please add AUTO_SYNC_PAT in Repo Settings -> Secrets."
             exit 0
           fi
 
@@ -365,18 +402,19 @@ jobs:
                           print(f"Error processing {file}: {e}")
 
           print("==============================================")
-          print("SUCCESS: Deep Scan 300 Builds Self-Healing Sync Completed!")
+          print("SUCCESS: Master Sync + Stable/Beta In-Place Sync + Website Sync!")
           print("==============================================")
           EOF
 
-          git clone https://m4mental:${PAT_TOKEN}@github.com/m4mental/m4mental.github.io.git site_repo
+          # x-access-token का उपयोग करके m4mental.github.io में पुश करेगा
+          git clone https://x-access-token:${PAT_TOKEN}@github.com/m4mental/m4mental.github.io.git site_repo
           rsync -av --exclude='.git' ./tmp_site/ ./site_repo/
 
           cd site_repo
           git config user.name 'github-actions[bot]'
           git config user.email 'github-actions[bot]@users.noreply.github.com'
           git add .
-          git commit -m "Deep Scan Self-Healing Sync Website [skip ci]" || true
+          git commit -m "Auto sync website to m4mental.github.io [skip ci]" || true
           git push origin main
           cd ..
           rm -rf ./tmp_site ./site_repo
