@@ -1800,8 +1800,8 @@ Patches: [Raudrobot/patches-6.1.0.rvp](https://github.com/Raudrobot/revanced-pat
   
 <blockquote>
 
-[Release 2026-08-01](https://github.com/m4mental/my-rvb-builder/releases/tag/260125)<br>
-Patches: [MorpheApp/patches-1.38.1-dev.1.mpp](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.38.1-dev.1)
+[Release 2026-08-02](https://github.com/m4mental/my-rvb-builder/releases/tag/260130)<br>
+Patches: [MorpheApp/patches-1.39.0-dev.1.mpp](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.39.0-dev.1)
 - Custom font
 - Disable modern home
 - Disable screenshot popup
@@ -1822,12 +1822,12 @@ Patches: [MorpheApp/patches-1.38.1-dev.1.mpp](https://github.com/MorpheApp/morph
 </details>
 
 <details>
-<summary id="reddit-morphe-exp"><b>Experimental</b>&emsp;<a href="https://m4mental.github.io/"><img src="https://img.shields.io/badge/version-v2026.29.0-gray?labelColor=FF4500&logo=reddit&logoColor=white&style=flat"></summary>
+<summary id="reddit-morphe-exp"><b>Experimental</b>&emsp;<a href="https://m4mental.github.io/"><img src="https://img.shields.io/badge/version-v2026.30.0-gray?labelColor=FF4500&logo=reddit&logoColor=white&style=flat"></summary>
   
 <blockquote>
 
-[Release 2026-08-01](https://github.com/m4mental/my-rvb-builder/releases/tag/260125)<br>
-Patches: [MorpheApp/patches-1.38.1-dev.1.mpp](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.38.1-dev.1)
+[Release 2026-08-02](https://github.com/m4mental/my-rvb-builder/releases/tag/260130)<br>
+Patches: [MorpheApp/patches-1.39.0-dev.1.mpp](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.39.0-dev.1)
 - Custom font
 - Disable modern home
 - Disable screenshot popup
@@ -1850,12 +1850,12 @@ Patches: [MorpheApp/patches-1.38.1-dev.1.mpp](https://github.com/MorpheApp/morph
 #### [Morphe (Adobo)](https://github.com/jkennethcarino/adobo)
 
 <details>
-<summary id="reddit-morphe-adobo"><b>Default</b>&emsp;<a href="https://m4mental.github.io/"><img src="https://img.shields.io/badge/version-v2026.29.0-gray?labelColor=FF4500&logo=reddit&logoColor=white&style=flat"></summary>
+<summary id="reddit-morphe-adobo"><b>Default</b>&emsp;<a href="https://m4mental.github.io/"><img src="https://img.shields.io/badge/version-v2026.30.0-gray?labelColor=FF4500&logo=reddit&logoColor=white&style=flat"></summary>
   
 <blockquote>
 
-[Release 2026-07-26](https://github.com/m4mental/my-rvb-builder/releases/tag/260097)<br>
-Patches: [jkennethcarino/patches-1.3.0-dev.13.mpp](https://github.com/jkennethcarino/adobo/releases/tag/v1.3.0-dev.13)
+[Release 2026-08-02](https://github.com/m4mental/my-rvb-builder/releases/tag/260130)<br>
+Patches: [jkennethcarino/patches-1.3.0-dev.15.mpp](https://github.com/jkennethcarino/adobo/releases/tag/v1.3.0-dev.15)
 - Colorize comment indent lines
 - Disable home screen redirect
 - Disable screenshot banner
@@ -2909,8 +2909,8 @@ Patches: [hoo-dles/patches-1.39.0.mpp](https://github.com/hoo-dles/morphe-patche
   
 <blockquote>
 
-[Release 2026-08-01](https://github.com/m4mental/my-rvb-builder/releases/tag/260125)<br>
-Patches: [MorpheApp/patches-1.38.1-dev.1.mpp](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.38.1-dev.1)
+[Release 2026-08-02](https://github.com/m4mental/my-rvb-builder/releases/tag/260130)<br>
+Patches: [MorpheApp/patches-1.39.0-dev.1.mpp](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.39.0-dev.1)
 - Add to queue
 - Alternative thumbnails
 - Ambient mode
@@ -2966,6 +2966,7 @@ Patches: [MorpheApp/patches-1.38.1-dev.1.mpp](https://github.com/MorpheApp/morph
 - Open videos fullscreen
 - Override YouTube Music buttons
 - Play all
+- Playback in feeds
 - Playback speed
 - Reload video
 - Remove background playback restrictions
@@ -3161,8 +3162,8 @@ Patches: [MorpheApp/patches-1.38.0.mpp](https://github.com/MorpheApp/morphe-patc
   
 <blockquote>
 
-[Release 2026-08-01](https://github.com/m4mental/my-rvb-builder/releases/tag/260125)<br>
-Patches: [MorpheApp/patches-1.38.1-dev.1.mpp](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.38.1-dev.1)
+[Release 2026-08-02](https://github.com/m4mental/my-rvb-builder/releases/tag/260130)<br>
+Patches: [MorpheApp/patches-1.39.0-dev.1.mpp](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.39.0-dev.1)
 - Add to queue
 - Alternative thumbnails
 - Ambient mode
@@ -3218,6 +3219,7 @@ Patches: [MorpheApp/patches-1.38.1-dev.1.mpp](https://github.com/MorpheApp/morph
 - Open videos fullscreen
 - Override YouTube Music buttons
 - Play all
+- Playback in feeds
 - Playback speed
 - Reload video
 - Remove background playback restrictions
@@ -3764,8 +3766,8 @@ Patches: [wchill/patches-5.16.4.mpp](https://github.com/wchill/rvx-morphed/relea
   
 <blockquote>
 
-[Release 2026-08-01](https://github.com/m4mental/my-rvb-builder/releases/tag/260125)<br>
-Patches: [MorpheApp/patches-1.38.1-dev.1.mpp](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.38.1-dev.1)
+[Release 2026-08-02](https://github.com/m4mental/my-rvb-builder/releases/tag/260130)<br>
+Patches: [MorpheApp/patches-1.39.0-dev.1.mpp](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.39.0-dev.1)
 - Bypass certificate checks
 - Change header
 - Change miniplayer color
@@ -3811,8 +3813,8 @@ Patches: [MorpheApp/patches-1.38.1-dev.1.mpp](https://github.com/MorpheApp/morph
   
 <blockquote>
 
-[Release 2026-08-01](https://github.com/m4mental/my-rvb-builder/releases/tag/260125)<br>
-Patches: [MorpheApp/patches-1.38.1-dev.1.mpp](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.38.1-dev.1)
+[Release 2026-08-02](https://github.com/m4mental/my-rvb-builder/releases/tag/260130)<br>
+Patches: [MorpheApp/patches-1.39.0-dev.1.mpp](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.39.0-dev.1)
 - Bypass certificate checks
 - Change header
 - Change miniplayer color
