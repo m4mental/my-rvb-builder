@@ -100,12 +100,12 @@ Patches: [hoo-dles/patches-1.39.0.mpp](https://github.com/hoo-dles/morphe-patche
 #### [Morphe (rushiranpise)](https://github.com/rushiranpise/morphe-patches)
 
 <details>
-<summary id="adguard-morphe-nightly">&emsp;<a href="https://m4mental.github.io/"><img src="https://img.shields.io/badge/version-v4.14.68-gray?labelColor=68BC71&logo=adguard&logoColor=white&style=flat"></summary>
+<summary id="adguard-morphe-nightly">&emsp;<a href="https://m4mental.github.io/"><img src="https://img.shields.io/badge/version-v4.14.0-gray?labelColor=68BC71&logo=adguard&logoColor=white&style=flat"></summary>
 
 <blockquote>
 
-[Release 2026-07-23](https://github.com/m4mental/my-rvb-builder/releases/tag/260085)<br>
-Patches: [rushiranpise/patches-1.15.1.mpp](https://github.com/rushiranpise/morphe-patches/releases/tag/v1.15.1)
+[Release 2026-08-03](https://github.com/m4mental/my-rvb-builder/releases/tag/260136)<br>
+Patches: [rushiranpise/patches-1.16.0.mpp](https://github.com/rushiranpise/morphe-patches/releases/tag/v1.16.0)
 - GmsCore support (MicroG)
 - Unlock Lifetime Premium
 </blockquote>
@@ -198,8 +198,8 @@ Patches: [RookieEnough/patches-1.0.4.mpp](https://github.com/RookieEnough/De-Van
   
 <blockquote>
 
-[Release 2026-07-23](https://github.com/m4mental/my-rvb-builder/releases/tag/260085)<br>
-Patches: [rushiranpise/patches-1.15.1.mpp](https://github.com/rushiranpise/morphe-patches/releases/tag/v1.15.1)
+[Release 2026-08-03](https://github.com/m4mental/my-rvb-builder/releases/tag/260136)<br>
+Patches: [rushiranpise/patches-1.16.0.mpp](https://github.com/rushiranpise/morphe-patches/releases/tag/v1.16.0)
 - GmsCore support (MicroG)
 - Unlock Premium+
 </blockquote>
@@ -398,8 +398,9 @@ Patches: [hoo-dles/patches-1.39.0.mpp](https://github.com/hoo-dles/morphe-patche
 
 <blockquote>
 
-[Release 2026-07-23](https://github.com/m4mental/my-rvb-builder/releases/tag/260085)<br>
-Patches: [rushiranpise/patches-1.15.1.mpp](https://github.com/rushiranpise/morphe-patches/releases/tag/v1.15.1)
+[Release 2026-08-03](https://github.com/m4mental/my-rvb-builder/releases/tag/260136)<br>
+Patches: [rushiranpise/patches-1.16.0.mpp](https://github.com/rushiranpise/morphe-patches/releases/tag/v1.16.0)
+- Disable Analytics / Telemetry
 - GmsCore support (MicroG)
 - Spoof WARP+ Unlimited UI
 </blockquote>
@@ -764,12 +765,12 @@ Patches: [RookieEnough/patches-1.0.4.mpp](https://github.com/RookieEnough/De-ReV
 #### [Morphe (rushiranpise)](https://github.com/rushiranpise/morphe-patches)
 
 <details>
-<summary id="google-photos-morphe-alt">&emsp;<a href="https://m4mental.github.io/"><img src="https://img.shields.io/badge/version-v7.85.0.952162352-gray?labelColor=FBBC04&logo=googlephotos&logoColor=white&style=flat"></summary>
+<summary id="google-photos-morphe-alt">&emsp;<a href="https://m4mental.github.io/"><img src="https://img.shields.io/badge/version-v7.86.0.956040398-gray?labelColor=FBBC04&logo=googlephotos&logoColor=white&style=flat"></summary>
   
 <blockquote>
 
-[Release 2026-07-26](https://github.com/m4mental/my-rvb-builder/releases/tag/260094)<br>
-Patches: [rushiranpise/patches-1.15.1.mpp](https://github.com/rushiranpise/morphe-patches/releases/tag/v1.15.1)
+[Release 2026-08-03](https://github.com/m4mental/my-rvb-builder/releases/tag/260136)<br>
+Patches: [rushiranpise/patches-1.16.0.mpp](https://github.com/rushiranpise/morphe-patches/releases/tag/v1.16.0)
 - AMOLED dark theme
 - Change package name
 - Enable DCIM folders backup control
@@ -880,8 +881,8 @@ Patches: [hoo-dles/patches-1.39.0.mpp](https://github.com/hoo-dles/morphe-patche
 
 <blockquote>
 
-[Release 2026-07-23](https://github.com/m4mental/my-rvb-builder/releases/tag/260085)<br>
-Patches: [rushiranpise/patches-1.15.1.mpp](https://github.com/rushiranpise/morphe-patches/releases/tag/v1.15.1)
+[Release 2026-08-03](https://github.com/m4mental/my-rvb-builder/releases/tag/260136)<br>
+Patches: [rushiranpise/patches-1.16.0.mpp](https://github.com/rushiranpise/morphe-patches/releases/tag/v1.16.0)
 - GmsCore support (MicroG)
 - Unlock Premium
 </blockquote>
@@ -1444,8 +1445,8 @@ Patches: [hoo-dles/patches-1.39.0.mpp](https://github.com/hoo-dles/morphe-patche
 
 <blockquote>
 
-[Release 2026-07-24](https://github.com/m4mental/my-rvb-builder/releases/tag/260086)<br>
-Patches: [rushiranpise/patches-1.15.1.mpp](https://github.com/rushiranpise/morphe-patches/releases/tag/v1.15.1)
+[Release 2026-08-03](https://github.com/m4mental/my-rvb-builder/releases/tag/260136)<br>
+Patches: [rushiranpise/patches-1.16.0.mpp](https://github.com/rushiranpise/morphe-patches/releases/tag/v1.16.0)
 - GmsCore support (MicroG)
 - Unlock Premium
 </blockquote>
@@ -2202,12 +2203,12 @@ Patches: [Aunali321/patches-2.0.0.rvp](https://github.com/Aunali321/ReVancedExpe
 #### [Morphe (rushiranpise)](https://github.com/rushiranpise/morphe-patches)
 
 <details>
-<summary id="terabox-morphe">&emsp;<a href="https://m4mental.github.io/"><img src="https://img.shields.io/badge/version-v4.20.1-gray?labelColor=226df6&logo=android&logoColor=white&style=flat"></summary>
+<summary id="terabox-morphe">&emsp;<a href="https://m4mental.github.io/"><img src="https://img.shields.io/badge/version-v4.22.1-gray?labelColor=226df6&logo=android&logoColor=white&style=flat"></summary>
   
 <blockquote>
 
-[Release 2026-07-23](https://github.com/m4mental/my-rvb-builder/releases/tag/260085)<br>
-Patches: [rushiranpise/patches-1.15.1.mpp](https://github.com/rushiranpise/morphe-patches/releases/tag/v1.15.1)
+[Release 2026-08-03](https://github.com/m4mental/my-rvb-builder/releases/tag/260136)<br>
+Patches: [rushiranpise/patches-1.16.0.mpp](https://github.com/rushiranpise/morphe-patches/releases/tag/v1.16.0)
 - GmsCore support (MicroG)
 - Unlock VIP
 </blockquote>
@@ -2222,12 +2223,12 @@ Patches: [rushiranpise/patches-1.15.1.mpp](https://github.com/rushiranpise/morph
 #### [Morphe (rushiranpise)](https://github.com/rushiranpise/morphe-patches)
 
 <details>
-<summary id="the-weather-channel-morphe">&emsp;<a href="https://m4mental.github.io/"><img src="https://img.shields.io/badge/version-v16.14.1-gray?labelColor=003399&logo=android&logoColor=white&style=flat"></summary>
+<summary id="the-weather-channel-morphe">&emsp;<a href="https://m4mental.github.io/"><img src="https://img.shields.io/badge/version-v16.16.0-gray?labelColor=003399&logo=android&logoColor=white&style=flat"></summary>
   
 <blockquote>
 
-[Release 2026-07-23](https://github.com/m4mental/my-rvb-builder/releases/tag/260085)<br>
-Patches: [rushiranpise/patches-1.15.1.mpp](https://github.com/rushiranpise/morphe-patches/releases/tag/v1.15.1)
+[Release 2026-08-03](https://github.com/m4mental/my-rvb-builder/releases/tag/260136)<br>
+Patches: [rushiranpise/patches-1.16.0.mpp](https://github.com/rushiranpise/morphe-patches/releases/tag/v1.16.0)
 - GmsCore support (MicroG)
 - Unlock Premium
 </blockquote>
@@ -2606,12 +2607,12 @@ Patches: [hoo-dles/patches-1.39.0.mpp](https://github.com/hoo-dles/morphe-patche
 #### [Morphe (rushiranpise)](https://github.com/rushiranpise/morphe-patches)
 
 <details>
-<summary id="waze-morphe">&emsp;<a href="https://m4mental.github.io/"><img src="https://img.shields.io/badge/version-v5.21.90.800-gray?labelColor=33ccff&logo=adguard&logoColor=white&style=flat"></summary>
+<summary id="waze-morphe">&emsp;<a href="https://m4mental.github.io/"><img src="https://img.shields.io/badge/version-v5.22.0.2-gray?labelColor=33ccff&logo=adguard&logoColor=white&style=flat"></summary>
 
 <blockquote>
 
-[Release 2026-07-23](https://github.com/m4mental/my-rvb-builder/releases/tag/260085)<br>
-Patches: [rushiranpise/patches-1.15.1.mpp](https://github.com/rushiranpise/morphe-patches/releases/tag/v1.15.1)
+[Release 2026-08-03](https://github.com/m4mental/my-rvb-builder/releases/tag/260136)<br>
+Patches: [rushiranpise/patches-1.16.0.mpp](https://github.com/rushiranpise/morphe-patches/releases/tag/v1.16.0)
 - Alert Distances
 - AutoZoom
 - Disable Ads
