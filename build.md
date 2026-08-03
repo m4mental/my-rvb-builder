@@ -1,15 +1,4 @@
-youtube-morphe (arm64-v8a): 21.04.223  
-youtube-morphe (arm-v7a): 21.04.223  
-youtube-music-morphe (arm64-v8a): 9.15.51  
-youtube-music-morphe (arm-v7a): 9.15.51  
-youtube-morphe-exp (arm64-v8a): 21.31.523  
-youtube-morphe-exp (arm-v7a): 21.31.523  
-youtube-music-morphe-exp (arm64-v8a): 9.30.52  
-youtube-music-morphe-exp (arm-v7a): 9.30.52  
-reddit-morphe-exp (arm64-v8a): 2026.30.0  
-reddit-morphe-exp (arm-v7a): 2026.30.0  
-reddit-morphe (arm64-v8a): 2026.14.0  
-reddit-morphe (arm-v7a): 2026.14.0  
+gboard-morphe-alt (arm64-v8a): 17.7.7.932364120-release-arm64-v8a  
 
 **Notes:**  
 • Install [MicroG-RE](https://github.com/MorpheApp/MicroG-RE/releases/latest) or [MicroG](https://github.com/ReVanced/GmsCore/releases/latest), required for Google APKs.  
@@ -18,8 +7,5 @@ reddit-morphe (arm-v7a): 2026.14.0
 [GitHub](https://github.com/nullcpy/rvb) | [Group](https://t.me/rvb27) | [Donate](https://fahim-ahmed05.github.io/donate) | [Website](https://nullcpy.github.io)
   
 CLI: MorpheApp/morphe-desktop-1.12.0-all.jar  
-Patches: jkennethcarino/patches-1.3.0-dev.15.mpp  
-[Changelog](https://github.com/jkennethcarino/adobo/releases/tag/v1.3.0-dev.15)
-
-Patches: MorpheApp/patches-1.39.0-dev.1.mpp  
-[Changelog](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.39.0-dev.1)  
+Patches: jasonwu1994/patches-2.5.0-dev.1.mpp  
+[Changelog](https://github.com/jasonwu1994/Gboard-patches/releases/tag/v2.5.0-dev.1)  
