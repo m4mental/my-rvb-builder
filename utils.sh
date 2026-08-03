@@ -1548,41 +1548,50 @@ patch_apk() {
 	fi
 
 	if [[ "$cli_source_l" == *"instafel"* ]]; then
-		mkdir -p "$tmp_dir"
+		local rel_tmp_dir="${patched_apk}-temporary-files"
+		mkdir -p "$rel_tmp_dir"
 		local cli_dir
 		cli_dir=$(dirname "$cli_jar")
 		for j in "${p_jars[@]}"; do
 			cp "$j" "$cli_dir/ifl-patcher-core-8e4756f.jar" 2>/dev/null || :
 			cp "$j" "ifl-patcher-core-8e4756f.jar" 2>/dev/null || :
-			cp "$j" "$tmp_dir/ifl-patcher-core-8e4756f.jar" 2>/dev/null || :
+			cp "$j" "$rel_tmp_dir/ifl-patcher-core-8e4756f.jar" 2>/dev/null || :
 		done
 
-		local wdir="$tmp_dir/instafel_wdir"
 		local init_cmd="java -jar '$cli_jar' init '$stock_input'"
 		pr "$init_cmd"
 		local init_op
 		init_op=$(eval "$init_cmd" 2>&1)
 		pr "$init_op"
 
-		if [ ! -d "$wdir" ]; then
-			wdir=$(find "$tmp_dir" -maxdepth 2 -type d -name "*instagram*" -o -name "*wdir*" -o -name "*patcher*" | head -n 1)
-			[ -z "$wdir" ] && wdir=$(find . -maxdepth 2 -type d -name "*instagram*" | head -n 1)
+		local wdir=""
+		local proj_file
+		proj_file=$(find . "$rel_tmp_dir" -maxdepth 3 -type f -name "project.json" 2>/dev/null | head -n 1)
+		if [ -n "$proj_file" ]; then
+			wdir=$(dirname "$proj_file")
+			wdir="${wdir#./}"
+		fi
+
+		if [ -z "$wdir" ] || [ ! -d "$wdir" ]; then
+			epr "Instafel init failed to create project working directory for '$stock_input'."
+			rm -rf "$rel_tmp_dir" 2>/dev/null || :
+			return 1
 		fi
 
 		local patches_to_run=""
 		if [ -n "$per_bundle_ed" ]; then
-			patches_to_run=$(echo "$per_bundle_ed" | tr -d "'-")
+			patches_to_run=$(echo "$per_bundle_ed" | grep -oP "'\K[^']+" 2>/dev/null | tr '\n' ' ' | sed 's/ *$//')
 		fi
 		if [ -z "$patches_to_run" ]; then
-			patches_to_run="unlock_developer_options remove_snooze_warning remove_ads instafel"
+			patches_to_run="unlock_developer_options remove_snooze_warning remove_ads amoled_theme instafel"
 		fi
 
-		local run_cmd="java -jar '$cli_jar' run '${wdir:-instafel_wdir}' $patches_to_run"
+		local run_cmd="java -jar '$cli_jar' run '$wdir' $patches_to_run"
 		pr "$run_cmd"
 		PATCH_OUTPUT=$(eval "$run_cmd" 2>&1)
 		echo "$PATCH_OUTPUT"
 
-		local build_cmd="java -jar '$cli_jar' build '${wdir:-instafel_wdir}'"
+		local build_cmd="java -jar '$cli_jar' build '$wdir'"
 		pr "$build_cmd"
 		local build_op
 		build_op=$(eval "$build_cmd" 2>&1)
@@ -1590,14 +1599,14 @@ patch_apk() {
 		PATCH_OUTPUT+=$'\n'"$build_op"
 
 		local built_apk
-		built_apk=$(find "$tmp_dir" "$wdir" . -maxdepth 3 -type f -name "*.apk" 2>/dev/null | grep -v "$stock_input" | head -n 1)
+		built_apk=$(find "$wdir/build" "$wdir" "$rel_tmp_dir" -maxdepth 5 -type f -name "*.apk" 2>/dev/null | grep -v "$stock_input" | head -n 1)
 		if [ -n "$built_apk" ] && [ -f "$built_apk" ]; then
 			mv "$built_apk" "$patched_apk"
-			rm -rf "$tmp_dir" 2>/dev/null || :
+			rm -rf "$rel_tmp_dir" "$wdir" 2>/dev/null || :
 			return 0
 		else
-			rm "$patched_apk" 2>/dev/null || :
-			rm -rf "$tmp_dir" 2>/dev/null || :
+			rm -f "$patched_apk" 2>/dev/null || :
+			rm -rf "$rel_tmp_dir" "$wdir" 2>/dev/null || :
 			return 1
 		fi
 	fi
@@ -1683,11 +1692,12 @@ write_build_info() {
 	fi
 	local arch_orig="${args[arch]// /}"
 	if [ "$arch_orig" != "auto" ]; then ext="${arch}${ext}"; arch=""; fi
-	# extract applied patches supporting both old and new morphe-desktop output formats
-	# old: INFO: "Patch Name" succeeded
-	# new: INFO: Applied: Patch Name
+	# extract applied patches supporting revanced, morphe-desktop, and instafel output formats
+	# revanced: INFO: "Patch Name" succeeded
+	# morphe:   INFO: Applied: Patch Name
+	# instafel: ---------------------------\nPatch Name
 	local applied_json
-	applied_json=$(printf '%s\n' "$PATCH_OUTPUT" | grep -oP '(?<=INFO: ")[^"\n]+(?=" succeeded)|(?<=INFO: Applied: ).*' | jq -R -s -c 'split("\n") | map(select(length > 0))' 2>/dev/null || true)
+	applied_json=$(printf '%s\n' "$PATCH_OUTPUT" | grep -oP '(?<=INFO: ")[^"\n]+(?=" succeeded)|(?<=INFO: Applied: ).*|(?<=---------------------------\n)[^\r\n]+' | jq -R -s -c 'split("\n") | map(select(length > 0))' 2>/dev/null || true)
 	[[ "$applied_json" != \[* ]] && applied_json='[]'
 	jq --arg key "$key" \
 		--arg ext "$ext" \
@@ -1804,7 +1814,7 @@ build_rv() {
 	list_patches=$(patches_list "$cli_jar" "$patches_jar" "$pkg_name" "${args[cli_source]}") || return 1
 	
 	local cli_source_l="${args[cli_source],,}"
-	if [[ "$cli_source_l" != *"npatch"* ]] && [[ "$cli_source_l" != *"lspatch"* ]]; then
+	if [[ "$cli_source_l" != *"npatch"* ]] && [[ "$cli_source_l" != *"lspatch"* ]] && [[ "$cli_source_l" != *"instafel"* ]]; then
 		if ! grep -Fq "$pkg_name" <<<"$list_patches"; then
 			epr "No app-specific patches found for '$pkg_name'. Skipping completely."
 			return 0
