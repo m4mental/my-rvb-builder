@@ -1,4 +1,5 @@
-gboard-morphe-alt (arm64-v8a): 17.7.7.932364120-release-arm64-v8a  
+instagram-instafel (arm64-v8a): 441.0.0.43.81  
+instagram-instafel-clone (arm64-v8a): 441.0.0.43.81  
 
 **Notes:**  
 • Install [MicroG-RE](https://github.com/MorpheApp/MicroG-RE/releases/latest) or [MicroG](https://github.com/ReVanced/GmsCore/releases/latest), required for Google APKs.  
@@ -6,6 +7,6 @@ gboard-morphe-alt (arm64-v8a): 17.7.7.932364120-release-arm64-v8a
 
 [GitHub](https://github.com/nullcpy/rvb) | [Group](https://t.me/rvb27) | [Donate](https://fahim-ahmed05.github.io/donate) | [Website](https://nullcpy.github.io)
   
-CLI: MorpheApp/morphe-desktop-1.12.0-all.jar  
-Patches: jasonwu1994/patches-2.5.0.mpp  
-[Changelog](https://github.com/jasonwu1994/Gboard-patches/releases/tag/v2.5.0)  
+CLI: instafel/ifl-patcher-v4.7.0-release.jar  
+Patches: instafel/ifl-patcher-core-4c4e41d.jar  
+[Changelog](https://github.com/instafel/pc-rel/releases/tag/4c4e41d-4.7.0)  
