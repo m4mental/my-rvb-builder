@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout main branch
-        uses: actions/checkout@v7
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
           token: ${{ secrets.GITHUB_TOKEN }}
@@ -96,7 +96,7 @@ jobs:
           git commit -m "Sync upstream code & clean README [skip ci]" || true
           git push origin main
 
-      - name: Inject Multi-File P2P Share & Disconnect Feature to Website
+      - name: Replace ALL Website Download & Source Links to m4mental
         env:
           PAT_TOKEN: ${{ secrets.AUTO_SYNC_PAT }}
         run: |
@@ -109,7 +109,7 @@ jobs:
           mkdir -p ./tmp_site
           git clone https://github.com/nullcpy/nullcpy.github.io.git ./tmp_site
 
-          # Python Script: Clean Telegram/Donate + Inject Multi-File P2P + Disconnect Button
+          # Python Script: ALL Files (script.js, releases.json, index.html) Deep Replacer
           python3 << 'EOF'
           import re, os
 
@@ -124,22 +124,21 @@ jobs:
                           with open(fpath, "r", encoding="utf-8") as f:
                               c = f.read()
 
-                          # 1. Inject PeerJS Script into <head> of index.html
                           if file == "index.html" and "unpkg.com/peerjs" not in c:
                               c = c.replace("</head>", '<script src="https://unpkg.com/peerjs@1.5.2/dist/peerjs.min.js"></script>\n</head>')
 
-                          # 2. Remove Telegram & Donate links
+                          # Remove Telegram & Donate
                           c = re.sub(r'<a[^>]*href="https://t\.me/[^"]*"[^>]*>.*?</a>\s*', '', c, flags=re.DOTALL)
                           c = re.sub(r'<a[^>]*t\.me[^>]*>.*?</a>\s*', '', c, flags=re.DOTALL)
                           c = re.sub(r'<a[^>]*href="[^"]*donate[^"]*"[^>]*>.*?</a>\s*', '', c, flags=re.DOTALL)
                           c = re.sub(r'<a[^>]*ko-fi[^>]*>.*?</a>\s*', '', c, flags=re.DOTALL)
 
-                          # 3. Deep Replace ALL Download, Release, API, Owner & Repo Variables
+                          # Replace URLs to https://m4mental.github.io/
                           c = re.sub(r'https?://github\.com/nullcpy/rvb/releases/download/', 'https://github.com/m4mental/my-rvb-builder/releases/download/', c)
                           c = re.sub(r'https?://github\.com/nullcpy/rvb/releases/tag/', 'https://github.com/m4mental/my-rvb-builder/releases/tag/', c)
-                          c = re.sub(r'https?://github\.com/nullcpy/rvb/releases', 'https://github.com/m4mental/my-rvb-builder/releases', c)
-                          c = re.sub(r'https?://github\.com/nullcpy/rvb', 'https://github.com/m4mental/my-rvb-builder', c)
-                          c = re.sub(r'https?://api\.github\.com/repos/nullcpy/rvb', 'https://api.github.com/repos/m4mental/my-rvb-builder', c)
+                          c = re.sub(r'https?://github\.com/nullcpy/rvb/releases', 'https://github.com/m4mental/my-rvb-builder/releases')
+                          c = re.sub(r'https?://github\.com/nullcpy/rvb', 'https://github.com/m4mental/my-rvb-builder')
+                          c = re.sub(r'https?://api\.github\.com/repos/nullcpy/rvb', 'https://api.github.com/repos/m4mental/my-rvb-builder')
                           
                           c = c.replace("nullcpy/rvb", "m4mental/my-rvb-builder")
                           c = c.replace("nullcpy.github.io", "m4mental.github.io")
@@ -150,17 +149,14 @@ jobs:
                           c = c.replace('repo: "rvb"', 'repo: "my-rvb-builder"')
                           c = c.replace("repo: 'rvb'", "repo: 'my-rvb-builder'")
 
-                          # 4. Inject P2P Share Rocket Button RIGHT NEXT to GitHub Logo in index.html
                           if file == "index.html" and "renderP2PShareUI" not in c:
                               p2p_btn = '<a href="javascript:void(0)" onclick="renderP2PShareUI()" title="P2P File Drop / Share" style="display:inline-flex; align-items:center; justify-content:center; background:#161b22; border:1px solid #30363d; border-radius:10px; width:40px; height:40px; text-decoration:none; margin-left:8px; font-size:1.2rem; cursor:pointer;">🚀</a>'
                               github_pattern = r'(<a[^>]*href="https://github\.com/m4mental/my-rvb-builder"[^>]*>[\s\S]*?</a>)'
                               c = re.sub(github_pattern, r'\1\n' + p2p_btn, c, count=1)
 
-                          # 5. Inject P2P Multi-File Engine + Disconnect Button before </body> in index.html
                           if file == "index.html" and "initP2PPeer" not in c:
                               p2p_js_engine = """
                               <script>
-                              // Live Link Interceptor Guard
                               window.addEventListener('click', function(e) {
                                 let target = e.target.closest('a');
                                 if (target && target.href) {
@@ -250,7 +246,7 @@ jobs:
                                 }
                                 setTimeout(initP2PPeer, 500);
                               }
-                              async function sendP2PFiles() {
+                              function sendP2PFiles() {
                                 const fileInput = document.getElementById('p2pFileInput');
                                 if (!fileInput || !fileInput.files || fileInput.files.length === 0) { alert('Select at least one file.'); return; }
                                 if (!peerConn) { alert('Connect via PIN first.'); return; }
@@ -325,11 +321,10 @@ jobs:
                           print(f"Error processing {file}: {e}")
 
           print("==============================================")
-          print("SUCCESS: Multi-File P2P Share & Disconnect Feature Injected!")
+          print("SUCCESS: ALL Website Links Updated to https://m4mental.github.io/")
           print("==============================================")
           EOF
 
-          # Dedicated Website Repo क्लोन करके सभी फाइलों को ऑटो-पुश करेगा
           git clone https://m4mental:${PAT_TOKEN}@github.com/m4mental/m4mental.github.io.git site_repo
           
           rsync -av --exclude='.git' ./tmp_site/ ./site_repo/
@@ -338,7 +333,7 @@ jobs:
           git config user.name 'github-actions[bot]'
           git config user.email 'github-actions[bot]@users.noreply.github.com'
           git add .
-          git commit -m "Inject Multi-File P2P Share and Disconnect Button [skip ci]" || true
+          git commit -m "Update website links to m4mental.github.io [skip ci]" || true
           git push origin main
           cd ..
           rm -rf ./tmp_site ./site_repo
