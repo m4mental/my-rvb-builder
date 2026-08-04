@@ -96,20 +96,16 @@ jobs:
         run: |
           LOG='${{ steps.get_output.outputs.BUILD_LOG }}'
           LOG=$(echo "$LOG" | sed -E 's#\[GitHub\]\([^)]+\)#[GitHub](https://github.com/m4mental/my-rvb-builder)#g')
-          LOG=$(echo "$LOG" | sed -E 's#\[Website\]\([^)]+\)#[Website](https://m4mental.github.io/my-rvb-builder/)#g')
+          LOG=$(echo "$LOG" | sed -E 's#\[Website\]\([^)]+\)#[Website](https://m4mental.github.io/)#g')
           LOG=$(echo "$LOG" | sed -E 's#\|[[:space:]]*\[Group\]\([^)]+\)##g')
           LOG=$(echo "$LOG" | sed -E 's#\|[[:space:]]*\[Donate\]\([^)]+\)##g')
           echo "CLEAN_LOG<<EOF" >> $GITHUB_OUTPUT
           echo "$LOG" >> $GITHUB_OUTPUT
           echo "EOF" >> $GITHUB_OUTPUT
 
-      - name: Update readme with new app versions
+      - name: Update readme
         run: |
           python3 scripts/update-readme.py ${{ steps.version.outputs.NEXT_VER_CODE }} "$GITHUB_REPOSITORY" || true
-
-      - name: Clean README using Python Script
-        run: |
-          python3 scripts/clean-readme.py || true
 
       - name: Pull latest main before commit
         run: |
