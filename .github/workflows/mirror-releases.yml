@@ -1,102 +1,118 @@
 name: Mirror Releases from Original Repo
 
 on:
-  workflow_dispatch:      # केवल मैन्युअल बटन
+  schedule:
+    - cron: '0 */6 * * *' # हर 6 घंटे में ऑटो-चेक और ऑटो-रिपेयर करेगा
+  workflow_dispatch:      # मैन्युअल बटन
 
 permissions:
   contents: write
 
 jobs:
-  mirror:
+  mirror-and-repair:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v7
+        uses: actions/checkout@v4
 
-      - name: Mirror ALL Releases (No Duplicate Archive Tags)
+      - name: Auto-Audit Mismatches & Mirror Releases
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          set -e
-          echo "Fetching ALL releases from beginning (nullcpy/rvb)..."
+          python3 << 'EOF'
+          import urllib.request, json, subprocess, os, time, re
+
+          orig_repo = "nullcpy/rvb"
+          my_repo = "${{ github.repository }}"
+
+          def get_json(url):
+              req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
+              try:
+                  with urllib.request.urlopen(req) as res:
+                      return json.loads(res.read().decode())
+              except Exception as e:
+                  print(f"Error fetching {url}: {e}")
+                  return []
+
+          print("🔍 Fetching releases from original repo and local repo...")
           
-          P1=$(curl -s "https://api.github.com/repos/nullcpy/rvb/releases?per_page=100&page=1")
-          P2=$(curl -s "https://api.github.com/repos/nullcpy/rvb/releases?per_page=100&page=2")
-          P3=$(curl -s "https://api.github.com/repos/nullcpy/rvb/releases?per_page=100&page=3")
+          # 1. दोनों Repos से रिलीज़ेस का डेटा लाएगा
+          orig_releases = get_json(f"https://api.github.com/repos/{orig_repo}/releases?per_page=30")
+          my_releases = get_json(f"https://api.github.com/repos/{my_repo}/releases?per_page=30")
 
-          RELEASES_JSON=$(jq -s '([.[0][], .[1][], .[2][]] | select(. != null))' <(echo "$P1") <(echo "$P2") <(echo "$P3"))
+          if not orig_releases:
+              print("Failed to fetch original releases.")
+              exit(1)
 
-          if ! echo "$RELEASES_JSON" | jq -e '. | type == "array"' >/dev/null; then
-            echo "Failed to fetch releases."
-            exit 1
-          fi
-
-          TOTAL_COUNT=$(echo "$RELEASES_JSON" | jq 'length')
-          echo "Found $TOTAL_COUNT total releases from beginning!"
+          my_rel_map = {}
+          if isinstance(my_releases, list):
+              for r in my_releases:
+                  tag = r.get('tag_name')
+                  if tag:
+                      my_rel_map[tag] = [a['name'] for a in r.get('assets', [])]
 
           # पुराने से नए के क्रम में प्रोसेस करेगा
-          echo "$RELEASES_JSON" | jq -c 'reverse | .[]' | while read -r rel; do
-            ORIG_TAG=$(echo "$rel" | jq -r '.tag_name')
-            ORIG_TITLE=$(echo "$rel" | jq -r '.name // .tag_name')
-            BODY=$(echo "$rel" | jq -r '.body // ""')
-            PRERELEASE=$(echo "$rel" | jq -r '.prerelease')
+          for rel in reversed(orig_releases):
+              tag = rel['tag_name']
+              title = rel.get('name') or tag
+              body = rel.get('body') or ""
+              is_prerelease = rel.get('prerelease', False)
+              orig_assets = sorted([a['name'] for a in rel.get('assets', [])])
 
-            # Beta और Stable आर्काइव की डुप्लिकेट कॉपी बनने से रोकेगा
-            if [[ "$ORIG_TAG" == "beta" || "$ORIG_TAG" == "stable" ]]; then
-              if gh release view "$ORIG_TAG" >/dev/null 2>&1; then
-                echo "✓ Archive release '$ORIG_TAG' already exists. Skipping duplicate."
-                continue
-              fi
-            fi
+              mismatch_detected = False
 
-            TARGET_TAG="$ORIG_TAG"
-            TARGET_TITLE="$ORIG_TITLE"
+              # अगर यह टैग आपकी Repo में पहले से है, तो फाइलों का मिलान करेगा
+              if tag in my_rel_map:
+                  local_assets = sorted(my_rel_map[tag])
+                  if orig_assets != local_assets:
+                      print(f"⚠️ MISMATCH DETECTED in Tag: {tag}!")
+                      print(f"   Original Assets ({len(orig_assets)}): {orig_assets}")
+                      print(f"   Local Assets    ({len(local_assets)}): {local_assets}")
+                      print(f"   action: Auto-Deleting mismatched local release {tag}...")
+                      
+                      # मिसमैच वाले रिलीज़ और टैग को डिलीट करेगा
+                      subprocess.run(["gh", "release", "delete", tag, "-y", "--cleanup-tag"], check=False)
+                      subprocess.run(["git", "push", "--delete", "origin", tag], check=False)
+                      mismatch_detected = True
+                      time.sleep(2)
+                  else:
+                      print(f"✓ Tag {tag} matches 100% perfectly. Skipping.")
+                      continue
 
-            # केवल नंबर वाले बिल्ड्स (260107 आदि) के लिए ऑटो-इंक्रीमेंट करेगा
-            if [[ "$ORIG_TAG" =~ ^[0-9]+$ ]]; then
-              NUM=$ORIG_TAG
-              while gh release view "$TARGET_TAG" >/dev/null 2>&1; do
-                NUM=$((NUM + 1))
-                TARGET_TAG="$NUM"
-                TARGET_TITLE="Build No. $NUM"
-              done
-            fi
+              print(f"🚀 Mirroring/Repairing Release: {tag} ({title})...")
 
-            # Description से Group/Donate लिंक्स हटाकर आपकी लिंक्स लगाएगा
-            CLEAN_BODY=$(echo "$BODY" | sed -E \
-              -e 's#\[GitHub\]\([^)]+\)#[GitHub](https://github.com/m4mental/my-rvb-builder)#g' \
-              -e 's#\|[[:space:]]*\[Group\]\([^)]+\)##g' \
-              -e 's#\|[[:space:]]*\[Donate\]\([^)]+\)##g' \
-              -e 's#\[Website\]\([^)]+\)#[Website](https://m4mental.github.io/my-rvb-builder/)#g')
+              # Description क्लीनिंग (Group/Donate हटाएगा, m4mental लिंक्स लगाएगा)
+              clean_body = re.sub(r'\[GitHub\]\([^)]+\)', r'[GitHub](https://github.com/m4mental/my-rvb-builder)', body)
+              clean_body = re.sub(r'\[Website\]\([^)]+\)', r'[Website](https://m4mental.github.io/my-rvb-builder/)', clean_body)
+              clean_body = re.sub(r'\|[ \t]*\[Group\]\([^)]+\)', '', clean_body)
+              clean_body = re.sub(r'\|[ \t]*\[Donate\]\([^)]+\)', '', clean_body)
 
-            echo "🚀 Mirroring Release: $TARGET_TAG ($TARGET_TITLE)..."
+              rm_dir = f"./tmp_assets_{tag}"
+              os.makedirs(rm_dir, exist_ok=True)
 
-            RM_DIR="./tmp_assets_$TARGET_TAG"
-            mkdir -p "$RM_DIR"
+              # ओरिजिनल Repo से सही फाइलें डाउनलोड करेगा
+              for asset in rel.get('assets', []):
+                  dl_url = asset['browser_download_url']
+                  fname = asset['name']
+                  print(f"   📥 Downloading {fname}...")
+                  subprocess.run(["curl", "-sL", dl_url, "-o", f"{rm_dir}/{fname}"], check=False)
 
-            # फ़ाइलें डाउनलोड करेगा
-            echo "$rel" | jq -c '.assets[]' | while read -r asset; do
-              DL_URL=$(echo "$asset" | jq -r '.browser_download_url')
-              FNAME=$(echo "$asset" | jq -r '.name')
-              echo "   📥 Downloading $FNAME..."
-              curl -sL "$DL_URL" -o "$RM_DIR/$FNAME"
-            done
+              # आपकी Repo में 100% मैचिंग फ़ाइलों के साथ नया रिलीज़ बनाएगा
+              cmd = ["gh", "release", "create", tag]
+              for fname in os.listdir(rm_dir):
+                  cmd.append(f"{rm_dir}/{fname}")
 
-            # आपकी Repo में रिलीज़ बनाएगा
-            if [ -d "$RM_DIR" ] && [ "$(ls -A "$RM_DIR")" ]; then
-              echo "   📤 Uploading $TARGET_TAG to your releases..."
-              
-              PR_FLAG=""
-              if [ "$PRERELEASE" = "true" ]; then
-                PR_FLAG="--prerelease"
-              fi
+              cmd.extend(["--title", title, "--notes", clean_body])
+              if is_prerelease:
+                  cmd.append("--prerelease")
 
-              gh release create "$TARGET_TAG" "$RM_DIR"/* --title "$TARGET_TITLE" --notes "$CLEAN_BODY" $PR_FLAG || true
-            fi
+              print(f"   📤 Uploading corrected release {tag} to your repo...")
+              subprocess.run(cmd, check=False)
 
-            rm -rf "$RM_DIR"
-            echo "✓ Release $TARGET_TAG successfully created!"
-            sleep 2
-          done
+              # सफाई
+              subprocess.run(["rm", "-rf", rm_dir], check=False)
+              print(f"✓ Tag {tag} successfully mirrored & verified!")
+              time.sleep(2)
 
-          echo "🎉 All releases mirrored cleanly with no duplicate archives!"
+          print("🎉 All releases audited and repaired successfully!")
+          EOF
