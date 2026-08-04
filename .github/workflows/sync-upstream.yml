@@ -1,4 +1,4 @@
-name: Sync Upstream Code & Separate Website
+name: Sync Upstream Code & Auto Website
 
 on:
   schedule:
@@ -83,7 +83,7 @@ jobs:
                   f.write(final_content)
 
               print("==============================================")
-              print("SUCCESS: Line-by-Line README.md Cleaned!")
+              print("SUCCESS: README.md Cleaned!")
               print("==============================================")
           EOF
 
@@ -96,7 +96,7 @@ jobs:
           git commit -m "Sync upstream code & clean README [skip ci]" || true
           git push origin main
 
-      - name: Replace ALL Website Download & Source Links to m4mental
+      - name: Auto Sync Website & Fix All Download Links to m4mental
         env:
           PAT_TOKEN: ${{ secrets.AUTO_SYNC_PAT }}
         run: |
@@ -105,11 +105,11 @@ jobs:
             exit 0
           fi
 
-          echo "Cloning official website repository (nullcpy.github.io)..."
+          echo "Fetching official website files from nullcpy.github.io..."
           mkdir -p ./tmp_site
           git clone https://github.com/nullcpy/nullcpy.github.io.git ./tmp_site
 
-          # Fixed Python Script: ALL Files (script.js, releases.json, index.html) Safe Replacer
+          # Python Script: Clean Telegram/Donate + Fix All Download & Release Links to m4mental
           python3 << 'EOF'
           import re, os
 
@@ -134,7 +134,7 @@ jobs:
                           c = re.sub(r'<a[^>]*href="[^"]*donate[^"]*"[^>]*>.*?</a>\s*', '', c, flags=re.DOTALL)
                           c = re.sub(r'<a[^>]*ko-fi[^>]*>.*?</a>\s*', '', c, flags=re.DOTALL)
 
-                          # 3. Fast Memory-Safe String Replacements
+                          # 3. Fix ALL Download URLs, Source Release URLs & API Endpoints to m4mental
                           c = c.replace("https://github.com/nullcpy/rvb/releases/download/", "https://github.com/m4mental/my-rvb-builder/releases/download/")
                           c = c.replace("https://github.com/nullcpy/rvb/releases/tag/", "https://github.com/m4mental/my-rvb-builder/releases/tag/")
                           c = c.replace("https://github.com/nullcpy/rvb/releases", "https://github.com/m4mental/my-rvb-builder/releases")
@@ -150,17 +150,17 @@ jobs:
                           c = c.replace('repo: "rvb"', 'repo: "my-rvb-builder"')
                           c = c.replace("repo: 'rvb'", "repo: 'my-rvb-builder'")
 
-                          # 4. Inject P2P Share Rocket Button RIGHT NEXT to GitHub Logo in index.html
+                          # 4. Inject P2P Share Rocket Button RIGHT NEXT to GitHub Logo Icon in index.html
                           if file == "index.html" and "renderP2PShareUI" not in c:
                               p2p_btn = '<a href="javascript:void(0)" onclick="renderP2PShareUI()" title="P2P File Drop / Share" style="display:inline-flex; align-items:center; justify-content:center; background:#161b22; border:1px solid #30363d; border-radius:10px; width:40px; height:40px; text-decoration:none; margin-left:8px; font-size:1.2rem; cursor:pointer;">🚀</a>'
-                              target_str = 'href="https://github.com/m4mental/my-rvb-builder"'
-                              if target_str in c:
-                                  c = re.sub(r'(<a[^>]*href="https://github\.com/m4mental/my-rvb-builder"[^>]*>[\s\S]*?</a>)', r'\1\n' + p2p_btn, c, count=1)
+                              github_pattern = r'(<a[^>]*href="https://github\.com/m4mental/my-rvb-builder"[^>]*>[\s\S]*?</a>)'
+                              c = re.sub(github_pattern, r'\1\n' + p2p_btn, c, count=1)
 
                           # 5. Inject P2P JS Logic Engine before </body> in index.html
                           if file == "index.html" and "initP2PPeer" not in c:
                               p2p_js_engine = """
                               <script>
+                              // Live Link Interceptor Guard
                               window.addEventListener('click', function(e) {
                                 let target = e.target.closest('a');
                                 if (target && target.href) {
@@ -308,38 +308,4 @@ jobs:
                                     <div style="margin-top:15px; font-size:0.9rem; font-weight:600; color:#38bdf8;" id="p2pStatus">Status: Waiting for connection...</div>
                                     <div style="margin-top:12px; display:flex; justify-content:center; gap:10px; flex-wrap:wrap;">
                                       <button id="disconnectBtn" onclick="disconnectDevice()" style="display:none; background:#dc2626; color:#fff; border:none; padding:8px 16px; border-radius:8px; cursor:pointer; font-weight:bold;">🔌 Disconnect Device</button>
-                                      <button onclick="location.reload()" style="background:#21262d; border:1px solid #30363d; color:#9ca3af; padding:8px 16px; border-radius:8px; cursor:pointer; font-weight:bold;">← Back to App Store</button>
-                                    </div>
-                                  </div>
-                                `;
-                                initP2PPeer();
-                              }
-                              </script>
-                              </body>
-                              """
-                              c = c.replace("</body>", p2p_js_engine)
-
-                          with open(fpath, "w", encoding="utf-8") as f:
-                              f.write(c)
-                          print(f"✓ Processed & Cleaned {file}")
-                      except Exception as e:
-                          print(f"Error processing {file}: {e}")
-
-          print("==============================================")
-          print("SUCCESS: ALL Website Files 100% Processed without errors!")
-          print("==============================================")
-          EOF
-
-          # Dedicated Website Repo क्लोन करके सभी फाइलों को ऑटो-पुश करेगा
-          git clone https://m4mental:${PAT_TOKEN}@github.com/m4mental/m4mental.github.io.git site_repo
-          
-          rsync -av --exclude='.git' ./tmp_site/ ./site_repo/
-
-          cd site_repo
-          git config user.name 'github-actions[bot]'
-          git config user.email 'github-actions[bot]@users.noreply.github.com'
-          git add .
-          git commit -m "Fix all website download links and release URLs [skip ci]" || true
-          git push origin main
-          cd ..
-          rm -rf ./tmp_site ./site_repo
+                                      <but
