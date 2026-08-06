@@ -31,8 +31,8 @@
 > All APKs and modules in this repository are 100% automated. If you need help, please direct your feedback to the right place:
 >
 > - 🧩 **Patch Issues:** If a specific feature/mod is broken (e.g., ads are showing), please open an issue in the **respective patch developer's repository**.
-> - 🛠️ **Builder Issues:** If an app fails to build, or the download links are broken, **[open an Issue here on GitHub](https://github.com/m4mental/my-rvb-builder/issues/new/choose)** .
-> - 💬 **General Help & Requests:** Need help installing, or want to request a new app? **[open an Issue here on GitHub](https://github.com/m4mental/my-rvb-builder/issues/new/choose)** or **[open a discussion here on GitHub](https://github.com/m4mental/my-rvb-builder/discussions/new?category=general)**.
+> - 🛠️ **Builder Issues:** If an app fails to build, or the download links are broken, **[open an Issue here on GitHub](https://github.com/m4mental/my-rvb-builder/issues/new/choose)** or **[send a message in our Telegram Group](https://t.me/rvb27/306)**.
+> - 💬 **General Help & Requests:** Need help installing, or want to request a new app? **[Send a message in our Telegram Group](https://t.me/rvb27/306)** or **[open an Issue here on GitHub](https://github.com/m4mental/my-rvb-builder/issues/new/choose)** or **[open a discussion here on GitHub](https://github.com/m4mental/my-rvb-builder/discussions/new?category=general)**.
 
 ---
 
@@ -692,7 +692,7 @@ Patches: [jkennethcarino/patches-1.2.0.mpp](https://github.com/jkennethcarino/ad
   
 <blockquote>
 
-[Release 2026-08-06](https://github.com/m4mental/my-rvb-builder/releases/tag/260144)<br>
+[Release 2026-08-06](https://github.com/m4mental/my-rvb-builder/releases/tag/260145)<br>
 Patches: [jasonwu1994/patches-2.6.0-dev.1.mpp](https://github.com/jasonwu1994/Gboard-patches/releases/tag/v2.6.0-dev.1)
 - AI Writing Tools
 - Add Gboard Signature Bypass
@@ -750,12 +750,12 @@ Patches: [docbt/patches-1.10.0.mpp](https://github.com/docbt/patched-up/releases
 #### [Morphe (De-Vanced)](https://github.com/RookieEnough/De-Vanced)
 
 <details>
-<summary id="google-photos-morphe">&emsp;<a href="https://m4mental.github.io/"><img src="https://img.shields.io/badge/version-v7.86.0.956040398-gray?labelColor=FBBC04&logo=googlephotos&logoColor=white&style=flat"></summary>
+<summary id="google-photos-morphe">&emsp;<a href="https://m4mental.github.io/"><img src="https://img.shields.io/badge/version-v7.87.0.957333026-gray?labelColor=FBBC04&logo=googlephotos&logoColor=white&style=flat"></summary>
   
 <blockquote>
 
-[Release 2026-07-30](https://github.com/m4mental/my-rvb-builder/releases/tag/260115)<br>
-Patches: [RookieEnough/patches-1.0.4.mpp](https://github.com/RookieEnough/De-ReVanced/releases/tag/v1.0.4)
+[Release 2026-08-06](https://github.com/m4mental/my-rvb-builder/releases/tag/260144)<br>
+Patches: [RookieEnough/patches-1.1.0.mpp](https://github.com/RookieEnough/De-Vanced/releases/tag/v1.1.0)
 - Fix selected account persistence
 - GmsCore support
 - Spoof features
@@ -807,9 +807,8 @@ Patches: [Raudrobot/patches-6.1.0.rvp](https://github.com/Raudrobot/revanced-pat
   
 <blockquote>
 
-[Release 2026-05-13](https://github.com/m4mental/my-rvb-builder/releases/tag/242)<br>
-Patches: [RookieEnough/patches-1.0.4.mpp](https://github.com/RookieEnough/De-Vanced/releases/tag/v1.0.4)
-
+[Release 2026-08-06](https://github.com/m4mental/my-rvb-builder/releases/tag/260144)<br>
+Patches: [RookieEnough/patches-1.1.0.mpp](https://github.com/RookieEnough/De-Vanced/releases/tag/v1.1.0)
 - Remove device restrictions
 </blockquote>
 </details>
@@ -1252,13 +1251,14 @@ Patches: [hoo-dles/patches-1.39.0.mpp](https://github.com/hoo-dles/morphe-patche
   
 <blockquote>
 
-[Release 2026-05-13](https://github.com/m4mental/my-rvb-builder/releases/tag/242)<br>
-Patches: [RookieEnough/patches-1.0.4.mpp](https://github.com/RookieEnough/De-Vanced/releases/tag/v1.0.4)
-
+[Release 2026-08-06](https://github.com/m4mental/my-rvb-builder/releases/tag/260144)<br>
+Patches: [RookieEnough/patches-1.1.0.mpp](https://github.com/RookieEnough/De-Vanced/releases/tag/v1.1.0)
 - Disable typing indicator
-- Hide Facebook button
+- Hide Facebook buttons
 - Hide inbox ads
+- Hide inbox stories and notes tray
 - Hide inbox subtabs
+- Open links externally
 - Remove Meta AI
 </blockquote>
 </details>
@@ -1312,9 +1312,8 @@ Patches: [quantavil/patches-1.33.0.mpp](https://github.com/quantavil/edge-morphe
   
 <blockquote>
 
-[Release 2026-05-13](https://github.com/m4mental/my-rvb-builder/releases/tag/242)<br>
-Patches: [RookieEnough/patches-1.0.4.mpp](https://github.com/RookieEnough/De-Vanced/releases/tag/v1.0.4)
-
+[Release 2026-08-06](https://github.com/m4mental/my-rvb-builder/releases/tag/260144)<br>
+Patches: [RookieEnough/patches-1.1.0.mpp](https://github.com/RookieEnough/De-Vanced/releases/tag/v1.1.0)
 - Hide OneDrive migration
 </blockquote>
 </details>
@@ -1561,13 +1560,12 @@ Patches: [ajstrick81/patches-1.17.0.mpp](https://github.com/ajstrick81/morphe-an
 #### [Morphe (De-Vanced)](https://github.com/RookieEnough/De-Vanced)
 
 <details>
-<summary id="photomath-morphe">&emsp;<a href="https://m4mental.github.io/"><img src="https://img.shields.io/badge/version-v8.47.1-gray?labelColor=DA2323&logo=android&logoColor=white&style=flat"></summary>
+<summary id="photomath-morphe">&emsp;<a href="https://m4mental.github.io/"><img src="https://img.shields.io/badge/version-v8.48.0-gray?labelColor=DA2323&logo=android&logoColor=white&style=flat"></summary>
   
 <blockquote>
 
-[Release 2026-05-13](https://github.com/m4mental/my-rvb-builder/releases/tag/242)<br>
-Patches: [RookieEnough/patches-1.0.4.mpp](https://github.com/RookieEnough/De-Vanced/releases/tag/v1.0.4)
-
+[Release 2026-08-06](https://github.com/m4mental/my-rvb-builder/releases/tag/260144)<br>
+Patches: [RookieEnough/patches-1.1.0.mpp](https://github.com/RookieEnough/De-Vanced/releases/tag/v1.1.0)
 - Hide update popup
 - Spoof device ID
 - Unlock plus
@@ -1609,8 +1607,8 @@ Patches: [binarymend/patches-1.3.1.mpp](https://github.com/binarymend/morphe-pat
   
 <blockquote>
 
-[Release 2026-07-09](https://github.com/m4mental/my-rvb-builder/releases/tag/260026)<br>
-Patches: [RookieEnough/patches-1.0.4.mpp](https://github.com/RookieEnough/De-Vanced/releases/tag/v1.0.4)
+[Release 2026-08-06](https://github.com/m4mental/my-rvb-builder/releases/tag/260144)<br>
+Patches: [RookieEnough/patches-1.1.0.mpp](https://github.com/RookieEnough/De-Vanced/releases/tag/v1.1.0)
 - Hide ads
 </blockquote>
 </details>
@@ -1754,9 +1752,8 @@ Patches: [arandomhooman/patches-1.43.4.mpp](https://github.com/arandomhooman/hoo
   
 <blockquote>
 
-[Release 2026-05-13](https://github.com/m4mental/my-rvb-builder/releases/tag/242)<br>
-Patches: [RookieEnough/patches-1.0.4.mpp](https://github.com/RookieEnough/De-Vanced/releases/tag/v1.0.4)
-
+[Release 2026-08-06](https://github.com/m4mental/my-rvb-builder/releases/tag/260144)<br>
+Patches: [RookieEnough/patches-1.1.0.mpp](https://github.com/RookieEnough/De-Vanced/releases/tag/v1.1.0)
 - Remove 'Sent from' signature
 - Remove free accounts limit
 </blockquote>
@@ -2265,9 +2262,8 @@ Patches: [rushiranpise/patches-1.16.0.mpp](https://github.com/rushiranpise/morph
   
 <blockquote>
 
-[Release 2026-05-13](https://github.com/m4mental/my-rvb-builder/releases/tag/242)<br>
-Patches: [RookieEnough/patches-1.0.4.mpp](https://github.com/RookieEnough/De-Vanced/releases/tag/v1.0.4)
-
+[Release 2026-08-06](https://github.com/m4mental/my-rvb-builder/releases/tag/260144)<br>
+Patches: [RookieEnough/patches-1.1.0.mpp](https://github.com/RookieEnough/De-Vanced/releases/tag/v1.1.0)
 - Hide ads
 </blockquote>
 </details>
@@ -2458,13 +2454,12 @@ Patches: [ajstrick81/patches-1.17.0.mpp](https://github.com/ajstrick81/morphe-an
 #### [Morphe (De-Vanced)](https://github.com/RookieEnough/De-Vanced)
 
 <details>
-<summary id="tumblr-morphe">&emsp;<a href="https://m4mental.github.io/"><img src="https://img.shields.io/badge/version-v44.5.0.108-gray?labelColor=36465D&logo=tumblr&logoColor=white&style=flat"></summary>
+<summary id="tumblr-morphe">&emsp;<a href="https://m4mental.github.io/"><img src="https://img.shields.io/badge/version-v45.7.1.100-gray?labelColor=36465D&logo=tumblr&logoColor=white&style=flat"></summary>
 
 <blockquote>
 
-[Release 2026-05-13](https://github.com/m4mental/my-rvb-builder/releases/tag/242)<br>
-Patches: [RookieEnough/patches-1.0.4.mpp](https://github.com/RookieEnough/De-Vanced/releases/tag/v1.0.4)
-
+[Release 2026-08-06](https://github.com/m4mental/my-rvb-builder/releases/tag/260144)<br>
+Patches: [RookieEnough/patches-1.1.0.mpp](https://github.com/RookieEnough/De-Vanced/releases/tag/v1.1.0)
 - Disable Ad-Free Banner
 - Disable Tumblr TV
 - Disable blog notification reminder
@@ -2549,9 +2544,8 @@ Patches: [hoo-dles/patches-1.39.0.mpp](https://github.com/hoo-dles/morphe-patche
 
 <blockquote>
 
-[Release 2026-05-13](https://github.com/m4mental/my-rvb-builder/releases/tag/242)<br>
-Patches: [RookieEnough/patches-1.0.4.mpp](https://github.com/RookieEnough/De-Vanced/releases/tag/v1.0.4)
-
+[Release 2026-08-06](https://github.com/m4mental/my-rvb-builder/releases/tag/260144)<br>
+Patches: [RookieEnough/patches-1.1.0.mpp](https://github.com/RookieEnough/De-Vanced/releases/tag/v1.1.0)
 - Hide Ads
 </blockquote>
 </details>
@@ -2676,13 +2670,12 @@ Patches: [rushiranpise/patches-1.15.1.mpp](https://github.com/rushiranpise/morph
 #### [Morphe (De-Vanced)](https://github.com/RookieEnough/De-Vanced)
 
 <details>
-<summary id="rar-morphe">&emsp;<a href="https://m4mental.github.io/"><img src="https://img.shields.io/badge/version-v7.20.build131-gray?labelColor=FF6B00&logo=android&logoColor=white&style=flat"></summary>
+<summary id="rar-morphe">&emsp;<a href="https://m4mental.github.io/"><img src="https://img.shields.io/badge/version-v7.23.build134-gray?labelColor=FF6B00&logo=android&logoColor=white&style=flat"></summary>
   
 <blockquote>
 
-[Release 2026-05-13](https://github.com/m4mental/my-rvb-builder/releases/tag/242)<br>
-Patches: [RookieEnough/patches-1.0.4.mpp](https://github.com/RookieEnough/De-Vanced/releases/tag/v1.0.4)
-
+[Release 2026-08-06](https://github.com/m4mental/my-rvb-builder/releases/tag/260144)<br>
+Patches: [RookieEnough/patches-1.1.0.mpp](https://github.com/RookieEnough/De-Vanced/releases/tag/v1.1.0)
 - Hide purchase reminder
 </blockquote>
 </details>
