@@ -483,7 +483,7 @@ Patches: [Paresh-Maheshwari/patches-1.19.0.mpp](https://gitlab.com/Paresh-Mahesh
 
 <blockquote>
 
-[Release 2026-08-05](https://github.com/m4mental/my-rvb-builder/releases/tag/260142)<br>
+[Release 2026-08-06](https://github.com/m4mental/my-rvb-builder/releases/tag/260152)<br>
 Patches: [revenge-mod/app-release.apk](https://github.com/revenge-mod/revenge-xposed/releases/tag/1601)
 </blockquote>
 </details>
@@ -1745,17 +1745,21 @@ Patches: [arandomhooman/patches-1.43.4.mpp](https://github.com/arandomhooman/hoo
 
 `ch.protonmail.android`
 
-#### [Morphe (De-Vanced)](https://github.com/RookieEnough/De-Vanced)
+#### [Morphe (hxreborn)](https://github.com/hxreborn/morphe-patches)
 
 <details>
-<summary id="proton-mail-morphe">&emsp;<a href="https://m4mental.github.io/"><img src="https://img.shields.io/badge/version-v4.15.0-gray?labelColor=6A4DFF&logo=protonmail&logoColor=white&style=flat"></summary>
+<summary id="proton-mail-morphe">&emsp;<a href="https://m4mental.github.io/"><img src="https://img.shields.io/badge/version-v7.10.4-gray?labelColor=6A4DFF&logo=protonmail&logoColor=white&style=flat"></summary>
   
 <blockquote>
 
-[Release 2026-08-06](https://github.com/m4mental/my-rvb-builder/releases/tag/260144)<br>
-Patches: [RookieEnough/patches-1.1.0.mpp](https://github.com/RookieEnough/De-Vanced/releases/tag/v1.1.0)
+[Release 2026-08-06](https://github.com/m4mental/my-rvb-builder/releases/tag/260147)<br>
+Patches: [hxreborn/patches-1.3.0.mpp](https://github.com/hxreborn/morphe-patches/releases/tag/v1.3.0)
+- AMOLED dark theme
+- Hide upgrade upselling
 - Remove 'Sent from' signature
 - Remove free accounts limit
+- Spoof signature
+- Unlock custom time picker
 </blockquote>
 </details>
 
@@ -1979,16 +1983,17 @@ Patches: [Paresh-Maheshwari/patches-1.19.0.mpp](https://gitlab.com/Paresh-Mahesh
 
 `com.michaldrabik.showly2`
 
-#### [Morphe (hoo-dles)](https://github.com/hoo-dles/morphe-patches)
+#### [Morphe (hxreborn)](https://github.com/hxreborn/morphe-patches)
 
 <details>
 <summary id="showly-morphe">&emsp;<a href="https://m4mental.github.io/"><img src="https://img.shields.io/badge/version-v3.70.0-gray?labelColor=ec483b&logo=android&logoColor=white&style=flat"></summary>
 
 <blockquote>
 
-[Release 2026-07-15](https://github.com/m4mental/my-rvb-builder/releases/tag/260053)<br>
-Patches: [hoo-dles/patches-1.39.0.mpp](https://github.com/hoo-dles/morphe-patches/releases/tag/v1.39.0)
-- Enable Premium
+[Release 2026-08-06](https://github.com/m4mental/my-rvb-builder/releases/tag/260146)<br>
+Patches: [hxreborn/patches-1.3.0.mpp](https://github.com/hxreborn/morphe-patches/releases/tag/v1.3.0)
+- AMOLED dark theme
+- Unlock premium
 </blockquote>
 </details>
 
