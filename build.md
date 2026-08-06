@@ -1,11 +1,13 @@
-youtube-anddea (arm64-v8a): 20.51.39  
-youtube-anddea (arm-v7a): 20.51.39  
-youtube-music-anddea (arm64-v8a): 9.15.51  
-youtube-music-anddea (arm-v7a): 9.15.51  
+reddit-morphe-adobo (arm64-v8a): 2026.31.0  
+reddit-morphe-adobo (arm-v7a): 2026.31.0  
 youtube-morphe (arm64-v8a): 21.04.223  
 youtube-morphe (arm-v7a): 21.04.223  
+youtube-music-morphe (arm64-v8a): 9.15.51  
+youtube-music-morphe (arm-v7a): 9.15.51  
 youtube-morphe-exp (arm64-v8a): 21.31.523  
 youtube-morphe-exp (arm-v7a): 21.31.523  
+youtube-music-morphe-exp (arm64-v8a): 9.30.52  
+youtube-music-morphe-exp (arm-v7a): 9.30.52  
 reddit-morphe-exp (arm64-v8a): 2026.31.0  
 reddit-morphe-exp (arm-v7a): 2026.31.0  
 reddit-morphe (arm64-v8a): 2026.14.0  
@@ -18,8 +20,8 @@ reddit-morphe (arm-v7a): 2026.14.0
 [GitHub](https://github.com/nullcpy/rvb) | [Group](https://t.me/rvb27) | [Donate](https://fahim-ahmed05.github.io/donate) | [Website](https://nullcpy.github.io)
   
 CLI: MorpheApp/morphe-desktop-1.12.0-all.jar  
-Patches: anddea/patches-4.2.0-dev.12.mpp  
-[Changelog](https://github.com/anddea/revanced-patches/releases/tag/v4.2.0-dev.12)
+Patches: jkennethcarino/patches-1.3.0-dev.17.mpp  
+[Changelog](https://github.com/jkennethcarino/adobo/releases/tag/v1.3.0-dev.17)
 
-Patches: MorpheApp/patches-1.39.0-dev.7.mpp  
-[Changelog](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.39.0-dev.7)  
+Patches: MorpheApp/patches-1.39.0-dev.8.mpp  
+[Changelog](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.39.0-dev.8)  
