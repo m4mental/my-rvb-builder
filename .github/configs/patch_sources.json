@@ -235,5 +235,21 @@
     "prerelease": "v1.1.0-dev.1",
     "pre_date": "2026-07-19T18:13:41Z",
     "blocked": false
+  },
+  "kiraio": {
+    "repo": "kiraio-moe/Lain-Patches",
+    "stable": "v1.3.0",
+    "stable_date": "2026-07-12T15:14:45Z",
+    "prerelease": "v1.4.0-dev.2",
+    "pre_date": "2026-07-18T01:49:32Z",
+    "blocked": false
+  },
+  "shaun": {
+    "repo": "shaun-the-sheep-patches/morphe-patches",
+    "stable": "v1.1.0",
+    "stable_date": "2026-07-07T18:52:06Z",
+    "prerelease": "v1.2.0-dev.1",
+    "pre_date": "2026-07-12T08:51:41Z",
+    "blocked": false
   }
 }
