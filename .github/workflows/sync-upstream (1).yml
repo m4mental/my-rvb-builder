@@ -1,0 +1,364 @@
+name: Sync Upstream Code & Separate Website
+
+on:
+  schedule:
+    - cron: '0 * * * *' # हर 1 घंटे में ऑटो-सिंक
+  workflow_dispatch:      # मैन्युअल बटन
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout main branch
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Fetch upstream code (main branch)
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email 'github-actions[bot]@users.noreply.github.com'
+          git remote add upstream https://github.com/nullcpy/rvb.git || git remote set-url upstream https://github.com/nullcpy/rvb.git
+          git fetch upstream main
+          git checkout main
+
+          # 1. ओरिजिनल Repo से सारे नए ऐप्स और कोड लाएगा
+          git checkout upstream/main -- .
+
+      - name: Line-by-Line README Cleaner
+        run: |
+          python3 << 'EOF'
+          import re, os
+
+          path = "README.md"
+          if os.path.exists(path):
+              with open(path, "r", encoding="utf-8") as f:
+                  lines = f.readlines()
+
+              clean_lines = []
+              skip_support_section = False
+
+              for line in lines:
+                  if "support-palestine-banner" in line or "Support Palestine" in line:
+                      continue
+
+                  if "Support the Project" in line or "🤝 Support" in line:
+                      skip_support_section = True
+                      continue
+                  if skip_support_section and (line.startswith("## ") or line.startswith("---") or line.startswith("> [!NOTE]")):
+                      skip_support_section = False
+
+                  if skip_support_section:
+                      continue
+
+                  if "badge/Group-" in line or "badge/Channel-" in line or "badge/Donate-" in line or "t.me/rvb" in line or "fahim-ahmed05" in line:
+                      line = re.sub(r'<a href="[^"]*t\.me/[^"]*">.*?</a>\s*', '', line)
+                      line = re.sub(r'<a href="[^"]*donate[^"]*">.*?</a>\s*', '', line)
+                      line = re.sub(r'\[Group\]\([^)]+\)', '', line)
+                      line = re.sub(r'\[Donate\]\([^)]+\)', '', line)
+                      line = re.sub(r'\|[ \t]*\[Group\]\([^)]+\)', '', line)
+                      line = re.sub(r'\|[ \t]*\[Donate\]\([^)]+\)', '', line)
+                      
+                      if re.sub(r'<[^>]+>', '', line).strip() == '':
+                          continue
+
+                  line = re.sub(r'https://visitor-badge\.laobi\.icu/badge\?page_id=[^\"]*', 'https://hits.seeyoufarm.org/api/count/incr/badge.svg?url=https%3A%2F%2Fm4mental.github.io&count_bg=%231283C3&title_bg=%23555555&title=Website+Visitors', line)
+                  line = line.replace("github/stars/nullcpy/rvb", "github/stars/m4mental/my-rvb-builder")
+                  line = line.replace("github/downloads/nullcpy/rvb", "github/downloads/m4mental/my-rvb-builder")
+                  line = line.replace("https://github.com/nullcpy/rvb", "https://github.com/m4mental/my-rvb-builder")
+                  line = line.replace("https://nullcpy.github.io/", "https://m4mental.github.io/")
+                  line = line.replace("https://nullcpy.github.io", "https://m4mental.github.io/")
+
+                  clean_lines.append(line)
+
+              final_content = "".join(clean_lines)
+              final_content = re.sub(r'\n{3,}', '\n\n', final_content)
+
+              with open(path, "w", encoding="utf-8") as f:
+                  f.write(final_content)
+
+              print("==============================================")
+              print("SUCCESS: Line-by-Line README.md Cleaned!")
+              print("==============================================")
+          EOF
+
+      - name: Commit and Push Cleaned README & Upstream Code
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email 'github-actions[bot]@users.noreply.github.com'
+          git add README.md
+          git checkout HEAD -- .github/workflows/ || true
+          git commit -m "Sync upstream code & clean README [skip ci]" || true
+          git push origin main
+
+      - name: Auto-Modify & Sync Website with All 100+ Apps & Features
+        env:
+          PAT_TOKEN: ${{ secrets.AUTO_SYNC_PAT }}
+        run: |
+          if [ -z "$PAT_TOKEN" ]; then
+            echo "PAT Secret not set, skipping website sync."
+            exit 0
+          fi
+
+          echo "Cloning official website repository (nullcpy.github.io)..."
+          mkdir -p ./tmp_site
+          git clone https://github.com/nullcpy/nullcpy.github.io.git ./tmp_site
+
+          # Fixed Memory-Safe Python Script to modify ALL 100+ Apps, Links & Features
+          python3 << 'EOF'
+          import re, os
+
+          site_dir = "tmp_site"
+
+          # 1. Modify releases.json (Contains ALL 100+ Apps)
+          rel_json_path = os.path.join(site_dir, "releases.json")
+          if os.path.exists(rel_json_path):
+              try:
+                  with open(rel_json_path, "r", encoding="utf-8") as f:
+                      r_text = f.read()
+                  r_text = r_text.replace("https://github.com/nullcpy/rvb/releases/download/", "https://github.com/m4mental/my-rvb-builder/releases/download/")
+                  r_text = r_text.replace("https://github.com/nullcpy/rvb/releases/tag/", "https://github.com/m4mental/my-rvb-builder/releases/tag/")
+                  r_text = r_text.replace("https://github.com/nullcpy/rvb", "https://github.com/m4mental/my-rvb-builder")
+                  r_text = r_text.replace("nullcpy/rvb", "m4mental/my-rvb-builder")
+                  with open(rel_json_path, "w", encoding="utf-8") as f:
+                      f.write(r_text)
+                  print("✓ releases.json successfully updated for m4mental!")
+              except Exception as e:
+                  print(f"Error on releases.json: {e}")
+
+          # 2. Modify index.html, script.js, style.css
+          for root, dirs, files in os.walk(site_dir):
+              if ".git" in root:
+                  continue
+              for file in files:
+                  if file.endswith((".html", ".js", ".json", ".css")):
+                      fpath = os.path.join(root, file)
+                      try:
+                          with open(fpath, "r", encoding="utf-8") as f:
+                              c = f.read()
+
+                          # Inject PeerJS Script into <head> of index.html
+                          if file == "index.html" and "unpkg.com/peerjs" not in c:
+                              c = c.replace("</head>", '<script src="https://unpkg.com/peerjs@1.5.2/dist/peerjs.min.js"></script>\n</head>')
+
+                          # Remove Telegram & Donate links
+                          c = re.sub(r'<a[^>]*href="https://t\.me/[^"]*"[^>]*>.*?</a>\s*', '', c, flags=re.DOTALL)
+                          c = re.sub(r'<a[^>]*t\.me[^>]*>.*?</a>\s*', '', c, flags=re.DOTALL)
+                          c = re.sub(r'<a[^>]*href="[^"]*donate[^"]*"[^>]*>.*?</a>\s*', '', c, flags=re.DOTALL)
+                          c = re.sub(r'<a[^>]*ko-fi[^>]*>.*?</a>\s*', '', c, flags=re.DOTALL)
+
+                          # Replace ALL Download, Release & API URLs
+                          c = c.replace("https://github.com/nullcpy/rvb/releases/download/", "https://github.com/m4mental/my-rvb-builder/releases/download/")
+                          c = c.replace("https://github.com/nullcpy/rvb/releases/tag/", "https://github.com/m4mental/my-rvb-builder/releases/tag/")
+                          c = c.replace("https://github.com/nullcpy/rvb/releases", "https://github.com/m4mental/my-rvb-builder/releases")
+                          c = c.replace("https://github.com/nullcpy/rvb", "https://github.com/m4mental/my-rvb-builder")
+                          c = c.replace("https://api.github.com/repos/nullcpy/rvb", "https://api.github.com/repos/m4mental/my-rvb-builder")
+                          
+                          c = c.replace("nullcpy/rvb", "m4mental/my-rvb-builder")
+                          c = c.replace("nullcpy.github.io", "m4mental.github.io")
+                          c = c.replace("NullStore", "m4mental store")
+                          
+                          c = c.replace('owner: "nullcpy"', 'owner: "m4mental"')
+                          c = c.replace("owner: 'nullcpy'", "owner: 'm4mental'")
+                          c = c.replace('repo: "rvb"', 'repo: "my-rvb-builder"')
+                          c = c.replace("repo: 'rvb'", "repo: 'my-rvb-builder'")
+
+                          # Inject P2P Share Rocket Button RIGHT NEXT to GitHub Logo
+                          if file == "index.html" and "renderP2PShareUI" not in c:
+                              p2p_btn = '<a href="javascript:void(0)" onclick="renderP2PShareUI()" title="P2P File Drop / Share" style="display:inline-flex; align-items:center; justify-content:center; background:#161b22; border:1px solid #30363d; border-radius:10px; width:40px; height:40px; text-decoration:none; margin-left:8px; font-size:1.2rem; cursor:pointer;">🚀</a>'
+                              target_str = 'href="https://github.com/m4mental/my-rvb-builder"'
+                              if target_str in c:
+                                  c = c.replace(target_str, target_str)
+                                  c = re.sub(r'(<a[^>]*href="https://github\.com/m4mental/my-rvb-builder"[^>]*>[\s\S]*?</a>)', r'\1\n' + p2p_btn, c, count=1)
+
+                          # Inject P2P Engine + Live Link Interceptor Guard before </body> in index.html
+                          if file == "index.html" and "initP2PPeer" not in c:
+                              p2p_js_engine = """
+                              <script>
+                              window.addEventListener('click', function(e) {
+                                let target = e.target.closest('a');
+                                if (target && target.href) {
+                                  if (target.href.includes('nullcpy/rvb')) {
+                                    target.href = target.href.replace(/nullcpy\/rvb/g, 'm4mental/my-rvb-builder');
+                                  }
+                                  if (target.href.includes('nullcpy.github.io')) {
+                                    target.href = target.href.replace(/nullcpy\.github\.io/g, 'm4mental.github.io');
+                                  }
+                                }
+                              }, true);
+
+                              let peer = null, peerConn = null, myPinCode = '';
+                              function generatePin() { return Math.floor(1000 + Math.random() * 9000).toString(); }
+                              function initP2PPeer() {
+                                if (peer && !peer.destroyed) return;
+                                myPinCode = 'm4m-' + generatePin();
+                                peer = new Peer(myPinCode, { debug: 1 });
+                                peer.on('open', (id) => {
+                                  const el = document.getElementById('myPinDisplay');
+                                  if (el) el.innerText = myPinCode.replace('m4m-', '');
+                                });
+                                peer.on('connection', (conn) => {
+                                  peerConn = conn;
+                                  setupConnListeners();
+                                });
+                              }
+                              function setupConnListeners() {
+                                const el = document.getElementById('p2pStatus');
+                                if (el) el.innerText = '⚡ Connected to peer device!';
+                                const dcBtn = document.getElementById('disconnectBtn');
+                                if (dcBtn) dcBtn.style.display = 'inline-block';
+
+                                peerConn.on('data', (data) => {
+                                  if (data.file) {
+                                    const blob = new Blob([data.file], { type: data.type || 'application/octet-stream' });
+                                    const url = URL.createObjectURL(blob);
+                                    const el = document.getElementById('p2pStatus');
+                                    let fileBox = document.getElementById('receivedFilesList');
+                                    
+                                    if (!fileBox) {
+                                      if (el) el.innerHTML = `<b>🎉 Received Files:</b><div id="receivedFilesList" style="margin-top:10px; display:flex; flex-direction:column; gap:8px; align-items:center;"></div>`;
+                                      fileBox = document.getElementById('receivedFilesList');
+                                    }
+
+                                    if (fileBox) {
+                                      const link = document.createElement('a');
+                                      link.href = url;
+                                      link.download = data.name;
+                                      link.style = "background:#22c55e; color:#fff; padding:10px 18px; border-radius:8px; text-decoration:none; display:inline-block; font-weight:bold; margin-top:5px;";
+                                      link.innerHTML = `📥 Save ${data.name} (${data.fileIndex || 1}/${data.totalFiles || 1})`;
+                                      fileBox.appendChild(link);
+                                    }
+                                  }
+                                });
+
+                                peerConn.on('close', () => {
+                                  const el = document.getElementById('p2pStatus');
+                                  if (el) el.innerText = '🔌 Device disconnected.';
+                                  const dcBtn = document.getElementById('disconnectBtn');
+                                  if (dcBtn) dcBtn.style.display = 'none';
+                                  peerConn = null;
+                                });
+                              }
+                              function connectToSender() {
+                                const pin = document.getElementById('connectPinInput').value.trim();
+                                if (!pin || pin.length !== 4) { alert('Enter valid 4-digit PIN.'); return; }
+                                const el = document.getElementById('p2pStatus');
+                                if (el) el.innerText = '🔄 Connecting to PIN: ' + pin + '...';
+                                if (!peer) initP2PPeer();
+                                peerConn = peer.connect('m4m-' + pin);
+                                peerConn.on('open', setupConnListeners);
+                              }
+                              function disconnectDevice() {
+                                if (peerConn) {
+                                  peerConn.close();
+                                  peerConn = null;
+                                }
+                                const el = document.getElementById('p2pStatus');
+                                if (el) el.innerText = '🔌 Disconnected cleanly. Generating new PIN...';
+                                const dcBtn = document.getElementById('disconnectBtn');
+                                if (dcBtn) dcBtn.style.display = 'none';
+
+                                if (peer) {
+                                  peer.destroy();
+                                  peer = null;
+                                }
+                                setTimeout(initP2PPeer, 500);
+                              }
+                              function sendP2PFiles() {
+                                const fileInput = document.getElementById('p2pFileInput');
+                                if (!fileInput || !fileInput.files || fileInput.files.length === 0) { alert('Select at least one file.'); return; }
+                                if (!peerConn) { alert('Connect via PIN first.'); return; }
+                                
+                                const files = Array.from(fileInput.files);
+                                const el = document.getElementById('p2pStatus');
+
+                                for (let i = 0; i < files.length; i++) {
+                                  const file = files[i];
+                                  if (el) el.innerText = `📤 Transferring (${i + 1}/${files.length}): ${file.name}...`;
+
+                                  await new Promise((resolve) => {
+                                    const reader = new FileReader();
+                                    reader.onload = (e) => {
+                                      peerConn.send({
+                                        name: file.name,
+                                        type: file.type,
+                                        file: e.target.result,
+                                        fileIndex: i + 1,
+                                        totalFiles: files.length
+                                      });
+                                      resolve();
+                                    };
+                                    reader.readAsArrayBuffer(file);
+                                  });
+
+                                  await new Promise(r => setTimeout(r, 300));
+                                }
+
+                                if (el) el.innerText = `🎉 All ${files.length} file(s) transferred successfully!`;
+                              }
+                              function renderP2PShareUI() {
+                                const container = document.getElementById('appGrid') || document.getElementById('appList') || document.querySelector('.app-grid') || document.body;
+                                if (!container) return;
+                                container.innerHTML = `
+                                  <div style="max-width:800px; margin:20px auto; background:#161b22; border:1px solid #30363d; border-radius:16px; padding:24px; text-align:center;">
+                                    <div style="font-size:1.5rem; font-weight:800; color:#2dd4bf; margin-bottom:6px;">🚀 Nothing Warp / P2P Multi-File Drop</div>
+                                    <div style="font-size:0.88rem; color:#94a3b8; margin-bottom:20px;">Direct Peer-to-Peer file sharing between Android, iOS, Windows & Mac.<br><b>Select Multiple Files • Zero server uploads • Zero size limits</b></div>
+                                    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:16px;">
+                                      <div style="background:#0d1117; border:1px solid #21262d; border-radius:14px; padding:20px;">
+                                        <div style="font-weight:700; color:#fff;">1. Your Device PIN (Receive Files)</div>
+                                        <div style="font-size:2.2rem; font-weight:800; color:#38bdf8; letter-spacing:4px; background:#161b22; padding:10px; border-radius:10px; border:1px dashed #30363d; margin:10px 0;" id="myPinDisplay">----</div>
+                                      </div>
+                                      <div style="background:#0d1117; border:1px solid #21262d; border-radius:14px; padding:20px;">
+                                        <div style="font-weight:700; color:#fff;">2. Connect & Send (Enter PIN)</div>
+                                        <input type="number" id="connectPinInput" style="width:100%; background:#161b22; border:1px solid #30363d; color:#fff; font-size:1.2rem; text-align:center; padding:10px; border-radius:10px; margin:10px 0;" placeholder="1234">
+                                        <button style="background:#2563eb; color:#fff; border:none; padding:10px; border-radius:10px; font-weight:700; cursor:pointer; width:100%;" onclick="connectToSender()">Connect Device</button>
+                                      </div>
+                                    </div>
+                                    <div style="border:2px dashed #30363d; border-radius:12px; padding:20px; margin-top:15px; cursor:pointer;" onclick="document.getElementById('p2pFileInput').click()">
+                                      <div style="font-size:1.8rem;">📁</div>
+                                      <div style="font-weight:700; color:#f0f6fc;">Click to select multiple files (APKs, ZIPs, Videos, Photos)</div>
+                                      <input type="file" id="p2pFileInput" multiple style="display:none;" onchange="sendP2PFiles()">
+                                    </div>
+                                    <div style="margin-top:15px; font-size:0.9rem; font-weight:600; color:#38bdf8;" id="p2pStatus">Status: Waiting for connection...</div>
+                                    <div style="margin-top:12px; display:flex; justify-content:center; gap:10px; flex-wrap:wrap;">
+                                      <button id="disconnectBtn" onclick="disconnectDevice()" style="display:none; background:#dc2626; color:#fff; border:none; padding:8px 16px; border-radius:8px; cursor:pointer; font-weight:bold;">🔌 Disconnect Device</button>
+                                      <button onclick="location.reload()" style="background:#21262d; border:1px solid #30363d; color:#9ca3af; padding:8px 16px; border-radius:8px; cursor:pointer; font-weight:bold;">← Back to App Store</button>
+                                    </div>
+                                  </div>
+                                `;
+                                initP2PPeer();
+                              }
+                              </script>
+                              </body>
+                              """
+                              c = c.replace("</body>", p2p_js_engine)
+
+                          with open(fpath, "w", encoding="utf-8") as f:
+                              f.write(c)
+                          print(f"✓ Processed {file}")
+                      except Exception as e:
+                          print(f"Error processing {file}: {e}")
+
+          print("==============================================")
+          print("SUCCESS: ALL 100+ Apps & Features Injected!")
+          print("==============================================")
+          EOF
+
+          # Dedicated Website Repo क्लोन करके सभी फाइलों को ऑटो-पुश करेगा
+          git clone https://m4mental:${PAT_TOKEN}@github.com/m4mental/m4mental.github.io.git site_repo
+          
+          rsync -av --exclude='.git' ./tmp_site/ ./site_repo/
+
+          cd site_repo
+          git config user.name 'github-actions[bot]'
+          git config user.email 'github-actions[bot]@users.noreply.github.com'
+          git add .
+          git commit -m "Auto update website with all 100+ apps and P2P Share [skip ci]" || true
+          git push origin main
+          cd ..
+          rm -rf ./tmp_site ./site_repo
