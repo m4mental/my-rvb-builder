@@ -31,8 +31,8 @@
 > All APKs and modules in this repository are 100% automated. If you need help, please direct your feedback to the right place:
 >
 > - 🧩 **Patch Issues:** If a specific feature/mod is broken (e.g., ads are showing), please open an issue in the **respective patch developer's repository**.
-> - 🛠️ **Builder Issues:** If an app fails to build, or the download links are broken, **[open an Issue here on GitHub](https://github.com/m4mental/my-rvb-builder/issues/new/choose)** .
-> - 💬 **General Help & Requests:** Need help installing, or want to request a new app? **[open an Issue here on GitHub](https://github.com/m4mental/my-rvb-builder/issues/new/choose)** or **[open a discussion here on GitHub](https://github.com/m4mental/my-rvb-builder/discussions/new?category=general)**.
+> - 🛠️ **Builder Issues:** If an app fails to build, or the download links are broken, **[open an Issue here on GitHub](https://github.com/m4mental/my-rvb-builder/issues/new/choose)** or **[send a message in our Telegram Group](https://t.me/rvb27/306)**.
+> - 💬 **General Help & Requests:** Need help installing, or want to request a new app? **[Send a message in our Telegram Group](https://t.me/rvb27/306)** or **[open an Issue here on GitHub](https://github.com/m4mental/my-rvb-builder/issues/new/choose)** or **[open a discussion here on GitHub](https://github.com/m4mental/my-rvb-builder/discussions/new?category=general)**.
 
 ---
 
@@ -87,12 +87,12 @@ Patches: [binarymend/patches-1.3.1.mpp](https://github.com/binarymend/morphe-pat
 #### [Morphe (hoo-dles)](https://github.com/hoo-dles/morphe-patches)
 
 <details>
-<summary id="adguard-morphe">&emsp;<a href="https://m4mental.github.io/"><img src="https://img.shields.io/badge/version-v4.12.81-gray?labelColor=68BC71&logo=adguard&logoColor=white&style=flat"></summary>
+<summary id="adguard-morphe">&emsp;<a href="https://m4mental.github.io/"><img src="https://img.shields.io/badge/version-v4.13.1-gray?labelColor=68BC71&logo=adguard&logoColor=white&style=flat"></summary>
 
 <blockquote>
 
-[Release 2026-07-15](https://github.com/m4mental/my-rvb-builder/releases/tag/260053)<br>
-Patches: [hoo-dles/patches-1.39.0.mpp](https://github.com/hoo-dles/morphe-patches/releases/tag/v1.39.0)
+[Release 2026-08-07](https://github.com/m4mental/my-rvb-builder/releases/tag/260156)<br>
+Patches: [hoo-dles/patches-1.40.0.mpp](https://github.com/hoo-dles/morphe-patches/releases/tag/v1.40.0)
 - Enable Premium
 </blockquote>
 </details>
@@ -539,8 +539,8 @@ Patches: [Paresh-Maheshwari/patches-1.19.0.mpp](https://gitlab.com/Paresh-Mahesh
   
 <blockquote>
 
-[Release 2026-07-15](https://github.com/m4mental/my-rvb-builder/releases/tag/260053)<br>
-Patches: [hoo-dles/patches-1.39.0.mpp](https://github.com/hoo-dles/morphe-patches/releases/tag/v1.39.0)
+[Release 2026-08-07](https://github.com/m4mental/my-rvb-builder/releases/tag/260156)<br>
+Patches: [hoo-dles/patches-1.40.0.mpp](https://github.com/hoo-dles/morphe-patches/releases/tag/v1.40.0)
 - Enable Premium
 </blockquote>
 </details>
@@ -692,7 +692,7 @@ Patches: [jkennethcarino/patches-1.2.0.mpp](https://github.com/jkennethcarino/ad
   
 <blockquote>
 
-[Release 2026-08-07](https://github.com/m4mental/my-rvb-builder/releases/tag/260156)<br>
+[Release 2026-08-07](https://github.com/m4mental/my-rvb-builder/releases/tag/260157)<br>
 Patches: [jasonwu1994/patches-2.6.0.mpp](https://github.com/jasonwu1994/Gboard-patches/releases/tag/v2.6.0)
 - AI Writing Tools
 - Add Gboard Signature Bypass
@@ -842,7 +842,7 @@ Patches: [Raudrobot/patches-6.1.0.rvp](https://github.com/Raudrobot/revanced-pat
 
 <blockquote>
 
-[Release 2026-08-07](https://github.com/m4mental/my-rvb-builder/releases/tag/260156)<br>
+[Release 2026-08-07](https://github.com/m4mental/my-rvb-builder/releases/tag/260157)<br>
 Patches: [ajstrick81/patches-1.18.1.mpp](https://github.com/ajstrick81/morphe-androidtv-patches/releases/tag/v1.19.0)
 - HBO Max - Disable Ads
 </blockquote>
@@ -1478,12 +1478,12 @@ Patches: [rushiranpise/patches-1.16.0.mpp](https://github.com/rushiranpise/morph
 #### [Morphe (hoo-dles)](https://github.com/hoo-dles/morphe-patches)
 
 <details>
-<summary id="nova-launcher-morphe">&emsp;<a href="https://m4mental.github.io/"><img src="https://img.shields.io/badge/version-v81042-gray?labelColor=FF6B00&logo=android&logoColor=white&style=flat"></summary>
+<summary id="nova-launcher-morphe">&emsp;<a href="https://m4mental.github.io/"><img src="https://img.shields.io/badge/version-v88600-gray?labelColor=FF6B00&logo=android&logoColor=white&style=flat"></summary>
 
 <blockquote>
 
-[Release 2026-07-15](https://github.com/m4mental/my-rvb-builder/releases/tag/260053)<br>
-Patches: [hoo-dles/patches-1.39.0.mpp](https://github.com/hoo-dles/morphe-patches/releases/tag/v1.39.0)
+[Release 2026-08-07](https://github.com/m4mental/my-rvb-builder/releases/tag/260156)<br>
+Patches: [hoo-dles/patches-1.40.0.mpp](https://github.com/hoo-dles/morphe-patches/releases/tag/v1.40.0)
 - Enable Prime
 </blockquote>
 </details>
@@ -1523,7 +1523,7 @@ Patches: [hoo-dles/patches-1.40.0.mpp](https://github.com/hoo-dles/morphe-patche
 
 <blockquote>
 
-[Release 2026-08-07](https://github.com/m4mental/my-rvb-builder/releases/tag/260156)<br>
+[Release 2026-08-07](https://github.com/m4mental/my-rvb-builder/releases/tag/260157)<br>
 Patches: [ajstrick81/patches-1.18.1.mpp](https://github.com/ajstrick81/morphe-androidtv-patches/releases/tag/v1.19.0)
 - Disable auto-updates
 - Skip ads
@@ -1543,7 +1543,7 @@ Patches: [ajstrick81/patches-1.18.1.mpp](https://github.com/ajstrick81/morphe-an
   
 <blockquote>
 
-[Release 2026-08-07](https://github.com/m4mental/my-rvb-builder/releases/tag/260156)<br>
+[Release 2026-08-07](https://github.com/m4mental/my-rvb-builder/releases/tag/260157)<br>
 Patches: [ajstrick81/patches-1.18.1.mpp](https://github.com/ajstrick81/morphe-androidtv-patches/releases/tag/v1.19.0)
 - Disable auto-updates
 - Override certificate pinning
@@ -1708,7 +1708,7 @@ Patches: [hoo-dles/patches-1.39.0.mpp](https://github.com/hoo-dles/morphe-patche
 
 <blockquote>
 
-[Release 2026-08-07](https://github.com/m4mental/my-rvb-builder/releases/tag/260156)<br>
+[Release 2026-08-07](https://github.com/m4mental/my-rvb-builder/releases/tag/260157)<br>
 Patches: [ajstrick81/patches-1.18.1.mpp](https://github.com/ajstrick81/morphe-androidtv-patches/releases/tag/v1.19.0)
 - Bundle native ad-strip hook
 - Disable auto-updates
@@ -1787,12 +1787,12 @@ Patches: [Raudrobot/patches-6.1.0.rvp](https://github.com/Raudrobot/revanced-pat
 #### [Morphe (hoo-dles)](https://github.com/hoo-dles/morphe-patches)
 
 <details>
-<summary id="proton-vpn-morphe">&emsp;<a href="https://m4mental.github.io/"><img src="https://img.shields.io/badge/version-v5.17.72.0-gray?labelColor=6D4AFF&logo=protonvpn&logoColor=white&style=flat"></summary>
+<summary id="proton-vpn-morphe">&emsp;<a href="https://m4mental.github.io/"><img src="https://img.shields.io/badge/version-v5.19.43.0-gray?labelColor=6D4AFF&logo=protonvpn&logoColor=white&style=flat"></summary>
   
 <blockquote>
 
-[Release 2026-07-15](https://github.com/m4mental/my-rvb-builder/releases/tag/260053)<br>
-Patches: [hoo-dles/patches-1.39.0.mpp](https://github.com/hoo-dles/morphe-patches/releases/tag/v1.39.0)
+[Release 2026-08-07](https://github.com/m4mental/my-rvb-builder/releases/tag/260156)<br>
+Patches: [hoo-dles/patches-1.40.0.mpp](https://github.com/hoo-dles/morphe-patches/releases/tag/v1.40.0)
 - Remove delay
 - Unlock LAN connections
 - Unlock custom DNS
@@ -2444,7 +2444,7 @@ Patches: [bufferk/patches-1.8.0.mpp](https://github.com/bufferk/morphe-patches/r
 
 <blockquote>
 
-[Release 2026-08-07](https://github.com/m4mental/my-rvb-builder/releases/tag/260156)<br>
+[Release 2026-08-07](https://github.com/m4mental/my-rvb-builder/releases/tag/260157)<br>
 Patches: [ajstrick81/patches-1.18.1.mpp](https://github.com/ajstrick81/morphe-androidtv-patches/releases/tag/v1.19.0)
 - Skip ads
 </blockquote>
@@ -2568,7 +2568,7 @@ Patches: [RookieEnough/patches-1.1.0.mpp](https://github.com/RookieEnough/De-Van
 
 <blockquote>
 
-[Release 2026-08-07](https://github.com/m4mental/my-rvb-builder/releases/tag/260156)<br>
+[Release 2026-08-07](https://github.com/m4mental/my-rvb-builder/releases/tag/260157)<br>
 Patches: [ajstrick81/patches-1.18.1.mpp](https://github.com/ajstrick81/morphe-androidtv-patches/releases/tag/v1.19.0)
 - Override certificate pinning
 - Skip ads
