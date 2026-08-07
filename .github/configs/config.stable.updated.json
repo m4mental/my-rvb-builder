@@ -27,7 +27,7 @@
     "archive-dlurl": "https://archive.org/download/geologically/apks/com.google.android.inputmethod.latin"
   },
   "disneyplus-morphe-androidtv": {
-    "enabled": true,
+    "enabled": false,
     "app-name": "disneyplus",
     "rv-brand": "morphe-androidtv",
     "build-mode": "apk",
@@ -39,7 +39,7 @@
     "github-dlurl": "https://github.com/nullcpy/apks/releases/tag/com.disney.disneyplus"
   },
   "prime-video-morphe-androidtv": {
-    "enabled": true,
+    "enabled": false,
     "app-name": "prime-video",
     "rv-brand": "morphe-androidtv",
     "build-mode": "apk",
@@ -52,7 +52,7 @@
     "github-dlurl": "https://github.com/nullcpy/apks/releases/tag/com.amazon.amazonvideo.livingroom"
   },
   "hbomax-morphe-androidtv": {
-    "enabled": true,
+    "enabled": false,
     "app-name": "hbomax",
     "rv-brand": "morphe-androidtv",
     "build-mode": "apk",
@@ -64,7 +64,7 @@
     "github-dlurl": "https://github.com/nullcpy/apks/releases/tag/com.wbd.hbomax"
   },
   "peacock-morphe-androidtv": {
-    "enabled": true,
+    "enabled": false,
     "app-name": "peacock",
     "rv-brand": "morphe-androidtv",
     "build-mode": "apk",
@@ -77,7 +77,7 @@
     "github-dlurl": "https://github.com/nullcpy/apks/releases/tag/com.peacocktv.peacockandroid"
   },
   "tubi-morphe-androidtv": {
-    "enabled": true,
+    "enabled": false,
     "app-name": "tubi",
     "rv-brand": "morphe-androidtv",
     "build-mode": "apk",
@@ -89,7 +89,7 @@
     "github-dlurl": "https://github.com/nullcpy/apks/releases/tag/com.tubitv"
   },
   "vix-morphe-androidtv": {
-    "enabled": true,
+    "enabled": false,
     "app-name": "vix",
     "rv-brand": "morphe-androidtv",
     "build-mode": "apk",
@@ -101,7 +101,7 @@
     "github-dlurl": "https://github.com/nullcpy/apks/releases/tag/com.univision.prendetv"
   },
   "plutotv-morphe-androidtv": {
-    "enabled": true,
+    "enabled": false,
     "app-name": "plutotv",
     "rv-brand": "morphe-androidtv",
     "build-mode": "apk",
@@ -601,7 +601,7 @@
     "github-dlurl": "https://github.com/nullcpy/apks/releases/tag/com.reddit.frontpage"
   },
   "gboard-morphe-alt": {
-    "enabled": true,
+    "enabled": false,
     "app-name": "gboard",
     "rv-brand": "morphe-alt",
     "build-mode": "both",
@@ -1214,7 +1214,7 @@
     "dpi": "480dpi nodpi anydpi auto"
   },
   "calorie-counter-morphe": {
-    "enabled": false,
+    "enabled": true,
     "app-name": "calorie-counter",
     "rv-brand": "morphe",
     "build-mode": "apk",
@@ -1229,7 +1229,7 @@
     "github-dlurl": "https://github.com/nullcpy/apks/releases/tag/com.fatsecret.android"
   },
   "soundcloud-morphe-alt": {
-    "enabled": false,
+    "enabled": true,
     "app-name": "soundcloud",
     "rv-brand": "morphe-alt",
     "build-mode": "apk",
