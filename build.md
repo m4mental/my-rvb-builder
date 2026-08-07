@@ -1,17 +1,21 @@
-reddit-morphe-adobo (arm64-v8a): 2026.31.0  
-reddit-morphe-adobo (arm-v7a): 2026.31.0  
-youtube-morphe (arm64-v8a): 21.04.223  
-youtube-morphe (arm-v7a): 21.04.223  
-youtube-music-morphe (arm64-v8a): 9.15.51  
-youtube-music-morphe (arm-v7a): 9.15.51  
-youtube-morphe-exp (arm64-v8a): 21.31.523  
-youtube-morphe-exp (arm-v7a): 21.31.523  
-youtube-music-morphe-exp (arm64-v8a): 9.30.52  
-youtube-music-morphe-exp (arm-v7a): 9.30.52  
-reddit-morphe-exp (arm64-v8a): 2026.31.0  
-reddit-morphe-exp (arm-v7a): 2026.31.0  
-reddit-morphe (arm64-v8a): 2026.14.0  
-reddit-morphe (arm-v7a): 2026.14.0  
+prime-video-morphe-androidtv (arm-v7a): 6.23.23+v15.5.0.70-armv7a  
+hbomax-morphe-androidtv (all): 7.7.0.78  
+peacock-morphe-androidtv (all): 7.6.100  
+tubi-morphe-androidtv (all): 10.28.5000  
+vix-morphe-androidtv (all): 4.46.0_tv  
+plutotv-morphe-androidtv (all): 5.66.0-leanback  
+icon-packer-morphe (arm64-v8a): 1.21.0-release  
+icon-packer-morphe (arm-v7a): 1.21.0-release  
+podcast-addict-morphe (arm64-v8a): 2026.4  
+podcast-addict-morphe (arm-v7a): 2026.4  
+smart-launcher-6-morphe (all): 6.6build002patch1  
+merriam-webster-dictionary-morphe (arm64-v8a): 5.5.0  
+merriam-webster-dictionary-morphe (arm-v7a): 5.5.0  
+pandora-morphe (arm64-v8a): 2602.1  
+pandora-morphe (arm-v7a): 2602.1  
+ventusky-morphe (arm64-v8a): 53.1  
+ventusky-morphe (arm-v7a): 53.1  
+lightroom-morphe (arm64-v8a): 11.4.5  
 
 **Notes:**  
 • Install [MicroG-RE](https://github.com/MorpheApp/MicroG-RE/releases/latest) or [MicroG](https://github.com/ReVanced/GmsCore/releases/latest), required for Google APKs.  
@@ -19,9 +23,9 @@ reddit-morphe (arm-v7a): 2026.14.0
 
 [GitHub](https://github.com/nullcpy/rvb) | [Group](https://t.me/rvb27) | [Donate](https://fahim-ahmed05.github.io/donate) | [Website](https://nullcpy.github.io)
   
-CLI: MorpheApp/morphe-desktop-1.12.0-all.jar  
-Patches: jkennethcarino/patches-1.3.0-dev.17.mpp  
-[Changelog](https://github.com/jkennethcarino/adobo/releases/tag/v1.3.0-dev.17)
+CLI: MorpheApp/morphe-desktop-1.13.0-all.jar  
+Patches: ajstrick81/patches-1.18.0.mpp  
+[Changelog](https://github.com/ajstrick81/morphe-androidtv-patches/releases/tag/v1.18.1)
 
-Patches: MorpheApp/patches-1.39.0-dev.8.mpp  
-[Changelog](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.39.0-dev.8)  
+Patches: hoo-dles/patches-1.40.0.mpp  
+[Changelog](https://github.com/hoo-dles/morphe-patches/releases/tag/v1.40.0)  
