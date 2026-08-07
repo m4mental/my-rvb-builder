@@ -31,8 +31,8 @@
 > All APKs and modules in this repository are 100% automated. If you need help, please direct your feedback to the right place:
 >
 > - 🧩 **Patch Issues:** If a specific feature/mod is broken (e.g., ads are showing), please open an issue in the **respective patch developer's repository**.
-> - 🛠️ **Builder Issues:** If an app fails to build, or the download links are broken, **[open an Issue here on GitHub](https://github.com/m4mental/my-rvb-builder/issues/new/choose)** or **[send a message in our Telegram Group](https://t.me/rvb27/306)**.
-> - 💬 **General Help & Requests:** Need help installing, or want to request a new app? **[Send a message in our Telegram Group](https://t.me/rvb27/306)** or **[open an Issue here on GitHub](https://github.com/m4mental/my-rvb-builder/issues/new/choose)** or **[open a discussion here on GitHub](https://github.com/m4mental/my-rvb-builder/discussions/new?category=general)**.
+> - 🛠️ **Builder Issues:** If an app fails to build, or the download links are broken, **[open an Issue here on GitHub](https://github.com/m4mental/my-rvb-builder/issues/new/choose)** .
+> - 💬 **General Help & Requests:** Need help installing, or want to request a new app? **[open an Issue here on GitHub](https://github.com/m4mental/my-rvb-builder/issues/new/choose)** or **[open a discussion here on GitHub](https://github.com/m4mental/my-rvb-builder/discussions/new?category=general)**.
 
 ---
 
@@ -1884,8 +1884,8 @@ Patches: [Raudrobot/patches-6.1.0.rvp](https://github.com/Raudrobot/revanced-pat
   
 <blockquote>
 
-[Release 2026-08-07](https://github.com/m4mental/my-rvb-builder/releases/tag/260159)<br>
-Patches: [MorpheApp/patches-1.39.0-dev.9.mpp](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.39.0-dev.9)
+[Release 2026-08-07](https://github.com/m4mental/my-rvb-builder/releases/tag/260162)<br>
+Patches: [MorpheApp/patches-1.39.0-dev.10.mpp](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.39.0-dev.10)
 - Custom font
 - Disable modern home
 - Disable screenshot popup
@@ -1910,8 +1910,8 @@ Patches: [MorpheApp/patches-1.39.0-dev.9.mpp](https://github.com/MorpheApp/morph
   
 <blockquote>
 
-[Release 2026-08-07](https://github.com/m4mental/my-rvb-builder/releases/tag/260159)<br>
-Patches: [MorpheApp/patches-1.39.0-dev.9.mpp](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.39.0-dev.9)
+[Release 2026-08-07](https://github.com/m4mental/my-rvb-builder/releases/tag/260162)<br>
+Patches: [MorpheApp/patches-1.39.0-dev.10.mpp](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.39.0-dev.10)
 - Custom font
 - Disable modern home
 - Disable screenshot popup
@@ -2991,8 +2991,8 @@ Patches: [hoo-dles/patches-1.39.0.mpp](https://github.com/hoo-dles/morphe-patche
   
 <blockquote>
 
-[Release 2026-08-07](https://github.com/m4mental/my-rvb-builder/releases/tag/260159)<br>
-Patches: [MorpheApp/patches-1.39.0-dev.9.mpp](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.39.0-dev.9)
+[Release 2026-08-07](https://github.com/m4mental/my-rvb-builder/releases/tag/260162)<br>
+Patches: [MorpheApp/patches-1.39.0-dev.10.mpp](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.39.0-dev.10)
 - Add to queue
 - Alternative thumbnails
 - Ambient mode
@@ -3850,8 +3850,8 @@ Patches: [wchill/patches-5.16.4.mpp](https://github.com/wchill/rvx-morphed/relea
   
 <blockquote>
 
-[Release 2026-08-07](https://github.com/m4mental/my-rvb-builder/releases/tag/260159)<br>
-Patches: [MorpheApp/patches-1.39.0-dev.9.mpp](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.39.0-dev.9)
+[Release 2026-08-07](https://github.com/m4mental/my-rvb-builder/releases/tag/260162)<br>
+Patches: [MorpheApp/patches-1.39.0-dev.10.mpp](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.39.0-dev.10)
 - Bypass certificate checks
 - Change header
 - Change miniplayer color
@@ -3899,8 +3899,8 @@ Patches: [MorpheApp/patches-1.39.0-dev.9.mpp](https://github.com/MorpheApp/morph
   
 <blockquote>
 
-[Release 2026-08-07](https://github.com/m4mental/my-rvb-builder/releases/tag/260159)<br>
-Patches: [MorpheApp/patches-1.39.0-dev.9.mpp](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.39.0-dev.9)
+[Release 2026-08-07](https://github.com/m4mental/my-rvb-builder/releases/tag/260162)<br>
+Patches: [MorpheApp/patches-1.39.0-dev.10.mpp](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.39.0-dev.10)
 - Bypass certificate checks
 - Change header
 - Change miniplayer color
