@@ -1,19 +1,7 @@
-youtube-anddea (arm64-v8a): 20.51.39  
-youtube-anddea (arm-v7a): 20.51.39  
-youtube-music-anddea (arm64-v8a): 9.15.51  
-youtube-music-anddea (arm-v7a): 9.15.51  
-youtube-morphe (arm64-v8a): 21.04.223  
-youtube-morphe (arm-v7a): 21.04.223  
-youtube-music-morphe (arm64-v8a): 9.15.51  
-youtube-music-morphe (arm-v7a): 9.15.51  
-youtube-morphe-exp (arm64-v8a): 21.31.523  
-youtube-morphe-exp (arm-v7a): 21.31.523  
-youtube-music-morphe-exp (arm64-v8a): 9.30.52  
-youtube-music-morphe-exp (arm-v7a): 9.30.52  
-reddit-morphe-exp (arm64-v8a): 2026.31.1  
-reddit-morphe-exp (arm-v7a): 2026.31.1  
-reddit-morphe (arm64-v8a): 2026.14.0  
-reddit-morphe (arm-v7a): 2026.14.0  
+calorie-counter-morphe (arm64-v8a): 11.7.0.1  
+calorie-counter-morphe (arm-v7a): 11.7.0.1  
+soundcloud-morphe-alt (arm64-v8a): 2026.07.23-release  
+soundcloud-morphe-alt (arm-v7a): 2026.07.23-release  
 
 **Notes:**  
 • Install [MicroG-RE](https://github.com/MorpheApp/MicroG-RE/releases/latest) or [MicroG](https://github.com/ReVanced/GmsCore/releases/latest), required for Google APKs.  
@@ -22,8 +10,5 @@ reddit-morphe (arm-v7a): 2026.14.0
 [GitHub](https://github.com/nullcpy/rvb) | [Group](https://t.me/rvb27) | [Donate](https://fahim-ahmed05.github.io/donate) | [Website](https://nullcpy.github.io)
   
 CLI: MorpheApp/morphe-desktop-1.13.0-all.jar  
-Patches: anddea/patches-4.2.0-dev.14.mpp  
-[Changelog](https://github.com/anddea/revanced-patches/releases/tag/v4.2.0-dev.14)
-
-Patches: MorpheApp/patches-1.39.0-dev.9.mpp  
-[Changelog](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.39.0-dev.9)  
+Patches: kondratjev/patches-1.19.0.mpp  
+[Changelog](https://github.com/kondratjev/morphe-patches/releases/tag/v1.19.0)  
