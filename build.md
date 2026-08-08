@@ -7,5 +7,5 @@ gboard-morphe-alt (arm64-v8a): 17.7.7.932364120-release-arm64-v8a
 [GitHub](https://github.com/nullcpy/rvb) | [Group](https://t.me/rvb27) | [Donate](https://fahim-ahmed05.github.io/donate) | [Website](https://nullcpy.github.io)
   
 CLI: MorpheApp/morphe-desktop-1.13.0-all.jar  
-Patches: jasonwu1994/patches-2.7.0-dev.1.mpp  
-[Changelog](https://github.com/jasonwu1994/Gboard-patches/releases/tag/v2.7.0-dev.1)  
+Patches: jasonwu1994/patches-2.7.0-dev.2.mpp  
+[Changelog](https://github.com/jasonwu1994/Gboard-patches/releases/tag/v2.7.0-dev.2)  
