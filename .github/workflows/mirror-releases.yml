@@ -1,8 +1,8 @@
 name: Mirror Releases from Original Repo
 
 on:
-  schedule:
-    - cron: '0 */6 * * *' # हर 6 घंटे में ऑटो-चेक करेगा
+  workflow_call:          # कंट्रोलर द्वारा कॉल
+  करने के लिए
   workflow_dispatch:      # मैन्युअल बटन
 
 permissions:
