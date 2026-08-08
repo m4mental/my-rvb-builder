@@ -2,7 +2,7 @@ name: Mirror Releases from Original Repo
 
 on:
   schedule:
-    - cron: '0 */6 * * *' # हर 6 घंटे में ऑटो-चेक और ऑटो-रिपेयर करेगा
+    - cron: '0 */6 * * *' # हर 6 घंटे में ऑटो-सिंक और ऑटो-अपडेट करेगा
   workflow_dispatch:      # मैन्युअल बटन
 
 permissions:
@@ -15,7 +15,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Auto-Audit Mismatches & Mirror Releases
+      - name: Mirror ALL 100+ Releases & Update Permanent Archives (Stable/Beta)
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
@@ -34,15 +34,27 @@ jobs:
                   print(f"Error fetching {url}: {e}")
                   return []
 
-          print("🔍 Fetching releases from original repo and local repo...")
+          print("🔍 Fetching ALL 100+ releases across all pages from original repo...")
           
-          # 1. दोनों Repos से रिलीज़ेस का डेटा लाएगा
-          orig_releases = get_json(f"https://api.github.com/repos/{orig_repo}/releases?per_page=30")
-          my_releases = get_json(f"https://api.github.com/repos/{my_repo}/releases?per_page=30")
+          # 1. ओरिजिनल Repo के पेज 1 से 5 तक के सभी 100+ रिलीज़ेस लाएगा
+          orig_releases = []
+          for page in range(1, 6):
+              data = get_json(f"https://api.github.com/repos/{orig_repo}/releases?per_page=100&page={page}")
+              if isinstance(data, list) and len(data) > 0:
+                  orig_releases.extend(data)
+              else:
+                  break
 
-          if not orig_releases:
-              print("Failed to fetch original releases.")
-              exit(1)
+          print(f"Total Original Releases Found: {len(orig_releases)}")
+
+          # 2. आपकी लोकल Repo के सभी रिलीज़ेस लाएगा
+          my_releases = []
+          for page in range(1, 6):
+              data = get_json(f"https://api.github.com/repos/{my_repo}/releases?per_page=100&page={page}")
+              if isinstance(data, list) and len(data) > 0:
+                  my_releases.extend(data)
+              else:
+                  break
 
           my_rel_map = {}
           if isinstance(my_releases, list):
@@ -59,60 +71,73 @@ jobs:
               is_prerelease = rel.get('prerelease', False)
               orig_assets = sorted([a['name'] for a in rel.get('assets', [])])
 
-              mismatch_detected = False
+              is_archive = tag in ["stable", "beta"]
 
-              # अगर यह टैग आपकी Repo में पहले से है, तो फाइलों का मिलान करेगा
-              if tag in my_rel_map:
+              # नंबर वाले बिल्ड्स में अगर फ़ाइलें मिसमैच होंगी तो रिपेयर करेगा
+              if tag in my_rel_map and not is_archive:
                   local_assets = sorted(my_rel_map[tag])
                   if orig_assets != local_assets:
-                      print(f"⚠️ MISMATCH DETECTED in Tag: {tag}!")
-                      print(f"   Original Assets ({len(orig_assets)}): {orig_assets}")
-                      print(f"   Local Assets    ({len(local_assets)}): {local_assets}")
-                      print(f"   action: Auto-Deleting mismatched local release {tag}...")
-                      
-                      # मिसमैच वाले रिलीज़ और टैग को डिलीट करेगा
+                      print(f"⚠️ MISMATCH DETECTED in Numbered Tag: {tag}!")
+                      print(f"   Deleting mismatched local release {tag}...")
                       subprocess.run(["gh", "release", "delete", tag, "-y", "--cleanup-tag"], check=False)
                       subprocess.run(["git", "push", "--delete", "origin", tag], check=False)
-                      mismatch_detected = True
                       time.sleep(2)
                   else:
                       print(f"✓ Tag {tag} matches 100% perfectly. Skipping.")
                       continue
 
-              print(f"🚀 Mirroring/Repairing Release: {tag} ({title})...")
+              if is_archive:
+                  print(f"🔄 Updating Permanent Archive Release '{tag}' with latest assets...")
+              else:
+                  print(f"🚀 Mirroring Release: {tag} ({title})...")
 
-              # Description क्लीनिंग (Group/Donate हटाएगा, m4mental लिंक्स लगाएगा)
+              # Description से Group/Donate लिंक्स हटाएगा, m4mental लिंक्स सेट करेगा
               clean_body = re.sub(r'\[GitHub\]\([^)]+\)', r'[GitHub](https://github.com/m4mental/my-rvb-builder)', body)
-              clean_body = re.sub(r'\[Website\]\([^)]+\)', r'[Website](https://m4mental.github.io/my-rvb-builder/)', clean_body)
+              clean_body = re.sub(r'\[Website\]\([^)]+\)', r'[Website](https://m4mental.github.io/)', clean_body)
               clean_body = re.sub(r'\|[ \t]*\[Group\]\([^)]+\)', '', clean_body)
               clean_body = re.sub(r'\|[ \t]*\[Donate\]\([^)]+\)', '', clean_body)
 
               rm_dir = f"./tmp_assets_{tag}"
               os.makedirs(rm_dir, exist_ok=True)
 
-              # ओरिजिनल Repo से सही फाइलें डाउनलोड करेगा
+              # ओरिजिनल Repo से फ़ाइलें डाउनलोड करेगा
               for asset in rel.get('assets', []):
                   dl_url = asset['browser_download_url']
                   fname = asset['name']
                   print(f"   📥 Downloading {fname}...")
                   subprocess.run(["curl", "-sL", dl_url, "-o", f"{rm_dir}/{fname}"], check=False)
 
-              # आपकी Repo में 100% मैचिंग फ़ाइलों के साथ नया रिलीज़ बनाएगा
-              cmd = ["gh", "release", "create", tag]
-              for fname in os.listdir(rm_dir):
-                  cmd.append(f"{rm_dir}/{fname}")
+              # 'stable' और 'beta' को डिलीट किए बिना उनकी फ़ाइलों को ओवरराइट/अपडेट करेगा
+              if is_archive:
+                  if tag in my_rel_map:
+                      cmd = ["gh", "release", "upload", tag]
+                      for fname in os.listdir(rm_dir):
+                          cmd.append(f"{rm_dir}/{fname}")
+                      cmd.append("--clobber")
+                      print(f"   📤 Overwriting/Updating assets in permanent archive release '{tag}'...")
+                      subprocess.run(cmd, check=False)
+                  else:
+                      cmd = ["gh", "release", "create", tag]
+                      for fname in os.listdir(rm_dir):
+                          cmd.append(f"{rm_dir}/{fname}")
+                      cmd.extend(["--title", title, "--notes", clean_body])
+                      if is_prerelease:
+                          cmd.append("--prerelease")
+                      print(f"   📤 Creating permanent archive release '{tag}'...")
+                      subprocess.run(cmd, check=False)
+              else:
+                  cmd = ["gh", "release", "create", tag]
+                  for fname in os.listdir(rm_dir):
+                      cmd.append(f"{rm_dir}/{fname}")
+                  cmd.extend(["--title", title, "--notes", clean_body])
+                  if is_prerelease:
+                      cmd.append("--prerelease")
+                  print(f"   📤 Uploading release {tag} to your repo...")
+                  subprocess.run(cmd, check=False)
 
-              cmd.extend(["--title", title, "--notes", clean_body])
-              if is_prerelease:
-                  cmd.append("--prerelease")
-
-              print(f"   📤 Uploading corrected release {tag} to your repo...")
-              subprocess.run(cmd, check=False)
-
-              # सफाई
               subprocess.run(["rm", "-rf", rm_dir], check=False)
-              print(f"✓ Tag {tag} successfully mirrored & verified!")
+              print(f"✓ Release {tag} successfully processed!")
               time.sleep(2)
 
-          print("🎉 All releases audited and repaired successfully!")
+          print("🎉 ALL 100+ releases and permanent archives (stable/beta) synced successfully!")
           EOF
