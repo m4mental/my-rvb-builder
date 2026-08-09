@@ -31,8 +31,8 @@
 > All APKs and modules in this repository are 100% automated. If you need help, please direct your feedback to the right place:
 >
 > - 🧩 **Patch Issues:** If a specific feature/mod is broken (e.g., ads are showing), please open an issue in the **respective patch developer's repository**.
-> - 🛠️ **Builder Issues:** If an app fails to build, or the download links are broken, **[open an Issue here on GitHub](https://github.com/m4mental/my-rvb-builder/issues/new/choose)** or **[send a message in our Telegram Group](https://t.me/rvb27/306)**.
-> - 💬 **General Help & Requests:** Need help installing, or want to request a new app? **[Send a message in our Telegram Group](https://t.me/rvb27/306)** or **[open an Issue here on GitHub](https://github.com/m4mental/my-rvb-builder/issues/new/choose)** or **[open a discussion here on GitHub](https://github.com/m4mental/my-rvb-builder/discussions/new?category=general)**.
+> - 🛠️ **Builder Issues:** If an app fails to build, or the download links are broken, **[open an Issue here on GitHub](https://github.com/m4mental/my-rvb-builder/issues/new/choose)** .
+> - 💬 **General Help & Requests:** Need help installing, or want to request a new app? **[open an Issue here on GitHub](https://github.com/m4mental/my-rvb-builder/issues/new/choose)** or **[open a discussion here on GitHub](https://github.com/m4mental/my-rvb-builder/discussions/new?category=general)**.
 
 ---
 
@@ -875,8 +875,8 @@ Patches: [Raudrobot/patches-6.1.0.rvp](https://github.com/Raudrobot/revanced-pat
 
 <blockquote>
 
-[Release 2026-08-09](https://github.com/m4mental/my-rvb-builder/releases/tag/260175)<br>
-Patches: [ajstrick81/patches-1.22.0.mpp](https://github.com/ajstrick81/morphe-androidtv-patches/releases/tag/v1.23.0)
+[Release 2026-08-09](https://github.com/m4mental/my-rvb-builder/releases/tag/260179)<br>
+Patches: [ajstrick81/patches-1.23.0.mpp](https://github.com/ajstrick81/morphe-androidtv-patches/releases/tag/v1.24.0)
 - HBO Max - Disable Ads
 </blockquote>
 </details>
@@ -1596,8 +1596,8 @@ Patches: [hoo-dles/patches-1.40.0.mpp](https://github.com/hoo-dles/morphe-patche
 
 <blockquote>
 
-[Release 2026-08-09](https://github.com/m4mental/my-rvb-builder/releases/tag/260175)<br>
-Patches: [ajstrick81/patches-1.22.0.mpp](https://github.com/ajstrick81/morphe-androidtv-patches/releases/tag/v1.23.0)
+[Release 2026-08-09](https://github.com/m4mental/my-rvb-builder/releases/tag/260179)<br>
+Patches: [ajstrick81/patches-1.23.0.mpp](https://github.com/ajstrick81/morphe-androidtv-patches/releases/tag/v1.24.0)
 - Disable auto-updates
 - Skip ads
 </blockquote>
@@ -1616,8 +1616,8 @@ Patches: [ajstrick81/patches-1.22.0.mpp](https://github.com/ajstrick81/morphe-an
   
 <blockquote>
 
-[Release 2026-08-09](https://github.com/m4mental/my-rvb-builder/releases/tag/260175)<br>
-Patches: [ajstrick81/patches-1.22.0.mpp](https://github.com/ajstrick81/morphe-androidtv-patches/releases/tag/v1.23.0)
+[Release 2026-08-09](https://github.com/m4mental/my-rvb-builder/releases/tag/260179)<br>
+Patches: [ajstrick81/patches-1.23.0.mpp](https://github.com/ajstrick81/morphe-androidtv-patches/releases/tag/v1.24.0)
 - Disable auto-updates
 - Override certificate pinning
 - Skip ads
@@ -1781,8 +1781,8 @@ Patches: [hoo-dles/patches-1.39.0.mpp](https://github.com/hoo-dles/morphe-patche
 
 <blockquote>
 
-[Release 2026-08-09](https://github.com/m4mental/my-rvb-builder/releases/tag/260175)<br>
-Patches: [ajstrick81/patches-1.22.0.mpp](https://github.com/ajstrick81/morphe-androidtv-patches/releases/tag/v1.23.0)
+[Release 2026-08-09](https://github.com/m4mental/my-rvb-builder/releases/tag/260179)<br>
+Patches: [ajstrick81/patches-1.23.0.mpp](https://github.com/ajstrick81/morphe-androidtv-patches/releases/tag/v1.24.0)
 - Bundle native ad-strip hook
 - Disable auto-updates
 - Load native ad-strip hook
@@ -2392,8 +2392,8 @@ Patches: [Paresh-Maheshwari/patches-1.19.0.mpp](https://gitlab.com/Paresh-Mahesh
   
 <blockquote>
 
-[Release 2026-08-09](https://github.com/m4mental/my-rvb-builder/releases/tag/260177)<br>
-Patches: [icysymmetra/patches-0.6.0.mpp](https://github.com/icysymmetra/tiktok-patches-for-morphe/releases/tag/v0.6.0)
+[Release 2026-08-09](https://github.com/m4mental/my-rvb-builder/releases/tag/260179)<br>
+Patches: [icysymmetra/patches-0.6.1.mpp](https://github.com/icysymmetra/tiktok-patches-for-morphe/releases/tag/v0.6.1)
 - Always show publish date
 - Copy comments without username
 - Custom offline videos limit
@@ -2523,8 +2523,8 @@ Patches: [bufferk/patches-1.8.0.mpp](https://github.com/bufferk/morphe-patches/r
 
 <blockquote>
 
-[Release 2026-08-09](https://github.com/m4mental/my-rvb-builder/releases/tag/260175)<br>
-Patches: [ajstrick81/patches-1.22.0.mpp](https://github.com/ajstrick81/morphe-androidtv-patches/releases/tag/v1.23.0)
+[Release 2026-08-09](https://github.com/m4mental/my-rvb-builder/releases/tag/260179)<br>
+Patches: [ajstrick81/patches-1.23.0.mpp](https://github.com/ajstrick81/morphe-androidtv-patches/releases/tag/v1.24.0)
 - Skip ads
 </blockquote>
 </details>
@@ -2647,8 +2647,8 @@ Patches: [RookieEnough/patches-1.1.0.mpp](https://github.com/RookieEnough/De-Van
 
 <blockquote>
 
-[Release 2026-08-09](https://github.com/m4mental/my-rvb-builder/releases/tag/260175)<br>
-Patches: [ajstrick81/patches-1.22.0.mpp](https://github.com/ajstrick81/morphe-androidtv-patches/releases/tag/v1.23.0)
+[Release 2026-08-09](https://github.com/m4mental/my-rvb-builder/releases/tag/260179)<br>
+Patches: [ajstrick81/patches-1.23.0.mpp](https://github.com/ajstrick81/morphe-androidtv-patches/releases/tag/v1.24.0)
 - Override certificate pinning
 - Skip ads
 </blockquote>
