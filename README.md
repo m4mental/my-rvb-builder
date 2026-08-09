@@ -31,8 +31,8 @@
 > All APKs and modules in this repository are 100% automated. If you need help, please direct your feedback to the right place:
 >
 > - 🧩 **Patch Issues:** If a specific feature/mod is broken (e.g., ads are showing), please open an issue in the **respective patch developer's repository**.
-> - 🛠️ **Builder Issues:** If an app fails to build, or the download links are broken, **[open an Issue here on GitHub](https://github.com/m4mental/my-rvb-builder/issues/new/choose)** or **[send a message in our Telegram Group](https://t.me/rvb27/306)**.
-> - 💬 **General Help & Requests:** Need help installing, or want to request a new app? **[Send a message in our Telegram Group](https://t.me/rvb27/306)** or **[open an Issue here on GitHub](https://github.com/m4mental/my-rvb-builder/issues/new/choose)** or **[open a discussion here on GitHub](https://github.com/m4mental/my-rvb-builder/discussions/new?category=general)**.
+> - 🛠️ **Builder Issues:** If an app fails to build, or the download links are broken, **[open an Issue here on GitHub](https://github.com/m4mental/my-rvb-builder/issues/new/choose)** .
+> - 💬 **General Help & Requests:** Need help installing, or want to request a new app? **[open an Issue here on GitHub](https://github.com/m4mental/my-rvb-builder/issues/new/choose)** or **[open a discussion here on GitHub](https://github.com/m4mental/my-rvb-builder/discussions/new?category=general)**.
 
 ---
 
@@ -1015,8 +1015,8 @@ Patches: [brosssh/patches-2.8.1.mpp](https://github.com/brosssh/morphe-patches/r
 
 <blockquote>
 
-[Release 2026-08-09](https://github.com/m4mental/my-rvb-builder/releases/tag/260174)<br>
-Patches: [crimera/patches-3.9.0-dev.5.mpp](https://github.com/crimera/piko/releases/tag/v3.9.0-dev.5)
+[Release 2026-08-09](https://github.com/m4mental/my-rvb-builder/releases/tag/260176)<br>
+Patches: [crimera/patches-3.9.0-dev.6.mpp](https://github.com/crimera/piko/releases/tag/v3.9.0-dev.6)
 - Add settings
 - Allow user network certificate
 - Change like animation
@@ -1917,8 +1917,8 @@ Patches: [Raudrobot/patches-6.1.0.rvp](https://github.com/Raudrobot/revanced-pat
   
 <blockquote>
 
-[Release 2026-08-08](https://github.com/m4mental/my-rvb-builder/releases/tag/260169)<br>
-Patches: [MorpheApp/patches-1.39.1.mpp](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.39.1)
+[Release 2026-08-09](https://github.com/m4mental/my-rvb-builder/releases/tag/260176)<br>
+Patches: [MorpheApp/patches-1.40.0-dev.1.mpp](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.40.0-dev.1)
 - Custom font
 - Disable modern home
 - Disable screenshot popup
@@ -1943,8 +1943,8 @@ Patches: [MorpheApp/patches-1.39.1.mpp](https://github.com/MorpheApp/morphe-patc
   
 <blockquote>
 
-[Release 2026-08-08](https://github.com/m4mental/my-rvb-builder/releases/tag/260169)<br>
-Patches: [MorpheApp/patches-1.39.1.mpp](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.39.1)
+[Release 2026-08-09](https://github.com/m4mental/my-rvb-builder/releases/tag/260176)<br>
+Patches: [MorpheApp/patches-1.40.0-dev.1.mpp](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.40.0-dev.1)
 - Custom font
 - Disable modern home
 - Disable screenshot popup
@@ -2799,8 +2799,8 @@ Patches: [hoo-dles/patches-1.39.0.mpp](https://github.com/hoo-dles/morphe-patche
   
 <blockquote>
 
-[Release 2026-08-09](https://github.com/m4mental/my-rvb-builder/releases/tag/260174)<br>
-Patches: [crimera/patches-3.9.0-dev.5.mpp](https://github.com/crimera/piko/releases/tag/v3.9.0-dev.5)
+[Release 2026-08-09](https://github.com/m4mental/my-rvb-builder/releases/tag/260176)<br>
+Patches: [crimera/patches-3.9.0-dev.6.mpp](https://github.com/crimera/piko/releases/tag/v3.9.0-dev.6)
 - Add ability to copy media link
 - Block redirecting to X Lite
 - Change app icon
@@ -2879,8 +2879,8 @@ Patches: [crimera/patches-3.9.0-dev.5.mpp](https://github.com/crimera/piko/relea
   
 <blockquote>
 
-[Release 2026-08-09](https://github.com/m4mental/my-rvb-builder/releases/tag/260174)<br>
-Patches: [crimera/patches-3.9.0-dev.5.mpp](https://github.com/crimera/piko/releases/tag/v3.9.0-dev.5)
+[Release 2026-08-09](https://github.com/m4mental/my-rvb-builder/releases/tag/260176)<br>
+Patches: [crimera/patches-3.9.0-dev.6.mpp](https://github.com/crimera/piko/releases/tag/v3.9.0-dev.6)
 - Add ability to copy media link
 - Block redirecting to X Lite
 - Bring back twitter
@@ -3029,8 +3029,8 @@ Patches: [hoo-dles/patches-1.39.0.mpp](https://github.com/hoo-dles/morphe-patche
   
 <blockquote>
 
-[Release 2026-08-08](https://github.com/m4mental/my-rvb-builder/releases/tag/260169)<br>
-Patches: [MorpheApp/patches-1.39.1.mpp](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.39.1)
+[Release 2026-08-09](https://github.com/m4mental/my-rvb-builder/releases/tag/260176)<br>
+Patches: [MorpheApp/patches-1.40.0-dev.1.mpp](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.40.0-dev.1)
 - Add to queue
 - Alternative thumbnails
 - Ambient mode
@@ -3284,8 +3284,8 @@ Patches: [MorpheApp/patches-1.39.1.mpp](https://github.com/MorpheApp/morphe-patc
   
 <blockquote>
 
-[Release 2026-08-08](https://github.com/m4mental/my-rvb-builder/releases/tag/260169)<br>
-Patches: [MorpheApp/patches-1.39.1.mpp](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.39.1)
+[Release 2026-08-09](https://github.com/m4mental/my-rvb-builder/releases/tag/260176)<br>
+Patches: [MorpheApp/patches-1.40.0-dev.1.mpp](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.40.0-dev.1)
 - Add to queue
 - Alternative thumbnails
 - Ambient mode
@@ -3898,8 +3898,8 @@ Patches: [wchill/patches-5.16.4.mpp](https://github.com/wchill/rvx-morphed/relea
   
 <blockquote>
 
-[Release 2026-08-08](https://github.com/m4mental/my-rvb-builder/releases/tag/260169)<br>
-Patches: [MorpheApp/patches-1.39.1.mpp](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.39.1)
+[Release 2026-08-09](https://github.com/m4mental/my-rvb-builder/releases/tag/260176)<br>
+Patches: [MorpheApp/patches-1.40.0-dev.1.mpp](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.40.0-dev.1)
 - Bypass certificate checks
 - Change header
 - Change miniplayer color
@@ -3947,8 +3947,8 @@ Patches: [MorpheApp/patches-1.39.1.mpp](https://github.com/MorpheApp/morphe-patc
   
 <blockquote>
 
-[Release 2026-08-08](https://github.com/m4mental/my-rvb-builder/releases/tag/260169)<br>
-Patches: [MorpheApp/patches-1.39.1.mpp](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.39.1)
+[Release 2026-08-09](https://github.com/m4mental/my-rvb-builder/releases/tag/260176)<br>
+Patches: [MorpheApp/patches-1.40.0-dev.1.mpp](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.40.0-dev.1)
 - Bypass certificate checks
 - Change header
 - Change miniplayer color
