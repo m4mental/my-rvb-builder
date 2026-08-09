@@ -875,8 +875,8 @@ Patches: [Raudrobot/patches-6.1.0.rvp](https://github.com/Raudrobot/revanced-pat
 
 <blockquote>
 
-[Release 2026-08-09](https://github.com/m4mental/my-rvb-builder/releases/tag/260171)<br>
-Patches: [ajstrick81/patches-1.21.1.mpp](https://github.com/ajstrick81/morphe-androidtv-patches/releases/tag/v1.22.0)
+[Release 2026-08-09](https://github.com/m4mental/my-rvb-builder/releases/tag/260175)<br>
+Patches: [ajstrick81/patches-1.22.0.mpp](https://github.com/ajstrick81/morphe-androidtv-patches/releases/tag/v1.23.0)
 - HBO Max - Disable Ads
 </blockquote>
 </details>
@@ -1015,8 +1015,8 @@ Patches: [brosssh/patches-2.8.1.mpp](https://github.com/brosssh/morphe-patches/r
 
 <blockquote>
 
-[Release 2026-08-03](https://github.com/m4mental/my-rvb-builder/releases/tag/260137)<br>
-Patches: [crimera/patches-3.9.0-dev.4.mpp](https://github.com/crimera/piko/releases/tag/v3.9.0-dev.4)
+[Release 2026-08-09](https://github.com/m4mental/my-rvb-builder/releases/tag/260174)<br>
+Patches: [crimera/patches-3.9.0-dev.5.mpp](https://github.com/crimera/piko/releases/tag/v3.9.0-dev.5)
 - Add settings
 - Allow user network certificate
 - Change like animation
@@ -1057,6 +1057,7 @@ Patches: [crimera/patches-3.9.0-dev.4.mpp](https://github.com/crimera/piko/relea
 - More options on post
 - More options on profile
 - Open links externally
+- Recommended flags
 - Remove build expired popup
 - Remove empty bottom space
 - Sanitize share links
@@ -1595,8 +1596,8 @@ Patches: [hoo-dles/patches-1.40.0.mpp](https://github.com/hoo-dles/morphe-patche
 
 <blockquote>
 
-[Release 2026-08-09](https://github.com/m4mental/my-rvb-builder/releases/tag/260171)<br>
-Patches: [ajstrick81/patches-1.21.1.mpp](https://github.com/ajstrick81/morphe-androidtv-patches/releases/tag/v1.22.0)
+[Release 2026-08-09](https://github.com/m4mental/my-rvb-builder/releases/tag/260175)<br>
+Patches: [ajstrick81/patches-1.22.0.mpp](https://github.com/ajstrick81/morphe-androidtv-patches/releases/tag/v1.23.0)
 - Disable auto-updates
 - Skip ads
 </blockquote>
@@ -1615,8 +1616,8 @@ Patches: [ajstrick81/patches-1.21.1.mpp](https://github.com/ajstrick81/morphe-an
   
 <blockquote>
 
-[Release 2026-08-09](https://github.com/m4mental/my-rvb-builder/releases/tag/260171)<br>
-Patches: [ajstrick81/patches-1.21.1.mpp](https://github.com/ajstrick81/morphe-androidtv-patches/releases/tag/v1.22.0)
+[Release 2026-08-09](https://github.com/m4mental/my-rvb-builder/releases/tag/260175)<br>
+Patches: [ajstrick81/patches-1.22.0.mpp](https://github.com/ajstrick81/morphe-androidtv-patches/releases/tag/v1.23.0)
 - Disable auto-updates
 - Override certificate pinning
 - Skip ads
@@ -1780,8 +1781,8 @@ Patches: [hoo-dles/patches-1.39.0.mpp](https://github.com/hoo-dles/morphe-patche
 
 <blockquote>
 
-[Release 2026-08-09](https://github.com/m4mental/my-rvb-builder/releases/tag/260171)<br>
-Patches: [ajstrick81/patches-1.21.1.mpp](https://github.com/ajstrick81/morphe-androidtv-patches/releases/tag/v1.22.0)
+[Release 2026-08-09](https://github.com/m4mental/my-rvb-builder/releases/tag/260175)<br>
+Patches: [ajstrick81/patches-1.22.0.mpp](https://github.com/ajstrick81/morphe-androidtv-patches/releases/tag/v1.23.0)
 - Bundle native ad-strip hook
 - Disable auto-updates
 - Load native ad-strip hook
@@ -2522,8 +2523,8 @@ Patches: [bufferk/patches-1.8.0.mpp](https://github.com/bufferk/morphe-patches/r
 
 <blockquote>
 
-[Release 2026-08-09](https://github.com/m4mental/my-rvb-builder/releases/tag/260171)<br>
-Patches: [ajstrick81/patches-1.21.1.mpp](https://github.com/ajstrick81/morphe-androidtv-patches/releases/tag/v1.22.0)
+[Release 2026-08-09](https://github.com/m4mental/my-rvb-builder/releases/tag/260175)<br>
+Patches: [ajstrick81/patches-1.22.0.mpp](https://github.com/ajstrick81/morphe-androidtv-patches/releases/tag/v1.23.0)
 - Skip ads
 </blockquote>
 </details>
@@ -2646,8 +2647,8 @@ Patches: [RookieEnough/patches-1.1.0.mpp](https://github.com/RookieEnough/De-Van
 
 <blockquote>
 
-[Release 2026-08-09](https://github.com/m4mental/my-rvb-builder/releases/tag/260171)<br>
-Patches: [ajstrick81/patches-1.21.1.mpp](https://github.com/ajstrick81/morphe-androidtv-patches/releases/tag/v1.22.0)
+[Release 2026-08-09](https://github.com/m4mental/my-rvb-builder/releases/tag/260175)<br>
+Patches: [ajstrick81/patches-1.22.0.mpp](https://github.com/ajstrick81/morphe-androidtv-patches/releases/tag/v1.23.0)
 - Override certificate pinning
 - Skip ads
 </blockquote>
@@ -2798,8 +2799,8 @@ Patches: [hoo-dles/patches-1.39.0.mpp](https://github.com/hoo-dles/morphe-patche
   
 <blockquote>
 
-[Release 2026-08-03](https://github.com/m4mental/my-rvb-builder/releases/tag/260137)<br>
-Patches: [crimera/patches-3.9.0-dev.4.mpp](https://github.com/crimera/piko/releases/tag/v3.9.0-dev.4)
+[Release 2026-08-09](https://github.com/m4mental/my-rvb-builder/releases/tag/260174)<br>
+Patches: [crimera/patches-3.9.0-dev.5.mpp](https://github.com/crimera/piko/releases/tag/v3.9.0-dev.5)
 - Add ability to copy media link
 - Block redirecting to X Lite
 - Change app icon
@@ -2826,7 +2827,6 @@ Patches: [crimera/patches-3.9.0-dev.4.mpp](https://github.com/crimera/piko/relea
 - Disable auto timeline scroll on launch
 - Disable chirp font
 - Download patch
-- Dynamic color
 - Enable PiP mode automatically
 - Enable Undo Posts
 - Enable debug menu for posts
@@ -2879,8 +2879,8 @@ Patches: [crimera/patches-3.9.0-dev.4.mpp](https://github.com/crimera/piko/relea
   
 <blockquote>
 
-[Release 2026-08-03](https://github.com/m4mental/my-rvb-builder/releases/tag/260137)<br>
-Patches: [crimera/patches-3.9.0-dev.4.mpp](https://github.com/crimera/piko/releases/tag/v3.9.0-dev.4)
+[Release 2026-08-09](https://github.com/m4mental/my-rvb-builder/releases/tag/260174)<br>
+Patches: [crimera/patches-3.9.0-dev.5.mpp](https://github.com/crimera/piko/releases/tag/v3.9.0-dev.5)
 - Add ability to copy media link
 - Block redirecting to X Lite
 - Bring back twitter
