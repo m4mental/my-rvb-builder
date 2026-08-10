@@ -1727,8 +1727,44 @@ build_rv() {
 					fi
 				done
 			fi
-			[ "$is_exclusive" = true ] && bundle_ed+=" --exclusive"
-
+			if [ "$is_exclusive" = true ]; then
+				local all_patches_op
+				if all_patches_op=$(patches_list "$cli_jar" "${p_jars_arr[$bi]}" "$pkg_name" "${args[cli_source]}"); then
+					local all_patches=()
+					mapfile -t all_patches < <(echo "$all_patches_op" | grep -iE '^[[:space:]]*Name:' | sed -E 's/^[[:space:]]*Name:[[:space:]]*//I' | sed 's/[[:space:]]*$//')
+					
+					local -a current_bp_inc=()
+					bp_inc=$(echo "$bp_inc" | sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//')
+					if [ -n "$bp_inc" ]; then
+						while IFS= read -r p; do
+							[ -n "$p" ] && current_bp_inc+=("$p")
+						done <<< "$(list_args "$bp_inc" | sed -e "s/^'//" -e "s/'$//" -e 's/^"//' -e 's/"$//')"
+					fi
+					
+					local new_bp_exc="$bp_exc"
+					for p_name in "${all_patches[@]}"; do
+						local found=false
+						for inc_p in "${current_bp_inc[@]}"; do
+							if [ "$p_name" = "$inc_p" ]; then
+								found=true
+								break
+							fi
+						done
+						if [ "$found" = false ]; then
+							new_bp_exc+=" '$p_name'"
+						fi
+					done
+					bp_exc="$new_bp_exc"
+					
+					bundle_ed=""
+					bp_exc=$(echo "$bp_exc" | sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//')
+					if [ -n "$bp_exc" ]; then bundle_ed+=" $(join_args "$bp_exc" -d)"; fi
+					if [ -n "$bp_inc" ]; then bundle_ed+=" $(join_args "$bp_inc" -e)"; fi
+				else
+					epr "FATAL: Failed to fetch patch list for exclusive bundle '${p_jars_arr[$bi]}'. Cannot safely apply per-bundle exclusivity."
+					return 1
+				fi
+			fi
 			per_bundle_ed_args+=("$bundle_ed")
 		done
 	else

@@ -31,8 +31,8 @@
 > All APKs and modules in this repository are 100% automated. If you need help, please direct your feedback to the right place:
 >
 > - 🧩 **Patch Issues:** If a specific feature/mod is broken (e.g., ads are showing), please open an issue in the **respective patch developer's repository**.
-> - 🛠️ **Builder Issues:** If an app fails to build, or the download links are broken, **[open an Issue here on GitHub](https://github.com/m4mental/my-rvb-builder/issues/new/choose)** .
-> - 💬 **General Help & Requests:** Need help installing, or want to request a new app? **[open an Issue here on GitHub](https://github.com/m4mental/my-rvb-builder/issues/new/choose)** or **[open a discussion here on GitHub](https://github.com/m4mental/my-rvb-builder/discussions/new?category=general)**.
+> - 🛠️ **Builder Issues:** If an app fails to build, or the download links are broken, **[open an Issue here on GitHub](https://github.com/m4mental/my-rvb-builder/issues/new/choose)** or **[send a message in our Telegram Group](https://t.me/rvb27/306)**.
+> - 💬 **General Help & Requests:** Need help installing, or want to request a new app? **[Send a message in our Telegram Group](https://t.me/rvb27/306)** or **[open an Issue here on GitHub](https://github.com/m4mental/my-rvb-builder/issues/new/choose)** or **[open a discussion here on GitHub](https://github.com/m4mental/my-rvb-builder/discussions/new?category=general)**.
 
 ---
 
@@ -676,11 +676,12 @@ Patches: [hoo-dles/patches-1.39.0.mpp](https://github.com/hoo-dles/morphe-patche
   
 <blockquote>
 
-[Release 2026-08-09](https://github.com/m4mental/my-rvb-builder/releases/tag/260172)<br>
-Patches: [jasonwu1994/patches-2.7.0.mpp](https://github.com/jasonwu1994/Gboard-patches/releases/tag/v2.7.0)
+[Release 2026-08-10](https://github.com/m4mental/my-rvb-builder/releases/tag/260180)<br>
+Patches: [jasonwu1994/patches-2.7.0.mpp](https://github.com/jasonwu1994/Gboard-patches/releases/tag/v2.7.0), [jkennethcarino/patches-1.3.0.mpp](https://github.com/jkennethcarino/adobo/releases/tag/v1.3.0)
 - AI Writing Tools
 - Add Gboard Signature Bypass
 - Advanced Voice Typing
+- Always-incognito mode
 - Clipboard Custom Character Limit
 - Clipboard Enhancements
 - Custom Symbols
@@ -688,6 +689,9 @@ Patches: [jasonwu1994/patches-2.7.0.mpp](https://github.com/jasonwu1994/Gboard-p
 - Emojis, stickers & GIFs Tab Order
 - Enable Inline Autofill Suggestions
 - Enable OCR / Scan Text
+- Enable OCR feature
+- Enable clipboard in incognito
+- Enable voice typing in incognito
 - English QWERTY Up-Flick Uppercase
 - Grammar Checker
 - Inline Suggestions
@@ -709,11 +713,12 @@ Patches: [jasonwu1994/patches-2.7.0.mpp](https://github.com/jasonwu1994/Gboard-p
   
 <blockquote>
 
-[Release 2026-08-09](https://github.com/m4mental/my-rvb-builder/releases/tag/260172)<br>
-Patches: [jasonwu1994/patches-2.7.0.mpp](https://github.com/jasonwu1994/Gboard-patches/releases/tag/v2.7.0)
+[Release 2026-08-10](https://github.com/m4mental/my-rvb-builder/releases/tag/260180)<br>
+Patches: [jasonwu1994/patches-2.7.0.mpp](https://github.com/jasonwu1994/Gboard-patches/releases/tag/v2.7.0), [jkennethcarino/patches-1.3.0.mpp](https://github.com/jkennethcarino/adobo/releases/tag/v1.3.0)
 - AI Writing Tools
 - Add Gboard Signature Bypass
 - Advanced Voice Typing
+- Always-incognito mode
 - Clipboard Custom Character Limit
 - Clipboard Enhancements
 - Custom Symbols
@@ -721,6 +726,9 @@ Patches: [jasonwu1994/patches-2.7.0.mpp](https://github.com/jasonwu1994/Gboard-p
 - Emojis, stickers & GIFs Tab Order
 - Enable Inline Autofill Suggestions
 - Enable OCR / Scan Text
+- Enable OCR feature
+- Enable clipboard in incognito
+- Enable voice typing in incognito
 - English QWERTY Up-Flick Uppercase
 - Grammar Checker
 - Inline Suggestions
@@ -1096,11 +1104,11 @@ Patches: [Raudrobot/patches-6.1.0.rvp](https://github.com/Raudrobot/revanced-pat
 #### [Instafel](https://github.com/mamiiblt/instafel)
 
 <details>
-<summary id="instagram-instafel"><b>Unclone</b>&emsp;<a href="https://m4mental.github.io/"><img src="https://img.shields.io/badge/version-v442.0.0.43.79-gray?labelColor=E4405F&logo=instagram&logoColor=white&style=flat"></summary>
+<summary id="instagram-instafel"><b>Unclone</b>&emsp;<a href="https://m4mental.github.io/"><img src="https://img.shields.io/badge/version-v441.0.0.43.81-gray?labelColor=E4405F&logo=instagram&logoColor=white&style=flat"></summary>
   
 <blockquote>
 
-[Release 2026-08-10](https://github.com/m4mental/my-rvb-builder/releases/tag/260180)<br>
+[Release 2026-08-04](https://github.com/m4mental/my-rvb-builder/releases/tag/260139)<br>
 Patches: 
 - Unlock Developer Options
 - Remove Snooze Warning
@@ -1115,11 +1123,11 @@ Patches:
 </details>
 
 <details>
-<summary id="instagram-instafel-clone"><b>Clone</b>&emsp;<a href="https://m4mental.github.io/"><img src="https://img.shields.io/badge/version-v442.0.0.43.79-gray?labelColor=E4405F&logo=instagram&logoColor=white&style=flat"></summary>
+<summary id="instagram-instafel-clone"><b>Clone</b>&emsp;<a href="https://m4mental.github.io/"><img src="https://img.shields.io/badge/version-v441.0.0.43.81-gray?labelColor=E4405F&logo=instagram&logoColor=white&style=flat"></summary>
   
 <blockquote>
 
-[Release 2026-08-10](https://github.com/m4mental/my-rvb-builder/releases/tag/260180)<br>
+[Release 2026-08-04](https://github.com/m4mental/my-rvb-builder/releases/tag/260139)<br>
 Patches: 
 - Unlock Developer Options
 - Remove Snooze Warning
