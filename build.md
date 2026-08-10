@@ -1,7 +1,7 @@
-instagram-instafel (arm64-v8a): 441.0.0.43.81  
-instagram-instafel (arm-v7a): 441.0.0.43.81  
-instagram-instafel-clone (arm64-v8a): 441.0.0.43.81  
-instagram-instafel-clone (arm-v7a): 441.0.0.43.81  
+instagram-instafel (arm64-v8a): 443.0.0.0.41  
+instagram-instafel (arm-v7a): 443.0.0.0.41  
+instagram-instafel-clone (arm64-v8a): 443.0.0.0.41  
+instagram-instafel-clone (arm-v7a): 443.0.0.0.41  
 
 **Notes:**  
 • Install [MicroG-RE](https://github.com/MorpheApp/MicroG-RE/releases/latest) or [MicroG](https://github.com/ReVanced/GmsCore/releases/latest), required for Google APKs.  
