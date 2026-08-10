@@ -1104,7 +1104,7 @@ Patches: [Raudrobot/patches-6.1.0.rvp](https://github.com/Raudrobot/revanced-pat
   
 <blockquote>
 
-[Release 2026-08-04](https://github.com/m4mental/my-rvb-builder/releases/tag/260139)<br>
+[Release 2026-08-10](https://github.com/m4mental/my-rvb-builder/releases/tag/260183)<br>
 Patches: 
 - Unlock Developer Options
 - Remove Snooze Warning
@@ -1123,7 +1123,7 @@ Patches:
   
 <blockquote>
 
-[Release 2026-08-04](https://github.com/m4mental/my-rvb-builder/releases/tag/260139)<br>
+[Release 2026-08-10](https://github.com/m4mental/my-rvb-builder/releases/tag/260183)<br>
 Patches: 
 - Unlock Developer Options
 - Remove Snooze Warning
