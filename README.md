@@ -676,12 +676,11 @@ Patches: [hoo-dles/patches-1.39.0.mpp](https://github.com/hoo-dles/morphe-patche
   
 <blockquote>
 
-[Release 2026-08-10](https://github.com/m4mental/my-rvb-builder/releases/tag/260180)<br>
+[Release 2026-08-10](https://github.com/m4mental/my-rvb-builder/releases/tag/260181)<br>
 Patches: [jasonwu1994/patches-2.7.0.mpp](https://github.com/jasonwu1994/Gboard-patches/releases/tag/v2.7.0), [jkennethcarino/patches-1.3.0.mpp](https://github.com/jkennethcarino/adobo/releases/tag/v1.3.0)
 - AI Writing Tools
 - Add Gboard Signature Bypass
 - Advanced Voice Typing
-- Always-incognito mode
 - Clipboard Custom Character Limit
 - Clipboard Enhancements
 - Custom Symbols
@@ -689,7 +688,6 @@ Patches: [jasonwu1994/patches-2.7.0.mpp](https://github.com/jasonwu1994/Gboard-p
 - Emojis, stickers & GIFs Tab Order
 - Enable Inline Autofill Suggestions
 - Enable OCR / Scan Text
-- Enable OCR feature
 - Enable clipboard in incognito
 - Enable voice typing in incognito
 - English QWERTY Up-Flick Uppercase
@@ -713,12 +711,11 @@ Patches: [jasonwu1994/patches-2.7.0.mpp](https://github.com/jasonwu1994/Gboard-p
   
 <blockquote>
 
-[Release 2026-08-10](https://github.com/m4mental/my-rvb-builder/releases/tag/260180)<br>
+[Release 2026-08-10](https://github.com/m4mental/my-rvb-builder/releases/tag/260181)<br>
 Patches: [jasonwu1994/patches-2.7.0.mpp](https://github.com/jasonwu1994/Gboard-patches/releases/tag/v2.7.0), [jkennethcarino/patches-1.3.0.mpp](https://github.com/jkennethcarino/adobo/releases/tag/v1.3.0)
 - AI Writing Tools
 - Add Gboard Signature Bypass
 - Advanced Voice Typing
-- Always-incognito mode
 - Clipboard Custom Character Limit
 - Clipboard Enhancements
 - Custom Symbols
@@ -726,7 +723,6 @@ Patches: [jasonwu1994/patches-2.7.0.mpp](https://github.com/jasonwu1994/Gboard-p
 - Emojis, stickers & GIFs Tab Order
 - Enable Inline Autofill Suggestions
 - Enable OCR / Scan Text
-- Enable OCR feature
 - Enable clipboard in incognito
 - Enable voice typing in incognito
 - English QWERTY Up-Flick Uppercase

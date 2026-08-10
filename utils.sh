@@ -1675,7 +1675,17 @@ write_build_info() {
 
 build_rv() {
 	eval "declare -A args=${1#*=}"
-	local version="" pkg_name=""
+	local version="${args[version]:-}" pkg_name="${args[pkg_name]:-}"
+	
+	if [ -z "$pkg_name" ]; then
+		if [ -n "${args[github_dlurl]}" ] && [[ "${args[github_dlurl]}" == *"releases/tag/"* ]]; then
+			local tmp="${args[github_dlurl]%/}"
+			pkg_name="${tmp##*/}"
+		elif [ -n "${args[archive_dlurl]}" ] && [[ "${args[archive_dlurl]}" == *"apks/"* ]]; then
+			local tmp="${args[archive_dlurl]%/}"
+			pkg_name="${tmp##*/}"
+		fi
+	fi
 	local cli_jar="${args[cli]}"
 	local patches_jar="${args[ptjar]}"
 	local mode_arg=${args[build_mode]} version_mode=${args[version]}
@@ -1733,6 +1743,7 @@ build_rv() {
 					local all_patches=()
 					mapfile -t all_patches < <(echo "$all_patches_op" | grep -iE '^[[:space:]]*Name:' | sed -E 's/^[[:space:]]*Name:[[:space:]]*//I' | sed 's/[[:space:]]*$//')
 					
+					local new_bp_exc="$bp_exc"
 					local -a current_bp_inc=()
 					bp_inc=$(echo "$bp_inc" | sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//')
 					if [ -n "$bp_inc" ]; then
@@ -1797,16 +1808,6 @@ build_rv() {
 
 	local tried_dl=()
 	local list_patches=""
-	local pkg_name=""
-
-	# 1. Attempt to extract pkg_name safely from URLs to avoid flaky scraping
-	if [ -n "${args[github_dlurl]}" ] && [[ "${args[github_dlurl]}" == *"releases/tag/"* ]]; then
-		local tmp="${args[github_dlurl]%/}"
-		pkg_name="${tmp##*/}"
-	elif [ -n "${args[archive_dlurl]}" ] && [[ "${args[archive_dlurl]}" == *"apks/"* ]]; then
-		local tmp="${args[archive_dlurl]%/}"
-		pkg_name="${tmp##*/}"
-	fi
 
 	# 2. Establish dl_from and fetch required HTML responses
 	for dl_p in "${DL_SRCS[@]}"; do
