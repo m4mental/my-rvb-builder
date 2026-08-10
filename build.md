@@ -1,7 +1,15 @@
-instagram-instafel (arm64-v8a): 442.0.0.43.79  
-instagram-instafel (arm-v7a): 442.0.0.43.79  
-instagram-instafel-clone (arm64-v8a): 442.0.0.43.79  
-instagram-instafel-clone (arm-v7a): 442.0.0.43.79  
+youtube-morphe (arm64-v8a): 21.04.223  
+youtube-morphe (arm-v7a): 21.04.223  
+youtube-music-morphe (arm64-v8a): 9.15.51  
+youtube-music-morphe (arm-v7a): 9.15.51  
+youtube-morphe-exp (arm64-v8a): 21.32.2  
+youtube-morphe-exp (arm-v7a): 21.32.2  
+youtube-music-morphe-exp (arm64-v8a): 9.31.51  
+youtube-music-morphe-exp (arm-v7a): 9.31.51  
+reddit-morphe-exp (arm64-v8a): 2026.31.1  
+reddit-morphe-exp (arm-v7a): 2026.31.1  
+reddit-morphe (arm64-v8a): 2026.14.0  
+reddit-morphe (arm-v7a): 2026.14.0  
 
 **Notes:**  
 • Install [MicroG-RE](https://github.com/MorpheApp/MicroG-RE/releases/latest) or [MicroG](https://github.com/ReVanced/GmsCore/releases/latest), required for Google APKs.  
@@ -9,6 +17,6 @@ instagram-instafel-clone (arm-v7a): 442.0.0.43.79
 
 [GitHub](https://github.com/nullcpy/rvb) | [Group](https://t.me/rvb27) | [Donate](https://fahim-ahmed05.github.io/donate) | [Website](https://nullcpy.github.io)
   
-CLI: instafel/ifl-patcher-v4.7.0-release.jar  
-Patches: instafel/ifl-patcher-core-4c4e41d.jar  
-[Changelog](https://github.com/instafel/pc-rel/releases/tag/4c4e41d-4.7.0)  
+CLI: MorpheApp/morphe-desktop-1.13.0-all.jar  
+Patches: MorpheApp/patches-1.40.0-dev.2.mpp  
+[Changelog](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.40.0-dev.2)  
