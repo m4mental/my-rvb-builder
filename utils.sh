@@ -2171,6 +2171,11 @@ build_rv() {
 		return 0
 	fi
 
+	# Ensure the mtime is set to now so newly downloaded APKs with old server timestamps aren't purged
+	touch "$stock_apk" 2>/dev/null || true
+	[ -f "${stock_apk}.apkm" ] && touch "${stock_apk}.apkm" 2>/dev/null || true
+	[ -n "${common_apk:-}" ] && [ -f "$common_apk" ] && touch "$common_apk" 2>/dev/null || true
+
 	local sig_op
 	if [ -f "${stock_apk}.apkm" ]; then
 		rm -rf "${stock_apk}-zip" || :
@@ -2278,6 +2283,7 @@ build_rv() {
 		if [ "${NORB:-}" != true ] || { [ ! -f "$patched_apk" ] && [ ! -f "$apk_output" ]; }; then
 			if ! patch_apk "$stock_apk_to_patch" "$patched_apk" "${patcher_args[*]}" "${args[cli]}" "${args[ptjar]}" "${args[cli_source]}" "$per_bundle_ed_joined"; then
 				epr "Building '${table}' failed!"
+				rm -f "$stock_apk_to_patch"
 				return 0
 			fi
 		fi
