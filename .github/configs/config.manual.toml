@@ -1,62 +1,39 @@
-# patches-version = "dev"
+patches-version = "latest"
 # cli-version = "dev"
-enable-module-update = true
+enable-module-update = false
 
-[hola-vpn-morphe]
-enabled = true 
-app-name = "hola-vpn"
-rv-brand = "morphe"
-build-mode = "apk"
-arch = "arm64-v8a"
-patches-source = "rushiranpise/morphe-patches"
-cli-source = "MorpheApp/morphe-desktop"
-dpi = "nodpi anydpi auto"
-uptodown-dlurl = "https://holavpn.en.uptodown.com/android"
-apkpure-dlurl = "https://apkpure.com/hola-free-vpn-proxy-unblocker/org.hola"
-apkcombo-dlurl = "https://apkcombo.com/hola-vpn-fast-free-vpn-proxy/org.hola.play"
-github-dlurl = "https://github.com/nullcpy/apks/releases/tag/org.hola.play"
-
-[accuweather-morphe]
+[messenger-morphe]
 enabled = true
-app-name = "accuweather"
+pkg-name = "com.facebook.orca"
+app-name = "messenger"
 rv-brand = "morphe"
 build-mode = "apk"
 arch = "both"
 patches-source = "rushiranpise/morphe-patches"
+patches-version = "dev"
 cli-source = "MorpheApp/morphe-desktop"
-uptodown-dlurl = "https://accuweather.en.uptodown.com/android"
-apkmirror-dlurl = "https://www.apkmirror.com/apk/accuweather/accuweather"
+uptodown-dlurl = "https://facebook-messenger.en.uptodown.com/android"
+apkmirror-dlurl = "https://www.apkmirror.com/apk/facebook-2/messenger"
 dpi = "nodpi anydpi auto"
-# archive-dlurl = ""
-apkcombo-dlurl = "https://apkcombo.com/accuweather/com.accuweather.android"
-apkpure-dlurl = "https://apkpure.com/accuweather-weather-radar/com.accuweather.android"
+apkpure-dlurl = "https://apkpure.com/facebook-messenger/com.facebook.orca"
+apkcombo-dlurl = "https://apkcombo.com/facebook-messenger/com.facebook.orca"
+# archive-dlurl = "https://archive.org/download/geologically/apks/com.facebook.orca"
 
-[the-weather-channel-morphe]
+[facebook-morphe]
 enabled = true
-app-name = "the-weather-channel"
+pkg-name = "com.facebook.katana"
+app-name = "facebook"
 rv-brand = "morphe"
 build-mode = "apk"
 arch = "both"
 patches-source = "rushiranpise/morphe-patches"
+patches-version = "dev"
 cli-source = "MorpheApp/morphe-desktop"
-uptodown-dlurl = "https://the-weather-channel.en.uptodown.com/android"
-apkmirror-dlurl = "https://www.apkmirror.com/apk/the-weather-channel/the-weather-channel-local-forecast-weather-maps"
+uptodown-dlurl = "https://facebook.en.uptodown.com/android"
+apkmirror-dlurl = "https://www.apkmirror.com/apk/facebook-2/facebook"
 dpi = "nodpi anydpi auto"
-# archive-dlurl = ""
-apkcombo-dlurl = "https://apkcombo.com/the-weather-channel/com.weather.Weather"
-apkpure-dlurl = "https://apkpure.com/the-weather-channel-radar/com.weather.Weather"
+apkcombo-dlurl = "https://apkcombo.com/facebook/com.facebook.katana"
+apkpure-dlurl = "https://apkpure.com/facebook-app/com.facebook.katana"
+# archive-dlurl = "https://archive.org/download/geologically/apks/com.facebook.katana"
 
-[moviebox-morphe-androidtv]
-enabled = true
-app-name = "moviebox"
-rv-brand = "morphe-androidtv"
-build-mode = "apk"
-arch = "both"
-patches-source = "rushiranpise/morphe-patches"
-cli-source = "MorpheApp/morphe-desktop"
-# uptodown-dlurl = ""
-# apkmirror-dlurl = ""
-# dpi = "nodpi anydpi auto"
-# archive-dlurl = ""
-github-dlurl = "https://github.com/nullcpy/apks/releases/tag/com.community.mbox.tv"
 
