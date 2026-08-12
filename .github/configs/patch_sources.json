@@ -159,17 +159,17 @@
   "rushiranpise": {
     "repo": "rushiranpise/morphe-patches",
     "stable": "v1.17.0",
-    "prerelease": "v1.17.0-dev.2",
+    "prerelease": "v1.18.0-dev.2",
     "blocked": false,
     "stable_date": "2026-08-11T17:08:22Z",
-    "pre_date": "2026-08-11T17:04:25Z"
+    "pre_date": "2026-08-12T00:25:49Z"
   },
   "androidtv": {
     "repo": "ajstrick81/morphe-androidtv-patches",
-    "stable": "v1.24.0",
+    "stable": "v1.25.0",
     "prerelease": "v1.5.7-dev.3",
     "blocked": false,
-    "stable_date": "2026-08-09T18:57:18Z",
+    "stable_date": "2026-08-12T02:33:40Z",
     "pre_date": "2026-06-26T16:45:34Z"
   },
   "revenge": {
@@ -216,8 +216,8 @@
     "repo": "jasonwu1994/Gboard-patches",
     "stable": "v2.7.0",
     "stable_date": "2026-08-09T04:04:17Z",
-    "prerelease": "v2.7.0-dev.3",
-    "pre_date": "2026-08-09T01:30:11Z",
+    "prerelease": "v2.8.0-dev.2",
+    "pre_date": "2026-08-11T22:33:02Z",
     "blocked": false
   },
   "instafel": {
