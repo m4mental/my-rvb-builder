@@ -1,8 +1,5 @@
-google-recorder-morphe (arm64-v8a): 4.2.20260118.867906508  
-viber-morphe (arm64-v8a): 26.1.2.0  
-viber-morphe (arm-v7a): 26.1.2.0  
-pixiv-morphe (arm64-v8a): 6.141.1  
-pixiv-morphe (arm-v7a): 6.141.1  
+gboard-morphe (arm64-v8a): 17.7.7.932364120-release-arm64-v8a  
+gboard-morphe-clone (arm64-v8a): 17.7.7.932364120-release-arm64-v8a  
 
 **Notes:**  
 • Install [MicroG-RE](https://github.com/MorpheApp/MicroG-RE/releases/latest) or [MicroG](https://github.com/ReVanced/GmsCore/releases/latest), required for Google APKs.  
@@ -11,5 +8,5 @@ pixiv-morphe (arm-v7a): 6.141.1
 [GitHub](https://github.com/nullcpy/rvb) | [Group](https://t.me/rvb27) | [Donate](https://fahim-ahmed05.github.io/donate) | [Website](https://nullcpy.github.io)
   
 CLI: MorpheApp/morphe-desktop-1.13.0-all.jar  
-Patches: RookieEnough/patches-1.2.0.mpp  
-[Changelog](https://github.com/RookieEnough/De-Vanced/releases/tag/v1.2.0)  
+Patches: jasonwu1994/patches-2.8.0.mpp  
+[Changelog](https://github.com/jasonwu1994/Gboard-patches/releases/tag/v2.8.0)  
