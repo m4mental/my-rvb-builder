@@ -22,6 +22,7 @@ fi
 while read -r id repo host enabled enabledStable enabledDev; do
   if [ "$enabled" == "false" ]; then continue; fi
 
+  echo "::group::Fetching tags for $repo"
   if [ "$host" = "gitlab" ]; then
     api_response=$(fetch_gitlab_releases "$repo" 2>&1 || true)
     api_http_code=$(printf '%s\n' "$api_response" | tail -n1)
@@ -53,6 +54,10 @@ while read -r id repo host enabled enabledStable enabledDev; do
       pre_date=$(echo "$pre_obj" | jq -r '.published_at // ""')
     fi
 
+    if [ -n "$stable" ]; then echo "Found stable: $stable"; fi
+    if [ -n "$pre" ]; then echo "Found pre-release: $pre"; fi
+    if [ -z "$stable" ] && [ -z "$pre" ]; then echo "::warning::No valid tags found for $repo"; fi
+
     jq -n --arg id "$id" --arg stable "$stable" --arg stable_date "$stable_date" --arg pre "$pre" --arg pre_date "$pre_date" \
       '{($id): {"stable": $stable, "stable_date": $stable_date, "prerelease": $pre, "pre_date": $pre_date, "blocked": false}}' >> updates.jsonl
   else
@@ -66,6 +71,7 @@ while read -r id repo host enabled enabledStable enabledDev; do
     jq -n --arg id "$id" --arg stable "$old_stable" --arg stable_date "$old_stable_date" --arg pre "$old_pre" --arg pre_date "$old_pre_date" --argjson blocked "$old_blocked" \
       '{($id): {"stable": $stable, "stable_date": $stable_date, "prerelease": $pre, "pre_date": $pre_date, "blocked": $blocked}}' >> updates.jsonl
   fi
+  echo "::endgroup::"
 
 done < <(echo "$BASE_JSON" | jq -r 'to_entries[] | select(.value.repo != "") | "\(.key) \(.value.repo) \((.value.host // "github") | ascii_downcase) \(if .value.enabled == false then false else true end) \(if .value.enabledStable == false then false else true end) \(if .value.enabledDev == false then false else true end)"')
 
