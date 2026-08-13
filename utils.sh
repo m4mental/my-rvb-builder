@@ -1816,7 +1816,8 @@ build_rv() {
 	local tried_dl=()
 	local list_patches=""
 	local apk_cache_dir="${APK_CACHE_DIR:-${TEMP_DIR}/apks}"
-	mkdir -p "$apk_cache_dir"
+	local apk_dl_dir="${TEMP_DIR}/apks_dl"
+	mkdir -p "$apk_cache_dir" "$apk_dl_dir"
 
 	local skip_dl_source_check=false
 	local resolved_version=""
@@ -2055,8 +2056,10 @@ build_rv() {
 	version_f=${version_f#v}
 	for arch in "${arch_list[@]}"; do
 		arch_f="${arch// /}"
-		local stock_apk="${apk_cache_dir}/${pkg_name}-${version_f}-${arch_f}.apk"
-		local common_apk="${apk_cache_dir}/${pkg_name}-${version_f}-common.apk"
+		local cached_stock_apk="${apk_cache_dir}/${pkg_name}-${version_f}-${arch_f}.apk"
+		local cached_common_apk="${apk_cache_dir}/${pkg_name}-${version_f}-common.apk"
+		local stock_apk="$cached_stock_apk"
+		local common_apk="$cached_common_apk"
 		if [ -f "$common_apk" ]; then
 			local missing_arch=false
 			if [ "$arch_f" = "arm64-v8a" ] && ! unzip -l "$common_apk" 2>/dev/null | grep -q "lib/arm64-v8a/"; then
@@ -2072,6 +2075,10 @@ build_rv() {
 			fi
 		fi
 		if [ ! -f "$stock_apk" ]; then
+			# Redirect to staging directory for safe downloading and processing
+			stock_apk="${apk_dl_dir}/${pkg_name}-${version_f}-${arch_f}.apk"
+			common_apk="${apk_dl_dir}/${pkg_name}-${version_f}-common.apk"
+
 			for dl_p in "${DL_SRCS[@]}"; do
 				if [ -z "${args[${dl_p}_dlurl]}" ]; then continue; fi
 				pr "Downloading '${table}' from '${dl_p}'"
@@ -2170,21 +2177,46 @@ build_rv() {
 
 				break
 			done
-			if [ -f "$stock_apk" ] && [ ! -f "$common_apk" ]; then
-				if ! unzip -l "$stock_apk" 2>/dev/null | grep -q "lib/" || (unzip -l "$stock_apk" 2>/dev/null | grep -q "lib/arm64-v8a/" && unzip -l "$stock_apk" 2>/dev/null | grep -q "lib/armeabi-v7a/"); then
+			if [ -f "$stock_apk" ] && [ ! -f "$common_apk" ] && [[ "$arch" != "all" && "$arch" != "universal" && "$arch" != "common" ]]; then
+				local is_universal=false
+				if [ -f "${stock_apk%.apk}.apkm" ]; then
+					if ! unzip -l "${stock_apk%.apk}.apkm" 2>/dev/null | grep -iq "arm64\|armeabi\|x86\|x86_64" || (unzip -l "${stock_apk%.apk}.apkm" 2>/dev/null | grep -iq "arm64" && unzip -l "${stock_apk%.apk}.apkm" 2>/dev/null | grep -iq "armeabi"); then
+						is_universal=true
+					fi
+				else
+					if ! unzip -l "$stock_apk" 2>/dev/null | grep -q "lib/" || (unzip -l "$stock_apk" 2>/dev/null | grep -q "lib/arm64-v8a/" && unzip -l "$stock_apk" 2>/dev/null | grep -q "lib/armeabi-v7a/"); then
+						is_universal=true
+					fi
+				fi
+				
+				if [ "$is_universal" = true ]; then
 					cp -f "$stock_apk" "$common_apk"
 					if [ -f "${stock_apk%.apk}.apkm" ]; then
 						cp -f "${stock_apk%.apk}.apkm" "${common_apk%.apk}.apkm"
 					fi
 				fi
 			fi
-			if [ -n "${UPLOAD_APKS_REPO:-}" ] && [ "$dl_p" != "github" ] && [ "$dl_p" != "archive" ]; then
+			
+			# Sync pristine files from staging to cache
+			if [ -f "$stock_apk" ]; then
+				cp -f "$stock_apk" "$cached_stock_apk"
+				if [ -f "$common_apk" ]; then
+					cp -f "$common_apk" "$cached_common_apk"
+				fi
+				
+				# Point back to cache for GitHub upload and patching steps
+				stock_apk="$cached_stock_apk"
+				common_apk="$cached_common_apk"
+			fi
+
+			if [ -f "$stock_apk" ] && [ -n "${UPLOAD_APKS_REPO:-}" ] && [ "$dl_p" != "github" ] && [ "$dl_p" != "archive" ]; then
 				pr "Uploading newly downloaded APKs to ${UPLOAD_APKS_REPO}..."
 				if gh release view "$pkg_name" --repo "$UPLOAD_APKS_REPO" >/dev/null 2>&1 || gh release create "$pkg_name" --repo "$UPLOAD_APKS_REPO" --title "$pkg_name" --notes ""; then
-					gh release upload "$pkg_name" "$stock_apk" --repo "$UPLOAD_APKS_REPO" --clobber || true
-					[ -f "${stock_apk%.apk}.apkm" ] && gh release upload "$pkg_name" "${stock_apk%.apk}.apkm" --repo "$UPLOAD_APKS_REPO" --clobber || true
-					[ -f "$common_apk" ] && gh release upload "$pkg_name" "$common_apk" --repo "$UPLOAD_APKS_REPO" --clobber || true
-					[ -f "${common_apk%.apk}.apkm" ] && gh release upload "$pkg_name" "${common_apk%.apk}.apkm" --repo "$UPLOAD_APKS_REPO" --clobber || true
+					if [ -f "$common_apk" ]; then
+						gh release upload "$pkg_name" "$common_apk" --repo "$UPLOAD_APKS_REPO" --clobber || true
+					else
+						gh release upload "$pkg_name" "$stock_apk" --repo "$UPLOAD_APKS_REPO" --clobber || true
+					fi
 				else
 					wpr "Failed to view/create release $pkg_name on $UPLOAD_APKS_REPO"
 				fi
@@ -2203,6 +2235,9 @@ build_rv() {
 	touch "$stock_apk" 2>/dev/null || true
 	[ -f "${stock_apk%.apk}.apkm" ] && touch "${stock_apk%.apk}.apkm" 2>/dev/null || true
 	[ -n "${common_apk:-}" ] && [ -f "$common_apk" ] && touch "$common_apk" 2>/dev/null || true
+
+	# Log usage for apks repo cache sync
+	echo "${pkg_name}-${version_f}" >> "$TEMP_DIR/used_versions.txt"
 
 	local sig_op
 	if [ -f "${stock_apk%.apk}.apkm" ]; then
@@ -2315,7 +2350,9 @@ build_rv() {
 				return 0
 			fi
 		fi
-		rm "$stock_apk_to_patch"
+
+		# Cleanup the temporary stripped apk to save disk space
+		rm -f "$stock_apk_to_patch"
 		if [ "$build_mode" = apk ]; then
 			if [ "${NORB:-}" != true ] || { [ ! -f "$patched_apk" ] && [ ! -f "$apk_output" ]; }; then
 				mv -f "$patched_apk" "$apk_output"
