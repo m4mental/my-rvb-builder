@@ -1,8 +1,13 @@
-projectivy-launcher-morphe (all): 4.70  
-adobe-acrobat-morphe (arm64-v8a): 26.5.0.45958  
-adobe-acrobat-morphe (arm-v7a): 26.5.0.45958  
-tumblr-morphe (arm64-v8a): 45.0.0.109  
-tumblr-morphe (arm-v7a): 45.0.0.109  
+youtube-anddea (arm64-v8a): 20.51.39  
+youtube-anddea (arm-v7a): 20.51.39  
+youtube-music-anddea (arm64-v8a): 9.15.51  
+youtube-music-anddea (arm-v7a): 9.15.51  
+youtube-morphe (arm64-v8a): 21.04.223  
+youtube-morphe (arm-v7a): 21.04.223  
+youtube-music-morphe (arm64-v8a): 9.15.51  
+youtube-music-morphe (arm-v7a): 9.15.51  
+youtube-music-morphe-exp (arm64-v8a): 9.31.51  
+youtube-music-morphe-exp (arm-v7a): 9.31.51  
 
 **Notes:**  
 • Install [MicroG-RE](https://github.com/MorpheApp/MicroG-RE/releases/latest) or [MicroG](https://github.com/ReVanced/GmsCore/releases/latest), required for Google APKs.  
@@ -11,5 +16,8 @@ tumblr-morphe (arm-v7a): 45.0.0.109
 [GitHub](https://github.com/nullcpy/rvb) | [Group](https://t.me/rvb27) | [Donate](https://fahim-ahmed05.github.io/donate) | [Website](https://nullcpy.github.io)
   
 CLI: MorpheApp/morphe-desktop-1.13.0-all.jar  
-Patches: arandomhooman/patches-1.44.0.mpp  
-[Changelog](https://github.com/arandomhooman/hoomans-morphe-patches/releases/tag/v1.44.0)  
+Patches: anddea/patches-4.3.0-dev.1.mpp  
+[Changelog](https://github.com/anddea/revanced-patches/releases/tag/v4.3.0-dev.1)
+
+Patches: MorpheApp/patches-1.40.0-dev.5.mpp  
+[Changelog](https://github.com/MorpheApp/morphe-patches/releases/tag/v1.40.0-dev.5)  
