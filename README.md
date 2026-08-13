@@ -31,8 +31,8 @@
 > All APKs and modules in this repository are 100% automated. If you need help, please direct your feedback to the right place:
 >
 > - 🧩 **Patch Issues:** If a specific feature/mod is broken (e.g., ads are showing), please open an issue in the **respective patch developer's repository**.
-> - 🛠️ **Builder Issues:** If an app fails to build, or the download links are broken, **[open an Issue here on GitHub](https://github.com/m4mental/my-rvb-builder/issues/new/choose)** .
-> - 💬 **General Help & Requests:** Need help installing, or want to request a new app? **[open an Issue here on GitHub](https://github.com/m4mental/my-rvb-builder/issues/new/choose)** or **[open a discussion here on GitHub](https://github.com/m4mental/my-rvb-builder/discussions/new?category=general)**.
+> - 🛠️ **Builder Issues:** If an app fails to build, or the download links are broken, **[open an Issue here on GitHub](https://github.com/m4mental/my-rvb-builder/issues/new/choose)** or **[send a message in our Telegram Group](https://t.me/rvb27/306)**.
+> - 💬 **General Help & Requests:** Need help installing, or want to request a new app? **[Send a message in our Telegram Group](https://t.me/rvb27/306)** or **[open an Issue here on GitHub](https://github.com/m4mental/my-rvb-builder/issues/new/choose)** or **[open a discussion here on GitHub](https://github.com/m4mental/my-rvb-builder/discussions/new?category=general)**.
 
 ---
 
@@ -677,13 +677,11 @@ Patches: [hoo-dles/patches-1.39.0.mpp](https://github.com/hoo-dles/morphe-patche
   
 <blockquote>
 
-[Release 2026-08-13](https://github.com/m4mental/my-rvb-builder/releases/tag/260218)<br>
-Patches: [jasonwu1994/patches-2.9.0.mpp](https://github.com/jasonwu1994/Gboard-patches/releases/tag/v2.9.0)
+[Release 2026-08-10](https://github.com/m4mental/my-rvb-builder/releases/tag/260181)<br>
+Patches: [jasonwu1994/patches-2.7.0.mpp](https://github.com/jasonwu1994/Gboard-patches/releases/tag/v2.7.0), [jkennethcarino/patches-1.3.0.mpp](https://github.com/jkennethcarino/adobo/releases/tag/v1.3.0)
 - AI Writing Tools
-- Access Points menu style
 - Add Gboard Signature Bypass
 - Advanced Voice Typing
-- Change emoji size
 - Clipboard Custom Character Limit
 - Clipboard Enhancements
 - Custom Symbols
@@ -691,12 +689,10 @@ Patches: [jasonwu1994/patches-2.9.0.mpp](https://github.com/jasonwu1994/Gboard-p
 - Emojis, stickers & GIFs Tab Order
 - Enable Inline Autofill Suggestions
 - Enable OCR / Scan Text
-- Enable accessibility layout
-- Enable cursor trackpad mode
-- Enable split keyboard
+- Enable clipboard in incognito
+- Enable voice typing in incognito
 - English QWERTY Up-Flick Uppercase
 - Grammar Checker
-- Incognito Mode Toggle
 - Inline Suggestions
 - Key Shape Selection
 - Latin Globe Key Ignore Interval
@@ -716,13 +712,11 @@ Patches: [jasonwu1994/patches-2.9.0.mpp](https://github.com/jasonwu1994/Gboard-p
   
 <blockquote>
 
-[Release 2026-08-13](https://github.com/m4mental/my-rvb-builder/releases/tag/260218)<br>
-Patches: [jasonwu1994/patches-2.9.0.mpp](https://github.com/jasonwu1994/Gboard-patches/releases/tag/v2.9.0)
+[Release 2026-08-10](https://github.com/m4mental/my-rvb-builder/releases/tag/260181)<br>
+Patches: [jasonwu1994/patches-2.7.0.mpp](https://github.com/jasonwu1994/Gboard-patches/releases/tag/v2.7.0), [jkennethcarino/patches-1.3.0.mpp](https://github.com/jkennethcarino/adobo/releases/tag/v1.3.0)
 - AI Writing Tools
-- Access Points menu style
 - Add Gboard Signature Bypass
 - Advanced Voice Typing
-- Change emoji size
 - Clipboard Custom Character Limit
 - Clipboard Enhancements
 - Custom Symbols
@@ -730,12 +724,10 @@ Patches: [jasonwu1994/patches-2.9.0.mpp](https://github.com/jasonwu1994/Gboard-p
 - Emojis, stickers & GIFs Tab Order
 - Enable Inline Autofill Suggestions
 - Enable OCR / Scan Text
-- Enable accessibility layout
-- Enable cursor trackpad mode
-- Enable split keyboard
+- Enable clipboard in incognito
+- Enable voice typing in incognito
 - English QWERTY Up-Flick Uppercase
 - Grammar Checker
-- Incognito Mode Toggle
 - Inline Suggestions
 - Key Shape Selection
 - Latin Globe Key Ignore Interval
@@ -2405,8 +2397,8 @@ Patches: [Paresh-Maheshwari/patches-1.19.0.mpp](https://gitlab.com/Paresh-Mahesh
   
 <blockquote>
 
-[Release 2026-08-13](https://github.com/m4mental/my-rvb-builder/releases/tag/260217)<br>
-Patches: [icysymmetra/patches-0.7.0-dev.4.mpp](https://github.com/icysymmetra/tiktok-patches-for-morphe/releases/tag/v0.7.0-dev.4)
+[Release 2026-08-11](https://github.com/m4mental/my-rvb-builder/releases/tag/260193)<br>
+Patches: [icysymmetra/patches-0.7.0-dev.3.mpp](https://github.com/icysymmetra/tiktok-patches-for-morphe/releases/tag/v0.7.0-dev.3)
 - Always show publish date
 - Copy comments without username
 - Custom offline videos limit
