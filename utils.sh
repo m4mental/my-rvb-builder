@@ -703,7 +703,7 @@ _trawl_8191_get() {
 		wpr "Trawl:8191 attempt $attempt/$max_retries failed for: $url"
 		sleep 5
 	done
-	wpr "Trawl:8191 failed after $max_retries attempts: $url — falling back"
+	wpr "[!] Trawl:8191 failed after $max_retries attempts: $url"
 	return 1
 }
 
@@ -842,8 +842,8 @@ dl_apkmirror() {
 	local base_url="https://www.apkmirror.com"
 	local html=""
 
-	if [ -f "${output}.apkm" ]; then
-		merge_splits "${output}.apkm" "${output}"
+	if [ -f "${output%.apk}.apkm" ]; then
+		merge_splits "${output%.apk}.apkm" "${output}"
 		return 0
 	fi
 
@@ -1026,17 +1026,17 @@ dl_apkmirror() {
 	[[ "$btn_url" == http* ]] && referer_url="$btn_url"
 
 	if [ "$is_bundle" = true ]; then
-		wget -nv -O "${output}.apkm" \
+		wget -nv -O "${output%.apk}.apkm" \
 			--header="User-Agent: ${user_agent:-Mozilla/5.0}" \
 			--referer="$referer_url" \
 			"${cookie_args[@]}" \
 			--timeout=300 \
 			"$final_url" || return 1
-		if ! unzip -l "${output}.apkm" >/dev/null 2>&1; then
+		if ! unzip -l "${output%.apk}.apkm" >/dev/null 2>&1; then
 			epr "Downloaded file is not a valid zip (apkm): $final_url"
 			return 1
 		fi
-		merge_splits "${output}.apkm" "${output}"
+		merge_splits "${output%.apk}.apkm" "${output}"
 	else
 		wget -nv -O "${output}" \
 			--header="User-Agent: ${user_agent:-Mozilla/5.0}" \
@@ -1332,7 +1332,7 @@ dl_uptodown() {
 	data_url=$($HTMLQ "#detail-download-button" --attribute data-url <<<"$resp") || return 1
 	if [ $is_bundle = true ]; then
 		req "https://dw.uptodown.com/dwn/${data_url}" "$output.apkm" || return 1
-		merge_splits "${output}.apkm" "${output}"
+		merge_splits "${output%.apk}.apkm" "${output}"
 	else
 		req "https://dw.uptodown.com/dwn/${data_url}" "$output"
 	fi
@@ -1343,14 +1343,16 @@ get_uptodown_pkg_name() { $HTMLQ --text "tr.full:nth-child(1) > td:nth-child(3)"
 dl_archive() {
 	local url=$1 version=$2 output=$3 arch=$4
 	local path="" version_f=${version// /}
-	while IFS= read -r p; do
-		case "$p" in
-			*"${version_f#v}-${arch// /}.apk"|*"${version_f#v}-${arch// /}.apkm"|*"${version_f#v}-${arch// /}.xapk"|*"${version_f#v}-${arch// /}.apks"|*"${version_f#v}-all.apk"|*"${version_f#v}-all.apkm"|*"${version_f#v}-all.xapk"|*"${version_f#v}-all.apks")
-				path="$p"
-				break
-				;;
-		esac
-	done <<<"$__ARCHIVE_RESP__"
+	for a in "${arch// /}" "common" "all"; do
+		for ext in "apk" "apkm" "xapk" "apks" "apk.apkm" "apk.xapk" "apk.apks"; do
+			while IFS= read -r p; do
+				if [[ "$p" == *"${version_f#v}-${a}.${ext}" ]]; then
+					path="$p"
+					break 3
+				fi
+			done <<<"$__ARCHIVE_RESP__"
+		done
+	done
 	if [ -z "$path" ]; then
 		epr "Version ${version} with arch ${arch} not found in archive"
 		return 1
@@ -1383,7 +1385,7 @@ get_archive_resp() {
 	__DL_RESP_CACHE__["archive_resp_$url"]="$__ARCHIVE_RESP__"
 	__DL_RESP_CACHE__["archive_pkg_$url"]="$__ARCHIVE_PKG_NAME__"
 }
-get_archive_vers() { sed 's/^[^-]*-//;s/-\(all\|arm64-v8a\|arm-v7a\|x86\|x86_64\)\.\(apk\|apkm\|xapk\|apks\)$//g' <<<"$__ARCHIVE_RESP__"; }
+get_archive_vers() { sed 's/^[^-]*-//;s/-\(all\|common\|arm64-v8a\|arm-v7a\|x86\|x86_64\)\.\(apk\|apkm\|xapk\|apks\)$//g' <<<"$__ARCHIVE_RESP__"; }
 get_archive_pkg_name() { echo "$__ARCHIVE_PKG_NAME__"; }
 
 # -------------------- github --------------------
@@ -1393,14 +1395,16 @@ dl_github() {
 	local base_url=${__GITHUB_URL__:-$url}
     
     # Matches the exact file selection logic from dl_archive
-    while IFS= read -r p; do
-        case "$p" in
-            *"${version_f#v}-${arch// /}.apk"|*"${version_f#v}-${arch// /}.apkm"|*"${version_f#v}-${arch// /}.xapk"|*"${version_f#v}-${arch// /}.apks"|*"${version_f#v}-all.apk"|*"${version_f#v}-all.apkm"|*"${version_f#v}-all.xapk"|*"${version_f#v}-all.apks")
-                path="$p"
-                break
-                ;;
-        esac
-    done <<<"$__ARCHIVE_RESP__"
+    for a in "${arch// /}" "common" "all"; do
+        for ext in "apk" "apkm" "xapk" "apks" "apk.apkm" "apk.xapk" "apk.apks"; do
+            while IFS= read -r p; do
+                if [[ "$p" == *"${version_f#v}-${a}.${ext}" ]]; then
+                    path="$p"
+                    break 3
+                fi
+            done <<<"$__ARCHIVE_RESP__"
+        done
+    done
     
     if [ -z "$path" ]; then
         epr "Version ${version} with arch ${arch} not found in github"
@@ -1457,7 +1461,7 @@ get_github_resp() {
 
 # Extracts version matching the archive logic: strips prefix (up to first '-') and suffix (arch/extension)
 get_github_vers() {
-    sed 's/^[^-]*-//;s/-\(all\|arm64-v8a\|arm-v7a\|x86\|x86_64\)\.\(apk\|apkm\|xapk\|apks\)$//g' <<<"$__ARCHIVE_RESP__"
+    sed 's/^[^-]*-//;s/-\(all\|common\|arm64-v8a\|arm-v7a\|x86\|x86_64\)\.\(apk\|apkm\|xapk\|apks\)$//g' <<<"$__ARCHIVE_RESP__"
 }
 
 # Extracts package name by stripping everything from the first hyphen '-' onwards
@@ -1873,6 +1877,7 @@ build_rv() {
 				arch_f="${arch// /}"
 				local stock_apk="${apk_cache_dir}/${pkg_name}-${version_f}-${arch_f}.apk"
 				local common_apk="${apk_cache_dir}/${pkg_name}-${version_f}-common.apk"
+
 				if [ ! -f "$stock_apk" ] && [ ! -f "$common_apk" ]; then
 					all_archs_found=false
 					break
@@ -1936,6 +1941,14 @@ build_rv() {
 		# 2. Establish dl_from and fetch required HTML responses
 		for dl_p in "${DL_SRCS[@]}"; do
 			if [ -z "${args[${dl_p}_dlurl]}" ]; then continue; fi
+			
+			# If we need to find the latest version, do not use cache repositories as the source of truth
+			if [ -z "$resolved_version" ]; then
+				if [ "$dl_p" = "archive" ] || [ "$dl_p" = "github" ]; then
+					continue
+				fi
+			fi
+
 			if ! get_${dl_p}_resp "${args[${dl_p}_dlurl]}"; then
 				args[${dl_p}_dlurl]=""
 				epr "ERROR: Could not get response for ${table} in ${dl_p}"
@@ -2053,8 +2066,8 @@ build_rv() {
 			fi
 			if [ "$missing_arch" = false ]; then
 				cp -f "$common_apk" "$stock_apk"
-				if [ -f "${common_apk}.apkm" ]; then
-					cp -f "${common_apk}.apkm" "${stock_apk}.apkm"
+				if [ -f "${common_apk%.apk}.apkm" ]; then
+					cp -f "${common_apk%.apk}.apkm" "${stock_apk%.apk}.apkm"
 				fi
 			fi
 		fi
@@ -2125,9 +2138,9 @@ build_rv() {
 
 				local sig_op
 				local sig_ok=true
-				if [ -f "${stock_apk}.apkm" ]; then
+				if [ -f "${stock_apk%.apk}.apkm" ]; then
 					rm -rf "${stock_apk}-zip" || :
-					unzip -j "${stock_apk}.apkm" -d "${stock_apk}-zip" >/dev/null
+					unzip -j "${stock_apk%.apk}.apkm" -d "${stock_apk}-zip" >/dev/null
 					if [ -f "${stock_apk}-zip/base.apk" ]; then
 						if ! sig_op=$(check_sig "${stock_apk}-zip/base.apk" "$pkg_name" 2>&1); then
 							epr "Signature mismatch on base.apk: $sig_op. Rejecting download from $dl_p..."
@@ -2151,7 +2164,7 @@ build_rv() {
 					fi
 				fi
 				if [ "$sig_ok" = false ]; then
-					rm -f "$stock_apk" "${stock_apk}.apkm"
+					rm -f "$stock_apk" "${stock_apk%.apk}.apkm"
 					continue
 				fi
 
@@ -2160,9 +2173,20 @@ build_rv() {
 			if [ -f "$stock_apk" ] && [ ! -f "$common_apk" ]; then
 				if ! unzip -l "$stock_apk" 2>/dev/null | grep -q "lib/" || (unzip -l "$stock_apk" 2>/dev/null | grep -q "lib/arm64-v8a/" && unzip -l "$stock_apk" 2>/dev/null | grep -q "lib/armeabi-v7a/"); then
 					cp -f "$stock_apk" "$common_apk"
-					if [ -f "${stock_apk}.apkm" ]; then
-						cp -f "${stock_apk}.apkm" "${common_apk}.apkm"
+					if [ -f "${stock_apk%.apk}.apkm" ]; then
+						cp -f "${stock_apk%.apk}.apkm" "${common_apk%.apk}.apkm"
 					fi
+				fi
+			fi
+			if [ -n "${UPLOAD_APKS_REPO:-}" ] && [ "$dl_p" != "github" ] && [ "$dl_p" != "archive" ]; then
+				pr "Uploading newly downloaded APKs to ${UPLOAD_APKS_REPO}..."
+				if gh release view "$pkg_name" --repo "$UPLOAD_APKS_REPO" >/dev/null 2>&1 || gh release create "$pkg_name" --repo "$UPLOAD_APKS_REPO" --title "$pkg_name" --notes ""; then
+					gh release upload "$pkg_name" "$stock_apk" --repo "$UPLOAD_APKS_REPO" --clobber || true
+					[ -f "${stock_apk%.apk}.apkm" ] && gh release upload "$pkg_name" "${stock_apk%.apk}.apkm" --repo "$UPLOAD_APKS_REPO" --clobber || true
+					[ -f "$common_apk" ] && gh release upload "$pkg_name" "$common_apk" --repo "$UPLOAD_APKS_REPO" --clobber || true
+					[ -f "${common_apk%.apk}.apkm" ] && gh release upload "$pkg_name" "${common_apk%.apk}.apkm" --repo "$UPLOAD_APKS_REPO" --clobber || true
+				else
+					wpr "Failed to view/create release $pkg_name on $UPLOAD_APKS_REPO"
 				fi
 			fi
 		else
@@ -2177,13 +2201,13 @@ build_rv() {
 
 	# Ensure the mtime is set to now so newly downloaded APKs with old server timestamps aren't purged
 	touch "$stock_apk" 2>/dev/null || true
-	[ -f "${stock_apk}.apkm" ] && touch "${stock_apk}.apkm" 2>/dev/null || true
+	[ -f "${stock_apk%.apk}.apkm" ] && touch "${stock_apk%.apk}.apkm" 2>/dev/null || true
 	[ -n "${common_apk:-}" ] && [ -f "$common_apk" ] && touch "$common_apk" 2>/dev/null || true
 
 	local sig_op
-	if [ -f "${stock_apk}.apkm" ]; then
+	if [ -f "${stock_apk%.apk}.apkm" ]; then
 		rm -rf "${stock_apk}-zip" || :
-		unzip -j "${stock_apk}.apkm" -d "${stock_apk}-zip" >/dev/null
+		unzip -j "${stock_apk%.apk}.apkm" -d "${stock_apk}-zip" >/dev/null
 		if [ -f "${stock_apk}-zip/base.apk" ]; then
 			if ! sig_op=$(check_sig "${stock_apk}-zip/base.apk" "$pkg_name" 2>&1); then
 				epr "Not building $table, apk signature mismatch 'base.apk': $sig_op"
@@ -2328,20 +2352,20 @@ build_rv() {
 			if [ "${args[include_stock]}" = "merged" ]; then
 				cp -f "$stock_apk" "${base_template}/stock/base.apk"
 			elif [ "${args[include_stock]}" = "split" ]; then
-				if [ ! -f "${stock_apk}.apkm" ]; then
+				if [ ! -f "${stock_apk%.apk}.apkm" ]; then
 					epr "Cannot include as 'split' because stock apk of $table_name is not a bundle"
 					return 0
 				fi
 				if [ "$arch" = "arm64-v8a" ]; then
-					unzip -j "${stock_apk}.apkm" '*.apk' -x '*x86_64.apk' -x '*x86.apk' -x '*armeabi_v7a.apk' -d "${base_template}/stock/" >/dev/null 2>&1
+					unzip -j "${stock_apk%.apk}.apkm" '*.apk' -x '*x86_64.apk' -x '*x86.apk' -x '*armeabi_v7a.apk' -d "${base_template}/stock/" >/dev/null 2>&1
 				elif [ "$arch" = "arm-v7a" ]; then
-					unzip -j "${stock_apk}.apkm" '*.apk' -x '*x86_64.apk' -x '*x86.apk' -x '*arm64_v8a.apk' -d "${base_template}/stock/" >/dev/null 2>&1
+					unzip -j "${stock_apk%.apk}.apkm" '*.apk' -x '*x86_64.apk' -x '*x86.apk' -x '*arm64_v8a.apk' -d "${base_template}/stock/" >/dev/null 2>&1
 				elif [ "$arch" = "x86" ]; then
-					unzip -j "${stock_apk}.apkm" '*.apk' -x '*x86_64.apk' -x '*arm64_v8a.apk' -x '*armeabi_v7a.apk' -d "${base_template}/stock/" >/dev/null 2>&1
+					unzip -j "${stock_apk%.apk}.apkm" '*.apk' -x '*x86_64.apk' -x '*arm64_v8a.apk' -x '*armeabi_v7a.apk' -d "${base_template}/stock/" >/dev/null 2>&1
 				elif [ "$arch" = "x86_64" ]; then
-					unzip -j "${stock_apk}.apkm" '*.apk' -x '*x86.apk' -x '*arm64_v8a.apk' -x '*armeabi_v7a.apk' -d "${base_template}/stock/" >/dev/null 2>&1
+					unzip -j "${stock_apk%.apk}.apkm" '*.apk' -x '*x86.apk' -x '*arm64_v8a.apk' -x '*armeabi_v7a.apk' -d "${base_template}/stock/" >/dev/null 2>&1
 				else
-					unzip -j "${stock_apk}.apkm" '*.apk' -x '*x86_64.apk' -x '*x86.apk' -d "${base_template}/stock/" >/dev/null 2>&1
+					unzip -j "${stock_apk%.apk}.apkm" '*.apk' -x '*x86_64.apk' -x '*x86.apk' -d "${base_template}/stock/" >/dev/null 2>&1
 				fi
 			fi
 		fi
