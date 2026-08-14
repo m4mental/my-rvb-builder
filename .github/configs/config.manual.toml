@@ -2,19 +2,21 @@
 # cli-version = "dev"
 enable-module-update = true
 
-[facebook-morphe]
+[strava-morphe]
 enabled = true
-pkg-name = "com.facebook.katana"
-app-name = "facebook"
+pkg-name = "com.strava"
+app-name = "strava"
 rv-brand = "morphe"
 build-mode = "apk"
-arch = "both"
+arch = "all"
 patches-source = "RookieEnough/De-Vanced"
+patcher-args = "--continue-on-error"
 cli-source = "MorpheApp/morphe-desktop"
-uptodown-dlurl = "https://facebook.en.uptodown.com/android"
-apkmirror-dlurl = "https://www.apkmirror.com/apk/facebook-2/facebook"
-dpi = "nodpi anydpi auto"
-# archive-dlurl = "https://archive.org/download/geologically/apks/com.facebook.katana"
-github-dlurl = "https://github.com/nullcpy/apks/releases/tag/com.facebook.katana"
+# uptodown-dlurl = "https://strava.en.uptodown.com/android"
+# apkpure-dlurl = "https://apkpure.com/strava-run-hike-android-exercise-laugh/com.strava"
+apkcombo-dlurl = "https://apkcombo.com/it/strava/com.strava"
+# dpi = "nodpi anydpi auto"
+github-dlurl = "https://github.com/nullcpy/apks/releases/tag/com.strava"
+# archive-dlurl = ""
 
 
