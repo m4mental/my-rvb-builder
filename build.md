@@ -1,5 +1,20 @@
-gboard-morphe (arm64-v8a): 17.7.7.932364120-release-arm64-v8a  
-gboard-morphe-clone (arm64-v8a): 17.7.7.932364120-release-arm64-v8a  
+rumble-morphe (arm64-v8a): 3.14.5  
+rumble-morphe (arm-v7a): 3.14.5  
+twitch-morphe (arm64-v8a): 29.9.1  
+twitch-morphe (arm-v7a): 29.9.1  
+poweramp-morphe (all): build-1025-bundle-play  
+at4k-launcher-morphe (all): 0.99  
+projectivy-launcher-morphe (all): 4.70  
+adobe-acrobat-morphe (arm64-v8a): 26.5.0.45958  
+adobe-acrobat-morphe (arm-v7a): 26.5.0.45958  
+inshot-morphe (arm64-v8a): 2.214.1539  
+inshot-morphe (arm-v7a): 2.214.1539  
+todoist-morphe (arm64-v8a): 12190  
+todoist-morphe (arm-v7a): 12190  
+tumblr-morphe (arm64-v8a): 45.0.0.109  
+tumblr-morphe (arm-v7a): 45.0.0.109  
+proton-mail-morphe (arm64-v8a): 7.10.4  
+proton-mail-morphe (arm-v7a): 7.10.4  
 
 **Notes:**  
 • Install [MicroG-RE](https://github.com/MorpheApp/MicroG-RE/releases/latest) or [MicroG](https://github.com/ReVanced/GmsCore/releases/latest), required for Google APKs.  
@@ -8,5 +23,8 @@ gboard-morphe-clone (arm64-v8a): 17.7.7.932364120-release-arm64-v8a
 [GitHub](https://github.com/nullcpy/rvb) | [Group](https://t.me/rvb27) | [Donate](https://fahim-ahmed05.github.io/donate) | [Website](https://nullcpy.github.io)
   
 CLI: MorpheApp/morphe-desktop-1.13.0-all.jar  
-Patches: jasonwu1994/patches-2.11.0.mpp  
-[Changelog](https://github.com/jasonwu1994/Gboard-patches/releases/tag/v2.11.0)  
+Patches: arandomhooman/patches-1.45.0.mpp  
+[Changelog](https://github.com/arandomhooman/hoomans-morphe-patches/releases/tag/v1.45.0)
+
+Patches: hxreborn/patches-1.5.0.mpp  
+[Changelog](https://github.com/hxreborn/morphe-patches/releases/tag/v1.5.0)  
