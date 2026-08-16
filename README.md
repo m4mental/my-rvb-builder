@@ -31,8 +31,8 @@
 > All APKs and modules in this repository are 100% automated. If you need help, please direct your feedback to the right place:
 >
 > - 🧩 **Patch Issues:** If a specific feature/mod is broken (e.g., ads are showing), please open an issue in the **respective patch developer's repository**.
-> - 🛠️ **Builder Issues:** If an app fails to build, or the download links are broken, **[open an Issue here on GitHub](https://github.com/m4mental/my-rvb-builder/issues/new/choose)** or **[send a message in our Telegram Group](https://t.me/rvb27/306)**.
-> - 💬 **General Help & Requests:** Need help installing, or want to request a new app? **[Send a message in our Telegram Group](https://t.me/rvb27/306)** or **[open an Issue here on GitHub](https://github.com/m4mental/my-rvb-builder/issues/new/choose)** or **[open a discussion here on GitHub](https://github.com/m4mental/my-rvb-builder/discussions/new?category=general)**.
+> - 🛠️ **Builder Issues:** If an app fails to build, or the download links are broken, **[open an Issue here on GitHub](https://github.com/m4mental/my-rvb-builder/issues/new/choose)** .
+> - 💬 **General Help & Requests:** Need help installing, or want to request a new app? **[open an Issue here on GitHub](https://github.com/m4mental/my-rvb-builder/issues/new/choose)** or **[open a discussion here on GitHub](https://github.com/m4mental/my-rvb-builder/discussions/new?category=general)**.
 
 ---
 
@@ -125,8 +125,8 @@ Patches: [rushiranpise/patches-1.17.0.mpp](https://github.com/rushiranpise/morph
 
 <blockquote>
 
-[Release 2026-07-23](https://github.com/m4mental/my-rvb-builder/releases/tag/260080)<br>
-Patches: [arandomhooman/patches-1.43.4.mpp](https://github.com/arandomhooman/hoomans-morphe-patches/releases/tag/v1.43.4)
+[Release 2026-08-16](https://github.com/m4mental/my-rvb-builder/releases/tag/260237)<br>
+Patches: [arandomhooman/patches-1.48.0.mpp](https://github.com/arandomhooman/hoomans-morphe-patches/releases/tag/v1.48.0)
 - Unlock Pro
 </blockquote>
 </details>
@@ -238,8 +238,8 @@ Patches: [rushiranpise/patches-1.15.1.mpp](https://github.com/rushiranpise/morph
 
 <blockquote>
 
-[Release 2026-07-23](https://github.com/m4mental/my-rvb-builder/releases/tag/260080)<br>
-Patches: [arandomhooman/patches-1.43.4.mpp](https://github.com/arandomhooman/hoomans-morphe-patches/releases/tag/v1.43.4)
+[Release 2026-08-16](https://github.com/m4mental/my-rvb-builder/releases/tag/260237)<br>
+Patches: [arandomhooman/patches-1.48.0.mpp](https://github.com/arandomhooman/hoomans-morphe-patches/releases/tag/v1.48.0)
 - Unlock Premium
 </blockquote>
 </details>
@@ -295,12 +295,12 @@ Patches: [BholeyKaBhakt/patches-2.12.0.mpp](https://github.com/BholeyKaBhakt/rev
 #### [Morphe (hoomans-patches)](https://github.com/arandomhooman/hoomans-morphe-patches)
 
 <details>
-<summary id="battery-guru-morphe">&emsp;<a href="https://m4mental.github.io/"><img src="https://img.shields.io/badge/version-v2.4.8.1-gray?labelColor=2c7f87&logo=android&logoColor=white&style=flat"></summary>
+<summary id="battery-guru-morphe">&emsp;<a href="https://m4mental.github.io/"><img src="https://img.shields.io/badge/version-v2.5.0.6-gray?labelColor=2c7f87&logo=android&logoColor=white&style=flat"></summary>
   
 <blockquote>
 
-[Release 2026-06-29](https://github.com/m4mental/my-rvb-builder/releases/tag/419)<br>
-Patches: [arandomhooman/patches-1.34.0.mpp](https://github.com/arandomhooman/hoomans-morphe-patches/releases/tag/v1.34.0)
+[Release 2026-08-16](https://github.com/m4mental/my-rvb-builder/releases/tag/260237)<br>
+Patches: [arandomhooman/patches-1.48.0.mpp](https://github.com/arandomhooman/hoomans-morphe-patches/releases/tag/v1.48.0)
 - Unlock PRO
 </blockquote>
 </details>
@@ -1169,8 +1169,8 @@ Patches: [Aunali321/patches-2.0.0.rvp](https://github.com/Aunali321/ReVancedExpe
   
 <blockquote>
 
-[Release 2026-07-23](https://github.com/m4mental/my-rvb-builder/releases/tag/260080)<br>
-Patches: [arandomhooman/patches-1.43.4.mpp](https://github.com/arandomhooman/hoomans-morphe-patches/releases/tag/v1.43.4)
+[Release 2026-08-16](https://github.com/m4mental/my-rvb-builder/releases/tag/260237)<br>
+Patches: [arandomhooman/patches-1.48.0.mpp](https://github.com/arandomhooman/hoomans-morphe-patches/releases/tag/v1.48.0)
 - Unlock Pro
 </blockquote>
 </details>
@@ -1430,8 +1430,8 @@ Patches: [binarymend/patches-1.3.1.mpp](https://github.com/binarymend/morphe-pat
   
 <blockquote>
 
-[Release 2026-07-23](https://github.com/m4mental/my-rvb-builder/releases/tag/260080)<br>
-Patches: [arandomhooman/patches-1.43.4.mpp](https://github.com/arandomhooman/hoomans-morphe-patches/releases/tag/v1.43.4)
+[Release 2026-08-16](https://github.com/m4mental/my-rvb-builder/releases/tag/260237)<br>
+Patches: [arandomhooman/patches-1.48.0.mpp](https://github.com/arandomhooman/hoomans-morphe-patches/releases/tag/v1.48.0)
 - Unlock Premium
 </blockquote>
 </details>
@@ -1752,8 +1752,8 @@ Patches: [hoo-dles/patches-1.40.0.mpp](https://github.com/hoo-dles/morphe-patche
 
 <blockquote>
 
-[Release 2026-07-23](https://github.com/m4mental/my-rvb-builder/releases/tag/260080)<br>
-Patches: [arandomhooman/patches-1.43.4.mpp](https://github.com/arandomhooman/hoomans-morphe-patches/releases/tag/v1.43.4)
+[Release 2026-08-16](https://github.com/m4mental/my-rvb-builder/releases/tag/260237)<br>
+Patches: [arandomhooman/patches-1.48.0.mpp](https://github.com/arandomhooman/hoomans-morphe-patches/releases/tag/v1.48.0)
 - Unlock Premium
 </blockquote>
 </details>
@@ -1811,8 +1811,8 @@ Patches: [ajstrick81/patches-1.23.0.mpp](https://github.com/ajstrick81/morphe-an
 
 <blockquote>
 
-[Release 2026-07-23](https://github.com/m4mental/my-rvb-builder/releases/tag/260080)<br>
-Patches: [arandomhooman/patches-1.43.4.mpp](https://github.com/arandomhooman/hoomans-morphe-patches/releases/tag/v1.43.4)
+[Release 2026-08-16](https://github.com/m4mental/my-rvb-builder/releases/tag/260237)<br>
+Patches: [arandomhooman/patches-1.48.0.mpp](https://github.com/arandomhooman/hoomans-morphe-patches/releases/tag/v1.48.0)
 - Unlock Premium
 </blockquote>
 </details>
@@ -2028,8 +2028,8 @@ Patches: [anddea/patches-4.0.0.mpp](https://github.com/anddea/revanced-patches/r
   
 <blockquote>
 
-[Release 2026-07-23](https://github.com/m4mental/my-rvb-builder/releases/tag/260080)<br>
-Patches: [arandomhooman/patches-1.43.4.mpp](https://github.com/arandomhooman/hoomans-morphe-patches/releases/tag/v1.43.4)
+[Release 2026-08-16](https://github.com/m4mental/my-rvb-builder/releases/tag/260237)<br>
+Patches: [arandomhooman/patches-1.48.0.mpp](https://github.com/arandomhooman/hoomans-morphe-patches/releases/tag/v1.48.0)
 - Unlock Premium
 </blockquote>
 </details>
@@ -2443,8 +2443,8 @@ Patches: [icysymmetra/patches-0.7.0-dev.3.mpp](https://github.com/icysymmetra/ti
 
 <blockquote>
 
-[Release 2026-07-13](https://github.com/m4mental/my-rvb-builder/releases/tag/260041)<br>
-Patches: [arandomhooman/patches-1.43.0.mpp](https://github.com/arandomhooman/hoomans-morphe-patches/releases/tag/v1.43.0)
+[Release 2026-08-16](https://github.com/m4mental/my-rvb-builder/releases/tag/260237)<br>
+Patches: [arandomhooman/patches-1.48.0.mpp](https://github.com/arandomhooman/hoomans-morphe-patches/releases/tag/v1.48.0)
 - Unlock Pro
 </blockquote>
 </details>
@@ -2543,18 +2543,20 @@ Patches: [ajstrick81/patches-1.23.0.mpp](https://github.com/ajstrick81/morphe-an
 #### [Morphe (De-Vanced)](https://github.com/RookieEnough/De-Vanced)
 
 <details>
-<summary id="tumblr-morphe">&emsp;<a href="https://m4mental.github.io/"><img src="https://img.shields.io/badge/version-v45.7.1.100-gray?labelColor=36465D&logo=tumblr&logoColor=white&style=flat"></summary>
+<summary id="tumblr-morphe">&emsp;<a href="https://m4mental.github.io/"><img src="https://img.shields.io/badge/version-v45.8.0.110-gray?labelColor=36465D&logo=tumblr&logoColor=white&style=flat"></summary>
 
 <blockquote>
 
-[Release 2026-08-06](https://github.com/m4mental/my-rvb-builder/releases/tag/260144)<br>
-Patches: [RookieEnough/patches-1.1.0.mpp](https://github.com/RookieEnough/De-Vanced/releases/tag/v1.1.0)
-- Disable Ad-Free Banner
+[Release 2026-08-16](https://github.com/m4mental/my-rvb-builder/releases/tag/260237)<br>
+Patches: [arandomhooman/patches-1.48.0.mpp](https://github.com/arandomhooman/hoomans-morphe-patches/releases/tag/v1.48.0)
 - Disable Tumblr TV
+- Disable ad-free banner
 - Disable blog notification reminder
-- Disable dashboard ads
 - Disable gift message popup
 - Disable in-app update
+- Disable screenshot sharing
+- Enable premium UI
+- Remove ads
 </blockquote>
 </details>
 
@@ -2586,14 +2588,16 @@ Patches: [Raudrobot/patches-6.1.0.rvp](https://github.com/Raudrobot/revanced-pat
 #### [Morphe (hoomans-patches)](https://github.com/arandomhooman/hoomans-morphe-patches)
 
 <details>
-<summary id="twitch-morphe">&emsp;<a href="https://m4mental.github.io/"><img src="https://img.shields.io/badge/version-v29.9.1-gray?labelColor=9146FF&logo=twitch&logoColor=white&style=flat"></summary>
+<summary id="twitch-morphe">&emsp;<a href="https://m4mental.github.io/"><img src="https://img.shields.io/badge/version-v30.7.2-gray?labelColor=9146FF&logo=twitch&logoColor=white&style=flat"></summary>
   
 <blockquote>
 
-[Release 2026-07-23](https://github.com/m4mental/my-rvb-builder/releases/tag/260080)<br>
-Patches: [arandomhooman/patches-1.43.4.mpp](https://github.com/arandomhooman/hoomans-morphe-patches/releases/tag/v1.43.4)
+[Release 2026-08-16](https://github.com/m4mental/my-rvb-builder/releases/tag/260237)<br>
+Patches: [arandomhooman/patches-1.48.0.mpp](https://github.com/arandomhooman/hoomans-morphe-patches/releases/tag/v1.48.0)
+- 7TV and BTTV emotes
 - Auto claim channel points
 - Block live ads
+- Fix login
 - Hide display ads
 - Show deleted messages
 </blockquote>
