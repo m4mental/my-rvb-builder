@@ -31,8 +31,8 @@
 > All APKs and modules in this repository are 100% automated. If you need help, please direct your feedback to the right place:
 >
 > - 🧩 **Patch Issues:** If a specific feature/mod is broken (e.g., ads are showing), please open an issue in the **respective patch developer's repository**.
-> - 🛠️ **Builder Issues:** If an app fails to build, or the download links are broken, **[open an Issue here on GitHub](https://github.com/m4mental/my-rvb-builder/issues/new/choose)** or **[send a message in our Telegram Group](https://t.me/rvb27/306)**.
-> - 💬 **General Help & Requests:** Need help installing, or want to request a new app? **[Send a message in our Telegram Group](https://t.me/rvb27/306)** or **[open an Issue here on GitHub](https://github.com/m4mental/my-rvb-builder/issues/new/choose)** or **[open a discussion here on GitHub](https://github.com/m4mental/my-rvb-builder/discussions/new?category=general)**.
+> - 🛠️ **Builder Issues:** If an app fails to build, or the download links are broken, **[open an Issue here on GitHub](https://github.com/m4mental/my-rvb-builder/issues/new/choose)** .
+> - 💬 **General Help & Requests:** Need help installing, or want to request a new app? **[open an Issue here on GitHub](https://github.com/m4mental/my-rvb-builder/issues/new/choose)** or **[open a discussion here on GitHub](https://github.com/m4mental/my-rvb-builder/discussions/new?category=general)**.
 
 ---
 
@@ -125,8 +125,8 @@ Patches: [rushiranpise/patches-1.17.0.mpp](https://github.com/rushiranpise/morph
 
 <blockquote>
 
-[Release 2026-07-23](https://github.com/m4mental/my-rvb-builder/releases/tag/260080)<br>
-Patches: [arandomhooman/patches-1.43.4.mpp](https://github.com/arandomhooman/hoomans-morphe-patches/releases/tag/v1.43.4)
+[Release 2026-08-16](https://github.com/m4mental/my-rvb-builder/releases/tag/260234)<br>
+Patches: [arandomhooman/patches-1.47.0.mpp](https://github.com/arandomhooman/hoomans-morphe-patches/releases/tag/v1.47.0)
 - Unlock Pro
 </blockquote>
 </details>
@@ -238,8 +238,8 @@ Patches: [rushiranpise/patches-1.15.1.mpp](https://github.com/rushiranpise/morph
 
 <blockquote>
 
-[Release 2026-07-23](https://github.com/m4mental/my-rvb-builder/releases/tag/260080)<br>
-Patches: [arandomhooman/patches-1.43.4.mpp](https://github.com/arandomhooman/hoomans-morphe-patches/releases/tag/v1.43.4)
+[Release 2026-08-16](https://github.com/m4mental/my-rvb-builder/releases/tag/260234)<br>
+Patches: [arandomhooman/patches-1.47.0.mpp](https://github.com/arandomhooman/hoomans-morphe-patches/releases/tag/v1.47.0)
 - Unlock Premium
 </blockquote>
 </details>
@@ -1169,8 +1169,8 @@ Patches: [Aunali321/patches-2.0.0.rvp](https://github.com/Aunali321/ReVancedExpe
   
 <blockquote>
 
-[Release 2026-07-23](https://github.com/m4mental/my-rvb-builder/releases/tag/260080)<br>
-Patches: [arandomhooman/patches-1.43.4.mpp](https://github.com/arandomhooman/hoomans-morphe-patches/releases/tag/v1.43.4)
+[Release 2026-08-16](https://github.com/m4mental/my-rvb-builder/releases/tag/260234)<br>
+Patches: [arandomhooman/patches-1.47.0.mpp](https://github.com/arandomhooman/hoomans-morphe-patches/releases/tag/v1.47.0)
 - Unlock Pro
 </blockquote>
 </details>
@@ -1430,8 +1430,8 @@ Patches: [binarymend/patches-1.3.1.mpp](https://github.com/binarymend/morphe-pat
   
 <blockquote>
 
-[Release 2026-07-23](https://github.com/m4mental/my-rvb-builder/releases/tag/260080)<br>
-Patches: [arandomhooman/patches-1.43.4.mpp](https://github.com/arandomhooman/hoomans-morphe-patches/releases/tag/v1.43.4)
+[Release 2026-08-16](https://github.com/m4mental/my-rvb-builder/releases/tag/260234)<br>
+Patches: [arandomhooman/patches-1.47.0.mpp](https://github.com/arandomhooman/hoomans-morphe-patches/releases/tag/v1.47.0)
 - Unlock Premium
 </blockquote>
 </details>
@@ -1752,8 +1752,8 @@ Patches: [hoo-dles/patches-1.40.0.mpp](https://github.com/hoo-dles/morphe-patche
 
 <blockquote>
 
-[Release 2026-07-23](https://github.com/m4mental/my-rvb-builder/releases/tag/260080)<br>
-Patches: [arandomhooman/patches-1.43.4.mpp](https://github.com/arandomhooman/hoomans-morphe-patches/releases/tag/v1.43.4)
+[Release 2026-08-16](https://github.com/m4mental/my-rvb-builder/releases/tag/260234)<br>
+Patches: [arandomhooman/patches-1.47.0.mpp](https://github.com/arandomhooman/hoomans-morphe-patches/releases/tag/v1.47.0)
 - Unlock Premium
 </blockquote>
 </details>
@@ -1811,8 +1811,8 @@ Patches: [ajstrick81/patches-1.23.0.mpp](https://github.com/ajstrick81/morphe-an
 
 <blockquote>
 
-[Release 2026-07-23](https://github.com/m4mental/my-rvb-builder/releases/tag/260080)<br>
-Patches: [arandomhooman/patches-1.43.4.mpp](https://github.com/arandomhooman/hoomans-morphe-patches/releases/tag/v1.43.4)
+[Release 2026-08-16](https://github.com/m4mental/my-rvb-builder/releases/tag/260234)<br>
+Patches: [arandomhooman/patches-1.47.0.mpp](https://github.com/arandomhooman/hoomans-morphe-patches/releases/tag/v1.47.0)
 - Unlock Premium
 </blockquote>
 </details>
@@ -2028,8 +2028,8 @@ Patches: [anddea/patches-4.0.0.mpp](https://github.com/anddea/revanced-patches/r
   
 <blockquote>
 
-[Release 2026-07-23](https://github.com/m4mental/my-rvb-builder/releases/tag/260080)<br>
-Patches: [arandomhooman/patches-1.43.4.mpp](https://github.com/arandomhooman/hoomans-morphe-patches/releases/tag/v1.43.4)
+[Release 2026-08-16](https://github.com/m4mental/my-rvb-builder/releases/tag/260234)<br>
+Patches: [arandomhooman/patches-1.47.0.mpp](https://github.com/arandomhooman/hoomans-morphe-patches/releases/tag/v1.47.0)
 - Unlock Premium
 </blockquote>
 </details>
@@ -2443,8 +2443,8 @@ Patches: [icysymmetra/patches-0.7.0-dev.3.mpp](https://github.com/icysymmetra/ti
 
 <blockquote>
 
-[Release 2026-07-13](https://github.com/m4mental/my-rvb-builder/releases/tag/260041)<br>
-Patches: [arandomhooman/patches-1.43.0.mpp](https://github.com/arandomhooman/hoomans-morphe-patches/releases/tag/v1.43.0)
+[Release 2026-08-16](https://github.com/m4mental/my-rvb-builder/releases/tag/260234)<br>
+Patches: [arandomhooman/patches-1.47.0.mpp](https://github.com/arandomhooman/hoomans-morphe-patches/releases/tag/v1.47.0)
 - Unlock Pro
 </blockquote>
 </details>
