@@ -1329,7 +1329,7 @@
     "github-dlurl": "https://github.com/nullcpy/apks/releases/tag/com.tumblr"
   },
   "google-phone-morphe": {
-    "enabled": false,
+    "enabled": true,
     "pkg-name": "com.google.android.dialer",
     "app-name": "google-phone",
     "rv-brand": "morphe",
