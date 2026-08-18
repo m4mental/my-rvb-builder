@@ -502,7 +502,7 @@
     "github-dlurl": "https://github.com/nullcpy/apks/releases/tag/de.komoot.android"
   },
   "discord-xposed": {
-    "enabled": false,
+    "enabled": true,
     "pkg-name": "com.discord",
     "app-name": "discord",
     "rv-brand": "xposed",
