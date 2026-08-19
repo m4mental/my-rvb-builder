@@ -190,11 +190,12 @@
   },
   "IMXEren": {
     "repo": "IMXEren/mix-patches",
-    "stable": "v1.4.1",
-    "prerelease": "v1.4.1-dev.1",
+    "host": "gitlab",
+    "stable": "v1.5.0",
+    "prerelease": "v1.5.0-dev.1",
     "blocked": false,
-    "stable_date": "2026-07-23T16:30:38Z",
-    "pre_date": "2026-07-23T16:28:01Z"
+    "stable_date": "2026-08-19T02:11:04.715Z",
+    "pre_date": "2026-08-19T02:01:03.645Z"
   },
   "quantavil": {
     "repo": "quantavil/edge-morphe-patches",
