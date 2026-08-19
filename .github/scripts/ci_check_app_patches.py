@@ -83,26 +83,29 @@ def process_zip(path, pkg_info):
                         an = meta.get('app_name', '')
                         an_clean = an.replace('-', '')
                         
-                        if comp in comp_map: continue
-                        
-                        if pf and comp == pf:
-                            comp_map[comp] = pkg
-                            break
-                        elif an and (comp == an or comp == an_clean):
-                            comp_map[comp] = pkg
-                            break
+                        if pf:
+                            if comp == pf:
+                                comp_map.setdefault(comp, set()).add(pkg)
+                            continue
+                            
+                        if an and (comp == an or comp == an_clean):
+                            comp_map.setdefault(comp, set()).add(pkg)
                         elif pkg and comp in pkg.split('.'):
-                            comp_map[comp] = pkg
-                            break
+                            # Prevent youtube from mapping to youtube-music
+                            if comp == 'youtube' and 'music' in an.lower(): continue
+                            comp_map.setdefault(comp, set()).add(pkg)
             
             if info.filename.endswith('.class'):
                 content = z.read(info)
                 for pkg, b_pkg in pkg_bytes.items():
+                    pf = pkg_info[pkg].get('patch_folder', '')
+                    if pf: continue # Explicitly defined patch-folders shouldn't use bytecode fallback
+                    
                     if b_pkg in content:
                         if m:
                             comp = m.group(1)
                             if comp not in ['shared', 'all']:
-                                comp_map[comp] = pkg
+                                comp_map.setdefault(comp, set()).add(pkg)
 
         comp_regexes = {comp: re.compile(r'(^|/)' + re.escape(comp) + r'(/|\.|-)') for comp in all_comps}
                     
@@ -123,7 +126,8 @@ def process_zip(path, pkg_info):
                 for comp, reg in comp_regexes.items():
                     if reg.search(info.filename):
                         if comp in comp_map:
-                            buckets[comp_map[comp]].update(content)
+                            for p in comp_map[comp]:
+                                buckets[p].update(content)
                         assigned = True # Mark as handled to avoid shared bucket poisoning
                         break
                         
