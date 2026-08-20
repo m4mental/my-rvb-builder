@@ -557,7 +557,7 @@
     "github-dlurl": "https://github.com/nullcpy/apks/releases/tag/com.facebook.katana"
   },
   "threads-morphe": {
-    "enabled": false,
+    "enabled": true,
     "pkg-name": "com.instagram.barcelona",
     "app-name": "threads",
     "rv-brand": "morphe",
