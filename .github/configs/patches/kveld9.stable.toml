@@ -1,7 +1,3 @@
-# patches-version = "dev"
-# cli-version = "dev"
-enable-module-update = true
-
 [brave-browser-morphe]
 enabled = true
 pkg-name = "com.brave.browser"
@@ -17,14 +13,3 @@ dpi = "nodpi anydpi auto"
 apkpure-dlurl = "https://apkpure.com/brave-browser-private-ads-block/com.brave.browser"
 apkcombo-dlurl = "https://apkcombo.com/brave-browser/com.brave.browser"
 github-dlurl = "https://github.com/nullcpy/apks/releases/tag/com.brave.browser"
-
-
-
-
-
-
-
-
-
-
-
