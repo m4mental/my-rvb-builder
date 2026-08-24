@@ -772,7 +772,7 @@
     "github-dlurl": "https://github.com/nullcpy/apks/releases/tag/com.strava"
   },
   "brave-browser-morphe-beta": {
-    "enabled": false,
+    "enabled": true,
     "pkg-name": "com.brave.browser_beta",
     "app-name": "brave-browser",
     "rv-brand": "morphe-beta",
@@ -788,7 +788,7 @@
     "github-dlurl": "https://github.com/nullcpy/apks/releases/tag/com.brave.browser_beta"
   },
   "brave-browser-morphe-nightly": {
-    "enabled": false,
+    "enabled": true,
     "pkg-name": "com.brave.browser_nightly",
     "app-name": "brave-browser",
     "rv-brand": "morphe-nightly",
