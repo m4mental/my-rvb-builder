@@ -43,7 +43,7 @@
     "github-dlurl": "https://github.com/nullcpy/apks/releases/tag/com.amazon.amazonvideo.livingroom"
   },
   "hbomax-morphe-androidtv": {
-    "enabled": true,
+    "enabled": false,
     "pkg-name": "com.wbd.hbomax",
     "app-name": "hbomax",
     "rv-brand": "morphe-androidtv",
@@ -482,7 +482,7 @@
     "github-dlurl": "https://github.com/nullcpy/apks/releases/tag/de.komoot.android"
   },
   "discord-xposed": {
-    "enabled": true,
+    "enabled": false,
     "pkg-name": "com.discord",
     "app-name": "discord",
     "rv-brand": "xposed",
@@ -1231,7 +1231,7 @@
     "github-dlurl": "https://github.com/nullcpy/apks/releases/tag/com.overdevs.at4k"
   },
   "projectivy-launcher-morphe": {
-    "enabled": true,
+    "enabled": false,
     "pkg-name": "com.spocky.projengmenu",
     "app-name": "projectivy-launcher",
     "rv-brand": "morphe",
@@ -1275,7 +1275,7 @@
     "github-dlurl": "https://github.com/nullcpy/apks/releases/tag/com.camerasideas.instashot"
   },
   "todoist-morphe": {
-    "enabled": true,
+    "enabled": false,
     "pkg-name": "com.todoist",
     "app-name": "todoist",
     "rv-brand": "morphe",
