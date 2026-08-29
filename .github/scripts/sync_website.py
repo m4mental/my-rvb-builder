@@ -62,10 +62,10 @@ def main():
                     with open(fpath, "r", encoding="utf-8") as f:
                         c = f.read()
 
-                    # Inject PeerJS CDN, p2p-share.js and custom CSS in index.html
+                    # Inject PeerJS, QRCode, Html5Qrcode CDNs, p2p-share.js and custom CSS in index.html
                     if file == "index.html":
                         if "p2p-share.js" not in c:
-                            c = c.replace("</head>", f'<script src="https://unpkg.com/peerjs@1.5.2/dist/peerjs.min.js"></script>\n<script src="p2p-share.js"></script>\n<style>{custom_css}</style>\n</head>')
+                            c = c.replace("</head>", f'<script src="https://unpkg.com/peerjs@1.5.2/dist/peerjs.min.js"></script>\n<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>\n<script src="https://unpkg.com/html5-qrcode@2.3.8/html5-qrcode.min.js"></script>\n<script src="p2p-share.js"></script>\n<style>{custom_css}</style>\n</head>')
 
                         # Rebrand Title & Meta
                         c = re.sub(r'<title>.*?</title>', '<title>M4Mental Hub - ReVanced & Morphe Store</title>', c)
