@@ -1,7 +1,3 @@
-patches-version = "dev"
-# cli-version = "dev"
-enable-module-update = true
-
 [nuvio-morphe-androidtv]
 enabled = true
 pkg-name = "com.nuvio.tv"
@@ -15,8 +11,4 @@ excluded-patches = "'Side-by-side installation'"
 cli-source = "MorpheApp/morphe-desktop"
 dpi = "nodpi anydpi auto"
 github-dlurl = "https://github.com/nullcpy/apks/releases/tag/com.nuvio.tv"
-
-
-
-
 

@@ -8,4 +8,5 @@ build.md
 cmpr
 *-temporary-files
 __pycache__/
-*.py[cod]
+build.json
+/test

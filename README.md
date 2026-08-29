@@ -1,65 +1,46 @@
-<div align="center">
-  <h1>⚡ M4Mental Hub</h1>
-  <p><b>The Ultimate Automated ReVanced & Morphe App Center & Web Distribution Hub</b></p>
-  <p><i>Automatically builds, patches, and publishes non-root APKs & Magisk/KernelSU Modules in real-time.</i></p>
 
-  <p>
-    <a href="https://m4mental.github.io/"><img src="https://img.shields.io/badge/🌐_Official_Store-m4mental.github.io-06b6d4?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Official Website"></a>
-    <a href="https://github.com/m4mental/my-rvb-builder/releases"><img src="https://img.shields.io/github/v/release/m4mental/my-rvb-builder?style=for-the-badge&color=8b5cf6&label=Latest%20Build" alt="Latest Release"></a>
-  </p>
+<div align="center"><h1><img src="https://raw.githubusercontent.com/nullcpy/rvb/a5af1123e55c63119c6b81be894602e2f032fe08/.github/assets/icon.png"> <img src="https://raw.githubusercontent.com/nullcpy/rvb/a5af1123e55c63119c6b81be894602e2f032fe08/.github/assets/icon1.png"><br>⚡ M4Mental Hub - ReVanced & Morphe Apps</h1></div>
 
-  <p>
-    <a href="https://github.com/m4mental/my-rvb-builder"><img src="https://img.shields.io/github/stars/m4mental/my-rvb-builder?label=Stars&logo=github&style=social"></a>
-    <a href="https://m4mental.github.io/"><img src="https://hits.seeyoufarm.org/api/count/incr/badge.svg?url=https%3A%2F%2Fm4mental.github.io&count_bg=%2306b6d4&title_bg=%231e293b&title=M4Mental+Visitors"></a>
-    <a href="https://m4mental.github.io/"><img src="https://img.shields.io/github/downloads/m4mental/my-rvb-builder/total?logo=data:image/svg+xml;base64,PHN2ZyBmaWxsPSIjMDAwMDAwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNNSAyMGgxNHYtMkg1djJ6TTE5IDloLTRWM0g5djZINWw3IDcgNy03eiIvPjwvc3ZnPg==&label=Downloads&style=social"></a>
-  </p>
-</div>
+<p align="center"><b>Automatically builds and publishes APKs & Magisk/KernelSU Modules whenever new patches are released.</b></p>
+
+<p align="center"><a href="https://github.com/m4mental/my-rvb-builder"><img src="https://img.shields.io/github/stars/m4mental/my-rvb-builder?label=Stars&logo=github&style=social"></a> <a href="https://m4mental.github.io/"><img src="https://img.shields.io/github/downloads/m4mental/my-rvb-builder/total?logo=data:image/svg+xml;base64,PHN2ZyBmaWxsPSIjMDAwMDAwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNNSAyMGgxNHYtMkg1djJ6TTE5IDloLTRWM0g5djZINWw3IDcgNy03eiIvPjwvc3ZnPg==&label=Downloads&style=social"></a></p>
+
+<p align="center"><a href="https://m4mental.github.io/"><img src="https://hits.seeyoufarm.org/api/count/incr/badge.svg?url=https%3A%2F%2Fm4mental.github.io&count_bg=%2306b6d4&title_bg=%231e293b&title=M4Mental+Visitors"></a> <a href="https://github.com/m4mental/my-rvb-builder"><img src="https://hits.seeyoufarm.org/api/count/incr/badge.svg?url=https%3A%2F%2Fm4mental.github.io&count_bg=%2306b6d4&title_bg=%231e293b&title=M4Mental+Visitors"></a> </p>
 
 ---
 
-### 🌟 Key Highlights
-
-- ⚡ **100% Fully Automated**: Continuous pipeline tracking upstream releases and building newly patched versions every hour.
-- 🚀 **M4M Warp Drop (P2P Share)**: Direct encrypted Peer-to-Peer file sharing built into the web app for instant transfer between PC and Mobile devices.
-- 📦 **Complete App Suite**: YouTube ReVanced, YouTube Music, Spotify, Reddit, Twitter/X, Twitch, TikTok, and more.
-- 🛡️ **Zero Tracking / Direct Downloads**: High-speed CDN mirror downloads without intermediate link shorteners or invasive ads.
-- 🔄 **Obtainium 1-Click Updates**: Seamless automatic background updates right inside Android using Obtainium.
+<p align="center"><a href="https://github.com/m4mental/my-rvb-builder/issues"><img src="https://img.shields.io/badge/Issues-2f2f2f?style=flat&logo=github&logoColor=white"></a> <a href="https://github.com/m4mental/my-rvb-builder/pulls"><img src="https://img.shields.io/badge/Pull%20Requests-2f2f2f?style=flat&logo=github&logoColor=white"></a> <a href="https://github.com/m4mental/my-rvb-builder/discussions"><img src="https://img.shields.io/badge/Discussions-2f2f2f?style=flat&logo=github&logoColor=white"></a> <a href="https://github.com/m4mental/my-rvb-builder/actions"><img src="https://img.shields.io/badge/Actions-2f2f2f?style=flat&logo=github&logoColor=white"></a></p>
 
 ---
 
-### 🌐 Official App Catalog & Web Store
+---
 
-Visit **[m4mental.github.io](https://m4mental.github.io/)** for the best visual experience:
-
-- 📱 **Interactive App Catalog**: Filter by category, patch provider (ReVanced, Morphe, Anddea, Piko, De-Vanced), and architecture.
-- 🏷️ **Clear Release Channels**: Distinct **Stable** and **Beta** release archives.
-- 🚀 **Built-in Warp Drop P2P Sharing**: Send downloaded APKs to your friends or other devices instantly without uploading to third-party servers.
+> [!NOTE]
+>
+> 🌐 **[Visit Download Website](https://m4mental.github.io/)**
+>
+> For the best experience, please download from the website. It features:
+>
+> - 📱 **The complete list of every supported app.**
+> - 📦 Clear separation between **Stable**, **Beta** and **Variant** builds.
+> - 🏷️ Beautifully organized version numbers and download tracking.
+> - 🔄 Step-by-step instructions on how to set up automatic updates using **Obtainium** and easy **Add to Obtainium** button.
+>
+> **🤖 Fully Automated Builds**
+>
+> All APKs and modules in this repository are 100% automated. If you need help, please direct your feedback to the right place:
+>
+> - 🧩 **Patch Issues:** If a specific feature/mod is broken (e.g., ads are showing), please open an issue in the **respective patch developer's repository**.
+> - 🛠️ **Builder Issues:** If an app fails to build, or the download links are broken, **[open an Issue here on GitHub](https://github.com/m4mental/my-rvb-builder/issues/new/choose)** or **open an Issue here on GitHub**.
+> - 💬 **General Help & Requests:** Need help installing, or want to request a new app? **[Send a message in our Telegram Group](https://t.me/rvb27/306)** or **[open an Issue here on GitHub](https://github.com/m4mental/my-rvb-builder/issues/new/choose)** or **[open a discussion here on GitHub](https://github.com/m4mental/my-rvb-builder/discussions/new?category=general)**.
 
 ---
 
-### 📲 Setting Up Auto-Updates via Obtainium
+## 💖 Credits & Acknowledgements
 
-1. Install **[Obtainium](https://github.com/ImranR98/Obtainium)** on your Android device.
-2. Open **[m4mental.github.io](https://m4mental.github.io/)** on your phone.
-3. Click the **"Add to Obtainium"** button next to any app to subscribe for automatic background updates whenever new builds are released!
+This automated builder would not be possible without the incredible work and dedication of the open-source Android community. A massive thank you to:
 
----
+- **[peternmuller](https://github.com/peternmuller)**, **[nvbangg](https://github.com/nvbangg/revanced-morphe-builder)**, and **[j-hc](https://github.com/j-hc)** for their phenomenal foundational build scripts, CI/CD pipelines, and automation logic that power the core of this repository.
+- **The Patch Maintainers:** Huge appreciation to the development teams behind **ReVanced**, **MorpheApp**, **Anddea**, **RVX**, **Piko**, **De-Vanced**, and all the other independent developers who spend countless hours reverse-engineering, updating, and keeping these patches alive for everyone.
 
-### 🤝 Feedback & Community Support
-
-- 🛠️ **Builder & Download Issues:** If a download link fails or an app build needs an update, feel free to **[Open an Issue here on GitHub](https://github.com/m4mental/my-rvb-builder/issues)**.
-- 🧩 **Specific Patch Bugs:** If a specific patch or mod feature behaves unexpectedly, check the respective upstream patch maintainer repositories.
-
----
-
-### 💖 Credits & Acknowledgements
-
-This automated builder is powered by the collective innovation of the open-source Android community:
-
-- **Original Core Builders:** Appreciation to **[peternmuller](https://github.com/peternmuller)**, **[nvbangg](https://github.com/nvbangg/revanced-morphe-builder)**, and **[j-hc](https://github.com/j-hc)** for foundational scripts and pipelines.
-- **Patch Developers & Teams:** Huge gratitude to the maintainers of **ReVanced**, **MorpheApp**, **Anddea**, **RVX**, **Piko**, **De-Vanced**, and independent reverse-engineers keeping modded experiences open and accessible.
-
----
-<div align="center">
-  <sub>Maintained with ❤️ by <b>M4Mental</b></sub>
-</div>
+_If you enjoy using these builds, please consider starring their upstream repositories and supporting the original patch developers!_
