@@ -55,6 +55,36 @@ function copyMyPin() {
   }
 }
 
+function copyShareLink() {
+  const pinEl = document.getElementById('myPinDisplay');
+  if (!pinEl) return;
+  const pinText = pinEl.innerText.trim();
+  if (pinText && pinText !== '----') {
+    const link = `https://m4mental.github.io/#p2p=${pinText}`;
+    navigator.clipboard.writeText(link).then(() => {
+      const toast = document.getElementById('p2pStatus');
+      if (toast) toast.innerText = `🔗 Direct Share Link copied! Send to receiver.`;
+    }).catch(() => {});
+  }
+}
+
+function checkHashForP2P() {
+  const hash = window.location.hash;
+  if (hash && hash.includes('p2p=')) {
+    const pin = hash.split('p2p=')[1].split('&')[0];
+    if (pin && pin.length === 4) {
+      setTimeout(() => {
+        openP2PModal();
+        const pinInput = document.getElementById('connectPinInput');
+        if (pinInput) {
+          pinInput.value = pin;
+          connectToSender();
+        }
+      }, 800);
+    }
+  }
+}
+
 function initP2PPeer() {
   if (typeof Peer === 'undefined') {
     const st = document.getElementById('p2pStatus');
@@ -282,7 +312,10 @@ function injectP2PModalDOM() {
           <div style="font-weight:700; color:#e2e8f0; font-size:0.92rem; margin-bottom:4px;">1. Your Device PIN</div>
           <div style="font-size:0.75rem; color:#64748b;">(Share this to receive files)</div>
           <div id="myPinDisplay" style="font-size:2.2rem; font-weight:900; color:#06b6d4; letter-spacing:6px; background:#0f172a; padding:10px; border-radius:12px; border:1px dashed #334155; margin:10px 0; user-select:all;">----</div>
-          <button onclick="copyMyPin()" style="background:#1e293b; color:#cbd5e1; border:1px solid #334155; padding:6px 14px; border-radius:8px; font-size:0.8rem; font-weight:600; cursor:pointer;">📋 Copy PIN</button>
+          <div style="display:flex; gap:6px; justify-content:center; flex-wrap:wrap;">
+            <button onclick="copyMyPin()" style="background:#1e293b; color:#cbd5e1; border:1px solid #334155; padding:6px 12px; border-radius:8px; font-size:0.8rem; font-weight:600; cursor:pointer;">📋 Copy PIN</button>
+            <button onclick="copyShareLink()" style="background:#0284c7; color:#fff; border:none; padding:6px 12px; border-radius:8px; font-size:0.8rem; font-weight:600; cursor:pointer;">🔗 Share Link</button>
+          </div>
         </div>
 
         <!-- Step 2: Connect & Send -->
@@ -316,7 +349,11 @@ function injectP2PModalDOM() {
   document.body.appendChild(modalDiv);
 }
 
-document.addEventListener('DOMContentLoaded', injectP2PModalDOM);
+document.addEventListener('DOMContentLoaded', () => {
+  injectP2PModalDOM();
+  checkHashForP2P();
+});
 if (document.readyState === 'complete' || document.readyState === 'interactive') {
   injectP2PModalDOM();
+  checkHashForP2P();
 }

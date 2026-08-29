@@ -51,7 +51,7 @@ jobs:
               -e 's#\[GitHub\]\([^)]+\)#[GitHub](https://github.com/m4mental/my-rvb-builder)#g' \
               -e 's#\|[[:space:]]*\[Group\]\([^)]+\)##g' \
               -e 's#\|[[:space:]]*\[Donate\]\([^)]+\)##g' \
-              -e 's#\[Website\]\([^)]+\)#[Website](https://m4mental.github.io/my-rvb-builder/)#g')
+              -e 's#\[Website\]\([^)]+\)#[Website](https://m4mental.github.io/)#g')
 
             RM_DIR="./tmp_assets_$TAG"
             mkdir -p "$RM_DIR"

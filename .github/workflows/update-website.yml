@@ -15,7 +15,7 @@ jobs:
     steps:
       - name: Dispatch Website Cache Update
         run: |
-          curl -X POST https://api.github.com/repos/nullcpy/nullcpy.github.io/dispatches \
+          curl -X POST https://api.github.com/repos/m4mental/m4mental.github.io/dispatches \
           -H "Accept: application/vnd.github.v3+json" \
-          -H "Authorization: token ${{ secrets.WEBSITE_DISPATCH_TOKEN }}" \
+          -H "Authorization: token ${{ secrets.AUTO_SYNC_PAT || secrets.WEBSITE_DISPATCH_TOKEN || secrets.GH_PAT || secrets.GITHUB_TOKEN }}" \
           -d '{"event_type": "update-catalog-cache"}'
