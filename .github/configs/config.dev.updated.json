@@ -152,6 +152,20 @@
     "archive-dlurl": "https://archive.org/download/geologically/apks/com.google.android.inputmethod.latin",
     "github-dlurl": "https://github.com/nullcpy/apks/releases/tag/com.google.android.inputmethod.latin"
   },
+  "nuvio-morphe-androidtv": {
+    "enabled": false,
+    "pkg-name": "com.nuvio.tv",
+    "app-name": "nuvio",
+    "rv-brand": "morphe-androidtv",
+    "build-mode": "apk",
+    "arch": "both",
+    "patches-source": "liongalahad/nuviotv-morphe-patches",
+    "included-patches": "'Allow Importing Subs from Local Storage' 'Library Mode Focus Fix' 'Local Downloads' 'Local Media' 'Mark SDH Subtitles' 'Random Episode' 'Remove SDH Annotations' 'Restore Source Selection'",
+    "excluded-patches": "'Side-by-side installation'",
+    "cli-source": "MorpheApp/morphe-desktop",
+    "dpi": "nodpi anydpi auto",
+    "github-dlurl": "https://github.com/nullcpy/apks/releases/tag/com.nuvio.tv"
+  },
   "youtube-morphe": {
     "enabled": false,
     "pkg-name": "com.google.android.youtube",
