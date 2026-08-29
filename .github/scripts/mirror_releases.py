@@ -42,24 +42,59 @@ def run_cmd(cmd):
         print(f"   Command error: {e}")
 
 def main():
-    print(f"🔍 Checking latest releases between {orig_repo} and {my_repo}...")
+    print(f"🔍 Starting 1:1 Active Release Sync between {orig_repo} and {my_repo}...")
 
-    # Fetch latest 20 releases from upstream (active current builds)
-    orig_data = get_json(f"https://api.github.com/repos/{orig_repo}/releases?per_page=20")
+    # 1. Fetch Active Upstream Releases (Latest 30 releases currently active)
+    orig_data = get_json(f"https://api.github.com/repos/{orig_repo}/releases?per_page=30")
     if not isinstance(orig_data, list) or len(orig_data) == 0:
-        print("⚠️ Could not fetch upstream releases or no releases found. Skipping.")
+        print("⚠️ Could not fetch upstream releases. Skipping.")
         return
 
-    # Fetch existing releases in our repo
-    my_data = get_json(f"https://api.github.com/repos/{my_repo}/releases?per_page=50")
+    orig_tag_set = set(r.get('tag_name') for r in orig_data if r.get('tag_name'))
+    print(f"✓ Found {len(orig_tag_set)} active release tags on upstream repository.")
+
+    # 2. Fetch All Existing Releases in our Repo
+    my_data = []
+    for page in range(1, 5):
+        p_data = get_json(f"https://api.github.com/repos/{my_repo}/releases?per_page=100&page={page}")
+        if isinstance(p_data, list) and len(p_data) > 0:
+            my_data.extend(p_data)
+        else:
+            break
+
     my_rel_map = {}
+    extra_tags_to_delete = []
+
     if isinstance(my_data, list):
         for r in my_data:
             tag = r.get('tag_name')
-            if tag:
-                my_rel_map[tag] = set(a['name'] for a in r.get('assets', []))
+            if not tag:
+                continue
 
-    # Ensure Permanent Archives exist
+            # Always protect permanent vaults
+            if tag in ["stable", "beta"]:
+                my_rel_map[tag] = set(a['name'] for a in r.get('assets', []))
+                continue
+
+            # If tag exists in upstream active list, record it
+            if tag in orig_tag_set:
+                my_rel_map[tag] = set(a['name'] for a in r.get('assets', []))
+            else:
+                # Obsolete / Orphaned extra release not in upstream
+                extra_tags_to_delete.append(tag)
+
+    # 3. Clean up Extra / Orphaned Releases Automatically
+    if extra_tags_to_delete:
+        print(f"🧹 Found {len(extra_tags_to_delete)} extra/obsolete releases in our repo. Cleaning now...")
+        for old_tag in extra_tags_to_delete:
+            print(f"   🗑️ Deleting extra release: {old_tag}")
+            run_cmd(["gh", "release", "delete", old_tag, "--repo", my_repo, "-y", "--cleanup-tag"])
+            time.sleep(0.5)
+        print("✓ Extra releases cleaned up!")
+    else:
+        print("✓ No extra/orphaned releases found.")
+
+    # 4. Ensure Permanent Archives exist
     for archive_tag in ["stable", "beta"]:
         if archive_tag not in my_rel_map:
             print(f"Creating permanent '{archive_tag}' archive release vault...")
@@ -67,7 +102,7 @@ def main():
             if archive_tag == "beta":
                 run_cmd(["gh", "release", "edit", "beta", "--repo", my_repo, "--prerelease"])
 
-    # Find ONLY genuinely NEW releases that do not exist locally
+    # 5. Find ONLY genuinely NEW releases that need mirroring
     new_releases_to_mirror = []
     for rel in reversed(orig_data):
         tag = rel.get('tag_name')
@@ -80,17 +115,16 @@ def main():
         if tag in my_rel_map:
             local_asset_names = my_rel_map[tag]
             if orig_asset_names == local_asset_names or len(local_asset_names) > 0:
-                # Already mirrored and synced, skip!
                 continue
 
         new_releases_to_mirror.append(rel)
 
-    # If everything is in sync, do nothing and exit immediately!
+    # 6. If everything is already in sync, exit!
     if not new_releases_to_mirror:
-        print("✅ All releases are 100% in sync with original repo! Skipping, no extra builds created.")
+        print("✅ Releases are in 100% exact 1:1 sync with upstream! Skipping new build creation.")
         return
 
-    print(f"🚀 Found {len(new_releases_to_mirror)} new release(s) to mirror...")
+    print(f"🚀 Mirroring {len(new_releases_to_mirror)} new release(s)...")
 
     for rel in new_releases_to_mirror:
         tag = rel.get('tag_name')
@@ -140,7 +174,7 @@ def main():
         print(f"✓ Tag {tag} mirrored successfully!")
         time.sleep(2)
 
-    print("🎉 Smart Mirroring Complete!")
+    print("🎉 1:1 Active Release Sync & Cleanup Complete!")
 
 if __name__ == "__main__":
     main()
