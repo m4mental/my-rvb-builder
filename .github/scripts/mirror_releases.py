@@ -9,6 +9,7 @@ import sys
 
 orig_repo = "nullcpy/rvb"
 my_repo = os.environ.get("GITHUB_REPOSITORY", "m4mental/my-rvb-builder")
+KEEP_NUMBERED_RELEASES = 3  # Keep latest 3 numbered releases, clean older ones
 
 def get_json(url):
     req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
@@ -44,13 +45,15 @@ def main():
             if tag:
                 my_rel_map[tag] = [a['name'] for a in r.get('assets', [])]
 
+    # Ensure Permanent Archives exist
     for archive_tag in ["stable", "beta"]:
         if archive_tag not in my_rel_map:
-            print(f"Creating initial '{archive_tag}' archive release...")
-            subprocess.run(["gh", "release", "create", archive_tag, "--repo", my_repo, "--title", f"{archive_tag.capitalize()} Builds Archive", "--notes", f"Vault for {archive_tag} builds"], check=False)
+            print(f"Creating permanent '{archive_tag}' archive release vault...")
+            subprocess.run(["gh", "release", "create", archive_tag, "--repo", my_repo, "--title", f"{archive_tag.capitalize()} Builds Archive", "--notes", f"Permanent Vault for {archive_tag} builds"], check=False)
             if archive_tag == "beta":
                 subprocess.run(["gh", "release", "edit", "beta", "--repo", my_repo, "--prerelease"], check=False)
 
+    # Mirror New Builds from upstream
     for rel in reversed(orig_releases):
         tag = rel.get('tag_name')
         if not tag or tag in ["stable", "beta"]:
@@ -90,6 +93,7 @@ def main():
             print(f"   📥 Downloading {fname}...")
             subprocess.run(["curl", "-sL", dl_url, "-o", f"{rm_dir}/{fname}"], check=False)
 
+        # 1. Publish Numbered Release
         cmd = ["gh", "release", "create", tag, "--repo", my_repo]
         for fname in os.listdir(rm_dir):
             cmd.append(f"{rm_dir}/{fname}")
@@ -100,8 +104,9 @@ def main():
         print(f"   📤 Publishing numbered release {tag}...")
         subprocess.run(cmd, check=False)
 
+        # 2. Always Update Permanent Archive (stable / beta)
         target_archive = "beta" if is_prerelease else "stable"
-        print(f"   🔄 Syncing new files to '{target_archive}' archive release...")
+        print(f"   🔄 Syncing new files to permanent '{target_archive}' archive vault...")
         archive_cmd = ["gh", "release", "upload", target_archive, "--repo", my_repo]
         for fname in os.listdir(rm_dir):
             archive_cmd.append(f"{rm_dir}/{fname}")
@@ -109,10 +114,27 @@ def main():
         subprocess.run(archive_cmd, check=False)
 
         subprocess.run(["rm", "-rf", rm_dir], check=False)
-        print(f"✓ Build {tag} mirrored successfully!")
+        print(f"✓ Build {tag} mirrored & permanent archive updated successfully!")
         time.sleep(2)
 
-    print("🎉 Mirroring Complete!")
+    # 3. Clean up Old Numbered Releases (Keep permanent stable/beta + latest 3 numbered builds)
+    print("🧹 Checking for old numbered releases to clean...")
+    current_releases = get_json(f"https://api.github.com/repos/{my_repo}/releases?per_page=100")
+    if isinstance(current_releases, list):
+        numbered_releases = [r for r in current_releases if r.get('tag_name') not in ["stable", "beta"]]
+        # Sort by creation / published date (newest first)
+        numbered_releases.sort(key=lambda x: x.get('created_at', ''), reverse=True)
+
+        if len(numbered_releases) > KEEP_NUMBERED_RELEASES:
+            to_delete = numbered_releases[KEEP_NUMBERED_RELEASES:]
+            print(f"🗑️ Found {len(to_delete)} old numbered releases to clean up (Keeping latest {KEEP_NUMBERED_RELEASES})...")
+            for old_rel in to_delete:
+                old_tag = old_rel.get('tag_name')
+                print(f"   Deleting old numbered release: {old_tag}...")
+                subprocess.run(["gh", "release", "delete", old_tag, "--repo", my_repo, "-y", "--cleanup-tag"], check=False)
+                time.sleep(1)
+
+    print("🎉 Mirroring & Cleanup Complete! Permanent archives (stable & beta) are 100% up-to-date.")
 
 if __name__ == "__main__":
     main()
