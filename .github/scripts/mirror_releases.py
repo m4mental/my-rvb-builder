@@ -47,9 +47,9 @@ def main():
     for archive_tag in ["stable", "beta"]:
         if archive_tag not in my_rel_map:
             print(f"Creating initial '{archive_tag}' archive release...")
-            subprocess.run(["gh", "release", "create", archive_tag, "--title", f"{archive_tag.capitalize()} Builds Archive", "--notes", f"Vault for {archive_tag} builds"], check=False)
+            subprocess.run(["gh", "release", "create", archive_tag, "--repo", my_repo, "--title", f"{archive_tag.capitalize()} Builds Archive", "--notes", f"Vault for {archive_tag} builds"], check=False)
             if archive_tag == "beta":
-                subprocess.run(["gh", "release", "edit", "beta", "--prerelease"], check=False)
+                subprocess.run(["gh", "release", "edit", "beta", "--repo", my_repo, "--prerelease"], check=False)
 
     for rel in reversed(orig_releases):
         tag = rel.get('tag_name')
@@ -68,7 +68,7 @@ def main():
                 continue
             else:
                 print(f"⚠️ MISMATCH in Tag {tag}! Repairing...")
-                subprocess.run(["gh", "release", "delete", tag, "-y", "--cleanup-tag"], check=False)
+                subprocess.run(["gh", "release", "delete", tag, "--repo", my_repo, "-y", "--cleanup-tag"], check=False)
                 time.sleep(2)
 
         print(f"🚀 Mirroring NEW Build: {tag} ({title})...")
@@ -90,7 +90,7 @@ def main():
             print(f"   📥 Downloading {fname}...")
             subprocess.run(["curl", "-sL", dl_url, "-o", f"{rm_dir}/{fname}"], check=False)
 
-        cmd = ["gh", "release", "create", tag]
+        cmd = ["gh", "release", "create", tag, "--repo", my_repo]
         for fname in os.listdir(rm_dir):
             cmd.append(f"{rm_dir}/{fname}")
         cmd.extend(["--title", title, "--notes", clean_body])
@@ -102,7 +102,7 @@ def main():
 
         target_archive = "beta" if is_prerelease else "stable"
         print(f"   🔄 Syncing new files to '{target_archive}' archive release...")
-        archive_cmd = ["gh", "release", "upload", target_archive]
+        archive_cmd = ["gh", "release", "upload", target_archive, "--repo", my_repo]
         for fname in os.listdir(rm_dir):
             archive_cmd.append(f"{rm_dir}/{fname}")
         archive_cmd.append("--clobber")

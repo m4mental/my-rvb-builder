@@ -12,7 +12,7 @@ jobs:
   sync:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout main branch
+      - name: Checkout repository
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
@@ -24,10 +24,13 @@ jobs:
           git config user.email 'github-actions[bot]@users.noreply.github.com'
           git remote add upstream https://github.com/nullcpy/rvb.git || git remote set-url upstream https://github.com/nullcpy/rvb.git
           git fetch upstream main
-          git checkout main
 
-          # 1. Fetch latest upstream files & README
+          # Fetch latest upstream files & README
           git checkout upstream/main -- .
+
+          # Preserve customized workflows and scripts
+          git checkout HEAD -- .github/workflows/ || true
+          git checkout HEAD -- .github/scripts/ || true
 
       - name: Auto-Transform README.md to M4Mental Hub
         run: |
@@ -37,7 +40,6 @@ jobs:
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email 'github-actions[bot]@users.noreply.github.com'
-          git add .
-          git checkout HEAD -- .github/workflows/ || true
-          git commit -m "Auto-sync upstream code & transform README to M4Mental Hub [skip ci]" || true
-          git push origin main
+          git add -A
+          git diff-index --quiet HEAD || git commit -m "Auto-sync upstream code & transform README to M4Mental Hub [skip ci]"
+          git push "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" HEAD:main || true

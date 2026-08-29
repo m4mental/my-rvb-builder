@@ -16,31 +16,41 @@ jobs:
 
       - name: Sync, Brand & Deploy M4Mental Hub Website with High-Speed P2P Engine
         env:
-          PAT_TOKEN: ${{ secrets.AUTO_SYNC_PAT }}
+          PAT_TOKEN: ${{ secrets.AUTO_SYNC_PAT || secrets.GH_PAT || secrets.PAT || secrets.WEBSITE_DISPATCH_TOKEN }}
         run: |
           if [ -z "$PAT_TOKEN" ]; then
-            echo "⚠️ AUTO_SYNC_PAT secret not set. Skipping website deployment."
+            echo "⚠️ PAT Token secret (AUTO_SYNC_PAT / GH_PAT) not set. Skipping website sync."
             exit 0
           fi
 
           echo "📥 Cloning official website upstream repository (nullcpy.github.io)..."
+          rm -rf ./tmp_site ./site_repo
           mkdir -p ./tmp_site
           git clone https://github.com/nullcpy/nullcpy.github.io.git ./tmp_site
 
           # Run Website branding & P2P injection engine
           python3 .github/scripts/sync_website.py
 
-          # Clone and Push to Dedicated Website Repo (m4mental.github.io)
           echo "🚀 Deploying to m4mental.github.io..."
-          git clone https://m4mental:${PAT_TOKEN}@github.com/m4mental/m4mental.github.io.git site_repo
-          
-          rsync -av --exclude='.git' ./tmp_site/ ./site_repo/
+          git clone "https://x-access-token:${PAT_TOKEN}@github.com/m4mental/m4mental.github.io.git" site_repo || {
+            mkdir -p site_repo
+            cd site_repo
+            git init
+            git remote add origin "https://x-access-token:${PAT_TOKEN}@github.com/m4mental/m4mental.github.io.git"
+            cd ..
+          }
+
+          # Copy processed files to site repo
+          cp -rf ./tmp_site/* ./site_repo/
+          touch ./site_repo/.nojekyll
 
           cd site_repo
           git config user.name 'github-actions[bot]'
           git config user.email 'github-actions[bot]@users.noreply.github.com'
-          git add .
-          git commit -m "Deploy M4Mental Hub with Warp Drop P2P Engine [skip ci]" || true
-          git push origin main
+          git checkout -B main || true
+          git add -A
+          git diff-index --quiet HEAD || git commit -m "Deploy M4Mental Hub with Warp Drop P2P Engine [skip ci]"
+          git push -u origin main --force || git push -u origin master --force
           cd ..
           rm -rf ./tmp_site ./site_repo
+          echo "✅ m4mental.github.io deployment complete!"
