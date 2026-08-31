@@ -1842,7 +1842,7 @@
     "github-dlurl": "https://github.com/nullcpy/apks/releases/tag/com.mxtech.videoplayer.ad"
   },
   "twitter-morphe": {
-    "enabled": true,
+    "enabled": false,
     "pkg-name": "com.twitter.android",
     "app-name": "twitter",
     "rv-brand": "morphe",
@@ -1857,7 +1857,7 @@
     "github-dlurl": "https://github.com/nullcpy/apks/releases/tag/com.twitter.android"
   },
   "twitter-morphe-materialu": {
-    "enabled": true,
+    "enabled": false,
     "pkg-name": "com.twitter.android",
     "app-name": "twitter",
     "rv-brand": "morphe-materialu",
@@ -1873,7 +1873,7 @@
     "github-dlurl": "https://github.com/nullcpy/apks/releases/tag/com.twitter.android"
   },
   "instagram-morphe-piko": {
-    "enabled": true,
+    "enabled": false,
     "pkg-name": "com.instagram.android",
     "app-name": "instagram",
     "rv-brand": "morphe-piko",
