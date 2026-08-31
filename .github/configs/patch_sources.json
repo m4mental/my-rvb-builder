@@ -300,5 +300,13 @@
     "prerelease": "v1.0.0-dev.31",
     "pre_date": "2026-08-31T14:43:40Z",
     "blocked": false
+  },
+  "riky": {
+    "repo": "riky-dev/morphe-patches",
+    "stable": "v1.4.1",
+    "stable_date": "2026-08-30T09:46:33Z",
+    "prerelease": "v1.4.0-dev.1",
+    "pre_date": "2026-08-30T09:12:43Z",
+    "blocked": false
   }
 }

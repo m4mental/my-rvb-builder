@@ -2069,8 +2069,22 @@
     "apkmirror-dlurl": "https://apkmirror.com/apk/google-inc/photos",
     "dpi": "nodpi anydpi auto"
   },
-  "adguard-morphe-nightly": {
+  "capcut-morphe": {
     "enabled": false,
+    "pkg-name": "com.lemon.lvoverseas",
+    "app-name": "capcut",
+    "rv-brand": "morphe",
+    "build-mode": "apk",
+    "arch": "both",
+    "patches-source": "riky-dev/morphe-patches",
+    "cli-source": "MorpheApp/morphe-desktop",
+    "uptodown-dlurl": "https://viamaker.en.uptodown.com/android",
+    "apkmirror-dlurl": "https://www.apkmirror.com/apk/bytedance-pte-ltd/capcut",
+    "apkpure-dlurl": "https://apkpure.com/capcut-video-editor/com.lemon.lvoverseas",
+    "github-dlurl": "https://github.com/nullcpy/apks/releases/tag/com.lemon.lvoverseas"
+  },
+  "adguard-morphe-nightly": {
+    "enabled": true,
     "pkg-name": "com.adguard.android",
     "app-name": "adguard",
     "rv-brand": "morphe-nightly",
@@ -2084,7 +2098,7 @@
     "github-dlurl": "https://github.com/nullcpy/apks/releases/tag/com.adguard.android"
   },
   "warp-morphe": {
-    "enabled": false,
+    "enabled": true,
     "pkg-name": "com.cloudflare.onedotonedotonedotone",
     "app-name": "warp",
     "rv-brand": "morphe",
@@ -2097,7 +2111,7 @@
     "dpi": "nodpi anydpi auto"
   },
   "hola-vpn-morphe": {
-    "enabled": false,
+    "enabled": true,
     "pkg-name": "org.hola.play",
     "app-name": "hola-vpn",
     "rv-brand": "morphe",
@@ -2112,7 +2126,7 @@
     "github-dlurl": "https://github.com/nullcpy/apks/releases/tag/org.hola.play"
   },
   "ninja-vpn-morphe": {
-    "enabled": false,
+    "enabled": true,
     "pkg-name": "app.ninjavpn.android",
     "patch-folder": "ninjvapn",
     "app-name": "ninja-vpn",
@@ -2127,7 +2141,7 @@
     "github-dlurl": "https://github.com/nullcpy/apks/releases/tag/app.ninjavpn.android"
   },
   "windscribe-vpn-morphe": {
-    "enabled": false,
+    "enabled": true,
     "pkg-name": "com.windscribe.vpn",
     "app-name": "windscribe-vpn",
     "rv-brand": "morphe",
@@ -2142,7 +2156,7 @@
     "github-dlurl": "https://github.com/nullcpy/apks/releases/tag/com.windscribe.vpn"
   },
   "terabox-morphe": {
-    "enabled": false,
+    "enabled": true,
     "pkg-name": "com.dubox.drive",
     "app-name": "terabox",
     "rv-brand": "morphe",
@@ -2156,7 +2170,7 @@
     "uptodown-dlurl": "https://terabox.en.uptodown.com/android"
   },
   "accuweather-morphe": {
-    "enabled": false,
+    "enabled": true,
     "pkg-name": "com.accuweather.android",
     "app-name": "accuweather",
     "rv-brand": "morphe",
@@ -2172,7 +2186,7 @@
     "github-dlurl": "https://github.com/nullcpy/apks/releases/tag/com.accuweather.android"
   },
   "the-weather-channel-morphe": {
-    "enabled": false,
+    "enabled": true,
     "pkg-name": "com.weather.Weather",
     "app-name": "the-weather-channel",
     "rv-brand": "morphe",
@@ -2188,7 +2202,7 @@
     "github-dlurl": "https://github.com/nullcpy/apks/releases/tag/com.weather.Weather"
   },
   "beta-maniac-morphe": {
-    "enabled": false,
+    "enabled": true,
     "pkg-name": "it.mirko.beta",
     "app-name": "beta-maniac",
     "rv-brand": "morphe",
@@ -2201,7 +2215,7 @@
     "dpi": "nodpi anydpi auto"
   },
   "google-photos-morphe-alt": {
-    "enabled": false,
+    "enabled": true,
     "pkg-name": "com.google.android.apps.photos",
     "app-name": "google-photos",
     "rv-brand": "morphe-alt",
@@ -2215,7 +2229,7 @@
     "dpi": "nodpi anydpi auto"
   },
   "moviebox-morphe": {
-    "enabled": false,
+    "enabled": true,
     "pkg-name": "com.community.oneroom",
     "app-name": "moviebox",
     "rv-brand": "morphe",
@@ -2227,7 +2241,7 @@
     "github-dlurl": "https://github.com/nullcpy/apks/releases/tag/com.community.oneroom"
   },
   "moviebox-morphe-androidtv": {
-    "enabled": false,
+    "enabled": true,
     "pkg-name": "com.community.mbox.tv",
     "app-name": "moviebox",
     "rv-brand": "morphe-androidtv",
@@ -2239,7 +2253,7 @@
     "github-dlurl": "https://github.com/nullcpy/apks/releases/tag/com.community.mbox.tv"
   },
   "messenger-morphe": {
-    "enabled": false,
+    "enabled": true,
     "pkg-name": "com.facebook.orca",
     "app-name": "messenger",
     "rv-brand": "morphe",
@@ -2256,7 +2270,7 @@
     "github-dlurl": "https://github.com/nullcpy/apks/releases/tag/com.facebook.orca"
   },
   "pocket-casts-morphe": {
-    "enabled": false,
+    "enabled": true,
     "pkg-name": "au.com.shiftyjelly.pocketcasts",
     "app-name": "pocket-casts",
     "rv-brand": "morphe",
@@ -2271,7 +2285,7 @@
     "github-dlurl": "https://github.com/nullcpy/apks/releases/tag/au.com.shiftyjelly.pocketcasts"
   },
   "rar-morphe": {
-    "enabled": false,
+    "enabled": true,
     "pkg-name": "com.rarlab.rar",
     "app-name": "rar",
     "rv-brand": "morphe",
@@ -2287,7 +2301,7 @@
     "github-dlurl": "https://github.com/nullcpy/apks/releases/tag/com.rarlab.rar"
   },
   "amazon-india-morphe": {
-    "enabled": false,
+    "enabled": true,
     "pkg-name": "in.amazon.mShop.android.shopping",
     "app-name": "amazon-india",
     "rv-brand": "morphe",
@@ -2303,7 +2317,7 @@
     "github-dlurl": "https://github.com/nullcpy/apks/releases/tag/in.amazon.mShop.android.shopping"
   },
   "calm-morphe": {
-    "enabled": false,
+    "enabled": true,
     "pkg-name": "com.calm.android",
     "app-name": "calm",
     "rv-brand": "morphe",
@@ -2319,7 +2333,7 @@
     "github-dlurl": "https://github.com/nullcpy/apks/releases/tag/com.calm.android"
   },
   "bluetooth-keyboard-and-mouse-morphe": {
-    "enabled": false,
+    "enabled": true,
     "pkg-name": "io.appground.blek",
     "app-name": "bluetooth-keyboard-and-mouse",
     "rv-brand": "morphe",
@@ -2351,7 +2365,7 @@
     "github-dlurl": "https://github.com/nullcpy/apks/releases/tag/com.touchtype.swiftkey"
   },
   "macrodroid-morphe-alt": {
-    "enabled": false,
+    "enabled": true,
     "pkg-name": "com.arlosoft.macrodroid",
     "app-name": "macrodroid",
     "rv-brand": "morphe-alt",
@@ -2367,7 +2381,7 @@
     "github-dlurl": "https://github.com/nullcpy/apks/releases/tag/com.arlosoft.macrodroid"
   },
   "send-files-to-tv-morphe": {
-    "enabled": false,
+    "enabled": true,
     "pkg-name": "com.yablio.sendfilestotv",
     "app-name": "send-files-to-tv",
     "rv-brand": "morphe",
