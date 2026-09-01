@@ -2,7 +2,7 @@
   "patches-version": "latest",
   "enable-module-update": true,
   "imdb-morphe": {
-    "enabled": true,
+    "enabled": false,
     "pkg-name": "com.imdb.mobile",
     "app-name": "imdb",
     "rv-brand": "morphe",
@@ -482,7 +482,7 @@
     "github-dlurl": "https://github.com/nullcpy/apks/releases/tag/de.komoot.android"
   },
   "discord-xposed": {
-    "enabled": true,
+    "enabled": false,
     "pkg-name": "com.discord",
     "app-name": "discord",
     "rv-brand": "xposed",
@@ -605,7 +605,7 @@
     "github-dlurl": "https://github.com/nullcpy/apks/releases/tag/com.google.android.apps.youtube.music"
   },
   "google-photos-morphe": {
-    "enabled": true,
+    "enabled": false,
     "pkg-name": "com.google.android.apps.photos",
     "app-name": "google-photos",
     "rv-brand": "morphe",
@@ -648,7 +648,7 @@
     "github-dlurl": "https://github.com/nullcpy/apks/releases/tag/com.zhiliaoapp.musically"
   },
   "reddit-morphe-adobo": {
-    "enabled": true,
+    "enabled": false,
     "pkg-name": "com.reddit.frontpage",
     "app-name": "reddit",
     "rv-brand": "morphe-adobo",
@@ -663,7 +663,7 @@
     "github-dlurl": "https://github.com/nullcpy/apks/releases/tag/com.reddit.frontpage"
   },
   "photoshop-mix-morphe": {
-    "enabled": true,
+    "enabled": false,
     "pkg-name": "com.adobe.psmobile",
     "app-name": "photoshop-mix",
     "rv-brand": "morphe",
@@ -677,7 +677,7 @@
     "github-dlurl": "https://github.com/nullcpy/apks/releases/tag/com.adobe.psmobile"
   },
   "google-recorder-morphe": {
-    "enabled": true,
+    "enabled": false,
     "pkg-name": "com.google.android.apps.recorder",
     "app-name": "google-recorder",
     "rv-brand": "morphe",
@@ -692,7 +692,7 @@
     "github-dlurl": "https://github.com/nullcpy/apks/releases/tag/com.google.android.apps.recorder"
   },
   "microsoft-lens-morphe": {
-    "enabled": true,
+    "enabled": false,
     "app-name": "microsoft-lens",
     "rv-brand": "morphe",
     "build-mode": "apk",
@@ -705,7 +705,7 @@
     "github-dlurl": "https://github.com/nullcpy/apks/releases/tag/com.microsoft.lens"
   },
   "photomath-morphe": {
-    "enabled": true,
+    "enabled": false,
     "app-name": "photomath",
     "rv-brand": "morphe",
     "build-mode": "apk",
@@ -718,7 +718,7 @@
     "github-dlurl": "https://github.com/nullcpy/apks/releases/tag/com.microblink.photomath"
   },
   "viber-morphe": {
-    "enabled": true,
+    "enabled": false,
     "app-name": "viber",
     "rv-brand": "morphe",
     "build-mode": "apk",
@@ -730,7 +730,7 @@
     "github-dlurl": "https://github.com/nullcpy/apks/releases/tag/com.viber.voip"
   },
   "pixiv-morphe": {
-    "enabled": true,
+    "enabled": false,
     "app-name": "pixiv",
     "rv-brand": "morphe",
     "build-mode": "apk",
@@ -743,7 +743,7 @@
     "github-dlurl": "https://github.com/nullcpy/apks/releases/tag/jp.pxv.android"
   },
   "strava-morphe": {
-    "enabled": true,
+    "enabled": false,
     "pkg-name": "com.strava",
     "app-name": "strava",
     "rv-brand": "morphe",
@@ -1359,7 +1359,7 @@
     "github-dlurl": "https://github.com/nullcpy/apks/releases/tag/com.zhiliaoapp.musically"
   },
   "instagram-instafel": {
-    "enabled": true,
+    "enabled": false,
     "pkg-name": "com.instagram.android",
     "app-name": "instagram",
     "rv-brand": "instafel",
@@ -1373,7 +1373,7 @@
     "github-dlurl": "https://github.com/nullcpy/apks/releases/tag/com.instagram.android"
   },
   "instagram-instafel-clone": {
-    "enabled": true,
+    "enabled": false,
     "pkg-name": "com.instagram.android",
     "app-name": "instagram",
     "rv-brand": "instafel-clone",
@@ -1418,7 +1418,7 @@
     "github-dlurl": "https://github.com/nullcpy/apks/releases/tag/com.google.android.inputmethod.latin"
   },
   "calorie-counter-morphe": {
-    "enabled": true,
+    "enabled": false,
     "pkg-name": "com.fatsecret.android",
     "app-name": "calorie-counter",
     "rv-brand": "morphe",
@@ -1434,7 +1434,7 @@
     "github-dlurl": "https://github.com/nullcpy/apks/releases/tag/com.fatsecret.android"
   },
   "soundcloud-morphe-alt": {
-    "enabled": true,
+    "enabled": false,
     "pkg-name": "com.soundcloud.android",
     "app-name": "soundcloud",
     "rv-brand": "morphe-alt",
