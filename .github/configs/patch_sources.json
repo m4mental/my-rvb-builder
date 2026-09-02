@@ -308,5 +308,13 @@
     "prerelease": "v1.4.0-dev.1",
     "pre_date": "2026-08-30T09:12:43Z",
     "blocked": false
+  },
+  "prathxmop": {
+    "repo": "PrathxmOp/Prathxm-Patches",
+    "stable": "v1.13.0",
+    "stable_date": "2026-07-10T09:33:46Z",
+    "prerelease": "v1.13.1-dev.4",
+    "pre_date": "2026-08-24T16:16:24Z",
+    "blocked": false
   }
 }

@@ -13,7 +13,6 @@ uptodown-dlurl = "https://youtube.en.uptodown.com/android"
 apkmirror-dlurl = "https://apkmirror.com/apk/google-inc/youtube"
 dpi = "nodpi anydpi auto"
 archive-dlurl = "https://archive.org/download/geologically/apks/com.google.android.youtube"
-github-dlurl = "https://github.com/nullcpy/apks/releases/tag/com.google.android.youtube"
 
 [youtube-music-anddea]
 enabled = true
@@ -30,7 +29,6 @@ uptodown-dlurl = "https://youtube-music.en.uptodown.com/android"
 apkmirror-dlurl = "https://apkmirror.com/apk/google-inc/youtube-music"
 dpi = "nodpi anydpi auto"
 archive-dlurl = "https://archive.org/download/geologically/apks/com.google.android.apps.youtube.music"
-github-dlurl = "https://github.com/nullcpy/apks/releases/tag/com.google.android.apps.youtube.music"
 
 [google-photos-morphe]
 enabled = true
@@ -45,7 +43,6 @@ cli-source = "MorpheApp/morphe-desktop"
 apkmirror-dlurl = "https://apkmirror.com/apk/google-inc/photos"
 dpi = "nodpi anydpi auto"
 # archive-dlurl = "https://archive.org/download/geologically/apks/com.google.android.apps.photos"
-github-dlurl = "https://github.com/nullcpy/apks/releases/tag/com.google.android.apps.photos"
 
 [instagram-morphe]
 enabled = true
@@ -61,7 +58,6 @@ uptodown-dlurl = "https://instagram.en.uptodown.com/android"
 apkmirror-dlurl = "https://www.apkmirror.com/apk/instagram/instagram-instagram"
 dpi = "nodpi anydpi auto"
 archive-dlurl = "https://archive.org/download/geologically/apks/com.instagram.android"
-github-dlurl = "https://github.com/nullcpy/apks/releases/tag/com.instagram.android"
 
 [tiktok-morphe]
 enabled = true
@@ -76,7 +72,6 @@ uptodown-dlurl = "https://tiktok.en.uptodown.com/android"
 apkmirror-dlurl = "https://www.apkmirror.com/apk/tiktok-pte-ltd/tik-tok-including-musical-ly"
 dpi = "nodpi anydpi auto"
 archive-dlurl = "https://archive.org/download/geologically/apks/com.zhiliaoapp.musically"
-github-dlurl = "https://github.com/nullcpy/apks/releases/tag/com.zhiliaoapp.musically"
 
 [reddit-morphe-adobo]
 enabled = true
@@ -91,11 +86,3 @@ uptodown-dlurl = "https://reddit-official-app.en.uptodown.com/android"
 apkmirror-dlurl = "https://apkmirror.com/apk/redditinc/reddit"
 dpi = "nodpi anydpi auto"
 archive-dlurl = "https://archive.org/download/geologically/apks/com.reddit.frontpage"
-github-dlurl = "https://github.com/nullcpy/apks/releases/tag/com.reddit.frontpage"
-
-
-
-
-
-
-
