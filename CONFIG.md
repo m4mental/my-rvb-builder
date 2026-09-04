@@ -18,7 +18,7 @@ There exists an example below with all defaults shown and all the keys explicitl
 ```toml
 compression-level = 9                # module zip compression level
 remove-rv-integrations-checks = true # remove checks from the revanced integrations
-dpi = "nodpi anydpi 120-640dpi"      # dpi packages to be searched in order. default: "nodpi anydpi"
+dpi = "nodpi anydpi auto"            # dpi packages to be searched in order. 'auto' matches whatever is available. default: "nodpi anydpi auto"
 
 patches-source = "revanced/revanced-patches" # where to fetch patches bundle from. default: "MorpheApp/morphe-patches"
 patches-source-host = "github"               # source host for patches: "github" or "gitlab". default: "github"
@@ -42,6 +42,10 @@ build-mode = "both"  # 'both', 'apk' or 'module'. default: apk
 # 'latest' gets the latest stable without checking patches support. 'beta' gets the latest beta/alpha
 # whitespace seperated list of patches to exclude. default: ""
 version = "auto"     # 'auto', 'exp', 'latest', 'beta' or a version number (e.g. '17.40.41'). default: auto
+# target Android versionCode. 'auto' automatically resolves the supported versionCode from patch metadata (e.g. Morphe Desktop).
+# can also be set to an explicit versionCode (e.g. '473623755') or mapped per-architecture ('arm64-v8a: 473623755 | arm-v7a: 473623748').
+# used by APKMirror to select the exact build variant and to validate/invalidate cached and downloaded APKs. default: "" (or auto when resolved)
+version-code = "auto"
 
 # optional args to be passed to cli. can be used to set patch options
 # multiline strings in the config is supported
@@ -72,7 +76,7 @@ github-regex = "arm64-v8a: 'MyApp-arm64-v{version}\\.apk' | arm-v7a: 'MyApp-arm-
 direct-dlurl = "https://website/com.google.android.youtube-20.40.45-all.apk"
 
 module-prop-name = "some-app-module"                       # module prop name.
-dpi = "360-480dpi"                                         # used to select apk variant from apkmirror. 'auto' matches whatever is available. default: nodpi anydpi
+dpi = "360-480dpi"                                         # used to select apk variant from apkmirror. 'auto' matches whatever is available. default: nodpi anydpi auto
 arch = "arm64-v8a"                                         # 'auto', 'arm64-v8a', 'arm-v7a', 'all', 'both'. 'both' downloads both arm64-v8a and arm-v7a. 'auto' tries all → arm64-v8a → arm-v7a, using the first available. default: auto
 ```
 
