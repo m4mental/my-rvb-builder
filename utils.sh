@@ -9,6 +9,9 @@ DL_SRCS=("cache_repo" "direct" "github" "archive" "apkmirror" "uptodown" "apkpur
 BUILD_JSON_FILE="build.json"
 PATCH_OUTPUT=""
 
+if [ -z "${GITHUB_TOKEN-}" ] && command -v gh >/dev/null 2>&1; then
+	GITHUB_TOKEN=$(gh auth token 2>/dev/null || true)
+fi
 if [ "${GITHUB_TOKEN-}" ]; then GH_HEADER="Authorization: token ${GITHUB_TOKEN}"; else GH_HEADER=; fi
 NEXT_VER_CODE=${NEXT_VER_CODE:-$(date +'%Y%m%d')}
 OS=$(uname -o)
@@ -1720,22 +1723,25 @@ dl_github() {
     local url=$1 version=$2 output=$3 arch=$4 is_bundle=${5:-false} get_latest_ver=${6:-false}
     local path="" version_f=${version// /}
     local repo=$(cut -d/ -f4-5 <<<"$url")
-    local base_url=${__GITHUB_URL__:-$url}
-    
-    # If __GITHUB_TAG__ contains multiple tags (from /releases array), we must find the exact one
-    if echo "$__GITHUB_TAG__" | grep -q "[[:space:]]"; then
-        local exact_tag=""
-        for t in $__GITHUB_TAG__; do
-            if [ "$t" = "v${version_f#v}" ] || [ "$t" = "${version_f#v}" ]; then
-                exact_tag="$t"
-                break
-            fi
-        done
-        if [ -z "$exact_tag" ]; then
+    local exact_tag=""
+    while IFS= read -r t; do
+        [ -z "$t" ] && continue
+        if [ "$t" = "v${version_f#v}" ] || [ "$t" = "${version_f#v}" ]; then
+            exact_tag="$t"
+            break
+        fi
+    done <<<"$__GITHUB_TAG__"
+
+    if [ -z "$exact_tag" ]; then
+        local tag_lines
+        tag_lines=$(grep -c . <<<"$__GITHUB_TAG__" || true)
+        if [ "$tag_lines" -eq 1 ]; then
+            exact_tag="$__GITHUB_TAG__"
+        else
             exact_tag="v${version_f#v}"
         fi
-        base_url="https://github.com/${repo}/releases/download/${exact_tag}"
     fi
+    local base_url="https://github.com/${repo}/releases/download/${exact_tag}"
     
 local regex=""
     if [ -n "${args[github_regex]:-}" ]; then
@@ -1759,10 +1765,10 @@ local regex=""
     if [ -n "$regex" ] && [ "$dl_p" != "cache_repo" ]; then
         regex="${regex//\{version\}/${version_f#v}}"
         regex="${regex//\{arch\}/${arch}}"
-        path=$(grep -iE "$regex" <<<"$__ARCHIVE_RESP__" | head -1)
+        path=$(grep -iE "$regex" <<<"$__GITHUB_RESP__" | head -1)
     else
         # Matches the exact file selection logic from dl_archive
-        local norm_resp="${__ARCHIVE_RESP__//$'\r'/}"
+        local norm_resp="${__GITHUB_RESP__//$'\r'/}"
         for a in "${arch// /}" "all"; do
             for ext in "apk" "apkm" "xapk" "apks" "apk.apkm" "apk.xapk" "apk.apks"; do
                 while IFS= read -r p; do
@@ -1800,11 +1806,12 @@ local regex=""
 
 get_github_resp() {
 	local url="${1}"
-	if [ -n "${__DL_RESP_CACHE__["github_archive_resp_$url"]:-}" ]; then
-		__ARCHIVE_RESP__="${__DL_RESP_CACHE__["github_archive_resp_$url"]}"
-		__ARCHIVE_PKG_NAME__="${__DL_RESP_CACHE__["github_archive_pkg_$url"]}"
-		__GITHUB_URL__="${__DL_RESP_CACHE__["github_url_$url"]}"
-		__GITHUB_TAG__="${__DL_RESP_CACHE__["github_tag_$url"]}"
+	local cache_key="${url}_${pkg_name:-default}"
+	if [ -n "${__DL_RESP_CACHE__["github_resp_$cache_key"]:-}" ]; then
+		__GITHUB_RESP__="${__DL_RESP_CACHE__["github_resp_$cache_key"]}"
+		__GITHUB_PKG_NAME__="${__DL_RESP_CACHE__["github_pkg_$cache_key"]}"
+		__GITHUB_URL__="${__DL_RESP_CACHE__["github_url_$cache_key"]}"
+		__GITHUB_TAG__="${__DL_RESP_CACHE__["github_tag_$cache_key"]}"
 		return 0
 	fi
 	local repo tag resp endpoint
@@ -1814,10 +1821,10 @@ get_github_resp() {
 	tag=${tag##*/}
 	
 	if [ "$tag" = "${repo##*/}" ]; then
-		if [ -n "${version:-}" ]; then
-			tag="v${version}"
-		elif [ -n "${resolved_version:-}" ]; then
-			tag="v${resolved_version}"
+		if [ -n "${resolved_version:-}" ]; then
+			tag="v${resolved_version#v}"
+		elif [ -n "${version:-}" ] && ! isoneof "$version" auto latest beta exp; then
+			tag="v${version#v}"
 		else
 			tag="latest"
 		fi
@@ -1842,25 +1849,56 @@ get_github_resp() {
 	fi
 
 	if [ "$tag" = "latest" ]; then
+		local jq_filter=""
+		if [ -n "${args[github_release_regex]:-}" ]; then
+			jq_filter="[.[] | select((.name // \"\") | test(\"${args[github_release_regex]}\"; \"i\"))]"
+		else
+			local variant_l="${table,,} ${args[rv_brand]:-}"
+			if [[ "$variant_l" == *"beta"* ]]; then
+				jq_filter='[.[] | select((.name // "") | test("(^|[^a-zA-Z])Beta([^a-zA-Z]|$)"; "i"))]'
+			elif [[ "$variant_l" == *"nightly"* ]]; then
+				jq_filter='[.[] | select((.name // "") | test("(^|[^a-zA-Z])Nightly([^a-zA-Z]|$)"; "i"))]'
+			elif [[ "$variant_l" == *"alpha"* ]]; then
+				jq_filter='[.[] | select((.name // "") | test("(^|[^a-zA-Z])Alpha([^a-zA-Z]|$)"; "i"))]'
+			elif [[ "$variant_l" == *"canary"* ]]; then
+				jq_filter='[.[] | select((.name // "") | test("(^|[^a-zA-Z])Canary([^a-zA-Z]|$)"; "i"))]'
+			else
+				# Stable / default: exclude prereleases and channel-tagged builds if stable releases exist
+				jq_filter='[.[] | select((.prerelease == false) and (((.name // "") | test("(^|[^a-zA-Z])(Beta|Nightly|Alpha|Canary|Dev)([^a-zA-Z]|$)"; "i")) | not))]'
+			fi
+		fi
+		if [ -n "$jq_filter" ]; then
+			local filtered_resp
+			if filtered_resp=$(jq -e "$jq_filter" <<<"$resp" 2>/dev/null) && [ -n "$filtered_resp" ] && [ "$filtered_resp" != "[]" ]; then
+				resp="$filtered_resp"
+			fi
+		fi
 		tag=$(jq -r '.[].tag_name' <<<"$resp")
-		__ARCHIVE_RESP__=$(jq -r '.[].assets[]? | select(.name | test("\\.(apk|apkm|xapk|apks)$")) | .name' <<<"$resp")
+		__GITHUB_RESP__=$(jq -r '.[].assets[]? | select(.name | test("\\.(apk|apkm|xapk|apks)$")) | .name' <<<"$resp")
 	else
-		__ARCHIVE_RESP__=$(jq -r '.assets[]? | select(.name | test("\\.(apk|apkm|xapk|apks)$")) | .name' <<<"$resp")
+		__GITHUB_RESP__=$(jq -r '.assets[]? | select(.name | test("\\.(apk|apkm|xapk|apks)$")) | .name' <<<"$resp")
 	fi
 	
-	if [ -z "$__ARCHIVE_RESP__" ]; then return 1; fi
+	if [ -z "$__GITHUB_RESP__" ]; then return 1; fi
 	
 	# Grab the package name exactly like how get_archive_vers isolates the version
-	__ARCHIVE_PKG_NAME__=$(get_github_pkg_name)
-	if [ -z "$__ARCHIVE_PKG_NAME__" ]; then return 1; fi
+	__GITHUB_PKG_NAME__=$(get_github_pkg_name)
+	[ -z "$__GITHUB_PKG_NAME__" ] && __GITHUB_PKG_NAME__="${pkg_name:-}"
+	if [ -z "$__GITHUB_PKG_NAME__" ]; then return 1; fi
 	
-	__GITHUB_URL__="https://github.com/${repo}/releases/download/${tag}"
+	local tag_lines
+	tag_lines=$(grep -c . <<<"$tag" || true)
+	if [ "$tag_lines" -eq 1 ]; then
+		__GITHUB_URL__="https://github.com/${repo}/releases/download/${tag}"
+	else
+		__GITHUB_URL__="https://github.com/${repo}/releases/download"
+	fi
 	__GITHUB_TAG__="$tag"
 	
-	__DL_RESP_CACHE__["github_archive_resp_$url"]="$__ARCHIVE_RESP__"
-	__DL_RESP_CACHE__["github_archive_pkg_$url"]="$__ARCHIVE_PKG_NAME__"
-	__DL_RESP_CACHE__["github_url_$url"]="$__GITHUB_URL__"
-	__DL_RESP_CACHE__["github_tag_$url"]="$__GITHUB_TAG__"
+	__DL_RESP_CACHE__["github_resp_$cache_key"]="$__GITHUB_RESP__"
+	__DL_RESP_CACHE__["github_pkg_$cache_key"]="$__GITHUB_PKG_NAME__"
+	__DL_RESP_CACHE__["github_url_$cache_key"]="$__GITHUB_URL__"
+	__DL_RESP_CACHE__["github_tag_$cache_key"]="$__GITHUB_TAG__"
 }
 
 # Extracts version matching the archive logic: strips prefix (up to first '-') and suffix (arch/extension)
@@ -1870,15 +1908,21 @@ get_github_vers() {
 
 # Extracts package name by stripping everything from the first hyphen '-' onwards
 get_github_pkg_name() {
-    sed 's/-.*//' <<<"$__ARCHIVE_RESP__" | head -n 1
+    local p
+    p=$(sed 's/-.*//' <<<"$__GITHUB_RESP__" | head -n 1)
+    if [ -n "$p" ] && [[ "$p" != *".apk"* ]]; then
+        echo "$p"
+    elif [ -n "${pkg_name:-}" ]; then
+        echo "$pkg_name"
+    fi
 }
 
 # -------------------- cache_repo --------------------
 get_cache_repo_resp() {
 	local url="${1}"
-	if [ -n "${__DL_RESP_CACHE__["cache_repo_archive_resp_$url"]:-}" ]; then
-		__ARCHIVE_RESP__="${__DL_RESP_CACHE__["cache_repo_archive_resp_$url"]}"
-		__ARCHIVE_PKG_NAME__="${__DL_RESP_CACHE__["cache_repo_archive_pkg_$url"]}"
+	if [ -n "${__DL_RESP_CACHE__["cache_repo_resp_$url"]:-}" ]; then
+		__CACHE_REPO_RESP__="${__DL_RESP_CACHE__["cache_repo_resp_$url"]}"
+		__CACHE_REPO_PKG_NAME__="${__DL_RESP_CACHE__["cache_repo_pkg_$url"]}"
 		__CACHE_REPO_URL__="${__DL_RESP_CACHE__["cache_repo_url_$url"]}"
 		__CACHE_REPO_TAG__="${__DL_RESP_CACHE__["cache_repo_tag_$url"]}"
 		return 0
@@ -1895,18 +1939,18 @@ get_cache_repo_resp() {
 	fi
 	
 	# Extract only supported file extensions
-	__ARCHIVE_RESP__=$(jq -r '.assets[]? | select(.name | test("\\.(apk|apkm|xapk|apks)$")) | .name' <<<"$resp")
-	if [ -z "$__ARCHIVE_RESP__" ]; then return 1; fi
+	__CACHE_REPO_RESP__=$(jq -r '.assets[]? | select(.name | test("\\.(apk|apkm|xapk|apks)$")) | .name' <<<"$resp")
+	if [ -z "$__CACHE_REPO_RESP__" ]; then return 1; fi
 	
 	# Grab the package name exactly like how get_archive_vers isolates the version
-	__ARCHIVE_PKG_NAME__=$(sed 's/-.*//' <<<"$__ARCHIVE_RESP__" | head -n 1)
-	if [ -z "$__ARCHIVE_PKG_NAME__" ]; then return 1; fi
+	__CACHE_REPO_PKGNAME__=$(sed 's/-.*//' <<<"$__CACHE_REPO_RESP__" | head -n 1)
+	if [ -z "$__CACHE_REPO_PKGNAME__" ]; then return 1; fi
 	
 	__CACHE_REPO_URL__="https://github.com/${repo}/releases/download/${tag}"
 	__CACHE_REPO_TAG__="$tag"
 	
-	__DL_RESP_CACHE__["cache_repo_archive_resp_$url"]="$__ARCHIVE_RESP__"
-	__DL_RESP_CACHE__["cache_repo_archive_pkg_$url"]="$__ARCHIVE_PKG_NAME__"
+	__DL_RESP_CACHE__["cache_repo_resp_$url"]="$__CACHE_REPO_RESP__"
+	__DL_RESP_CACHE__["cache_repo_pkg_$url"]="$__CACHE_REPO_PKGNAME__"
 	__DL_RESP_CACHE__["cache_repo_url_$url"]="$__CACHE_REPO_URL__"
 	__DL_RESP_CACHE__["cache_repo_tag_$url"]="$__CACHE_REPO_TAG__"
 }
@@ -1917,7 +1961,7 @@ get_cache_repo_vers() {
 }
 
 get_cache_repo_pkg_name() {
-    echo "$__ARCHIVE_PKG_NAME__"
+    echo "${__CACHE_REPO_PKGNAME__:-$__CACHE_REPO_PKG_NAME__}"
 }
 
 dl_cache_repo() {
@@ -1947,10 +1991,10 @@ dl_cache_repo() {
     if [ -n "$regex" ]; then
         regex="${regex//\{version\}/${version_f#v}}"
         regex="${regex//\{arch\}/${arch}}"
-        path=$(grep -iE "$regex" <<<"$__ARCHIVE_RESP__" | head -1)
+        path=$(grep -iE "$regex" <<<"$__CACHE_REPO_RESP__" | head -1)
     else
         # Matches the exact file selection logic from dl_archive
-        local norm_resp="${__ARCHIVE_RESP__//$'\r'/}"
+        local norm_resp="${__CACHE_REPO_RESP__//$'\r'/}"
         for a in "${arch// /}" "all"; do
             for ext in "apk" "apkm" "xapk" "apks" "apk.apkm" "apk.xapk" "apk.apks"; do
                 while IFS= read -r p; do
@@ -2736,7 +2780,7 @@ build_rv() {
 			[ -z "$version" ] && get_latest_ver=true
 			if [ $get_latest_ver = true ]; then
 				if [ "$version_mode" = beta ]; then __AAV__="true"; else __AAV__="false"; fi
-				local vers_cache_key="${dl_from}_${args[${dl_from}_dlurl]}_${__AAV__}"
+				local vers_cache_key="${dl_from}_${args[${dl_from}_dlurl]}_${pkg_name:-default}_${__AAV__}"
 				if [ -n "${__PKG_VERS_CACHE__["$vers_cache_key"]:-}" ]; then
 					pkgvers="${__PKG_VERS_CACHE__["$vers_cache_key"]}"
 				else

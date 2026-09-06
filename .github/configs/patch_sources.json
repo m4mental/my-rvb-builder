@@ -324,5 +324,13 @@
     "prerelease": "v1.4.0-dev.1",
     "pre_date": "2026-09-03T11:25:07Z",
     "blocked": false
+  },
+  "quantro100": {
+    "repo": "Quantro100/Morphe-patches",
+    "stable": "v1.0.7",
+    "stable_date": "2026-06-02T20:22:14Z",
+    "prerelease": "",
+    "pre_date": "",
+    "blocked": false
   }
 }
