@@ -271,10 +271,10 @@
   },
   "dh6k": {
     "repo": "dh6k/morphe-patches",
-    "stable": "v1.4.0",
-    "stable_date": "2026-08-24T09:07:19Z",
-    "prerelease": "v1.5.0-dev.5",
-    "pre_date": "2026-09-04T09:26:29Z",
+    "stable": "v1.5.0",
+    "stable_date": "2026-09-05T22:28:53Z",
+    "prerelease": "v1.6.0-dev.4",
+    "pre_date": "2026-09-06T03:30:35Z",
     "blocked": false
   },
   "kveld9": {
