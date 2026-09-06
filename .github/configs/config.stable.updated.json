@@ -635,7 +635,7 @@
     "apkmirror-dlurl": "https://www.apkmirror.com/apk/pixiv-inc/pixiv"
   },
   "strava-morphe": {
-    "enabled": false,
+    "enabled": true,
     "pkg-name": "com.strava",
     "app-name": "strava",
     "rv-brand": "morphe",
