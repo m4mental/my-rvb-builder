@@ -24,10 +24,10 @@
   "morphe": {
     "repo": "MorpheApp/morphe-patches",
     "stable": "v1.41.0",
-    "prerelease": "v1.42.0-dev.6",
+    "prerelease": "v1.42.0-dev.7",
     "blocked": false,
     "stable_date": "2026-09-01T16:30:24Z",
-    "pre_date": "2026-09-06T12:43:48Z"
+    "pre_date": "2026-09-07T12:42:40Z"
   },
   "piko": {
     "repo": "crimera/piko",
@@ -135,10 +135,10 @@
   "tiktok": {
     "repo": "icysymmetra/tiktok-patches-for-morphe",
     "stable": "v0.7.0",
-    "prerelease": "v0.8.0-dev.5",
+    "prerelease": "v0.8.0-dev.6",
     "blocked": false,
     "stable_date": "2026-08-23T00:36:23Z",
-    "pre_date": "2026-09-06T23:41:09Z"
+    "pre_date": "2026-09-07T10:43:47Z"
   },
   "x-shim": {
     "enabled": false,
@@ -166,10 +166,10 @@
   },
   "androidtv": {
     "repo": "ajstrick81/morphe-androidtv-patches",
-    "stable": "v1.32.0",
+    "stable": "v1.33.0",
     "prerelease": "v1.5.7-dev.3",
     "blocked": false,
-    "stable_date": "2026-09-06T22:35:10Z",
+    "stable_date": "2026-09-07T19:49:26Z",
     "pre_date": "2026-06-26T16:45:34Z"
   },
   "revenge": {
@@ -287,8 +287,8 @@
   },
   "hxreborn-tiktok": {
     "repo": "hxreborn/hxreborn-tiktok-patches",
-    "stable": "v1.2.0",
-    "stable_date": "2026-09-06T18:59:58Z",
+    "stable": "v1.3.0",
+    "stable_date": "2026-09-07T08:52:16Z",
     "prerelease": "v0.10.0-dev.1",
     "pre_date": "2026-08-10T09:24:21Z",
     "blocked": false
@@ -321,8 +321,8 @@
     "repo": "SapitoSucio/FroggoMorphePatches",
     "stable": "v1.2.4",
     "stable_date": "2026-09-02T22:03:06Z",
-    "prerelease": "v1.4.0-dev.1",
-    "pre_date": "2026-09-03T11:25:07Z",
+    "prerelease": "v1.4.0-dev.2",
+    "pre_date": "2026-09-07T09:40:26Z",
     "blocked": false
   },
   "quantro100": {
