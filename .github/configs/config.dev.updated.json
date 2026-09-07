@@ -1,6 +1,6 @@
 {
   "patches-version": "dev",
-  "enable-module-update": true,
+  "enable-module-update": false,
   "youtube-anddea": {
     "enabled": false,
     "pkg-name": "com.google.android.youtube",
@@ -56,7 +56,7 @@
     "archive-dlurl": "https://archive.org/download/geologically/apks/com.instagram.android"
   },
   "tiktok-morphe": {
-    "enabled": true,
+    "enabled": false,
     "pkg-name": "com.zhiliaoapp.musically",
     "app-name": "tiktok",
     "rv-brand": "morphe",
@@ -237,7 +237,7 @@
     "archive-dlurl": "https://archive.org/download/geologically/apks/com.reddit.frontpage"
   },
   "twitter-morphe": {
-    "enabled": true,
+    "enabled": false,
     "pkg-name": "com.twitter.android",
     "app-name": "twitter",
     "rv-brand": "morphe",
@@ -250,7 +250,7 @@
     "apkpure-dlurl": "https://apkpure.com/x-formerly-twitter/com.twitter.android"
   },
   "twitter-morphe-materialu": {
-    "enabled": true,
+    "enabled": false,
     "pkg-name": "com.twitter.android",
     "app-name": "twitter",
     "rv-brand": "morphe-materialu",
@@ -264,7 +264,7 @@
     "apkpure-dlurl": "https://apkpure.com/x-formerly-twitter/com.twitter.android"
   },
   "instagram-morphe-piko": {
-    "enabled": true,
+    "enabled": false,
     "pkg-name": "com.instagram.android",
     "app-name": "instagram",
     "rv-brand": "morphe-piko",
