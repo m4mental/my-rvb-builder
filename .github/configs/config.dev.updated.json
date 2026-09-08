@@ -319,6 +319,7 @@
     "enabled": false,
     "pkg-name": "com.instagram.android",
     "app-name": "Instagram",
+    "patches-version": "both",
     "apkmirror-dlurl": "https://www.apkmirror.com/apk/instagram/instagram-instagram",
     "uptodown-dlurl": "https://instagram.en.uptodown.com/android",
     "archive-dlurl": "https://archive.org/download/geologically/apks/com.instagram.android"
@@ -328,6 +329,7 @@
     "pkg-name": "com.instagram.android",
     "app-name": "Instagram",
     "variant": "Clone",
+    "patches-version": "both",
     "included-patches": "'Clone'",
     "apkmirror-dlurl": "https://www.apkmirror.com/apk/instagram/instagram-instagram",
     "uptodown-dlurl": "https://instagram.en.uptodown.com/android",
@@ -338,6 +340,7 @@
     "pkg-name": "com.truecaller",
     "app-name": "Truecaller",
     "build-mode": "both",
+    "patches-version": "both",
     "apkmirror-dlurl": "https://www.apkmirror.com/apk/true-software-scandinavia-ab/truecaller-caller-id-block",
     "uptodown-dlurl": "https://truecaller.en.uptodown.com/android",
     "apkpure-dlurl": "https://apkpure.com/truecaller-caller-id-block-for-android-2024/com.truecaller",
@@ -427,6 +430,7 @@
     "pkg-name": "com.google.android.apps.photos",
     "app-name": "Google Photos",
     "build-mode": "both",
+    "patches-version": "both",
     "apkmirror-dlurl": "https://apkmirror.com/apk/google-inc/photos"
   },
   "AdobePhotoshopMix-DeVanced": {
@@ -884,6 +888,7 @@
     "pkg-name": "com.zhiliaoapp.musically",
     "app-name": "TikTok",
     "patches-source": "hxreborn/hxreborn-tiktok-patches",
+    "patches-version": "both",
     "apkmirror-dlurl": "https://www.apkmirror.com/apk/tiktok-pte-ltd/tik-tok-including-musical-ly",
     "uptodown-dlurl": "https://tiktok.en.uptodown.com/android",
     "apkpure-dlurl": "https://apkpure.com/tiktok-app/com.zhiliaoapp.musically",
@@ -1025,6 +1030,7 @@
     "app-name": "YouTube",
     "variant": "Nord Theme",
     "patch-folder": "youtube",
+    "patches-version": "stable",
     "patcher-args": "-e 'Theme' -OdarkThemeBackgroundColor=#2E3440 -OlightThemeBackgroundColor=#E5E9F0",
     "apkmirror-dlurl": "https://apkmirror.com/apk/google-inc/youtube",
     "uptodown-dlurl": "https://youtube.en.uptodown.com/android",
@@ -1038,6 +1044,7 @@
     "app-name": "YouTube",
     "variant": "Mocha Theme",
     "patch-folder": "youtube",
+    "patches-version": "stable",
     "patcher-args": "-e 'Theme' -OdarkThemeBackgroundColor=#FF181825 -OlightThemeBackgroundColor=#E6E9EF",
     "apkmirror-dlurl": "https://apkmirror.com/apk/google-inc/youtube",
     "uptodown-dlurl": "https://youtube.en.uptodown.com/android",
@@ -1421,6 +1428,16 @@
     "arch": "all",
     "uptodown-dlurl": "https://picsart-estudio.en.uptodown.com/android",
     "apkcombo-dlurl": "https://apkcombo.com/picsart/com.picsart.studio"
+  },
+  "ProtonMail-rushiranpise": {
+    "enabled": false,
+    "pkg-name": "ch.protonmail.android",
+    "app-name": "Proton Mail",
+    "apkmirror-dlurl": "https://apkmirror.com/apk/proton-technologies-ag/protonmail-encrypted-email",
+    "uptodown-dlurl": "https://protonmail.en.uptodown.com/android",
+    "apkpure-dlurl": "https://apkpure.com/proton-mail-encrypted-email/ch.protonmail.android",
+    "apkcombo-dlurl": "https://apkcombo.com/proton-mail/ch.protonmail.android",
+    "archive-dlurl": "https://archive.org/download/geologically/apks/ch.protonmail.android"
   },
   "KineStop-ShaunTheSheep": {
     "enabled": false,
