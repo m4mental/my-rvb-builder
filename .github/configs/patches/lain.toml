@@ -1,0 +1,21 @@
+patches-source = "kiraio-moe/Lain-Patches"
+brand = "Lain"
+
+[DROFUS-Lain]
+enabled = true
+pkg-name = "com.mixapplications.rufus"
+app-name = "DROFUS"
+apkmirror-dlurl = "https://www.apkmirror.com/apk/mixapplications/drofus-iso2usb/"
+uptodown-dlurl = "https://rufus-unofficial.en.uptodown.com/android"
+apkpure-dlurl = "https://apkpure.com/rufus-unofficial/com.mixapplications.rufus"
+apkcombo-dlurl = "https://apkcombo.com/drofus-iso-2-usb/com.mixapplications.rufus"
+
+[Hermit-Lain]
+enabled = true
+pkg-name = "com.chimbori.hermitcrab"
+app-name = "Hermit"
+patch-folder = "hermit"
+apkmirror-dlurl = "https://www.apkmirror.com/apk/chimbori/hermit-lite-apps-browser"
+uptodown-dlurl = "https://hermit.en.uptodown.com/android"
+apkpure-dlurl = "https://apkpure.com/hermit-%E2%80%94-lite-apps-browser/com.chimbori.hermitcrab"
+apkcombo-dlurl = "https://apkcombo.com/hermit-lite-apps-browser/com.chimbori.hermitcrab"

@@ -23,16 +23,21 @@ declare -gA __PATCH_VER_CACHE__
 declare -gA __PKG_VERS_CACHE__
 declare -gA __DL_RESP_CACHE__
 
-toml_prep() {
-	if [ ! -f "$1" ]; then return 1; fi
-	if [ "${1##*.}" == toml ]; then
-		if [ -x "$TOML" ] 2>/dev/null && __TOML__=$("$TOML" --output json --file "$1" . 2>/dev/null); then
-			return 0
+toml_file_to_json() {
+	local f="$1"
+	if [ ! -f "$f" ]; then return 1; fi
+	if [[ "$f" == *.toml ]]; then
+		local res=""
+		if [ -n "${TOML-}" ] && [ -x "$TOML" ] 2>/dev/null; then
+			if res=$("$TOML" --output json --file "$f" . 2>/dev/null) && [ -n "$res" ]; then
+				echo "$res"
+				return 0
+			fi
 		fi
 		if command -v python3 >/dev/null 2>&1 || command -v python >/dev/null 2>&1; then
 			local py_bin="python3"
 			command -v python3 >/dev/null 2>&1 || py_bin="python"
-			if __TOML__=$("$py_bin" -c "
+			if res=$("$py_bin" -c "
 try:
     import tomllib
 except ImportError:
@@ -42,14 +47,55 @@ except ImportError:
         import sys; sys.exit(1)
 import json, sys
 print(json.dumps(tomllib.load(open(sys.argv[1], 'rb'))))
-" "$1" 2>/dev/null); then
+" "$f" 2>/dev/null) && [ -n "$res" ]; then
+				echo "$res"
 				return 0
 			fi
 		fi
-		__TOML__=$($TOML --output json --file "$1" .)
-	elif [ "${1##*.}" == json ]; then
-		__TOML__=$(cat "$1")
-	else abort "config extension not supported"; fi
+		if command -v yq >/dev/null 2>&1; then
+			if res=$(yq -o=json eval '.' "$f" 2>/dev/null) && [ -n "$res" ]; then
+				echo "$res"
+				return 0
+			fi
+		fi
+		abort "Neither python (tomllib/tomli) nor yq is available to parse $f"
+	elif [[ "$f" == *.json ]]; then
+		cat "$f"
+	else
+		abort "config extension not supported: $f"
+	fi
+}
+
+toml_merge_configs() {
+	local files=("$@")
+	local jsons=()
+	for f in "${files[@]}"; do
+		[ -f "$f" ] || continue
+		local file_json
+		file_json=$(toml_file_to_json "$f") || continue
+
+		local propagated
+		propagated=$(jq '
+			(to_entries | map(select(.value | type != "object")) | from_entries) as $defaults |
+			map_values(
+				if type == "object" then
+					($defaults + .)
+				else . end
+			)
+		' <<<"$file_json")
+		jsons+=("$propagated")
+	done
+
+	if [ ${#jsons[@]} -eq 0 ]; then
+		echo "{}"
+	else
+		printf '%s\n' "${jsons[@]}" | jq -s 'add // {}'
+	fi
+}
+
+toml_prep() {
+	if [ ! -f "$1" ]; then return 1; fi
+	__TOML__=$(toml_file_to_json "$1") || abort "failed to parse config file: $1"
 }
 toml_get_table_names() { jq -r -e 'to_entries[] | select(.value | type == "object") | .key' <<<"$__TOML__"; }
 toml_get_table_main() { jq -r -e 'to_entries | map(select(.value | type != "object")) | from_entries' <<<"$__TOML__"; }
@@ -129,14 +175,14 @@ source_release_pick_from_list() {
 	local host=${1,,} mode=$2
 	case "$host" in
 		github)
-			if [ "$mode" = dev ]; then
+			if [ "$mode" = dev ] || [ "$mode" = beta ]; then
 				jq -e -c 'map(select(.prerelease == true and .tag_name != null and .tag_name != "")) | sort_by(.published_at // .created_at // "") | reverse | .[0] // empty'
 			else
 				jq -e -c 'map(select(.prerelease != true and .tag_name != null and .tag_name != "")) | sort_by(.published_at // .created_at // "") | reverse | .[0] // empty'
 			fi
 			;;
 		gitlab)
-			if [ "$mode" = dev ]; then
+			if [ "$mode" = dev ] || [ "$mode" = beta ]; then
 				jq -e -c 'map(select(.tag_name != null and .tag_name != "" and (.tag_name | test("(?i)(dev|alpha|beta|rc)")))) | sort_by(.released_at // .created_at // "") | reverse | .[0] // empty'
 			else
 				jq -e -c 'map(select(.tag_name != null and .tag_name != "" and (.tag_name | test("(?i)(dev|alpha|beta|rc)") | not))) | sort_by(.released_at // .created_at // "") | reverse | .[0] // empty'
@@ -191,18 +237,18 @@ _get_prebuilts() {
 
 	local rv_rel release resp tag_name matches asset name url
 	rv_rel=$(source_release_api_base "$host" "$src") || return 1
-	if [ "$ver" = "dev" ]; then
+	if [ "$ver" = "beta" ] || [ "$ver" = "dev" ]; then
 		resp=$({ if [ "$host" = github ]; then gh_req "$rv_rel?per_page=100" -; else req "$rv_rel?per_page=100" -; fi; }) || return 1
-		release=$(source_release_pick_from_list "$host" dev <<<"$resp") || true
+		release=$(source_release_pick_from_list "$host" beta <<<"$resp") || true
 		ver=$(jq -r '.tag_name' <<<"$release") || true
 		if [ -z "$ver" ] || [ "$ver" = "null" ]; then
 			ver=$(jq -e -r '.[].tag_name' <<<"$resp" | get_highest_ver) || return 1
 			release="" # Clear release if we had to fallback to get_highest_ver
 		fi
 	fi
-	if [ "$ver" = "latest" ]; then
+	if [ "$ver" = "stable" ] || [ "$ver" = "latest" ]; then
 		resp=$({ if [ "$host" = github ]; then gh_req "$rv_rel?per_page=100" -; else req "$rv_rel?per_page=100" -; fi; }) || return 1
-		release=$(source_release_pick_from_list "$host" latest <<<"$resp") || return 1
+		release=$(source_release_pick_from_list "$host" stable <<<"$resp") || return 1
 	elif [ -z "${release:-}" ]; then
 		rv_rel=$(source_release_tag_api "$host" "$src" "$ver") || return 1
 		release=$({ if [ "$host" = github ]; then gh_req "$rv_rel" -; else req "$rv_rel" -; fi; }) || return 1
@@ -289,18 +335,18 @@ _get_prebuilts() {
 		
 		local rv_rel release resp tag_name matches asset name url
 		rv_rel=$(source_release_api_base "$host" "$src") || return 1
-		if [ "$ver" = "dev" ]; then
+		if [ "$ver" = "beta" ] || [ "$ver" = "dev" ]; then
 			resp=$({ if [ "$host" = github ]; then gh_req "$rv_rel?per_page=100" -; else req "$rv_rel?per_page=100" -; fi; }) || return 1
-			release=$(source_release_pick_from_list "$host" dev <<<"$resp") || true
+			release=$(source_release_pick_from_list "$host" beta <<<"$resp") || true
 			ver=$(jq -r '.tag_name' <<<"$release") || true
 			if [ -z "$ver" ] || [ "$ver" = "null" ]; then
 				ver=$(jq -e -r '.[].tag_name' <<<"$resp" | get_highest_ver) || return 1
 				release="" # Clear release if we had to fallback to get_highest_ver
 			fi
 		fi
-		if [ "$ver" = "latest" ]; then
+		if [ "$ver" = "stable" ] || [ "$ver" = "latest" ]; then
 			resp=$({ if [ "$host" = github ]; then gh_req "$rv_rel?per_page=100" -; else req "$rv_rel?per_page=100" -; fi; }) || return 1
-			release=$(source_release_pick_from_list "$host" latest <<<"$resp") || return 1
+			release=$(source_release_pick_from_list "$host" stable <<<"$resp") || return 1
 		elif [ -z "${release:-}" ]; then
 			rv_rel=$(source_release_tag_api "$host" "$src" "$ver") || return 1
 			release=$({ if [ "$host" = github ]; then gh_req "$rv_rel" -; else req "$rv_rel" -; fi; }) || return 1
@@ -419,73 +465,6 @@ set_prebuilts() {
 		if [ ! -x "$AAPT2" ] && [ -n "$latest_bt" ] && [ -x "$latest_bt/aapt2" ]; then
 			AAPT2="$latest_bt/aapt2"
 		fi
-	fi
-}
-
-config_update() {
-	if [ ! -f build.md ]; then abort "build.md not available"; fi
-	declare -A sources
-	: >"$TEMP_DIR"/skipped
-	local upped=()
-	local prcfg=false
-	for table_name in $(toml_get_table_names); do
-		if [ -z "$table_name" ]; then continue; fi
-		t=$(toml_get_table "$table_name")
-		enabled=$(toml_get "$t" enabled) || enabled=true
-		if [ "$enabled" = "false" ]; then continue; fi
-		local raw_patches_src raw_patches_host raw_patches_ver
-		raw_patches_src=$(toml_get "$t" patches-source) || raw_patches_src=$DEF_PATCHES_SRC
-		raw_patches_host=$(toml_get "$t" patches-source-host) || raw_patches_host=$DEF_PATCHES_SRC_HOST
-		raw_patches_ver=$(toml_get "$t" patches-version) || raw_patches_ver=$DEF_PATCHES_VER
-		local IFS=$'\n'
-		local p_srcs=($(list_args "$raw_patches_src" | tr -d \"\')); [ ${#p_srcs[@]} -eq 0 ] && p_srcs=("$raw_patches_src")
-		local p_hosts=($(list_args "$raw_patches_host" | tr -d \"\')); [ ${#p_hosts[@]} -eq 0 ] && p_hosts=("$raw_patches_host")
-		local p_vers=($(list_args "$raw_patches_ver" | tr -d \"\')); [ ${#p_vers[@]} -eq 0 ] && p_vers=("$raw_patches_ver")
-		unset IFS
-		local table_updated=false
-		for i in "${!p_srcs[@]}"; do
-			local PATCHES_SRC="${p_srcs[$i]}"
-			local PATCHES_HOST="${p_hosts[$i]:-${p_hosts[0]}}"
-			local PATCHES_VER="${p_vers[$i]:-${p_vers[0]}}"
-			if [[ -v sources["$PATCHES_HOST/$PATCHES_SRC/$PATCHES_VER"] ]]; then
-				if [ "${sources["$PATCHES_HOST/$PATCHES_SRC/$PATCHES_VER"]}" = 1 ]; then table_updated=true; fi
-			else
-				sources["$PATCHES_HOST/$PATCHES_SRC/$PATCHES_VER"]=0
-				local rv_rel resp last_patches
-				rv_rel=$(source_release_api_base "$PATCHES_HOST" "$PATCHES_SRC") || continue
-				if [ "$PATCHES_VER" = "dev" ]; then
-					resp=$({ if [ "$PATCHES_HOST" = github ]; then gh_req "$rv_rel?per_page=100" -; else req "$rv_rel?per_page=100" -; fi; }) || continue
-					last_patches=$(source_release_pick_from_list "$PATCHES_HOST" dev <<<"$resp") || continue
-				elif [ "$PATCHES_VER" = "latest" ]; then
-					resp=$({ if [ "$PATCHES_HOST" = github ]; then gh_req "$rv_rel?per_page=100" -; else req "$rv_rel?per_page=100" -; fi; }) || continue
-					last_patches=$(source_release_pick_from_list "$PATCHES_HOST" latest <<<"$resp") || continue
-				else
-					rv_rel=$(source_release_tag_api "$PATCHES_HOST" "$PATCHES_SRC" "$PATCHES_VER") || continue
-					last_patches=$({ if [ "$PATCHES_HOST" = github ]; then gh_req "$rv_rel" -; else req "$rv_rel" -; fi; }) || continue
-				fi
-				if ! last_patches=$(source_release_assets_json "$PATCHES_HOST" <<<"$last_patches" | jq -e -r '.[0].name'); then
-					abort "config_update error: '$last_patches'"
-				fi
-				if [ "$last_patches" ]; then
-					if ! OP=$(grep "^Patches: ${PATCHES_SRC%%/*}/" build.md | grep -m1 "$last_patches"); then
-						sources["$PATCHES_HOST/$PATCHES_SRC/$PATCHES_VER"]=1
-						prcfg=true
-						table_updated=true
-					else
-						echo "$OP" >>"$TEMP_DIR"/skipped
-					fi
-				fi
-			fi
-		done
-		[ "$table_updated" = true ] && upped+=("$table_name")
-	done
-	if [ "$prcfg" = true ]; then
-		local query=""
-		for table in "${upped[@]}"; do
-			if [ -n "$query" ]; then query+=" or "; fi
-			query+=".key == \"$table\""
-		done
-		jq "to_entries | map(select(${query} or (.value | type != \"object\"))) | from_entries" <<<"$__TOML__"
 	fi
 }
 
@@ -1843,7 +1822,7 @@ get_github_resp() {
 		if [ -n "${args[github_release_regex]:-}" ]; then
 			jq_filter="[.[] | select((.name // \"\") | test(\"${args[github_release_regex]}\"; \"i\"))]"
 		else
-			local variant_l="${table,,} ${args[rv_brand]:-}"
+			local variant_l="${table,,} ${args[variant]:-} ${args[brand]:-}"
 			if [[ "$variant_l" == *"beta"* ]]; then
 				jq_filter='[.[] | select((.name // "") | test("(^|[^a-zA-Z])Beta([^a-zA-Z]|$)"; "i"))]'
 			elif [[ "$variant_l" == *"nightly"* ]]; then
@@ -2096,6 +2075,10 @@ patch_apk() {
 			fi
 		done
 
+		local expected_base
+		expected_base=$(basename "$stock_input" .apk)
+		[ -n "$expected_base" ] && [ -d "$expected_base" ] && rm -rf "$expected_base" 2>/dev/null || :
+
 		local init_cmd="java -jar '$cli_jar' init '$stock_input'"
 		pr "$init_cmd"
 		local init_op
@@ -2103,11 +2086,18 @@ patch_apk() {
 		pr "$init_op"
 
 		local wdir=""
-		local proj_file
-		proj_file=$(find . "$rel_tmp_dir" -maxdepth 3 -type f -name "project.json" 2>/dev/null | head -n 1)
-		if [ -n "$proj_file" ]; then
-			wdir=$(dirname "$proj_file")
-			wdir="${wdir#./}"
+		if [ -n "$expected_base" ] && [ -d "$expected_base" ] && [ -f "$expected_base/project.json" ]; then
+			wdir="$expected_base"
+		elif [ -n "$expected_base" ] && [ -d "$rel_tmp_dir/$expected_base" ] && [ -f "$rel_tmp_dir/$expected_base/project.json" ]; then
+			wdir="$rel_tmp_dir/$expected_base"
+		else
+			local proj_file
+			proj_file=$(find "$rel_tmp_dir" . -maxdepth 3 -type f -name "project.json" 2>/dev/null | grep "$expected_base" | head -n 1)
+			[ -z "$proj_file" ] && proj_file=$(find "$rel_tmp_dir" . -maxdepth 3 -type f -name "project.json" 2>/dev/null | head -n 1)
+			if [ -n "$proj_file" ]; then
+				wdir=$(dirname "$proj_file")
+				wdir="${wdir#./}"
+			fi
 		fi
 
 		if [ -z "$wdir" ] || [ ! -d "$wdir" ]; then
@@ -2141,6 +2131,7 @@ patch_apk() {
 			built_apk=$(find "$wdir/build" "$wdir" "$rel_tmp_dir" -maxdepth 5 -type f -name "*.apk" 2>/dev/null | grep -v "$stock_input" | grep -iE "/clone|_c_" | head -n 1)
 			if [ -z "$built_apk" ]; then
 				echo "[-] ERROR: Clone build was requested but no clone APK was generated!"
+				rm -rf "$rel_tmp_dir" "$wdir" 2>/dev/null || :
 				return 1
 			fi
 		else
@@ -2148,11 +2139,11 @@ patch_apk() {
 		fi
 		if [ -n "$built_apk" ] && [ -f "$built_apk" ]; then
 			mv "$built_apk" "$patched_apk"
-			#rm -rf "$rel_tmp_dir" "$wdir" 2>/dev/null || :
+			rm -rf "$rel_tmp_dir" "$wdir" 2>/dev/null || :
 			return 0
 		else
 			rm -f "$patched_apk" 2>/dev/null || :
-			#rm -rf "$rel_tmp_dir" "$wdir" 2>/dev/null || :
+			rm -rf "$rel_tmp_dir" "$wdir" 2>/dev/null || :
 			return 1
 		fi
 	fi
@@ -2231,11 +2222,22 @@ check_sig() {
 	fi
 }
 
+resolve_slug() {
+	local val="${1:-}"
+	[ -z "$val" ] && return 0
+	local slug
+	slug=$(echo "$val" | tr '[:upper:]' '[:lower:]' | sed -E 's/[^a-z0-9]+/-/g' | sed -E 's/^-+|-+$//g')
+	echo "$slug"
+}
+
 write_build_info() {
 	local key=$1 arch=$2 ext=$3 name=$4 version=$5 patches=$6 changelog=$7
-	if [ "$ext" = ".apk" ] || [ "$mode_arg" = module ]; then
-		log "${key} (${arch}): ${version}"
-	fi
+	local pkg_name=${8:-${pkg_name:-}}
+	local display_name=${9:-${app_name:-${key}}}
+	local patches_source=${10:-${args[patches_src]:-}}
+	local brand=${11:-${args[brand]:-}}
+	local variant=${12:-${args[variant]:-}}
+	local sub_variant=${13:-${args[sub_variant]:-}}
 	local arch_orig="${args[arch]// /}"
 	if [ "$arch_orig" != "auto" ]; then ext="${arch}${ext}"; arch=""; fi
 	# extract applied patches supporting revanced, morphe-desktop, and instafel output formats
@@ -2252,8 +2254,38 @@ write_build_info() {
 		--arg version "$version" \
 		--arg patches "$patches" \
 		--arg changelog "$changelog" \
+		--arg pkg_name "$pkg_name" \
+		--arg display_name "$display_name" \
+		--arg patches_source "$patches_source" \
+		--arg brand "$brand" \
+		--arg variant "$variant" \
+		--arg sub_variant "$sub_variant" \
 		--argjson applied "$applied_json" \
-		'if has($key) then .[$key].exts = (.[$key].exts + [$ext] | unique) else .[$key] = {exts: [$ext], name: $name, arch: $arch, version: $version, patches: $patches, changlog: $changelog, applied_patches: $applied} end' \
+		'if has($key) then
+			.[$key].exts = (.[$key].exts + [$ext] | unique) |
+			(if $pkg_name != "" then .[$key].package_name = $pkg_name else . end) |
+			(if $display_name != "" then .[$key].display_name = $display_name else . end) |
+			(if $patches_source != "" then .[$key].patches_source = $patches_source else . end) |
+			(if $brand != "" then .[$key].brand = $brand else . end) |
+			(if $variant != "" then .[$key].variant = $variant else . end) |
+			(if $sub_variant != "" then .[$key].sub_variant = $sub_variant else . end)
+		else
+			.[$key] = {
+				exts: [$ext],
+				name: $name,
+				arch: $arch,
+				version: $version,
+				patches: $patches,
+				changlog: $changelog,
+				package_name: $pkg_name,
+				display_name: $display_name,
+				patches_source: $patches_source,
+				brand: $brand,
+				variant: $variant,
+				sub_variant: $sub_variant,
+				applied_patches: $applied
+			}
+		end' \
 		"$BUILD_JSON_FILE" > "${BUILD_JSON_FILE}.tmp" && mv "${BUILD_JSON_FILE}.tmp" "$BUILD_JSON_FILE"
 }
 verify_downloaded_apk() {
@@ -2322,8 +2354,9 @@ build_rv() {
 	local patches_jar="${args[ptjar]}"
 	local mode_arg=${args[build_mode]} version_mode=${args[version]}
 	local app_name=${args[app_name]}
-	local app_name_l=${app_name,,}
-	app_name_l=${app_name_l// /-}
+	local app_name_l
+	app_name_l=$(resolve_slug "$app_name")
+	[ -z "$app_name_l" ] && { app_name_l=${app_name,,}; app_name_l=${app_name_l// /-}; }
 	local table=${args[table]}
 	local dl_from=${args[dl_from]}
 	local arch=${args[arch]}
@@ -3080,8 +3113,23 @@ build_rv() {
 	' <<<"$list_patches")
 
 	local patcher_args patched_apk build_mode
-	local rv_brand_f=${args[rv_brand],,}
-	rv_brand_f=${rv_brand_f// /-}
+	local brand_val="${args[brand]:-}"
+	local brand_slug=""
+	[ -n "$brand_val" ] && brand_slug=$(resolve_slug "$brand_val")
+
+	local variant_val="${args[variant]:-}"
+	local variant_slug=""
+	[ -n "$variant_val" ] && variant_slug=$(resolve_slug "$variant_val")
+
+	local sub_variant_val="${args[sub_variant]:-}"
+	local sub_variant_slug=""
+	[ -n "$sub_variant_val" ] && sub_variant_slug=$(resolve_slug "$sub_variant_val")
+
+	local file_prefix="${app_name_l}"
+	[ -n "$brand_slug" ] && file_prefix+="-${brand_slug}"
+	[ -n "$variant_slug" ] && [ "$variant_slug" != "default" ] && file_prefix+="-${variant_slug}"
+	[ -n "$sub_variant_slug" ] && file_prefix+="-${sub_variant_slug}"
+
 	local patches_ref="${args[patches_ref]}"
 	local changelog_url="${args[changelog_url]}"
 	if [ "${args[patcher_args]}" ]; then p_patcher_args+=("${args[patcher_args]}"); fi
@@ -3090,9 +3138,9 @@ build_rv() {
 		local -a cur_per_bundle_ed_args=("${per_bundle_ed_args[@]}")
 		pr "Building '${table}' in '$build_mode' mode"
 		if [ ${#microg_patches[@]} -gt 0 ] || [ ${#build_mode_arr[@]} -gt 1 ]; then
-			patched_apk="${TEMP_DIR}/${app_name_l}-${rv_brand_f}-${version_f}-${arch_f}-${build_mode}.apk"
+			patched_apk="${TEMP_DIR}/${file_prefix}-${version_f}-${arch_f}-${build_mode}.apk"
 		else
-			patched_apk="${TEMP_DIR}/${app_name_l}-${rv_brand_f}-${version_f}-${arch_f}.apk"
+			patched_apk="${TEMP_DIR}/${file_prefix}-${version_f}-${arch_f}.apk"
 		fi
 		if [ ${#microg_patches[@]} -gt 0 ]; then
 			for idx in "${!microg_patches[@]}"; do
@@ -3135,7 +3183,7 @@ build_rv() {
 			fi
 		fi
 
-		local stock_apk_to_patch="${TEMP_DIR}/${app_name_l}-${rv_brand_f}-${version_f}-${arch_f}.stripped.apk"
+		local stock_apk_to_patch="${TEMP_DIR}/${file_prefix}-${version_f}-${arch_f}.stripped.apk"
 		if [ ! -f "$stock_apk_to_patch" ]; then
 			cp -f "$stock_apk" "$stock_apk_to_patch"
 			if [ "$arch" = "arm64-v8a" ]; then
@@ -3157,13 +3205,26 @@ build_rv() {
 			per_bundle_ed_joined+="${cur_per_bundle_ed_args[$bi]}"
 		done
 
-		local apk_output="${BUILD_DIR}/${app_name_l}-${rv_brand_f}-v${version_f}-${arch_f}.apk"
+		local apk_output="${BUILD_DIR}/${file_prefix}-v${version_f}-${arch_f}.apk"
 		if [ "${NORB:-}" != true ] || { [ ! -f "$patched_apk" ] && [ ! -f "$apk_output" ]; }; then
 			if ! patch_apk "$stock_apk_to_patch" "$patched_apk" "${patcher_args[*]}" "${args[cli]}" "${args[ptjar]}" "${args[cli_source]}" "$per_bundle_ed_joined"; then
 				epr "Building '${table}' failed!"
 				return 0
 			fi
 		fi
+
+		local final_pkg_name="${args[patched_pkg_name]:-}"
+		if [ -z "$final_pkg_name" ] && [ -f "$patched_apk" ] && [ -n "${AAPT2:-}" ] && [ -x "$AAPT2" ]; then
+			local detected_pkg
+			detected_pkg=$("$AAPT2" dump badging "$patched_apk" 2>/dev/null | grep -oP "package: name='\K[^']+" | head -1 || true)
+			if [ -n "$detected_pkg" ]; then
+				if [ "$detected_pkg" != "$pkg_name" ]; then
+					pr "Detected modified package ID in manifest: '$pkg_name' -> '$detected_pkg'"
+				fi
+				final_pkg_name="$detected_pkg"
+			fi
+		fi
+		final_pkg_name="${final_pkg_name:-$pkg_name}"
 
 		if [ "$build_mode" = apk ]; then
 			if [ "${NORB:-}" != true ] || { [ ! -f "$patched_apk" ] && [ ! -f "$apk_output" ]; }; then
@@ -3172,7 +3233,7 @@ build_rv() {
 				cp -f "$patched_apk" "$apk_output"
 			fi
 			pr "Built ${table} (non-root): '${apk_output}'"
-			write_build_info "${table% (*}" "${arch_f}" ".apk" "${app_name_l}-${rv_brand_f}" "$version_f" "$patches_ref" "$changelog_url"
+			write_build_info "${table% (*}" "${arch_f}" ".apk" "${file_prefix}" "$version_f" "$patches_ref" "$changelog_url" "$final_pkg_name" "${app_name}" "${args[patches_src]}" "${brand_val}" "${variant_val}" "${sub_variant_val}"
 			continue
 		fi
 		local base_template
@@ -3180,20 +3241,24 @@ build_rv() {
 		cp -a $MODULE_TEMPLATE_DIR/. "$base_template"
 		local upj="${args[module_prop_name],,}-update.json"
 
-		module_config "$base_template" "$pkg_name" "$version_f" "$arch"
+		module_config "$base_template" "$final_pkg_name" "$version_f" "$arch"
 
 		local patches_ver
 		patches_ver="${patches_jar%% *}"; patches_ver="${patches_ver##*-}"
+		local brand_display="${args[brand]:-}"
+		[ -n "${args[variant]:-}" ] && [ "${args[variant]}" != "Default" ] && brand_display+=" ${args[variant]}"
+		[ -n "${args[sub_variant]:-}" ] && brand_display+=" ${args[sub_variant]}"
+		brand_display="${brand_display#" "}"
 		module_prop \
 			"${args[module_prop_name]}" \
-			"${app_name} ${args[rv_brand]}" \
+			"${app_name} ${brand_display}" \
 			"${version_f} (patches ${patches_ver})" \
 			"${DEF_AUTHOR_NAME:-nullcpy}" \
-			"${app_name} ${args[rv_brand]} module" \
+			"${app_name} ${brand_display} module" \
 			"https://raw.githubusercontent.com/${GITHUB_REPOSITORY-}/update/${upj}" \
 			"$base_template"
 
-		local module_output="${app_name_l}-${rv_brand_f}-module-v${version_f}-${arch_f}.zip"
+		local module_output="${file_prefix}-module-v${version_f}-${arch_f}.zip"
 		pr "Packing module ${table}"
 		cp -f "$patched_apk" "${base_template}/base.apk"
 
@@ -3224,7 +3289,7 @@ build_rv() {
 		zip -"$COMPRESSION_LEVEL" -FSqr "${CWD}/${BUILD_DIR}/${module_output}" .
 		popd >/dev/null || :
 		pr "Built ${table} (root): '${BUILD_DIR}/${module_output}'"
-		write_build_info "${table% (*}" "${arch_f}" ".zip" "${app_name_l}-${rv_brand_f}" "$version_f" "$patches_ref" "$changelog_url"
+		write_build_info "${table% (*}" "${arch_f}" ".zip" "${file_prefix}" "$version_f" "$patches_ref" "$changelog_url" "$final_pkg_name" "${app_name}" "${args[patches_src]}" "${brand_val}" "${variant_val}" "${sub_variant_val}"
 	done
 }
 
