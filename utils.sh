@@ -1620,23 +1620,30 @@ dl_archive() {
 	local url=$1 version=$2 output=$3 arch=$4 is_bundle=${5:-false} get_latest_ver=${6:-false} version_code=${7:-}
 	local path="" version_f=${version// /}
 	local norm_resp="${__ARCHIVE_RESP__//$'\r'/}"
-	for a in "${arch// /}" "all"; do
-		for ext in "apk" "apkm" "xapk" "apks" "apk.apkm" "apk.xapk" "apk.apks"; do
-			while IFS= read -r p; do
-				if [ -n "$version_code" ]; then
+	if [ -n "$version_code" ]; then
+		for a in "${arch// /}" "all"; do
+			for ext in "apk" "apkm" "xapk" "apks" "apk.apkm" "apk.xapk" "apk.apks"; do
+				while IFS= read -r p; do
 					if [[ "$p" == *"${version_f#v}-${version_code}-${a}.${ext}" ]]; then
 						path="$p"
 						break 3
 					fi
-				else
+				done <<<"$norm_resp"
+			done
+		done
+	fi
+	if [ -z "$path" ]; then
+		for a in "${arch// /}" "all"; do
+			for ext in "apk" "apkm" "xapk" "apks" "apk.apkm" "apk.xapk" "apk.apks"; do
+				while IFS= read -r p; do
 					if [[ "$p" == *"${version_f#v}-${a}.${ext}" ]]; then
 						path="$p"
 						break 3
 					fi
-				fi
-			done <<<"$norm_resp"
+				done <<<"$norm_resp"
+			done
 		done
-	done
+	fi
 	if [ -z "$path" ]; then
 		epr "Version ${version} with arch ${arch} not found in archive"
 		return 1
@@ -1646,8 +1653,10 @@ dl_archive() {
 			req "${url}/${path}" "$output"
 			;;
 		apkm|xapk|apks)
-			req "${url}/${path}" "${output}.${path##*.}" || return 1
-			merge_splits "${output}.${path##*.}" "${output}"
+			local bundle="${output}.${path##*.}"
+			req "${url}/${path}" "$bundle" || return 1
+			merge_splits "$bundle" "${output}" || { rm -f "$bundle"; return 1; }
+			rm -f "$bundle"
 			;;
 		*)
 			epr "Unsupported archive file type for ${path}"
@@ -1964,23 +1973,30 @@ dl_cache_repo() {
     else
         # Matches the exact file selection logic from dl_archive
         local norm_resp="${__CACHE_REPO_RESP__//$'\r'/}"
-        for a in "${arch// /}" "all"; do
-            for ext in "apk" "apkm" "xapk" "apks" "apk.apkm" "apk.xapk" "apk.apks"; do
-                while IFS= read -r p; do
-                    if [ -n "$version_code" ]; then
+        if [ -n "$version_code" ]; then
+            for a in "${arch// /}" "all"; do
+                for ext in "apk" "apkm" "xapk" "apks" "apk.apkm" "apk.xapk" "apk.apks"; do
+                    while IFS= read -r p; do
                         if [[ "$p" == *"${version_f#v}-${version_code}-${a}.${ext}" ]]; then
                             path="$p"
                             break 3
                         fi
-                    else
+                    done <<<"$norm_resp"
+                done
+            done
+        fi
+        if [ -z "$path" ]; then
+            for a in "${arch// /}" "all"; do
+                for ext in "apk" "apkm" "xapk" "apks" "apk.apkm" "apk.xapk" "apk.apks"; do
+                    while IFS= read -r p; do
                         if [[ "$p" == *"${version_f#v}-${a}.${ext}" ]]; then
                             path="$p"
                             break 3
                         fi
-                    fi
-                done <<<"$norm_resp"
+                    done <<<"$norm_resp"
+                done
             done
-        done
+        fi
     fi
     
     # Strip any \r from path just in case
@@ -1998,7 +2014,8 @@ dl_cache_repo() {
         apkm|xapk|apks)
 			local bundle="${output}.${ext}"
 			req "${base_url}/${path}" "$bundle" || return 1
-			merge_splits "$bundle" "$output"
+			merge_splits "$bundle" "$output" || { rm -f "$bundle"; return 1; }
+			rm -f "$bundle"
             ;;
         *)
             epr "Unsupported cache_repo file type for ${path}"
@@ -2263,7 +2280,7 @@ write_build_info() {
 		--argjson applied "$applied_json" \
 		'if has($key) then
 			.[$key].exts = (.[$key].exts + [$ext] | unique) |
-			(if $pkg_name != "" then .[$key].package_name = $pkg_name else . end) |
+			(if ($ext == ".apk" and $pkg_name != "") or ((.[$key].package_name // "") == "" and $pkg_name != "") then .[$key].package_name = $pkg_name else . end) |
 			(if $display_name != "" then .[$key].display_name = $display_name else . end) |
 			(if $patches_source != "" then .[$key].patches_source = $patches_source else . end) |
 			(if $brand != "" then .[$key].brand = $brand else . end) |
@@ -2276,7 +2293,7 @@ write_build_info() {
 				arch: $arch,
 				version: $version,
 				patches: $patches,
-				changlog: $changelog,
+				changelog: $changelog,
 				package_name: $pkg_name,
 				display_name: $display_name,
 				patches_source: $patches_source,
@@ -3214,14 +3231,34 @@ build_rv() {
 		fi
 
 		local final_pkg_name="${args[patched_pkg_name]:-}"
-		if [ -z "$final_pkg_name" ] && [ -f "$patched_apk" ] && [ -n "${AAPT2:-}" ] && [ -x "$AAPT2" ]; then
-			local detected_pkg
-			detected_pkg=$("$AAPT2" dump badging "$patched_apk" 2>/dev/null | grep -oP "package: name='\K[^']+" | head -1 || true)
-			if [ -n "$detected_pkg" ]; then
-				if [ "$detected_pkg" != "$pkg_name" ]; then
-					pr "Detected modified package ID in manifest: '$pkg_name' -> '$detected_pkg'"
+		if [ -z "$final_pkg_name" ]; then
+			local target_apk_to_check=""
+			[ -f "$patched_apk" ] && target_apk_to_check="$patched_apk"
+			[ -z "$target_apk_to_check" ] && [ -f "$apk_output" ] && target_apk_to_check="$apk_output"
+
+			if [ -n "$target_apk_to_check" ]; then
+				local aapt_tool=""
+				if [ -n "${AAPT2:-}" ] && { [ -x "$AAPT2" ] || command -v "$AAPT2" >/dev/null 2>&1; }; then
+					aapt_tool="$AAPT2"
+				elif command -v aapt2 >/dev/null 2>&1; then
+					aapt_tool="aapt2"
+				elif command -v aapt >/dev/null 2>&1; then
+					aapt_tool="aapt"
 				fi
-				final_pkg_name="$detected_pkg"
+
+				if [ -n "$aapt_tool" ]; then
+					local detected_pkg=""
+					if [[ "$aapt_tool" == *"aapt2"* ]]; then
+						detected_pkg=$("$aapt_tool" dump packagename "$target_apk_to_check" 2>/dev/null | tr -d '\r\n' || true)
+					fi
+					[ -z "$detected_pkg" ] && detected_pkg=$("$aapt_tool" dump badging "$target_apk_to_check" 2>/dev/null | grep -oP "package: name='\K[^']+" | head -1 || true)
+					if [ -n "$detected_pkg" ]; then
+						if [ "$detected_pkg" != "$pkg_name" ]; then
+							pr "Detected modified package ID in manifest: '$pkg_name' -> '$detected_pkg'"
+						fi
+						final_pkg_name="$detected_pkg"
+					fi
+				fi
 			fi
 		fi
 		final_pkg_name="${final_pkg_name:-$pkg_name}"
