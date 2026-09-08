@@ -46,6 +46,7 @@
     "enabled": false,
     "pkg-name": "com.ttxapps.autosync",
     "app-name": "Autosync",
+    "arch": "arm64-v8a",
     "apkmirror-dlurl": "https://www.apkmirror.com/apk/metactrl/autosync-universal-cloud-sync-and-backup",
     "uptodown-dlurl": "https://autosync.en.uptodown.com/android"
   },
@@ -322,6 +323,16 @@
     "uptodown-dlurl": "https://instagram.en.uptodown.com/android",
     "archive-dlurl": "https://archive.org/download/geologically/apks/com.instagram.android"
   },
+  "Instagram-brosssh-Clone": {
+    "enabled": false,
+    "pkg-name": "com.instagram.android",
+    "app-name": "Instagram",
+    "variant": "Clone",
+    "included-patches": "'Clone'",
+    "apkmirror-dlurl": "https://www.apkmirror.com/apk/instagram/instagram-instagram",
+    "uptodown-dlurl": "https://instagram.en.uptodown.com/android",
+    "archive-dlurl": "https://archive.org/download/geologically/apks/com.instagram.android"
+  },
   "Truecaller-bufferk": {
     "enabled": false,
     "pkg-name": "com.truecaller",
@@ -551,7 +562,6 @@
     "enabled": false,
     "pkg-name": "cn.wps.moffice_eng",
     "app-name": "WPS Office",
-    "version": "18.12.1",
     "apkmirror-dlurl": "https://www.apkmirror.com/apk/wps-software-pte-ltd/wps-office-pdf",
     "uptodown-dlurl": "https://wps-office.en.uptodown.com/android",
     "apkpure-dlurl": "https://apkpure.com/wps-office-pdf-word-excel-ppt/cn.wps.moffice_eng",
@@ -957,15 +967,6 @@
     "github-dlurl": "https://github.com/brave/brave-browser",
     "github-regex": "arm64-v8a: BraveMonoarm64\\.apk | arm-v7a: BraveMonoarm\\.apk"
   },
-  "DROFUS-Lain": {
-    "enabled": false,
-    "pkg-name": "com.mixapplications.rufus",
-    "app-name": "DROFUS",
-    "apkmirror-dlurl": "https://www.apkmirror.com/apk/mixapplications/drofus-iso2usb/",
-    "uptodown-dlurl": "https://rufus-unofficial.en.uptodown.com/android",
-    "apkpure-dlurl": "https://apkpure.com/rufus-unofficial/com.mixapplications.rufus",
-    "apkcombo-dlurl": "https://apkcombo.com/drofus-iso-2-usb/com.mixapplications.rufus"
-  },
   "Hermit-Lain": {
     "enabled": false,
     "pkg-name": "com.chimbori.hermitcrab",
@@ -1117,13 +1118,6 @@
     "apkpure-dlurl": "https://apkpure.com/lumina-wallpapers/com.lumina.wallpapers",
     "apkcombo-dlurl": "https://apkcombo.com/lumina-wallpapers/com.lumina.wallpapers"
   },
-  "DocumentScanner-Paresh": {
-    "enabled": false,
-    "pkg-name": "alldocumentreader.office.viewer.filereader.pdfviewerscanner",
-    "app-name": "Document Scanner",
-    "apkmirror-dlurl": "https://www.apkmirror.com/apk/lufick/document-scanner-pdf-creator",
-    "uptodown-dlurl": "https://doc-scanner.en.uptodown.com/android"
-  },
   "Eyecon-Paresh": {
     "enabled": false,
     "pkg-name": "com.eyecon.global",
@@ -1155,7 +1149,6 @@
     "enabled": false,
     "pkg-name": "ch.protonvpn.android",
     "app-name": "Proton VPN",
-    "brand": "Paresh",
     "apkmirror-dlurl": "https://www.apkmirror.com/apk/proton-technologies-ag/protonvpn-secure-and-free-vpn",
     "uptodown-dlurl": "https://protonvpn.en.uptodown.com/android",
     "archive-dlurl": "https://archive.org/download/geologically/apks/ch.protonvpn.android"
@@ -1194,14 +1187,6 @@
     "apkmirror-dlurl": "https://www.apkmirror.com/apk/arlosoft/macrodroid-device-automation-2",
     "uptodown-dlurl": "https://macrodroid.en.uptodown.com/android"
   },
-  "MXPlayer-Paresh": {
-    "enabled": false,
-    "pkg-name": "com.mxtech.videoplayer.ad",
-    "app-name": "MX Player",
-    "arch": "all",
-    "apkmirror-dlurl": "https://www.apkmirror.com/apk/mx-media-entertainment-pte-ltd/mx-player-pro",
-    "uptodown-dlurl": "https://mx-player.en.uptodown.com/android"
-  },
   "Twitter-Piko": {
     "enabled": false,
     "pkg-name": "com.twitter.android",
@@ -1233,6 +1218,7 @@
     "pkg-name": "com.instagram.android",
     "app-name": "Instagram",
     "sub-variant": "Clone",
+    "build-mode": "apk",
     "arch": "arm64-v8a",
     "included-patches": "'Clone'",
     "apkmirror-dlurl": "https://www.apkmirror.com/apk/instagram/instagram-instagram",
@@ -1289,10 +1275,10 @@
     "apkmirror-dlurl": "https://www.apkmirror.com/apk/adguard-software-limited/adguard",
     "uptodown-dlurl": "https://adguard-for-android.en.uptodown.com/android"
   },
-  "WARP-rushiranpise": {
+  "Cloudflare-WARP-rushiranpise": {
     "enabled": false,
     "pkg-name": "com.cloudflare.onedotonedotonedotone",
-    "app-name": "1.1.1.1 + WARP",
+    "app-name": "Cloudflare WARP",
     "apkmirror-dlurl": "https://www.apkmirror.com/apk/cloudflare/1-1-1-1-faster-safer-internet",
     "uptodown-dlurl": "https://1-1-1-1.en.uptodown.com/android"
   },
@@ -1322,14 +1308,6 @@
     "apkmirror-dlurl": "https://www.apkmirror.com/apk/windscribe/windscribe-vpn",
     "uptodown-dlurl": "https://windscribe.uptodown.com/android",
     "apkcombo-dlurl": "https://apkcombo.com/windscribe/com.windscribe.vpn"
-  },
-  "TeraBox-rushiranpise": {
-    "enabled": false,
-    "pkg-name": "com.dubox.drive",
-    "app-name": "TeraBox",
-    "patch-folder": "duboxdrive",
-    "apkmirror-dlurl": "https://www.apkmirror.com/apk/flextech-inc/terabox-cloud-storage-cloud-backup-data-backup",
-    "uptodown-dlurl": "https://terabox.en.uptodown.com/android"
   },
   "AccuWeather-rushiranpise": {
     "enabled": false,
@@ -1363,20 +1341,6 @@
     "included-patches": "'AMOLED dark theme' 'Change package name' 'Enable DCIM folders backup control' 'Fix DCIM folder classification'",
     "apkmirror-dlurl": "https://apkmirror.com/apk/google-inc/photos",
     "uptodown-dlurl": "https://google-photos.en.uptodown.com/android"
-  },
-  "MovieBox-rushiranpise": {
-    "enabled": false,
-    "pkg-name": "com.community.oneroom",
-    "app-name": "MovieBox",
-    "uptodown-dlurl": "https://com-community-oneroom.en.uptodown.com/android"
-  },
-  "MovieBox-rushiranpise-AndroidTV": {
-    "enabled": false,
-    "pkg-name": "com.community.mbox.tv",
-    "app-name": "MovieBox",
-    "variant": "Android TV",
-    "patch-folder": "movieboxtv",
-    "github-dlurl": "https://github.com/nullcpy/apks/releases/tag/com.community.mbox.tv"
   },
   "Messenger-rushiranpise": {
     "enabled": false,
