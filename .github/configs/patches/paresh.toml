@@ -28,13 +28,6 @@ uptodown-dlurl = "https://lumina-walls.en.uptodown.com/android"
 apkpure-dlurl = "https://apkpure.com/lumina-wallpapers/com.lumina.wallpapers"
 apkcombo-dlurl = "https://apkcombo.com/lumina-wallpapers/com.lumina.wallpapers"
 
-[DocumentScanner-Paresh]
-enabled = true
-pkg-name = "alldocumentreader.office.viewer.filereader.pdfviewerscanner"
-app-name = "Document Scanner"
-apkmirror-dlurl = "https://www.apkmirror.com/apk/lufick/document-scanner-pdf-creator"
-uptodown-dlurl = "https://doc-scanner.en.uptodown.com/android"
-
 [Eyecon-Paresh]
 enabled = true
 pkg-name = "com.eyecon.global"
@@ -66,7 +59,6 @@ apkcombo-dlurl = "https://apkcombo.com/sd-maid-2-se-system-cleaner/eu.darken.sdm
 enabled = true
 pkg-name = "ch.protonvpn.android"
 app-name = "Proton VPN"
-brand = "Paresh"
 apkmirror-dlurl = "https://www.apkmirror.com/apk/proton-technologies-ag/protonvpn-secure-and-free-vpn"
 uptodown-dlurl = "https://protonvpn.en.uptodown.com/android"
 archive-dlurl = "https://archive.org/download/geologically/apks/ch.protonvpn.android"
@@ -105,10 +97,4 @@ build-mode = "both"
 apkmirror-dlurl = "https://www.apkmirror.com/apk/arlosoft/macrodroid-device-automation-2"
 uptodown-dlurl = "https://macrodroid.en.uptodown.com/android"
 
-[MXPlayer-Paresh]
-enabled = true
-pkg-name = "com.mxtech.videoplayer.ad"
-app-name = "MX Player"
-arch = "all"
-apkmirror-dlurl = "https://www.apkmirror.com/apk/mx-media-entertainment-pte-ltd/mx-player-pro"
-uptodown-dlurl = "https://mx-player.en.uptodown.com/android"
+

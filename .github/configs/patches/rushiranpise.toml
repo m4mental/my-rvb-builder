@@ -10,10 +10,10 @@ build-mode = "both"
 apkmirror-dlurl = "https://www.apkmirror.com/apk/adguard-software-limited/adguard"
 uptodown-dlurl = "https://adguard-for-android.en.uptodown.com/android"
 
-[WARP-rushiranpise]
+[Cloudflare-WARP-rushiranpise]
 enabled = true
 pkg-name = "com.cloudflare.onedotonedotonedotone"
-app-name = "1.1.1.1 + WARP"
+app-name = "Cloudflare WARP"
 apkmirror-dlurl = "https://www.apkmirror.com/apk/cloudflare/1-1-1-1-faster-safer-internet"
 uptodown-dlurl = "https://1-1-1-1.en.uptodown.com/android"
 
@@ -43,14 +43,6 @@ arch = "all"
 apkmirror-dlurl = "https://www.apkmirror.com/apk/windscribe/windscribe-vpn"
 uptodown-dlurl = "https://windscribe.uptodown.com/android"
 apkcombo-dlurl = "https://apkcombo.com/windscribe/com.windscribe.vpn"
-
-[TeraBox-rushiranpise]
-enabled = true
-pkg-name = "com.dubox.drive"
-app-name = "TeraBox"
-patch-folder = "duboxdrive"
-apkmirror-dlurl = "https://www.apkmirror.com/apk/flextech-inc/terabox-cloud-storage-cloud-backup-data-backup"
-uptodown-dlurl = "https://terabox.en.uptodown.com/android"
 
 [AccuWeather-rushiranpise]
 enabled = true
@@ -84,20 +76,6 @@ app-name = "Google Photos"
 included-patches = "'AMOLED dark theme' 'Change package name' 'Enable DCIM folders backup control' 'Fix DCIM folder classification'"
 apkmirror-dlurl = "https://apkmirror.com/apk/google-inc/photos"
 uptodown-dlurl = "https://google-photos.en.uptodown.com/android"
-
-[MovieBox-rushiranpise]
-enabled = true
-pkg-name = "com.community.oneroom"
-app-name = "MovieBox"
-uptodown-dlurl = "https://com-community-oneroom.en.uptodown.com/android"
-
-[MovieBox-rushiranpise-AndroidTV]
-enabled = true
-pkg-name = "com.community.mbox.tv"
-app-name = "MovieBox"
-variant = "Android TV"
-patch-folder = "movieboxtv"
-github-dlurl = "https://github.com/nullcpy/apks/releases/tag/com.community.mbox.tv"
 
 [Messenger-rushiranpise]
 enabled = true
