@@ -439,7 +439,7 @@
     "patches-source": "durgesh0505/chiggi_morphe_patches",
     "brand": "chiggi",
     "arch": "arm64-v8a",
-    "enabled": true,
+    "enabled": false,
     "pkg-name": "com.instagram.barcelona",
     "app-name": "Threads",
     "patch-folder": "threads",
@@ -452,7 +452,7 @@
     "patches-source": "durgesh0505/chiggi_morphe_patches",
     "brand": "chiggi",
     "arch": "arm64-v8a",
-    "enabled": true,
+    "enabled": false,
     "pkg-name": "com.instagram.barcelona",
     "app-name": "Threads",
     "patch-folder": "threads",
@@ -1003,7 +1003,7 @@
   "ProtonMail-hxreborn": {
     "patches-source": "hxreborn/morphe-patches",
     "brand": "hxreborn",
-    "enabled": true,
+    "enabled": false,
     "pkg-name": "ch.protonmail.android",
     "app-name": "Proton Mail",
     "apkmirror-dlurl": "https://apkmirror.com/apk/proton-technologies-ag/protonmail-encrypted-email",
@@ -1015,7 +1015,7 @@
   "Showly-hxreborn": {
     "patches-source": "hxreborn/morphe-patches",
     "brand": "hxreborn",
-    "enabled": true,
+    "enabled": false,
     "pkg-name": "com.michaldrabik.showly2",
     "app-name": "Showly",
     "apkmirror-dlurl": "https://www.apkmirror.com/apk/trakt/showly",
@@ -1122,7 +1122,7 @@
   "BraveBrowser-kveld9": {
     "patches-source": "kveld9/kveld-morphe-patches",
     "brand": "kveld9",
-    "enabled": false,
+    "enabled": true,
     "pkg-name": "com.brave.browser",
     "app-name": "Brave Browser",
     "apkmirror-dlurl": "https://www.apkmirror.com/apk/brave-software/brave-browser",
@@ -1519,7 +1519,7 @@
   "AdGuard-rushiranpise-Nightly": {
     "patches-source": "rushiranpise/morphe-patches",
     "brand": "rushiranpise",
-    "enabled": true,
+    "enabled": false,
     "pkg-name": "com.adguard.android",
     "app-name": "AdGuard",
     "variant": "Nightly",
@@ -1530,7 +1530,7 @@
   "Cloudflare-WARP-rushiranpise": {
     "patches-source": "rushiranpise/morphe-patches",
     "brand": "rushiranpise",
-    "enabled": true,
+    "enabled": false,
     "pkg-name": "com.cloudflare.onedotonedotonedotone",
     "app-name": "Cloudflare WARP",
     "apkmirror-dlurl": "https://www.apkmirror.com/apk/cloudflare/1-1-1-1-faster-safer-internet",
@@ -1539,7 +1539,7 @@
   "HolaVPN-rushiranpise": {
     "patches-source": "rushiranpise/morphe-patches",
     "brand": "rushiranpise",
-    "enabled": true,
+    "enabled": false,
     "pkg-name": "org.hola.play",
     "app-name": "Hola VPN",
     "arch": "arm64-v8a",
@@ -1550,7 +1550,7 @@
   "NinjaVPN-rushiranpise": {
     "patches-source": "rushiranpise/morphe-patches",
     "brand": "rushiranpise",
-    "enabled": true,
+    "enabled": false,
     "pkg-name": "app.ninjavpn.android",
     "app-name": "Ninja VPN",
     "patch-folder": "ninjvapn",
@@ -1561,7 +1561,7 @@
   "WindscribeVPN-rushiranpise": {
     "patches-source": "rushiranpise/morphe-patches",
     "brand": "rushiranpise",
-    "enabled": true,
+    "enabled": false,
     "pkg-name": "com.windscribe.vpn",
     "app-name": "Windscribe VPN",
     "arch": "all",
@@ -1572,7 +1572,7 @@
   "AccuWeather-rushiranpise": {
     "patches-source": "rushiranpise/morphe-patches",
     "brand": "rushiranpise",
-    "enabled": true,
+    "enabled": false,
     "pkg-name": "com.accuweather.android",
     "app-name": "AccuWeather",
     "apkmirror-dlurl": "https://www.apkmirror.com/apk/accuweather/accuweather",
@@ -1583,7 +1583,7 @@
   "TheWeatherChannel-rushiranpise": {
     "patches-source": "rushiranpise/morphe-patches",
     "brand": "rushiranpise",
-    "enabled": true,
+    "enabled": false,
     "pkg-name": "com.weather.Weather",
     "app-name": "The Weather Channel",
     "apkmirror-dlurl": "https://www.apkmirror.com/apk/the-weather-channel/the-weather-channel-local-forecast-weather-maps",
@@ -1594,7 +1594,7 @@
   "BetaManiac-rushiranpise": {
     "patches-source": "rushiranpise/morphe-patches",
     "brand": "rushiranpise",
-    "enabled": true,
+    "enabled": false,
     "pkg-name": "it.mirko.beta",
     "app-name": "Beta Maniac",
     "apkmirror-dlurl": "https://www.apkmirror.com/apk/mirko-dimartino/beta-maniac-life-of-a-beta-tester-2",
@@ -1603,7 +1603,7 @@
   "GooglePhotos-rushiranpise": {
     "patches-source": "rushiranpise/morphe-patches",
     "brand": "rushiranpise",
-    "enabled": true,
+    "enabled": false,
     "pkg-name": "com.google.android.apps.photos",
     "app-name": "Google Photos",
     "included-patches": "'AMOLED dark theme' 'Change package name' 'Enable DCIM folders backup control' 'Fix DCIM folder classification'",
@@ -1613,7 +1613,7 @@
   "Messenger-rushiranpise": {
     "patches-source": "rushiranpise/morphe-patches",
     "brand": "rushiranpise",
-    "enabled": true,
+    "enabled": false,
     "pkg-name": "com.facebook.orca",
     "app-name": "Messenger",
     "excluded-patches": "'Remove Meta AI' 'Hide inbox stories and notes tray' 'Hide inbox subtabs' 'Hide Facebook buttons'",
@@ -1625,7 +1625,7 @@
   "PocketCasts-rushiranpise": {
     "patches-source": "rushiranpise/morphe-patches",
     "brand": "rushiranpise",
-    "enabled": true,
+    "enabled": false,
     "pkg-name": "au.com.shiftyjelly.pocketcasts",
     "app-name": "Pocket Casts",
     "apkmirror-dlurl": "https://www.apkmirror.com/apk/automattic-inc/pocket-casts",
@@ -1635,7 +1635,7 @@
   "RAR-rushiranpise": {
     "patches-source": "rushiranpise/morphe-patches",
     "brand": "rushiranpise",
-    "enabled": true,
+    "enabled": false,
     "pkg-name": "com.rarlab.rar",
     "app-name": "RAR",
     "apkmirror-dlurl": "https://www.apkmirror.com/apk/rar-lab/rar-for-android",
@@ -1646,7 +1646,7 @@
   "AmazonIndia-rushiranpise": {
     "patches-source": "rushiranpise/morphe-patches",
     "brand": "rushiranpise",
-    "enabled": true,
+    "enabled": false,
     "pkg-name": "in.amazon.mShop.android.shopping",
     "app-name": "Amazon India",
     "apkmirror-dlurl": "https://www.apkmirror.com/apk/amazon-mobile-llc/amazon-india-shop-pay",
@@ -1657,7 +1657,7 @@
   "Calm-rushiranpise": {
     "patches-source": "rushiranpise/morphe-patches",
     "brand": "rushiranpise",
-    "enabled": true,
+    "enabled": false,
     "pkg-name": "com.calm.android",
     "app-name": "Calm",
     "apkmirror-dlurl": "https://www.apkmirror.com/apk/calm-com-inc/calm-meditate-sleep-relax/",
@@ -1668,7 +1668,7 @@
   "BluetoothKeyboardAndMouse-rushiranpise": {
     "patches-source": "rushiranpise/morphe-patches",
     "brand": "rushiranpise",
-    "enabled": true,
+    "enabled": false,
     "pkg-name": "io.appground.blek",
     "app-name": "Bluetooth Keyboard & Mouse",
     "apkmirror-dlurl": "https://www.apkmirror.com/apk/appground-io/bluetooth-keyboard-mouse-2",
@@ -1679,7 +1679,7 @@
   "MacroDroid-rushiranpise": {
     "patches-source": "rushiranpise/morphe-patches",
     "brand": "rushiranpise",
-    "enabled": true,
+    "enabled": false,
     "pkg-name": "com.arlosoft.macrodroid",
     "app-name": "MacroDroid",
     "apkmirror-dlurl": "https://www.apkmirror.com/apk/arlosoft/macrodroid-device-automation-2",
@@ -1690,7 +1690,7 @@
   "SendFilesToTV-rushiranpise": {
     "patches-source": "rushiranpise/morphe-patches",
     "brand": "rushiranpise",
-    "enabled": true,
+    "enabled": false,
     "pkg-name": "com.yablio.sendfilestotv",
     "app-name": "Send Files to TV",
     "apkmirror-dlurl": "https://www.apkmirror.com/apk/yablio/send-files-to-tv/",
@@ -1701,7 +1701,7 @@
   "PicsArt-rushiranpise": {
     "patches-source": "rushiranpise/morphe-patches",
     "brand": "rushiranpise",
-    "enabled": true,
+    "enabled": false,
     "pkg-name": "com.picsart.studio",
     "app-name": "PicsArt",
     "arch": "all",
@@ -1711,7 +1711,7 @@
   "ProtonMail-rushiranpise": {
     "patches-source": "rushiranpise/morphe-patches",
     "brand": "rushiranpise",
-    "enabled": true,
+    "enabled": false,
     "pkg-name": "ch.protonmail.android",
     "app-name": "Proton Mail",
     "apkmirror-dlurl": "https://apkmirror.com/apk/proton-technologies-ag/protonmail-encrypted-email",
