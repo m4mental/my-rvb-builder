@@ -40,11 +40,10 @@ if BASEPATH=$(get_basepath); then
 		mkdir -p /data/adb/post-fs-data.d
 		echo "mount -t tmpfs none $BASEPATH" >"$SCNM"
 		chmod +x "$SCNM"
-		ui_print ""
 		ui_print "* Created the uninstall script."
 		ui_print ""
-		ui_print "* Reflash after a reboot to complete installation."
-		exit 0
+		ui_print "* Reboot and reflash the module!"
+		abort
 	fi
 
 	VERSION=$(get_app_version)
@@ -57,6 +56,12 @@ if BASEPATH=$(get_basepath); then
 			module:    '$PKG_VER'"
 		abort
 	fi
+
+	# TODO:
+	# elif "${MODPATH:?}/bin/$ARCH/cmpr" "$BASEPATH/base.apk" "$MODPATH/$PKG_NAME.apk"; then
+	# 	ui_print "* $PKG_NAME is up-to-date"
+	# 	INS=false
+	# fi
 fi
 
 install() {
@@ -92,14 +97,8 @@ install() {
 		if ! op=$(pmex install-commit "$SES"); then
 			ui_print "$op"
 			if echo "$op" | grep -q -e INSTALL_FAILED_VERSION_DOWNGRADE -e INSTALL_FAILED_UPDATE_INCOMPATIBLE -e INSTALL_FAILED_DUPLICATE; then
-				ex_unins_arg=""
-				if echo "$op" | grep -q INSTALL_FAILED_DUPLICATE; then
-					ui_print "* Uninstalling without data loss..."
-					ex_unins_arg="-k"
-				else
-					ui_print "* Uninstalling..."
-				fi
-				if ! op=$(pmex uninstall --user 0 $ex_unins_arg "$PKG_NAME"); then
+				ui_print "* Uninstalling..."
+				if ! op=$(pmex uninstall --user 0 "$PKG_NAME"); then
 					ui_print "$op"
 					if [ $IT = 2 ]; then
 						install_err="ERROR: pm uninstall failed."
@@ -145,7 +144,7 @@ ui_print "* Mounting $PKG_NAME"
 mkdir -p "/data/adb/rvhc"
 mv -f "$MODPATH/base.apk" "$RVPATH"
 
-if ! op=$(mm mount -o bind "$RVPATH" "$BASEPATH/base.apk" 2>&1); then
+if ! op=$(su -M -c mount -o bind "$RVPATH" "$BASEPATH/base.apk" 2>&1); then
 	ui_print "ERROR: Mount failed!"
 	ui_print "$op"
 fi
@@ -166,8 +165,7 @@ if [ "$KSU" ]; then
 	if [ "$UID" ]; then
 		if ! OP=$("${MODPATH:?}/bin/$ARCH/ksu_profile" "$UID" "$PKG_NAME" 2>&1); then
 			ui_print "  $OP"
-			ui_print "* Because you are using a fork of KernelSU, "
-			ui_print "  * you need to go to your root manager app and"
+			ui_print "  * In your root manager app,"
 			ui_print "    disable 'Unmount modules' for $PKG_NAME"
 		fi
 	else
@@ -178,11 +176,6 @@ fi
 rm -rf "${MODPATH:?}/bin" "$MODPATH/stock/"
 cp -f "$MODPATH/module.prop" "$MODPATH/module.prop.orig"
 
-MAINTAINER_FILE="$MODPATH/maintainer.txt"
-if [ -f "$MAINTAINER_FILE" ]; then MAINTAINER=$(cat "$MAINTAINER_FILE"); fi
-if [ -z "${MAINTAINER:-}" ]; then MAINTAINER="nullcpy (github.com/nullcpy/rvb)"; fi
-rm -f "$MAINTAINER_FILE"
-
 ui_print "* Done. No need to reboot."
-ui_print "  by $MAINTAINER"
+ui_print "  by j-hc (github.com/j-hc)"
 ui_print " "
