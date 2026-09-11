@@ -433,14 +433,6 @@
     "patches-version": "both",
     "apkmirror-dlurl": "https://apkmirror.com/apk/google-inc/photos"
   },
-  "AdobePhotoshopMix-DeVanced": {
-    "enabled": false,
-    "pkg-name": "com.adobe.psmobile",
-    "app-name": "Adobe Photoshop Mix",
-    "arch": "arm64-v8a",
-    "apkmirror-dlurl": "https://www.apkmirror.com/apk/adobe/photoshop-mix",
-    "uptodown-dlurl": "https://adobe-photoshop-mix.en.uptodown.com/android"
-  },
   "GoogleRecorder-DeVanced": {
     "enabled": false,
     "pkg-name": "com.google.android.apps.recorder",
@@ -1438,6 +1430,15 @@
     "apkpure-dlurl": "https://apkpure.com/proton-mail-encrypted-email/ch.protonmail.android",
     "apkcombo-dlurl": "https://apkcombo.com/proton-mail/ch.protonmail.android",
     "archive-dlurl": "https://archive.org/download/geologically/apks/ch.protonmail.android"
+  },
+  "AdobeScan-rushiranpise": {
+    "enabled": false,
+    "pkg-name": "com.adobe.scan.android",
+    "app-name": "Adobe Scan",
+    "arch": "arm64-v8a",
+    "apkmirror-dlurl": "https://www.apkmirror.com/apk/adobe/adobe-scan-pdf-scanner-ocr",
+    "uptodown-dlurl": "https://adobe-scan.en.uptodown.com/android",
+    "apkcombo-dlurl": "https://apkcombo.com/adobe-scan/com.adobe.scan.android"
   },
   "KineStop-ShaunTheSheep": {
     "enabled": false,
