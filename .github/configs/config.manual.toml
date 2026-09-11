@@ -1,25 +1,26 @@
-patches-source = "liongalahad/nuviotv-morphe-patches"
-patches-version = "beta"
-brand = "liongalahad"
-
-[Nuvio-liongalahad-AndroidTV]
+[AdobePhotoshopMix-DeVanced]
 enabled = true
-pkg-name = "com.nuvio.tv"
-app-name = "Nuvio"
-variant = "Android TV"
-included-patches = "'Allow Importing Subs from Local Storage' 'Library Mode Focus Fix' 'Local Downloads' 'Local Media' 'Mark SDH Subtitles' 'Random Episode' 'Remove SDH Annotations' 'Restore Source Selection'"
-excluded-patches = "'Side-by-side installation'"
-github-dlurl = "https://github.com/NuvioMedia/NuvioTV"
-github-regex = 'app-full-universal-release\.apk'
+pkg-name = "com.adobe.photoshopmix"
+app-name = "Adobe Photoshop Mix"
+arch = "auto"
+patches-source = "RookieEnough/De-Vanced"
+brand = "DeVanced"
+apkmirror-dlurl = "https://www.apkmirror.com/apk/adobe/photoshop-mix"
+uptodown-dlurl = "https://adobe-photoshop-mix.en.uptodown.com/android"
+apkpure-dlurl = "https://apkpure.com/adobe-photoshop-mix-cut-out/com.adobe.photoshopmix"
+apkcombo-dlurl = "https://apkcombo.com/adobe-photoshop-mix-cut-out/com.adobe.photoshopmix"
 
-[Nuvio-liongalahad-AndroidTV-Clone]
+[AdobeScan-rushiranpise]
 enabled = true
-pkg-name = "com.nuvio.tv"
-app-name = "Nuvio"
-variant = "Android TV"
-sub-variant = "Clone"
-included-patches = "'Allow Importing Subs from Local Storage' 'Library Mode Focus Fix' 'Local Downloads' 'Local Media' 'Mark SDH Subtitles' 'Random Episode' 'Remove SDH Annotations' 'Restore Source Selection'"
-github-dlurl = "https://github.com/NuvioMedia/NuvioTV"
-github-regex = 'app-full-universal-release\.apk'
+pkg-name = "com.adobe.scan.android"
+app-name = "Adobe Scan"
+patches-source = "rushiranpise/morphe-patches"
+brand = "rushiranpise"
+arch = "auto"
+apkmirror-dlurl = "https://www.apkmirror.com/apk/adobe/adobe-scan-pdf-scanner-ocr"
+uptodown-dlurl = "https://adobe-scan.en.uptodown.com/android"
+apkcombo-dlurl = "https://apkcombo.com/adobe-scan/com.adobe.scan.android"
+
+
 
 
