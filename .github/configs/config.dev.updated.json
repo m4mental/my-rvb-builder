@@ -893,7 +893,7 @@
     "apkmirror-dlurl": "https://www.apkmirror.com/apk/tiktok-pte-ltd/tik-tok-including-musical-ly",
     "uptodown-dlurl": "https://tiktok.en.uptodown.com/android",
     "apkpure-dlurl": "https://apkpure.com/tiktok-app/com.zhiliaoapp.musically",
-    "archive-dlurl": "https://archive.org/download/geologically/apks/com.zhiliaoapp.musically"
+    "apkcombo-dlurl": "https://apkcombo.com/tiktok-videos-shop-live/com.zhiliaoapp.musically"
   },
   "TikTok-icysymmetra": {
     "enabled": false,
@@ -902,7 +902,7 @@
     "apkmirror-dlurl": "https://www.apkmirror.com/apk/tiktok-pte-ltd/tik-tok-including-musical-ly",
     "uptodown-dlurl": "https://tiktok.en.uptodown.com/android",
     "apkpure-dlurl": "https://apkpure.com/tiktok-app/com.zhiliaoapp.musically",
-    "archive-dlurl": "https://archive.org/download/geologically/apks/com.zhiliaoapp.musically"
+    "apkcombo-dlurl": "https://apkcombo.com/tiktok-videos-shop-live/com.zhiliaoapp.musically"
   },
   "Instagram-InstaFel": {
     "enabled": false,
@@ -972,6 +972,25 @@
     "apkcombo-dlurl": "https://apkcombo.com/brave-browser/com.brave.browser",
     "github-dlurl": "https://github.com/brave/brave-browser",
     "github-regex": "arm64-v8a: BraveMonoarm64\\.apk | arm-v7a: BraveMonoarm\\.apk"
+  },
+  "TikTok-kveld9": {
+    "enabled": false,
+    "pkg-name": "com.zhiliaoapp.musically",
+    "app-name": "TikTok",
+    "apkmirror-dlurl": "https://www.apkmirror.com/apk/tiktok-pte-ltd/tik-tok-including-musical-ly",
+    "uptodown-dlurl": "https://tiktok.en.uptodown.com/android",
+    "apkpure-dlurl": "https://apkpure.com/tiktok-app/com.zhiliaoapp.musically",
+    "apkcombo-dlurl": "https://apkcombo.com/tiktok-videos-shop-live/com.zhiliaoapp.musically"
+  },
+  "TikTok-kveld9-Asia": {
+    "enabled": false,
+    "pkg-name": "com.ss.android.ugc.trill",
+    "app-name": "TikTok",
+    "variant": "Asia",
+    "apkmirror-dlurl": "https://www.apkmirror.com/apk/tiktok-pte-ltd/tik-tok",
+    "uptodown-dlurl": "https://tik-tok.en.uptodown.com/android",
+    "apkpure-dlurl": "https://apkpure.com/tiktok-asia-app/com.ss.android.ugc.trill",
+    "apkcombo-dlurl": "https://apkcombo.com/tiktok-asia/com.ss.android.ugc.trill"
   },
   "Hermit-Lain": {
     "enabled": false,
