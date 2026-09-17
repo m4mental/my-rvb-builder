@@ -227,8 +227,8 @@
     "repo": "hoo-dles/morphe-patches",
     "stable": "v1.44.1",
     "stable_date": "2026-09-17T16:37:30Z",
-    "prerelease": "v1.44.1-dev.1",
-    "pre_date": "2026-09-16T22:13:20Z"
+    "prerelease": "v1.44.2-dev.1",
+    "pre_date": "2026-09-17T22:21:40Z"
   },
   "hxreborn/hxreborn-tiktok-patches": {
     "beta": "v0.10.0-dev.1",
@@ -324,8 +324,8 @@
     "blocked": false,
     "host": "github",
     "repo": "kveld9/kveld-morphe-patches",
-    "stable": "v1.36.1",
-    "stable_date": "2026-09-17T18:25:37Z",
+    "stable": "v1.38.2",
+    "stable_date": "2026-09-17T22:28:14Z",
     "prerelease": "",
     "pre_date": ""
   },
@@ -370,8 +370,8 @@
     "repo": "riky-dev/morphe-patches",
     "stable": "v1.4.1",
     "stable_date": "2026-08-30T09:46:33Z",
-    "prerelease": "v1.4.2-dev.2",
-    "pre_date": "2026-09-17T19:40:35Z"
+    "prerelease": "v1.4.2-dev.3",
+    "pre_date": "2026-09-17T20:12:26Z"
   },
   "rushiranpise/morphe-patches": {
     "beta": "v1.22.0-dev.1",
