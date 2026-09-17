@@ -40,8 +40,8 @@
     "repo": "MorpheApp/morphe-patches",
     "stable": "v1.43.0",
     "stable_date": "2026-09-14T12:57:41Z",
-    "prerelease": "v1.44.0-dev.3",
-    "pre_date": "2026-09-17T11:52:11Z"
+    "prerelease": "v1.44.0-dev.4",
+    "pre_date": "2026-09-17T18:00:26Z"
   },
   "Paresh-Maheshwari/paresh-patches": {
     "beta": "v1.20.0-dev.4",
@@ -84,8 +84,8 @@
     "repo": "RookieEnough/De-Vanced",
     "stable": "v1.4.2",
     "stable_date": "2026-09-15T11:45:50Z",
-    "prerelease": "v1.4.1-dev.1",
-    "pre_date": "2026-09-13T09:27:00Z"
+    "prerelease": "v1.4.3-dev.1",
+    "pre_date": "2026-09-17T19:37:17Z"
   },
   "SapitoSucio/FroggoMorphePatches": {
     "beta": "v1.4.0-dev.2",
@@ -225,8 +225,8 @@
     "blocked": false,
     "host": "github",
     "repo": "hoo-dles/morphe-patches",
-    "stable": "v1.44.0",
-    "stable_date": "2026-09-07T01:13:25Z",
+    "stable": "v1.44.1",
+    "stable_date": "2026-09-17T16:37:30Z",
     "prerelease": "v1.44.1-dev.1",
     "pre_date": "2026-09-16T22:13:20Z"
   },
@@ -247,8 +247,8 @@
     "blocked": false,
     "host": "github",
     "repo": "hxreborn/morphe-patches",
-    "stable": "v1.23.0",
-    "stable_date": "2026-09-15T05:51:29Z",
+    "stable": "v1.24.0",
+    "stable_date": "2026-09-17T15:12:45Z",
     "prerelease": "v1.1.0-dev.1",
     "pre_date": "2026-07-19T18:13:41Z"
   },
@@ -280,8 +280,8 @@
     "blocked": false,
     "host": "github",
     "repo": "jasonwu1994/Gboard-patches",
-    "stable": "v3.10.0",
-    "stable_date": "2026-09-02T10:45:23Z",
+    "stable": "custom-theme-previews-v1",
+    "stable_date": "2026-09-17T16:50:03Z",
     "prerelease": "v3.10.0-dev.3",
     "pre_date": "2026-09-01T22:42:41Z"
   },
@@ -324,8 +324,8 @@
     "blocked": false,
     "host": "github",
     "repo": "kveld9/kveld-morphe-patches",
-    "stable": "v1.35.0",
-    "stable_date": "2026-09-17T03:18:28Z",
+    "stable": "v1.36.1",
+    "stable_date": "2026-09-17T18:25:37Z",
     "prerelease": "",
     "pre_date": ""
   },
@@ -370,8 +370,8 @@
     "repo": "riky-dev/morphe-patches",
     "stable": "v1.4.1",
     "stable_date": "2026-08-30T09:46:33Z",
-    "prerelease": "v1.4.2-dev.1",
-    "pre_date": "2026-09-08T09:43:10Z"
+    "prerelease": "v1.4.2-dev.2",
+    "pre_date": "2026-09-17T19:40:35Z"
   },
   "rushiranpise/morphe-patches": {
     "beta": "v1.22.0-dev.1",
