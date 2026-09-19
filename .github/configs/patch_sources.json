@@ -40,8 +40,8 @@
     "repo": "MorpheApp/morphe-patches",
     "stable": "v1.43.0",
     "stable_date": "2026-09-14T12:57:41Z",
-    "prerelease": "v1.44.0-dev.8",
-    "pre_date": "2026-09-19T11:51:27Z"
+    "prerelease": "v1.44.0-dev.10",
+    "pre_date": "2026-09-19T15:45:23Z"
   },
   "Paresh-Maheshwari/paresh-patches": {
     "beta": "v1.20.0-dev.4",
@@ -60,8 +60,8 @@
     "blocked": false,
     "host": "github",
     "repo": "PrathxmOp/Prathxm-Patches",
-    "stable": "v1.13.0",
-    "stable_date": "2026-07-10T09:33:46Z",
+    "stable": "v1.13.1",
+    "stable_date": "2026-09-19T16:25:09Z",
     "prerelease": "v1.13.1-dev.4",
     "pre_date": "2026-08-24T16:16:24Z"
   },
@@ -291,10 +291,10 @@
     "blocked": false,
     "host": "github",
     "repo": "jkennethcarino/adobo",
-    "stable": "v1.4.0",
-    "stable_date": "2026-08-31T17:13:01Z",
-    "prerelease": "v1.5.0-dev.2",
-    "pre_date": "2026-09-06T15:04:24Z"
+    "stable": "v1.5.0",
+    "stable_date": "2026-09-19T15:26:04Z",
+    "prerelease": "v1.5.0-dev.4",
+    "pre_date": "2026-09-19T15:22:24Z"
   },
   "kiraio-moe/Lain-Patches": {
     "beta": "v1.4.0-dev.3",
