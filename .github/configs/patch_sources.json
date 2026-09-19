@@ -40,8 +40,8 @@
     "repo": "MorpheApp/morphe-patches",
     "stable": "v1.43.0",
     "stable_date": "2026-09-14T12:57:41Z",
-    "prerelease": "v1.44.0-dev.10",
-    "pre_date": "2026-09-19T15:45:23Z"
+    "prerelease": "v1.44.0-dev.11",
+    "pre_date": "2026-09-19T18:45:02Z"
   },
   "Paresh-Maheshwari/paresh-patches": {
     "beta": "v1.20.0-dev.4",
@@ -82,8 +82,8 @@
     "blocked": false,
     "host": "github",
     "repo": "RookieEnough/De-Vanced",
-    "stable": "v1.4.2",
-    "stable_date": "2026-09-15T11:45:50Z",
+    "stable": "v1.4.3",
+    "stable_date": "2026-09-19T21:53:48Z",
     "prerelease": "v1.4.3-dev.2",
     "pre_date": "2026-09-18T13:02:28Z"
   },
