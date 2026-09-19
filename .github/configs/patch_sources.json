@@ -104,8 +104,8 @@
     "blocked": false,
     "host": "github",
     "repo": "ajstrick81/morphe-androidtv-patches",
-    "stable": "v1.37.2",
-    "stable_date": "2026-09-16T19:17:05Z",
+    "stable": "v1.37.3",
+    "stable_date": "2026-09-19T01:41:54Z",
     "prerelease": "pv-v15-diag-120",
     "pre_date": "2026-09-17T23:50:52Z"
   },
