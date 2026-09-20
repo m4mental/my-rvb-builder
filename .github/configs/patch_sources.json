@@ -104,10 +104,10 @@
     "blocked": false,
     "host": "github",
     "repo": "ajstrick81/morphe-androidtv-patches",
-    "stable": "v1.37.3",
-    "stable_date": "2026-09-19T01:41:54Z",
-    "prerelease": "pv-v15-diag-120",
-    "pre_date": "2026-09-17T23:50:52Z"
+    "stable": "v1.37.4",
+    "stable_date": "2026-09-20T00:02:04Z",
+    "prerelease": "pv-v15-fix-120",
+    "pre_date": "2026-09-19T23:38:16Z"
   },
   "anddea/revanced-patches": {
     "beta": "v4.3.0-dev.6",
@@ -126,8 +126,8 @@
     "blocked": false,
     "host": "github",
     "repo": "arandomhooman/hoomans-morphe-patches",
-    "stable": "v1.51.1",
-    "stable_date": "2026-08-25T18:01:14Z",
+    "stable": "v1.52.0",
+    "stable_date": "2026-09-20T00:18:01Z",
     "prerelease": "v1.44.0-dev.4",
     "pre_date": "2026-08-13T04:04:19Z"
   },
