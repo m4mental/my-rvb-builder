@@ -181,10 +181,10 @@
     "blocked": false,
     "host": "github",
     "repo": "dh6k/morphe-patches",
-    "stable": "v1.5.0",
-    "stable_date": "2026-09-05T22:28:53Z",
-    "prerelease": "v1.6.0-dev.6",
-    "pre_date": "2026-09-06T05:21:07Z"
+    "stable": "v1.6.0",
+    "stable_date": "2026-09-20T14:57:59Z",
+    "prerelease": "v1.6.0-dev.8",
+    "pre_date": "2026-09-20T14:51:07Z"
   },
   "docbt/patched-up": {
     "beta": "v1.3.1-dev.2",
@@ -247,8 +247,8 @@
     "blocked": false,
     "host": "github",
     "repo": "hxreborn/morphe-patches",
-    "stable": "v1.25.0",
-    "stable_date": "2026-09-19T11:14:52Z",
+    "stable": "v1.26.0",
+    "stable_date": "2026-09-20T16:48:58Z",
     "prerelease": "v1.1.0-dev.1",
     "pre_date": "2026-07-19T18:13:41Z"
   },
@@ -293,8 +293,8 @@
     "repo": "jkennethcarino/adobo",
     "stable": "v1.5.0",
     "stable_date": "2026-09-19T15:26:04Z",
-    "prerelease": "v1.5.0-dev.4",
-    "pre_date": "2026-09-19T15:22:24Z"
+    "prerelease": "v1.6.0-dev.1",
+    "pre_date": "2026-09-20T16:13:26Z"
   },
   "kiraio-moe/Lain-Patches": {
     "beta": "v1.4.0-dev.3",
