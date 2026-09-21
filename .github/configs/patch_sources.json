@@ -38,8 +38,8 @@
     "blocked": false,
     "host": "github",
     "repo": "MorpheApp/morphe-patches",
-    "stable": "v1.43.0",
-    "stable_date": "2026-09-14T12:57:41Z",
+    "stable": "v1.44.0",
+    "stable_date": "2026-09-21T15:11:56Z",
     "prerelease": "v1.44.0-dev.19",
     "pre_date": "2026-09-21T13:40:13Z"
   },
@@ -247,8 +247,8 @@
     "blocked": false,
     "host": "github",
     "repo": "hxreborn/morphe-patches",
-    "stable": "v1.27.0",
-    "stable_date": "2026-09-21T12:19:40Z",
+    "stable": "v1.27.1",
+    "stable_date": "2026-09-21T18:30:18Z",
     "prerelease": "v1.1.0-dev.1",
     "pre_date": "2026-07-19T18:13:41Z"
   },
