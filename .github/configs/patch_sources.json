@@ -203,8 +203,8 @@
     "blocked": false,
     "host": "github",
     "repo": "durgesh0505/chiggi_morphe_patches",
-    "stable": "v1.21.2",
-    "stable_date": "2026-09-08T21:12:07Z",
+    "stable": "v1.23.1",
+    "stable_date": "2026-09-22T01:01:04Z",
     "prerelease": "",
     "pre_date": ""
   },
@@ -227,8 +227,8 @@
     "repo": "hoo-dles/morphe-patches",
     "stable": "v1.44.1",
     "stable_date": "2026-09-17T16:37:30Z",
-    "prerelease": "v1.45.0-dev.1",
-    "pre_date": "2026-09-21T06:08:39Z"
+    "prerelease": "v1.45.0-dev.2",
+    "pre_date": "2026-09-21T21:39:38Z"
   },
   "hxreborn/hxreborn-tiktok-patches": {
     "beta": "v0.10.0-dev.1",
