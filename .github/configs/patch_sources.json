@@ -40,8 +40,8 @@
     "repo": "MorpheApp/morphe-patches",
     "stable": "v1.44.0",
     "stable_date": "2026-09-21T15:11:56Z",
-    "prerelease": "v1.44.0-dev.19",
-    "pre_date": "2026-09-21T13:40:13Z"
+    "prerelease": "v1.45.0-dev.1",
+    "pre_date": "2026-09-22T09:11:48Z"
   },
   "Paresh-Maheshwari/paresh-patches": {
     "beta": "v1.20.0-dev.4",
@@ -280,8 +280,8 @@
     "blocked": false,
     "host": "github",
     "repo": "jasonwu1994/Gboard-patches",
-    "stable": "custom-theme-previews-v1",
-    "stable_date": "2026-09-17T16:50:03Z",
+    "stable": "v3.11.0",
+    "stable_date": "2026-09-22T06:59:02Z",
     "prerelease": "v3.11.0-dev.3",
     "pre_date": "2026-09-21T03:17:20Z"
   },
