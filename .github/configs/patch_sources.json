@@ -40,8 +40,8 @@
     "repo": "MorpheApp/morphe-patches",
     "stable": "v1.44.0",
     "stable_date": "2026-09-21T15:11:56Z",
-    "prerelease": "v1.45.0-dev.3",
-    "pre_date": "2026-09-22T20:09:06Z"
+    "prerelease": "v1.45.0-dev.4",
+    "pre_date": "2026-09-23T12:20:36Z"
   },
   "Paresh-Maheshwari/paresh-patches": {
     "beta": "v1.20.0-dev.4",
@@ -183,8 +183,8 @@
     "repo": "dh6k/morphe-patches",
     "stable": "v1.6.0",
     "stable_date": "2026-09-20T14:57:59Z",
-    "prerelease": "v1.7.0-dev.3",
-    "pre_date": "2026-09-23T04:36:09Z"
+    "prerelease": "v1.7.0-dev.5",
+    "pre_date": "2026-09-23T07:13:25Z"
   },
   "docbt/patched-up": {
     "beta": "v1.3.1-dev.2",
@@ -324,8 +324,8 @@
     "blocked": false,
     "host": "github",
     "repo": "kveld9/kveld-morphe-patches",
-    "stable": "v1.43.0",
-    "stable_date": "2026-09-23T03:00:54Z",
+    "stable": "v1.44.0",
+    "stable_date": "2026-09-23T04:55:12Z",
     "prerelease": "",
     "pre_date": ""
   },
@@ -370,8 +370,8 @@
     "repo": "riky-dev/morphe-patches",
     "stable": "v1.4.1",
     "stable_date": "2026-08-30T09:46:33Z",
-    "prerelease": "v1.4.2-dev.5",
-    "pre_date": "2026-09-18T10:19:04Z"
+    "prerelease": "v1.5.0-dev.1",
+    "pre_date": "2026-09-23T12:22:57Z"
   },
   "rushiranpise/morphe-patches": {
     "beta": "v1.22.0-dev.1",
