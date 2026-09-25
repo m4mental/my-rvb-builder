@@ -40,8 +40,8 @@
     "repo": "MorpheApp/morphe-patches",
     "stable": "v1.44.0",
     "stable_date": "2026-09-21T15:11:56Z",
-    "prerelease": "v1.45.0-dev.14",
-    "pre_date": "2026-09-25T12:04:29Z"
+    "prerelease": "v1.45.0-dev.15",
+    "pre_date": "2026-09-25T15:57:58Z"
   },
   "Paresh-Maheshwari/paresh-patches": {
     "beta": "v1.20.0-dev.4",
@@ -104,8 +104,8 @@
     "blocked": false,
     "host": "github",
     "repo": "ajstrick81/morphe-androidtv-patches",
-    "stable": "v1.37.5",
-    "stable_date": "2026-09-24T16:23:29Z",
+    "stable": "v1.37.6",
+    "stable_date": "2026-09-25T17:19:42Z",
     "prerelease": "pv-v15-fix-120",
     "pre_date": "2026-09-19T23:38:16Z"
   },
@@ -117,8 +117,8 @@
     "repo": "anddea/revanced-patches",
     "stable": "v4.2.0",
     "stable_date": "2026-08-07T15:03:16Z",
-    "prerelease": "v4.3.0-dev.7",
-    "pre_date": "2026-09-18T15:59:41Z"
+    "prerelease": "v4.3.0-dev.8",
+    "pre_date": "2026-09-25T17:22:21Z"
   },
   "arandomhooman/hoomans-morphe-patches": {
     "beta": "v1.44.0-dev.4",
@@ -247,8 +247,8 @@
     "blocked": false,
     "host": "github",
     "repo": "hxreborn/morphe-patches",
-    "stable": "v1.29.0",
-    "stable_date": "2026-09-23T14:32:11Z",
+    "stable": "v1.30.0",
+    "stable_date": "2026-09-25T17:39:04Z",
     "prerelease": "v1.1.0-dev.1",
     "pre_date": "2026-07-19T18:13:41Z"
   },
@@ -368,8 +368,8 @@
     "blocked": false,
     "host": "github",
     "repo": "riky-dev/morphe-patches",
-    "stable": "v1.4.1",
-    "stable_date": "2026-08-30T09:46:33Z",
+    "stable": "v2.0.0",
+    "stable_date": "2026-09-25T16:47:30Z",
     "prerelease": "v2.0.0-dev.2",
     "pre_date": "2026-09-23T15:32:34Z"
   },
