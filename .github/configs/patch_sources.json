@@ -40,8 +40,8 @@
     "repo": "MorpheApp/morphe-patches",
     "stable": "v1.44.0",
     "stable_date": "2026-09-21T15:11:56Z",
-    "prerelease": "v1.45.0-dev.16",
-    "pre_date": "2026-09-25T23:32:06Z"
+    "prerelease": "v1.45.0-dev.17",
+    "pre_date": "2026-09-26T08:15:05Z"
   },
   "Paresh-Maheshwari/paresh-patches": {
     "beta": "v1.20.0-dev.4",
@@ -106,8 +106,8 @@
     "repo": "ajstrick81/morphe-androidtv-patches",
     "stable": "v1.37.7",
     "stable_date": "2026-09-26T01:39:59Z",
-    "prerelease": "pv-v15-fix-120",
-    "pre_date": "2026-09-19T23:38:16Z"
+    "prerelease": "test-212",
+    "pre_date": "2026-09-26T12:54:16Z"
   },
   "anddea/revanced-patches": {
     "beta": "v4.3.0-dev.6",
