@@ -104,8 +104,8 @@
     "blocked": false,
     "host": "github",
     "repo": "ajstrick81/morphe-androidtv-patches",
-    "stable": "v1.37.7",
-    "stable_date": "2026-09-26T01:39:59Z",
+    "stable": "v1.38.0",
+    "stable_date": "2026-09-26T16:43:40Z",
     "prerelease": "test-212",
     "pre_date": "2026-09-26T12:54:16Z"
   },
@@ -258,8 +258,8 @@
     "blocked": false,
     "host": "github",
     "repo": "icysymmetra/tiktok-patches-for-morphe",
-    "stable": "v0.7.0",
-    "stable_date": "2026-08-23T00:36:23Z",
+    "stable": "v0.8.0",
+    "stable_date": "2026-09-26T15:27:09Z",
     "prerelease": "v0.8.0-dev.12",
     "pre_date": "2026-09-25T21:33:08Z"
   },
@@ -282,8 +282,8 @@
     "repo": "jasonwu1994/Gboard-patches",
     "stable": "v3.11.0",
     "stable_date": "2026-09-22T06:59:02Z",
-    "prerelease": "v3.11.0-dev.3",
-    "pre_date": "2026-09-21T03:17:20Z"
+    "prerelease": "v3.12.0-dev.5",
+    "pre_date": "2026-09-26T17:41:56Z"
   },
   "jkennethcarino/adobo": {
     "beta": "v1.5.0-dev.2",
@@ -293,8 +293,8 @@
     "repo": "jkennethcarino/adobo",
     "stable": "v1.5.0",
     "stable_date": "2026-09-19T15:26:04Z",
-    "prerelease": "v1.6.0-dev.1",
-    "pre_date": "2026-09-20T16:13:26Z"
+    "prerelease": "v1.6.0-dev.3",
+    "pre_date": "2026-09-26T18:21:28Z"
   },
   "kiraio-moe/Lain-Patches": {
     "beta": "v1.4.0-dev.3",
@@ -313,10 +313,10 @@
     "blocked": false,
     "host": "github",
     "repo": "kondratjev/morphe-patches",
-    "stable": "v1.25.0",
-    "stable_date": "2026-09-18T17:35:05Z",
-    "prerelease": "v1.25.0-dev.1",
-    "pre_date": "2026-09-18T17:23:20Z"
+    "stable": "v1.26.0",
+    "stable_date": "2026-09-26T13:40:35Z",
+    "prerelease": "v1.26.0-dev.2",
+    "pre_date": "2026-09-26T13:39:00Z"
   },
   "kveld9/kveld-morphe-patches": {
     "beta": "",
