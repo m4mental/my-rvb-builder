@@ -247,8 +247,8 @@
     "blocked": false,
     "host": "github",
     "repo": "hxreborn/morphe-patches",
-    "stable": "v1.30.0",
-    "stable_date": "2026-09-25T17:39:04Z",
+    "stable": "v1.31.0",
+    "stable_date": "2026-09-26T20:34:31Z",
     "prerelease": "v1.1.0-dev.1",
     "pre_date": "2026-07-19T18:13:41Z"
   },
