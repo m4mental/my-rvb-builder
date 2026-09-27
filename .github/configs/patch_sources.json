@@ -27,10 +27,10 @@
     "blocked": false,
     "host": "gitlab",
     "repo": "IMXEren/mix-patches",
-    "stable": "v1.7.1",
-    "stable_date": "2026-09-11T06:02:09.402Z",
-    "prerelease": "v1.7.2-dev.1",
-    "pre_date": "2026-09-13T12:18:20.352Z"
+    "stable": "v1.7.2",
+    "stable_date": "2026-09-27T07:34:41.179Z",
+    "prerelease": "v1.7.2-dev.2",
+    "pre_date": "2026-09-27T07:30:32.290Z"
   },
   "MorpheApp/morphe-patches": {
     "beta": "v1.44.0-dev.1",
@@ -40,8 +40,8 @@
     "repo": "MorpheApp/morphe-patches",
     "stable": "v1.44.0",
     "stable_date": "2026-09-21T15:11:56Z",
-    "prerelease": "v1.45.0-dev.17",
-    "pre_date": "2026-09-26T08:15:05Z"
+    "prerelease": "v1.45.0-dev.18",
+    "pre_date": "2026-09-27T11:33:43Z"
   },
   "Paresh-Maheshwari/paresh-patches": {
     "beta": "v1.20.0-dev.4",
@@ -183,8 +183,8 @@
     "repo": "dh6k/morphe-patches",
     "stable": "v1.7.0",
     "stable_date": "2026-09-24T07:45:37Z",
-    "prerelease": "v1.7.0-dev.7",
-    "pre_date": "2026-09-23T17:27:21Z"
+    "prerelease": "v1.8.0-dev.11",
+    "pre_date": "2026-09-27T10:25:49Z"
   },
   "docbt/patched-up": {
     "beta": "v1.3.1-dev.2",
@@ -214,10 +214,10 @@
     "blocked": false,
     "host": "github",
     "repo": "franticg33k/morphe-patches",
-    "stable": "v1.3.9",
-    "stable_date": "2026-09-04T08:13:16Z",
-    "prerelease": "v1.3.10-dev.3",
-    "pre_date": "2026-09-05T01:06:10Z"
+    "stable": "v1.3.10",
+    "stable_date": "2026-09-27T08:28:16Z",
+    "prerelease": "v1.3.10-dev.7",
+    "pre_date": "2026-09-27T08:21:46Z"
   },
   "hoo-dles/morphe-patches": {
     "beta": "v1.44.0-dev.2",
@@ -247,8 +247,8 @@
     "blocked": false,
     "host": "github",
     "repo": "hxreborn/morphe-patches",
-    "stable": "v1.31.0",
-    "stable_date": "2026-09-26T20:34:31Z",
+    "stable": "v1.32.0",
+    "stable_date": "2026-09-27T11:55:10Z",
     "prerelease": "v1.1.0-dev.1",
     "pre_date": "2026-07-19T18:13:41Z"
   },
