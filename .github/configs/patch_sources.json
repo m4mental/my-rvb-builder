@@ -62,8 +62,8 @@
     "repo": "PrathxmOp/Prathxm-Patches",
     "stable": "v1.13.1",
     "stable_date": "2026-09-19T16:25:09Z",
-    "prerelease": "v1.13.1-dev.4",
-    "pre_date": "2026-08-24T16:16:24Z"
+    "prerelease": "v1.13.2-dev.1",
+    "pre_date": "2026-09-27T16:37:53Z"
   },
   "Quantro100/Morphe-patches": {
     "beta": "",
@@ -183,8 +183,8 @@
     "repo": "dh6k/morphe-patches",
     "stable": "v1.7.0",
     "stable_date": "2026-09-24T07:45:37Z",
-    "prerelease": "v1.8.0-dev.11",
-    "pre_date": "2026-09-27T10:25:49Z"
+    "prerelease": "v1.7.0-dev.7",
+    "pre_date": "2026-09-23T17:27:21Z"
   },
   "docbt/patched-up": {
     "beta": "v1.3.1-dev.2",
@@ -216,8 +216,8 @@
     "repo": "franticg33k/morphe-patches",
     "stable": "v1.3.10",
     "stable_date": "2026-09-27T08:28:16Z",
-    "prerelease": "v1.3.10-dev.7",
-    "pre_date": "2026-09-27T08:21:46Z"
+    "prerelease": "v1.4.0-dev.2",
+    "pre_date": "2026-09-27T16:47:18Z"
   },
   "hoo-dles/morphe-patches": {
     "beta": "v1.44.0-dev.2",
@@ -236,8 +236,8 @@
     "blocked": false,
     "host": "github",
     "repo": "hxreborn/hxreborn-tiktok-patches",
-    "stable": "v1.3.0",
-    "stable_date": "2026-09-07T08:52:16Z",
+    "stable": "v1.4.0",
+    "stable_date": "2026-09-27T18:29:23Z",
     "prerelease": "v0.10.0-dev.1",
     "pre_date": "2026-08-10T09:24:21Z"
   },
@@ -247,8 +247,8 @@
     "blocked": false,
     "host": "github",
     "repo": "hxreborn/morphe-patches",
-    "stable": "v1.32.0",
-    "stable_date": "2026-09-27T11:55:10Z",
+    "stable": "v1.33.0",
+    "stable_date": "2026-09-27T17:49:02Z",
     "prerelease": "v1.1.0-dev.1",
     "pre_date": "2026-07-19T18:13:41Z"
   },
