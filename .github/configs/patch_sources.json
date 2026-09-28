@@ -40,8 +40,8 @@
     "repo": "MorpheApp/morphe-patches",
     "stable": "v1.44.0",
     "stable_date": "2026-09-21T15:11:56Z",
-    "prerelease": "v1.45.0-dev.18",
-    "pre_date": "2026-09-27T11:33:43Z"
+    "prerelease": "v1.45.0-dev.19",
+    "pre_date": "2026-09-28T16:09:32Z"
   },
   "Paresh-Maheshwari/paresh-patches": {
     "beta": "v1.20.0-dev.4",
@@ -62,8 +62,8 @@
     "repo": "PrathxmOp/Prathxm-Patches",
     "stable": "v1.13.1",
     "stable_date": "2026-09-19T16:25:09Z",
-    "prerelease": "v1.13.2-dev.1",
-    "pre_date": "2026-09-27T16:37:53Z"
+    "prerelease": "v1.14.0-dev.2",
+    "pre_date": "2026-09-28T15:40:01Z"
   },
   "Quantro100/Morphe-patches": {
     "beta": "",
@@ -115,10 +115,10 @@
     "blocked": false,
     "host": "github",
     "repo": "anddea/revanced-patches",
-    "stable": "v4.2.0",
-    "stable_date": "2026-08-07T15:03:16Z",
-    "prerelease": "v4.3.0-dev.8",
-    "pre_date": "2026-09-25T17:22:21Z"
+    "stable": "v4.3.0",
+    "stable_date": "2026-09-28T12:26:39Z",
+    "prerelease": "v4.3.1-dev.1",
+    "pre_date": "2026-09-28T12:51:41Z"
   },
   "arandomhooman/hoomans-morphe-patches": {
     "beta": "v1.44.0-dev.4",
@@ -214,10 +214,10 @@
     "blocked": false,
     "host": "github",
     "repo": "franticg33k/morphe-patches",
-    "stable": "v1.3.10",
-    "stable_date": "2026-09-27T08:28:16Z",
-    "prerelease": "v1.4.0-dev.3",
-    "pre_date": "2026-09-28T05:22:52Z"
+    "stable": "v1.4.1",
+    "stable_date": "2026-09-28T16:00:25Z",
+    "prerelease": "v1.4.1-dev.3",
+    "pre_date": "2026-09-28T12:46:33Z"
   },
   "hoo-dles/morphe-patches": {
     "beta": "v1.44.0-dev.2",
@@ -227,8 +227,8 @@
     "repo": "hoo-dles/morphe-patches",
     "stable": "v1.44.1",
     "stable_date": "2026-09-17T16:37:30Z",
-    "prerelease": "v1.45.0-dev.4",
-    "pre_date": "2026-09-28T05:27:55Z"
+    "prerelease": "v1.45.0-dev.5",
+    "pre_date": "2026-09-28T06:56:09Z"
   },
   "hxreborn/hxreborn-tiktok-patches": {
     "beta": "v0.10.0-dev.1",
@@ -247,8 +247,8 @@
     "blocked": false,
     "host": "github",
     "repo": "hxreborn/morphe-patches",
-    "stable": "v1.33.0",
-    "stable_date": "2026-09-27T17:49:02Z",
+    "stable": "v1.34.0",
+    "stable_date": "2026-09-28T14:58:53Z",
     "prerelease": "v1.1.0-dev.1",
     "pre_date": "2026-07-19T18:13:41Z"
   },
