@@ -60,10 +60,10 @@
     "blocked": false,
     "host": "github",
     "repo": "PrathxmOp/Prathxm-Patches",
-    "stable": "v1.13.1",
-    "stable_date": "2026-09-19T16:25:09Z",
-    "prerelease": "v1.14.0-dev.2",
-    "pre_date": "2026-09-28T15:40:01Z"
+    "stable": "v1.15.0",
+    "stable_date": "2026-09-28T22:01:05Z",
+    "prerelease": "v1.15.0-dev.1",
+    "pre_date": "2026-09-28T21:57:54Z"
   },
   "Quantro100/Morphe-patches": {
     "beta": "",
@@ -84,8 +84,8 @@
     "repo": "RookieEnough/De-Vanced",
     "stable": "v1.4.4",
     "stable_date": "2026-09-20T23:42:11Z",
-    "prerelease": "v1.4.4-dev.1",
-    "pre_date": "2026-09-20T23:37:47Z"
+    "prerelease": "v1.5.0-dev.1",
+    "pre_date": "2026-09-28T20:32:14Z"
   },
   "SapitoSucio/FroggoMorphePatches": {
     "beta": "v1.4.0-dev.2",
@@ -225,10 +225,10 @@
     "blocked": false,
     "host": "github",
     "repo": "hoo-dles/morphe-patches",
-    "stable": "v1.44.1",
-    "stable_date": "2026-09-17T16:37:30Z",
-    "prerelease": "v1.45.0-dev.5",
-    "pre_date": "2026-09-28T06:56:09Z"
+    "stable": "v1.45.0",
+    "stable_date": "2026-09-28T18:20:13Z",
+    "prerelease": "v1.46.0-dev.2",
+    "pre_date": "2026-09-28T21:15:10Z"
   },
   "hxreborn/hxreborn-tiktok-patches": {
     "beta": "v0.10.0-dev.1",
