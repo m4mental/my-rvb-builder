@@ -84,8 +84,8 @@
     "repo": "RookieEnough/De-Vanced",
     "stable": "v1.4.4",
     "stable_date": "2026-09-20T23:42:11Z",
-    "prerelease": "v1.5.0-dev.1",
-    "pre_date": "2026-09-28T20:32:14Z"
+    "prerelease": "v1.5.0-dev.2",
+    "pre_date": "2026-09-29T18:01:08Z"
   },
   "SapitoSucio/FroggoMorphePatches": {
     "beta": "v1.4.0-dev.2",
@@ -172,8 +172,8 @@
     "repo": "crimera/piko",
     "stable": "v3.9.0",
     "stable_date": "2026-08-31T02:40:04Z",
-    "prerelease": "v3.10.0-dev.8",
-    "pre_date": "2026-09-14T01:58:21Z"
+    "prerelease": "v3.10.0-dev.9",
+    "pre_date": "2026-09-29T16:18:53Z"
   },
   "dh6k/morphe-patches": {
     "beta": "v1.6.0-dev.6",
@@ -214,10 +214,10 @@
     "blocked": false,
     "host": "github",
     "repo": "franticg33k/morphe-patches",
-    "stable": "v1.4.1",
-    "stable_date": "2026-09-28T16:00:25Z",
-    "prerelease": "v1.4.1-dev.3",
-    "pre_date": "2026-09-28T12:46:33Z"
+    "stable": "v1.4.2",
+    "stable_date": "2026-09-29T16:39:00Z",
+    "prerelease": "v1.4.2-dev.3",
+    "pre_date": "2026-09-29T16:19:52Z"
   },
   "hoo-dles/morphe-patches": {
     "beta": "v1.44.0-dev.2",
@@ -247,8 +247,8 @@
     "blocked": false,
     "host": "github",
     "repo": "hxreborn/morphe-patches",
-    "stable": "v1.34.0",
-    "stable_date": "2026-09-28T14:58:53Z",
+    "stable": "v1.36.0",
+    "stable_date": "2026-09-29T17:27:35Z",
     "prerelease": "v1.1.0-dev.1",
     "pre_date": "2026-07-19T18:13:41Z"
   },
