@@ -29,8 +29,8 @@
     "repo": "IMXEren/mix-patches",
     "stable": "v1.7.2",
     "stable_date": "2026-09-27T07:34:41.179Z",
-    "prerelease": "v1.7.2-dev.2",
-    "pre_date": "2026-09-27T07:30:32.290Z"
+    "prerelease": "v1.8.0-dev.1",
+    "pre_date": "2026-10-02T05:48:14.401Z"
   },
   "MorpheApp/morphe-patches": {
     "beta": "v1.44.0-dev.1",
@@ -183,8 +183,8 @@
     "repo": "dh6k/morphe-patches",
     "stable": "v1.8.0",
     "stable_date": "2026-10-01T06:24:48Z",
-    "prerelease": "v1.9.0-dev.1",
-    "pre_date": "2026-10-01T15:41:52Z"
+    "prerelease": "v1.9.0-dev.2",
+    "pre_date": "2026-10-02T04:46:42Z"
   },
   "docbt/patched-up": {
     "beta": "v1.3.1-dev.2",
