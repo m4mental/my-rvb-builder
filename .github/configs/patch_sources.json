@@ -40,8 +40,8 @@
     "repo": "MorpheApp/morphe-patches",
     "stable": "v1.45.0",
     "stable_date": "2026-10-02T08:55:35Z",
-    "prerelease": "v1.45.0-dev.23",
-    "pre_date": "2026-10-01T16:14:30Z"
+    "prerelease": "v1.46.0-dev.1",
+    "pre_date": "2026-10-03T09:22:23Z"
   },
   "Paresh-Maheshwari/paresh-patches": {
     "beta": "v1.20.0-dev.4",
