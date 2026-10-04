@@ -40,8 +40,8 @@
     "repo": "MorpheApp/morphe-patches",
     "stable": "v1.45.0",
     "stable_date": "2026-10-02T08:55:35Z",
-    "prerelease": "v1.46.0-dev.1",
-    "pre_date": "2026-10-03T09:22:23Z"
+    "prerelease": "v1.46.0-dev.2",
+    "pre_date": "2026-10-04T08:18:57Z"
   },
   "Paresh-Maheshwari/paresh-patches": {
     "beta": "v1.20.0-dev.4",
@@ -82,10 +82,10 @@
     "blocked": false,
     "host": "github",
     "repo": "RookieEnough/De-Vanced",
-    "stable": "v1.5.0",
-    "stable_date": "2026-10-02T23:19:45Z",
-    "prerelease": "v1.5.0-dev.4",
-    "pre_date": "2026-09-29T19:47:24Z"
+    "stable": "v1.5.1",
+    "stable_date": "2026-10-04T10:21:11Z",
+    "prerelease": "v1.5.1-dev.1",
+    "pre_date": "2026-10-04T09:36:11Z"
   },
   "SapitoSucio/FroggoMorphePatches": {
     "beta": "v1.4.0-dev.2",
@@ -293,8 +293,8 @@
     "repo": "jkennethcarino/adobo",
     "stable": "v1.5.0",
     "stable_date": "2026-09-19T15:26:04Z",
-    "prerelease": "v1.6.0-dev.3",
-    "pre_date": "2026-09-26T18:21:28Z"
+    "prerelease": "v1.6.0-dev.4",
+    "pre_date": "2026-10-04T11:00:23Z"
   },
   "kiraio-moe/Lain-Patches": {
     "beta": "v1.4.0-dev.3",
@@ -370,8 +370,8 @@
     "repo": "riky-dev/morphe-patches",
     "stable": "v2.0.0",
     "stable_date": "2026-09-25T16:47:30Z",
-    "prerelease": "v2.0.0-dev.2",
-    "pre_date": "2026-09-23T15:32:34Z"
+    "prerelease": "v2.1.0-dev.2",
+    "pre_date": "2026-10-04T14:06:43Z"
   },
   "rushiranpise/morphe-patches": {
     "beta": "v1.22.0-dev.1",
