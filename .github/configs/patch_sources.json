@@ -172,8 +172,8 @@
     "repo": "crimera/piko",
     "stable": "v3.9.0",
     "stable_date": "2026-08-31T02:40:04Z",
-    "prerelease": "v3.10.0-dev.10",
-    "pre_date": "2026-10-04T17:29:18Z"
+    "prerelease": "v3.10.0-dev.11",
+    "pre_date": "2026-10-05T01:59:24Z"
   },
   "dh6k/morphe-patches": {
     "beta": "v1.6.0-dev.6",
