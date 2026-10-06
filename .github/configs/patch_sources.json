@@ -38,8 +38,8 @@
     "blocked": false,
     "host": "github",
     "repo": "MorpheApp/morphe-patches",
-    "stable": "v1.45.0",
-    "stable_date": "2026-10-02T08:55:35Z",
+    "stable": "v1.46.0",
+    "stable_date": "2026-10-06T11:42:42Z",
     "prerelease": "v1.46.0-dev.10",
     "pre_date": "2026-10-06T10:49:00Z"
   },
@@ -150,8 +150,8 @@
     "repo": "brosssh/morphe-patches",
     "stable": "v2.8.2",
     "stable_date": "2026-09-01T07:46:05Z",
-    "prerelease": "v2.8.3-dev.1",
-    "pre_date": "2026-10-05T14:01:40Z"
+    "prerelease": "v2.8.3-dev.2",
+    "pre_date": "2026-10-06T13:23:16Z"
   },
   "bufferk/morphe-patches": {
     "beta": "v1.8.0-dev.1",
@@ -247,8 +247,8 @@
     "blocked": false,
     "host": "github",
     "repo": "hxreborn/morphe-patches",
-    "stable": "v1.42.0",
-    "stable_date": "2026-10-06T06:38:51Z",
+    "stable": "v1.43.0",
+    "stable_date": "2026-10-06T11:53:00Z",
     "prerelease": "v1.1.0-dev.1",
     "pre_date": "2026-07-19T18:13:41Z"
   },
