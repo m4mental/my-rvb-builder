@@ -172,8 +172,8 @@
     "repo": "crimera/piko",
     "stable": "v3.9.0",
     "stable_date": "2026-08-31T02:40:04Z",
-    "prerelease": "v3.10.0-dev.11",
-    "pre_date": "2026-10-05T01:59:24Z"
+    "prerelease": "v3.10.0-dev.12",
+    "pre_date": "2026-10-07T11:04:16Z"
   },
   "dh6k/morphe-patches": {
     "beta": "v1.6.0-dev.6",
@@ -247,8 +247,8 @@
     "blocked": false,
     "host": "github",
     "repo": "hxreborn/morphe-patches",
-    "stable": "v1.43.0",
-    "stable_date": "2026-10-06T11:53:00Z",
+    "stable": "v1.44.0",
+    "stable_date": "2026-10-07T08:45:24Z",
     "prerelease": "v1.1.0-dev.1",
     "pre_date": "2026-07-19T18:13:41Z"
   },
