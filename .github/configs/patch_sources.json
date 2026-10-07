@@ -27,8 +27,8 @@
     "blocked": false,
     "host": "gitlab",
     "repo": "IMXEren/mix-patches",
-    "stable": "v1.7.2",
-    "stable_date": "2026-09-27T07:34:41.179Z",
+    "stable": "v1.8.0",
+    "stable_date": "2026-10-07T04:17:11.999Z",
     "prerelease": "v1.8.0-dev.1",
     "pre_date": "2026-10-02T05:48:14.401Z"
   },
@@ -161,8 +161,8 @@
     "repo": "bufferk/morphe-patches",
     "stable": "v1.8.0",
     "stable_date": "2026-07-18T18:58:06Z",
-    "prerelease": "v1.8.0-dev.1",
-    "pre_date": "2026-07-18T11:46:49Z"
+    "prerelease": "v1.9.0-dev.1",
+    "pre_date": "2026-10-07T04:52:47Z"
   },
   "crimera/piko": {
     "beta": "v3.10.0-dev.8",
