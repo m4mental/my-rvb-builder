@@ -40,8 +40,8 @@
     "repo": "MorpheApp/morphe-patches",
     "stable": "v1.46.0",
     "stable_date": "2026-10-06T11:42:42Z",
-    "prerelease": "v1.47.0-dev.4",
-    "pre_date": "2026-10-08T12:12:41Z"
+    "prerelease": "v1.47.0-dev.5",
+    "pre_date": "2026-10-08T18:09:58Z"
   },
   "Paresh-Maheshwari/paresh-patches": {
     "beta": "v1.20.0-dev.4",
@@ -326,8 +326,8 @@
     "repo": "kveld9/kveld-morphe-patches",
     "stable": "v2.5.0",
     "stable_date": "2026-10-06T04:21:19Z",
-    "prerelease": "v2.6.0-experimental.4",
-    "pre_date": "2026-10-08T01:31:43Z"
+    "prerelease": "v2.6.0-experimental.6",
+    "pre_date": "2026-10-08T19:46:31Z"
   },
   "liongalahad/nuviotv-morphe-patches": {
     "beta": "v1.0.0-beta.1",
