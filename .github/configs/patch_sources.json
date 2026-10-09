@@ -40,8 +40,8 @@
     "repo": "MorpheApp/morphe-patches",
     "stable": "v1.46.0",
     "stable_date": "2026-10-06T11:42:42Z",
-    "prerelease": "v1.47.0-dev.5",
-    "pre_date": "2026-10-08T18:09:58Z"
+    "prerelease": "v1.47.0-dev.10",
+    "pre_date": "2026-10-09T13:46:59Z"
   },
   "Paresh-Maheshwari/paresh-patches": {
     "beta": "v1.20.0-dev.4",
@@ -172,8 +172,8 @@
     "repo": "crimera/piko",
     "stable": "v3.9.0",
     "stable_date": "2026-08-31T02:40:04Z",
-    "prerelease": "v3.10.0-dev.12",
-    "pre_date": "2026-10-07T11:04:16Z"
+    "prerelease": "v3.10.0-dev.13",
+    "pre_date": "2026-10-09T08:28:33Z"
   },
   "dh6k/morphe-patches": {
     "beta": "v1.6.0-dev.6",
@@ -326,8 +326,8 @@
     "repo": "kveld9/kveld-morphe-patches",
     "stable": "v2.5.0",
     "stable_date": "2026-10-06T04:21:19Z",
-    "prerelease": "v2.6.0-experimental.11",
-    "pre_date": "2026-10-09T05:39:43Z"
+    "prerelease": "v2.6.0-experimental.13",
+    "pre_date": "2026-10-09T06:42:08Z"
   },
   "liongalahad/nuviotv-morphe-patches": {
     "beta": "v1.0.0-beta.1",
