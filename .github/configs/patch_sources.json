@@ -247,8 +247,8 @@
     "blocked": false,
     "host": "github",
     "repo": "hxreborn/morphe-patches",
-    "stable": "v1.47.0",
-    "stable_date": "2026-10-10T18:49:33Z",
+    "stable": "v1.48.0",
+    "stable_date": "2026-10-12T00:04:41Z",
     "prerelease": "v1.1.0-dev.1",
     "pre_date": "2026-07-19T18:13:41Z"
   },
@@ -326,8 +326,8 @@
     "repo": "kveld9/kveld-morphe-patches",
     "stable": "v2.6.0",
     "stable_date": "2026-10-10T03:05:27Z",
-    "prerelease": "v2.7.0-experimental.9",
-    "pre_date": "2026-10-11T19:46:30Z"
+    "prerelease": "v2.7.0-experimental.10",
+    "pre_date": "2026-10-12T05:14:24Z"
   },
   "liongalahad/nuviotv-morphe-patches": {
     "beta": "v1.0.0-beta.1",
