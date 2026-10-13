@@ -183,8 +183,8 @@
     "repo": "dh6k/morphe-patches",
     "stable": "v1.8.0",
     "stable_date": "2026-10-01T06:24:48Z",
-    "prerelease": "v1.9.0-dev.4",
-    "pre_date": "2026-10-05T19:15:22Z"
+    "prerelease": "v1.9.0-dev.5",
+    "pre_date": "2026-10-13T12:56:20Z"
   },
   "docbt/patched-up": {
     "beta": "v1.3.1-dev.2",
