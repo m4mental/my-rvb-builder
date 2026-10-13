@@ -29,8 +29,8 @@
     "repo": "IMXEren/mix-patches",
     "stable": "v1.8.0",
     "stable_date": "2026-10-07T04:17:11.999Z",
-    "prerelease": "v1.8.0-dev.1",
-    "pre_date": "2026-10-02T05:48:14.401Z"
+    "prerelease": "v1.9.0-dev.3",
+    "pre_date": "2026-10-12T21:28:44.487Z"
   },
   "MorpheApp/morphe-patches": {
     "beta": "v1.44.0-dev.1",
@@ -40,8 +40,8 @@
     "repo": "MorpheApp/morphe-patches",
     "stable": "v1.47.0",
     "stable_date": "2026-10-11T15:20:10Z",
-    "prerelease": "v1.48.0-dev.3",
-    "pre_date": "2026-10-12T08:30:23Z"
+    "prerelease": "v1.48.0-dev.4",
+    "pre_date": "2026-10-12T20:03:55Z"
   },
   "Paresh-Maheshwari/paresh-patches": {
     "beta": "v1.20.0-dev.4",
@@ -247,8 +247,8 @@
     "blocked": false,
     "host": "github",
     "repo": "hxreborn/morphe-patches",
-    "stable": "v1.48.0",
-    "stable_date": "2026-10-12T00:04:41Z",
+    "stable": "v1.49.1",
+    "stable_date": "2026-10-13T01:32:34Z",
     "prerelease": "v1.1.0-dev.1",
     "pre_date": "2026-07-19T18:13:41Z"
   },
@@ -326,8 +326,8 @@
     "repo": "kveld9/kveld-morphe-patches",
     "stable": "v2.6.0",
     "stable_date": "2026-10-10T03:05:27Z",
-    "prerelease": "v2.7.0-experimental.11",
-    "pre_date": "2026-10-12T16:47:30Z"
+    "prerelease": "v2.7.0-experimental.17",
+    "pre_date": "2026-10-12T23:46:42Z"
   },
   "liongalahad/nuviotv-morphe-patches": {
     "beta": "v1.0.0-beta.1",
