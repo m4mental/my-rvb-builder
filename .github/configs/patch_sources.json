@@ -247,8 +247,8 @@
     "blocked": false,
     "host": "github",
     "repo": "hxreborn/morphe-patches",
-    "stable": "v1.49.1",
-    "stable_date": "2026-10-13T01:32:34Z",
+    "stable": "v1.50.0",
+    "stable_date": "2026-10-14T00:07:20Z",
     "prerelease": "v1.1.0-dev.1",
     "pre_date": "2026-07-19T18:13:41Z"
   },
@@ -282,8 +282,8 @@
     "repo": "jasonwu1994/Gboard-patches",
     "stable": "v3.12.0",
     "stable_date": "2026-10-04T16:37:59Z",
-    "prerelease": "v3.12.1-dev.1",
-    "pre_date": "2026-10-13T08:36:41Z"
+    "prerelease": "v3.13.0-dev.1",
+    "pre_date": "2026-10-14T03:29:28Z"
   },
   "jkennethcarino/adobo": {
     "beta": "v1.5.0-dev.2",
