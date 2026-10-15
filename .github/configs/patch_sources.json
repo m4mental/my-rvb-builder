@@ -324,8 +324,8 @@
     "blocked": false,
     "host": "github",
     "repo": "kveld9/kveld-morphe-patches",
-    "stable": "v2.6.0",
-    "stable_date": "2026-10-10T03:05:27Z",
+    "stable": "v2.7.0",
+    "stable_date": "2026-10-15T20:19:42Z",
     "prerelease": "v2.7.0-experimental.25",
     "pre_date": "2026-10-15T19:46:25Z"
   },
