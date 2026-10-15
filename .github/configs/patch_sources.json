@@ -40,8 +40,8 @@
     "repo": "MorpheApp/morphe-patches",
     "stable": "v1.47.0",
     "stable_date": "2026-10-11T15:20:10Z",
-    "prerelease": "v1.48.0-dev.7",
-    "pre_date": "2026-10-14T09:07:59Z"
+    "prerelease": "v1.48.0-dev.8",
+    "pre_date": "2026-10-15T09:28:53Z"
   },
   "Paresh-Maheshwari/paresh-patches": {
     "beta": "v1.20.0-dev.4",
@@ -183,8 +183,8 @@
     "repo": "dh6k/morphe-patches",
     "stable": "v1.8.0",
     "stable_date": "2026-10-01T06:24:48Z",
-    "prerelease": "v1.9.0-dev.15",
-    "pre_date": "2026-10-14T20:02:53Z"
+    "prerelease": "v1.9.0-dev.16",
+    "pre_date": "2026-10-15T08:54:14Z"
   },
   "docbt/patched-up": {
     "beta": "v1.3.1-dev.2",
@@ -357,8 +357,8 @@
     "blocked": false,
     "host": "github",
     "repo": "revenge-mod/revenge-xposed",
-    "stable": "1701",
-    "stable_date": "2026-10-09T17:33:10Z",
+    "stable": "1801",
+    "stable_date": "2026-10-15T11:59:26Z",
     "prerelease": "",
     "pre_date": ""
   },
