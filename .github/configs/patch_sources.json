@@ -104,8 +104,8 @@
     "blocked": false,
     "host": "github",
     "repo": "ajstrick81/morphe-androidtv-patches",
-    "stable": "v1.40.6",
-    "stable_date": "2026-10-15T01:09:03Z",
+    "stable": "v1.41.0",
+    "stable_date": "2026-10-16T16:29:25Z",
     "prerelease": "test-212",
     "pre_date": "2026-10-06T22:01:57Z"
   },
@@ -117,8 +117,8 @@
     "repo": "anddea/revanced-patches",
     "stable": "v4.3.0",
     "stable_date": "2026-09-28T12:26:39Z",
-    "prerelease": "v4.4.0-dev.1",
-    "pre_date": "2026-10-14T08:06:25Z"
+    "prerelease": "v4.4.0-dev.2",
+    "pre_date": "2026-10-16T16:19:56Z"
   },
   "arandomhooman/hoomans-morphe-patches": {
     "beta": "v1.44.0-dev.4",
@@ -326,8 +326,8 @@
     "repo": "kveld9/kveld-morphe-patches",
     "stable": "v2.7.0",
     "stable_date": "2026-10-15T20:19:42Z",
-    "prerelease": "v2.7.0-experimental.27",
-    "pre_date": "2026-10-16T06:12:11Z"
+    "prerelease": "v2.7.0-experimental.28",
+    "pre_date": "2026-10-16T18:35:13Z"
   },
   "liongalahad/nuviotv-morphe-patches": {
     "beta": "v1.0.0-beta.1",
