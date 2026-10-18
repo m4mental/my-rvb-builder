@@ -203,8 +203,8 @@
     "blocked": false,
     "host": "github",
     "repo": "durgesh0505/chiggi_morphe_patches",
-    "stable": "v1.24.0",
-    "stable_date": "2026-10-18T02:00:48Z",
+    "stable": "v1.25.0",
+    "stable_date": "2026-10-18T13:48:32Z",
     "prerelease": "",
     "pre_date": ""
   },
@@ -291,10 +291,10 @@
     "blocked": false,
     "host": "github",
     "repo": "jkennethcarino/adobo",
-    "stable": "v1.5.0",
-    "stable_date": "2026-09-19T15:26:04Z",
-    "prerelease": "v1.6.0-dev.5",
-    "pre_date": "2026-10-10T08:51:20Z"
+    "stable": "v1.6.0",
+    "stable_date": "2026-10-18T14:04:53Z",
+    "prerelease": "v1.6.0-dev.6",
+    "pre_date": "2026-10-18T13:59:30Z"
   },
   "kiraio-moe/Lain-Patches": {
     "beta": "v1.4.0-dev.3",
@@ -326,8 +326,8 @@
     "repo": "kveld9/kveld-morphe-patches",
     "stable": "v2.7.0",
     "stable_date": "2026-10-15T20:19:42Z",
-    "prerelease": "v2.7.0-experimental.26",
-    "pre_date": "2026-10-16T02:43:08Z"
+    "prerelease": "v2.8.0-experimental.2",
+    "pre_date": "2026-10-18T14:25:53Z"
   },
   "liongalahad/nuviotv-morphe-patches": {
     "beta": "v1.0.0-beta.1",
@@ -368,10 +368,10 @@
     "blocked": false,
     "host": "github",
     "repo": "riky-dev/morphe-patches",
-    "stable": "v2.3.0",
-    "stable_date": "2026-10-14T15:34:44Z",
-    "prerelease": "v2.3.1-dev.1",
-    "pre_date": "2026-10-17T15:19:40Z"
+    "stable": "v2.3.2",
+    "stable_date": "2026-10-18T14:08:26Z",
+    "prerelease": "v2.3.2-dev.1",
+    "pre_date": "2026-10-18T14:00:26Z"
   },
   "rushiranpise/morphe-patches": {
     "beta": "v1.22.0-dev.1",
