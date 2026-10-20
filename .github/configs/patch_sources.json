@@ -40,8 +40,8 @@
     "repo": "MorpheApp/morphe-patches",
     "stable": "v1.47.0",
     "stable_date": "2026-10-11T15:20:10Z",
-    "prerelease": "v1.48.0-dev.13",
-    "pre_date": "2026-10-19T15:39:53Z"
+    "prerelease": "v1.48.0-dev.15",
+    "pre_date": "2026-10-20T12:48:18Z"
   },
   "Paresh-Maheshwari/paresh-patches": {
     "beta": "v1.20.0-dev.4",
@@ -216,8 +216,8 @@
     "repo": "franticg33k/morphe-patches",
     "stable": "v1.5.1",
     "stable_date": "2026-10-19T13:59:17Z",
-    "prerelease": "v1.5.1-dev.2",
-    "pre_date": "2026-10-19T13:50:09Z"
+    "prerelease": "v1.6.0-dev.1",
+    "pre_date": "2026-10-20T07:39:29Z"
   },
   "hoo-dles/morphe-patches": {
     "beta": "v1.44.0-dev.2",
@@ -326,8 +326,8 @@
     "repo": "kveld9/kveld-morphe-patches",
     "stable": "v2.7.0",
     "stable_date": "2026-10-15T20:19:42Z",
-    "prerelease": "v2.8.0-experimental.3",
-    "pre_date": "2026-10-19T20:31:57Z"
+    "prerelease": "v2.8.0-experimental.4",
+    "pre_date": "2026-10-20T10:40:40Z"
   },
   "liongalahad/nuviotv-morphe-patches": {
     "beta": "v1.0.0-beta.1",
@@ -357,10 +357,10 @@
     "blocked": false,
     "host": "github",
     "repo": "revenge-mod/revenge-xposed",
-    "stable": "1801",
-    "stable_date": "2026-10-15T11:59:26Z",
-    "prerelease": "",
-    "pre_date": ""
+    "stable": "1902",
+    "stable_date": "2026-10-20T12:20:35Z",
+    "prerelease": "1901",
+    "pre_date": "2026-10-20T11:33:48Z"
   },
   "riky-dev/morphe-patches": {
     "beta": "v1.4.2-dev.1",
