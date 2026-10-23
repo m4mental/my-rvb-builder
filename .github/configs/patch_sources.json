@@ -104,8 +104,8 @@
     "blocked": false,
     "host": "github",
     "repo": "ajstrick81/morphe-androidtv-patches",
-    "stable": "v1.42.2",
-    "stable_date": "2026-10-17T17:58:06Z",
+    "stable": "v1.42.3",
+    "stable_date": "2026-10-23T03:26:30Z",
     "prerelease": "test-212",
     "pre_date": "2026-10-06T22:01:57Z"
   },
@@ -249,8 +249,8 @@
     "repo": "hxreborn/morphe-patches",
     "stable": "v1.58.0",
     "stable_date": "2026-10-22T11:47:00Z",
-    "prerelease": "v1.59.0-dev.8",
-    "pre_date": "2026-10-22T21:30:24Z"
+    "prerelease": "v1.59.0-dev.9",
+    "pre_date": "2026-10-23T04:30:23Z"
   },
   "icysymmetra/tiktok-patches-for-morphe": {
     "beta": "v0.8.0-dev.11",
