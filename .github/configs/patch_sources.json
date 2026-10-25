@@ -29,8 +29,8 @@
     "repo": "IMXEren/mix-patches",
     "stable": "v1.8.0",
     "stable_date": "2026-10-07T04:17:11.999Z",
-    "prerelease": "v1.9.0-dev.8",
-    "pre_date": "2026-10-24T21:48:23.749Z"
+    "prerelease": "v1.9.0-dev.9",
+    "pre_date": "2026-10-24T23:51:33.740Z"
   },
   "MorpheApp/morphe-patches": {
     "beta": "v1.44.0-dev.1",
@@ -249,8 +249,8 @@
     "repo": "hxreborn/morphe-patches",
     "stable": "v1.60.0",
     "stable_date": "2026-10-24T13:05:04Z",
-    "prerelease": "v1.60.0-dev.5",
-    "pre_date": "2026-10-24T13:00:12Z"
+    "prerelease": "v1.61.0-dev.1",
+    "pre_date": "2026-10-25T01:17:56Z"
   },
   "icysymmetra/tiktok-patches-for-morphe": {
     "beta": "v0.8.0-dev.11",
@@ -282,8 +282,8 @@
     "repo": "jasonwu1994/Gboard-patches",
     "stable": "v3.13.0",
     "stable_date": "2026-10-16T10:05:53Z",
-    "prerelease": "v4.0.0-dev.3",
-    "pre_date": "2026-10-24T05:39:09Z"
+    "prerelease": "v4.0.0-dev.4",
+    "pre_date": "2026-10-25T03:47:02Z"
   },
   "jkennethcarino/adobo": {
     "beta": "v1.5.0-dev.2",
