@@ -159,10 +159,10 @@
     "blocked": false,
     "host": "github",
     "repo": "bufferk/morphe-patches",
-    "stable": "v1.8.0",
-    "stable_date": "2026-07-18T18:58:06Z",
-    "prerelease": "v1.9.0-dev.1",
-    "pre_date": "2026-10-07T04:52:47Z"
+    "stable": "v1.8.1",
+    "stable_date": "2026-10-25T06:39:44Z",
+    "prerelease": "v1.9.0-dev.2",
+    "pre_date": "2026-10-25T06:26:14Z"
   },
   "crimera/piko": {
     "beta": "v3.10.0-dev.8",
@@ -172,8 +172,8 @@
     "repo": "crimera/piko",
     "stable": "v3.10.0",
     "stable_date": "2026-10-10T14:58:13Z",
-    "prerelease": "v3.11.0-dev.1",
-    "pre_date": "2026-10-22T22:32:43Z"
+    "prerelease": "v3.11.0-dev.2",
+    "pre_date": "2026-10-25T06:54:41Z"
   },
   "dh6k/morphe-patches": {
     "beta": "v1.6.0-dev.6",
@@ -249,8 +249,8 @@
     "repo": "hxreborn/morphe-patches",
     "stable": "v1.60.0",
     "stable_date": "2026-10-24T13:05:04Z",
-    "prerelease": "v1.61.0-dev.1",
-    "pre_date": "2026-10-25T01:17:56Z"
+    "prerelease": "v1.61.0-dev.3",
+    "pre_date": "2026-10-25T10:31:52Z"
   },
   "icysymmetra/tiktok-patches-for-morphe": {
     "beta": "v0.8.0-dev.11",
