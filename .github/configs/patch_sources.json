@@ -82,8 +82,8 @@
     "blocked": false,
     "host": "github",
     "repo": "RookieEnough/De-Vanced",
-    "stable": "v1.6.0",
-    "stable_date": "2026-10-24T08:53:14Z",
+    "stable": "v1.6.1",
+    "stable_date": "2026-10-28T20:23:58Z",
     "prerelease": "v1.5.1-dev.1",
     "pre_date": "2026-10-04T09:36:11Z"
   },
@@ -104,8 +104,8 @@
     "blocked": false,
     "host": "github",
     "repo": "ajstrick81/morphe-androidtv-patches",
-    "stable": "v1.44.0",
-    "stable_date": "2026-10-26T00:25:08Z",
+    "stable": "v1.45.0",
+    "stable_date": "2026-10-28T18:59:32Z",
     "prerelease": "pv-v15-fix-260",
     "pre_date": "2026-10-25T23:57:43Z"
   },
@@ -249,8 +249,8 @@
     "repo": "hxreborn/morphe-patches",
     "stable": "v1.65.0",
     "stable_date": "2026-10-28T09:20:17Z",
-    "prerelease": "v1.66.0-dev.1",
-    "pre_date": "2026-10-28T14:34:18Z"
+    "prerelease": "v1.66.0-dev.2",
+    "pre_date": "2026-10-28T19:58:55Z"
   },
   "icysymmetra/tiktok-patches-for-morphe": {
     "beta": "v0.8.0-dev.11",
@@ -326,8 +326,8 @@
     "repo": "kveld9/kveld-morphe-patches",
     "stable": "v2.9.0",
     "stable_date": "2026-10-27T00:24:54Z",
-    "prerelease": "v2.9.0-experimental.5",
-    "pre_date": "2026-10-27T00:23:13Z"
+    "prerelease": "v2.10.0-experimental.2",
+    "pre_date": "2026-10-28T18:54:57Z"
   },
   "liongalahad/nuviotv-morphe-patches": {
     "beta": "v1.0.0-beta.1",
@@ -379,8 +379,8 @@
     "blocked": false,
     "host": "github",
     "repo": "rushiranpise/morphe-patches",
-    "stable": "v1.23.0",
-    "stable_date": "2026-10-14T17:39:11Z",
+    "stable": "v1.23.1",
+    "stable_date": "2026-10-28T18:16:06Z",
     "prerelease": "v1.23.1-dev.1",
     "pre_date": "2026-10-25T13:21:08Z"
   },
