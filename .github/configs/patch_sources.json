@@ -104,8 +104,8 @@
     "blocked": false,
     "host": "github",
     "repo": "ajstrick81/morphe-androidtv-patches",
-    "stable": "v1.45.0",
-    "stable_date": "2026-10-28T18:59:32Z",
+    "stable": "v1.46.0",
+    "stable_date": "2026-10-29T02:26:12Z",
     "prerelease": "pv-v15-fix-260",
     "pre_date": "2026-10-25T23:57:43Z"
   },
@@ -282,8 +282,8 @@
     "repo": "jasonwu1994/Gboard-patches",
     "stable": "v4.0.0",
     "stable_date": "2026-10-26T22:41:52Z",
-    "prerelease": "v4.0.0-dev.5",
-    "pre_date": "2026-10-26T07:04:24Z"
+    "prerelease": "v4.1.0-dev.1",
+    "pre_date": "2026-10-29T02:30:31Z"
   },
   "jkennethcarino/adobo": {
     "beta": "v1.5.0-dev.2",
