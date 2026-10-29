@@ -40,8 +40,8 @@
     "repo": "MorpheApp/morphe-patches",
     "stable": "v1.48.0",
     "stable_date": "2026-10-22T13:14:23Z",
-    "prerelease": "v1.49.0-dev.10",
-    "pre_date": "2026-10-28T08:25:09Z"
+    "prerelease": "v1.49.0-dev.11",
+    "pre_date": "2026-10-29T08:24:08Z"
   },
   "Paresh-Maheshwari/paresh-patches": {
     "beta": "v1.20.0-dev.4",
@@ -82,8 +82,8 @@
     "blocked": false,
     "host": "github",
     "repo": "RookieEnough/De-Vanced",
-    "stable": "v1.6.1",
-    "stable_date": "2026-10-28T20:23:58Z",
+    "stable": "v1.6.2",
+    "stable_date": "2026-10-29T08:29:05Z",
     "prerelease": "v1.5.1-dev.1",
     "pre_date": "2026-10-04T09:36:11Z"
   },
@@ -247,10 +247,10 @@
     "blocked": false,
     "host": "github",
     "repo": "hxreborn/morphe-patches",
-    "stable": "v1.65.0",
-    "stable_date": "2026-10-28T09:20:17Z",
-    "prerelease": "v1.66.0-dev.2",
-    "pre_date": "2026-10-28T19:58:55Z"
+    "stable": "v1.66.0",
+    "stable_date": "2026-10-29T12:50:35Z",
+    "prerelease": "v1.66.0-dev.3",
+    "pre_date": "2026-10-29T08:03:53Z"
   },
   "icysymmetra/tiktok-patches-for-morphe": {
     "beta": "v0.8.0-dev.11",
@@ -282,8 +282,8 @@
     "repo": "jasonwu1994/Gboard-patches",
     "stable": "v4.0.0",
     "stable_date": "2026-10-26T22:41:52Z",
-    "prerelease": "v4.1.0-dev.1",
-    "pre_date": "2026-10-29T02:30:31Z"
+    "prerelease": "v4.1.0-dev.2",
+    "pre_date": "2026-10-29T06:58:38Z"
   },
   "jkennethcarino/adobo": {
     "beta": "v1.5.0-dev.2",
@@ -326,8 +326,8 @@
     "repo": "kveld9/kveld-morphe-patches",
     "stable": "v2.9.0",
     "stable_date": "2026-10-27T00:24:54Z",
-    "prerelease": "v2.10.0-experimental.2",
-    "pre_date": "2026-10-28T18:54:57Z"
+    "prerelease": "v2.10.0-experimental.3",
+    "pre_date": "2026-10-29T10:08:49Z"
   },
   "liongalahad/nuviotv-morphe-patches": {
     "beta": "v1.0.0-beta.1",
