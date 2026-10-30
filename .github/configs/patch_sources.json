@@ -29,8 +29,8 @@
     "repo": "IMXEren/mix-patches",
     "stable": "v1.8.0",
     "stable_date": "2026-10-07T04:17:11.999Z",
-    "prerelease": "v1.9.0-dev.13",
-    "pre_date": "2026-10-27T17:20:45.436Z"
+    "prerelease": "v1.9.0-dev.14",
+    "pre_date": "2026-10-30T11:50:39.959Z"
   },
   "MorpheApp/morphe-patches": {
     "beta": "v1.44.0-dev.1",
@@ -38,10 +38,10 @@
     "blocked": false,
     "host": "github",
     "repo": "MorpheApp/morphe-patches",
-    "stable": "v1.48.0",
-    "stable_date": "2026-10-22T13:14:23Z",
-    "prerelease": "v2.0.0-dev.1",
-    "pre_date": "2026-10-29T18:33:56Z"
+    "stable": "v2.0.0",
+    "stable_date": "2026-10-30T11:16:04Z",
+    "prerelease": "v2.0.0-dev.4",
+    "pre_date": "2026-10-30T11:01:50Z"
   },
   "Paresh-Maheshwari/paresh-patches": {
     "beta": "v1.20.0-dev.4",
@@ -183,8 +183,8 @@
     "repo": "dh6k/morphe-patches",
     "stable": "v1.9.0",
     "stable_date": "2026-10-22T16:40:51Z",
-    "prerelease": "v1.9.0-dev.16",
-    "pre_date": "2026-10-15T08:54:14Z"
+    "prerelease": "v1.10.0-dev.1",
+    "pre_date": "2026-10-30T14:54:11Z"
   },
   "docbt/patched-up": {
     "beta": "v1.3.1-dev.2",
@@ -216,8 +216,8 @@
     "repo": "franticg33k/morphe-patches",
     "stable": "v1.6.0",
     "stable_date": "2026-10-21T03:39:51Z",
-    "prerelease": "v1.6.1-dev.2",
-    "pre_date": "2026-10-30T02:59:06Z"
+    "prerelease": "v1.7.0-dev.1",
+    "pre_date": "2026-10-30T06:05:43Z"
   },
   "hoo-dles/morphe-patches": {
     "beta": "v1.44.0-dev.2",
@@ -249,8 +249,8 @@
     "repo": "hxreborn/morphe-patches",
     "stable": "v1.66.0",
     "stable_date": "2026-10-29T12:50:35Z",
-    "prerelease": "v1.66.0-dev.3",
-    "pre_date": "2026-10-29T08:03:53Z"
+    "prerelease": "v1.67.0-dev.1",
+    "pre_date": "2026-10-30T07:13:31Z"
   },
   "icysymmetra/tiktok-patches-for-morphe": {
     "beta": "v0.8.0-dev.11",
