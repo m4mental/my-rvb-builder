@@ -249,8 +249,8 @@
     "repo": "hxreborn/morphe-patches",
     "stable": "v1.67.0",
     "stable_date": "2026-10-31T07:35:46Z",
-    "prerelease": "v1.68.0-dev.5",
-    "pre_date": "2026-10-31T16:46:02Z"
+    "prerelease": "v1.68.0-dev.7",
+    "pre_date": "2026-10-31T20:51:24Z"
   },
   "icysymmetra/tiktok-patches-for-morphe": {
     "beta": "v0.8.0-dev.11",
