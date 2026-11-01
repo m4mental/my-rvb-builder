@@ -49,10 +49,10 @@
     "blocked": false,
     "host": "gitlab",
     "repo": "Paresh-Maheshwari/paresh-patches",
-    "stable": "v1.20.0",
-    "stable_date": "2026-09-01T16:37:52.954Z",
-    "prerelease": "v1.20.0-dev.4",
-    "pre_date": "2026-09-01T16:25:25.186Z"
+    "stable": "v1.20.1",
+    "stable_date": "2026-11-01T05:56:32.681Z",
+    "prerelease": "v1.20.1-dev.1",
+    "pre_date": "2026-11-01T05:46:10.874Z"
   },
   "PrathxmOp/Prathxm-Patches": {
     "beta": "v1.13.1-dev.4",
@@ -84,8 +84,8 @@
     "repo": "RookieEnough/De-Vanced",
     "stable": "v1.6.2",
     "stable_date": "2026-10-29T08:29:05Z",
-    "prerelease": "v1.5.1-dev.1",
-    "pre_date": "2026-10-04T09:36:11Z"
+    "prerelease": "v1.6.3-dev.1",
+    "pre_date": "2026-10-31T23:55:33Z"
   },
   "SapitoSucio/FroggoMorphePatches": {
     "beta": "v1.4.0-dev.2",
@@ -214,10 +214,10 @@
     "blocked": false,
     "host": "github",
     "repo": "franticg33k/morphe-patches",
-    "stable": "v1.7.0",
-    "stable_date": "2026-10-31T15:58:39Z",
-    "prerelease": "v1.7.0-dev.5",
-    "pre_date": "2026-10-31T15:47:22Z"
+    "stable": "v1.7.1",
+    "stable_date": "2026-11-01T03:03:09Z",
+    "prerelease": "v1.7.2-dev.1",
+    "pre_date": "2026-11-01T04:38:46Z"
   },
   "hoo-dles/morphe-patches": {
     "beta": "v1.44.0-dev.2",
@@ -282,8 +282,8 @@
     "repo": "jasonwu1994/Gboard-patches",
     "stable": "v4.1.1",
     "stable_date": "2026-10-31T19:29:30Z",
-    "prerelease": "v4.1.1-dev.1",
-    "pre_date": "2026-10-31T10:53:14Z"
+    "prerelease": "v4.2.0-dev.2",
+    "pre_date": "2026-11-01T02:27:21Z"
   },
   "jkennethcarino/adobo": {
     "beta": "v1.5.0-dev.2",
