@@ -40,8 +40,8 @@
     "repo": "MorpheApp/morphe-patches",
     "stable": "v2.0.0",
     "stable_date": "2026-10-30T11:16:04Z",
-    "prerelease": "v2.1.0-dev.4",
-    "pre_date": "2026-10-31T17:10:04Z"
+    "prerelease": "v2.1.0-dev.5",
+    "pre_date": "2026-11-01T09:55:14Z"
   },
   "Paresh-Maheshwari/paresh-patches": {
     "beta": "v1.20.0-dev.4",
@@ -172,8 +172,8 @@
     "repo": "crimera/piko",
     "stable": "v3.10.0",
     "stable_date": "2026-10-10T14:58:13Z",
-    "prerelease": "v3.11.0-dev.3",
-    "pre_date": "2026-10-25T17:20:44Z"
+    "prerelease": "v3.11.0-dev.4",
+    "pre_date": "2026-11-01T13:26:43Z"
   },
   "dh6k/morphe-patches": {
     "beta": "v1.6.0-dev.6",
@@ -247,10 +247,10 @@
     "blocked": false,
     "host": "github",
     "repo": "hxreborn/morphe-patches",
-    "stable": "v1.67.0",
-    "stable_date": "2026-10-31T07:35:46Z",
-    "prerelease": "v1.68.0-dev.7",
-    "pre_date": "2026-10-31T20:51:24Z"
+    "stable": "v1.68.0",
+    "stable_date": "2026-11-01T07:51:54Z",
+    "prerelease": "v1.69.0-dev.4",
+    "pre_date": "2026-11-01T11:26:27Z"
   },
   "icysymmetra/tiktok-patches-for-morphe": {
     "beta": "v0.8.0-dev.11",
@@ -269,8 +269,8 @@
     "blocked": false,
     "host": "github",
     "repo": "instafel/pc-rel",
-    "stable": "ce49607-4.7.0",
-    "stable_date": "2026-10-15T17:48:51Z",
+    "stable": "b7764c7-4.7.0",
+    "stable_date": "2026-11-01T13:27:24Z",
     "prerelease": "",
     "pre_date": ""
   },
