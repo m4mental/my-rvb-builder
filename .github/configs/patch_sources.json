@@ -40,8 +40,8 @@
     "repo": "MorpheApp/morphe-patches",
     "stable": "v2.0.0",
     "stable_date": "2026-10-30T11:16:04Z",
-    "prerelease": "v2.1.0-dev.6",
-    "pre_date": "2026-11-02T08:28:24Z"
+    "prerelease": "v2.1.0-dev.7",
+    "pre_date": "2026-11-03T08:24:27Z"
   },
   "Paresh-Maheshwari/paresh-patches": {
     "beta": "v1.20.0-dev.4",
@@ -84,8 +84,8 @@
     "repo": "RookieEnough/De-Vanced",
     "stable": "v1.6.3",
     "stable_date": "2026-11-02T19:58:05Z",
-    "prerelease": "v1.6.3-dev.3",
-    "pre_date": "2026-11-02T19:34:34Z"
+    "prerelease": "v1.6.4-dev.1",
+    "pre_date": "2026-11-03T09:12:28Z"
   },
   "SapitoSucio/FroggoMorphePatches": {
     "beta": "v1.4.0-dev.2",
@@ -249,8 +249,8 @@
     "repo": "hxreborn/morphe-patches",
     "stable": "v1.69.0",
     "stable_date": "2026-11-02T08:53:39Z",
-    "prerelease": "v1.70.0-dev.8",
-    "pre_date": "2026-11-02T19:08:36Z"
+    "prerelease": "v1.70.0-dev.9",
+    "pre_date": "2026-11-03T07:01:54Z"
   },
   "icysymmetra/tiktok-patches-for-morphe": {
     "beta": "v0.8.0-dev.11",
@@ -282,8 +282,8 @@
     "repo": "jasonwu1994/Gboard-patches",
     "stable": "v4.1.1",
     "stable_date": "2026-10-31T19:29:30Z",
-    "prerelease": "v4.2.0-dev.4",
-    "pre_date": "2026-11-03T00:43:58Z"
+    "prerelease": "v4.2.0-dev.5",
+    "pre_date": "2026-11-03T08:48:59Z"
   },
   "jkennethcarino/adobo": {
     "beta": "v1.5.0-dev.2",
