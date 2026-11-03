@@ -117,8 +117,8 @@
     "repo": "anddea/revanced-patches",
     "stable": "v4.3.0",
     "stable_date": "2026-09-28T12:26:39Z",
-    "prerelease": "v4.4.0-dev.4",
-    "pre_date": "2026-10-30T17:49:19Z"
+    "prerelease": "v4.4.0-dev.5",
+    "pre_date": "2026-11-03T18:04:59Z"
   },
   "arandomhooman/hoomans-morphe-patches": {
     "beta": "v1.44.0-dev.4",
@@ -214,8 +214,8 @@
     "blocked": false,
     "host": "github",
     "repo": "franticg33k/morphe-patches",
-    "stable": "v1.7.1",
-    "stable_date": "2026-11-01T03:03:09Z",
+    "stable": "v1.7.2",
+    "stable_date": "2026-11-03T12:15:43Z",
     "prerelease": "v1.7.2-dev.1",
     "pre_date": "2026-11-01T04:38:46Z"
   },
@@ -247,10 +247,10 @@
     "blocked": false,
     "host": "github",
     "repo": "hxreborn/morphe-patches",
-    "stable": "v1.69.0",
-    "stable_date": "2026-11-02T08:53:39Z",
-    "prerelease": "v1.70.0-dev.9",
-    "pre_date": "2026-11-03T07:01:54Z"
+    "stable": "v1.70.0",
+    "stable_date": "2026-11-03T13:24:15Z",
+    "prerelease": "v1.71.0-dev.2",
+    "pre_date": "2026-11-03T19:10:31Z"
   },
   "icysymmetra/tiktok-patches-for-morphe": {
     "beta": "v0.8.0-dev.11",
