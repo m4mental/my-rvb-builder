@@ -40,8 +40,8 @@
     "repo": "MorpheApp/morphe-patches",
     "stable": "v2.0.0",
     "stable_date": "2026-10-30T11:16:04Z",
-    "prerelease": "v2.1.0-dev.8",
-    "pre_date": "2026-11-04T06:02:06Z"
+    "prerelease": "v2.1.0-dev.10",
+    "pre_date": "2026-11-04T15:00:43Z"
   },
   "Paresh-Maheshwari/paresh-patches": {
     "beta": "v1.20.0-dev.4",
@@ -82,10 +82,10 @@
     "blocked": false,
     "host": "github",
     "repo": "RookieEnough/De-Vanced",
-    "stable": "v1.6.3",
-    "stable_date": "2026-11-02T19:58:05Z",
-    "prerelease": "v1.6.4-dev.1",
-    "pre_date": "2026-11-03T09:12:28Z"
+    "stable": "v1.6.4",
+    "stable_date": "2026-11-04T16:34:58Z",
+    "prerelease": "v1.6.4-dev.2",
+    "pre_date": "2026-11-04T16:28:08Z"
   },
   "SapitoSucio/FroggoMorphePatches": {
     "beta": "v1.4.0-dev.2",
