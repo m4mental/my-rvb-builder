@@ -29,8 +29,8 @@
     "repo": "IMXEren/mix-patches",
     "stable": "v1.8.0",
     "stable_date": "2026-10-07T04:17:11.999Z",
-    "prerelease": "v2.0.0-dev.4",
-    "pre_date": "2026-10-31T16:49:35.347Z"
+    "prerelease": "v2.0.0-dev.6",
+    "pre_date": "2026-11-04T23:28:45.457Z"
   },
   "MorpheApp/morphe-patches": {
     "beta": "v1.44.0-dev.1",
@@ -249,8 +249,8 @@
     "repo": "hxreborn/morphe-patches",
     "stable": "v1.71.0",
     "stable_date": "2026-11-04T10:18:23Z",
-    "prerelease": "v1.71.0-dev.4",
-    "pre_date": "2026-11-04T10:10:27Z"
+    "prerelease": "v1.72.0-dev.1",
+    "pre_date": "2026-11-04T19:58:56Z"
   },
   "icysymmetra/tiktok-patches-for-morphe": {
     "beta": "v0.8.0-dev.11",
