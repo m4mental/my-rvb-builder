@@ -247,10 +247,10 @@
     "blocked": false,
     "host": "github",
     "repo": "hxreborn/morphe-patches",
-    "stable": "v1.71.0",
-    "stable_date": "2026-11-04T10:18:23Z",
-    "prerelease": "v1.72.0-dev.1",
-    "pre_date": "2026-11-04T19:58:56Z"
+    "stable": "v1.72.0",
+    "stable_date": "2026-11-05T16:20:23Z",
+    "prerelease": "v1.72.0-dev.3",
+    "pre_date": "2026-11-05T16:11:34Z"
   },
   "icysymmetra/tiktok-patches-for-morphe": {
     "beta": "v0.8.0-dev.11",
