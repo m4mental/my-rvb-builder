@@ -29,8 +29,8 @@
     "repo": "IMXEren/mix-patches",
     "stable": "v1.8.0",
     "stable_date": "2026-10-07T04:17:11.999Z",
-    "prerelease": "v2.0.0-dev.8",
-    "pre_date": "2026-11-07T16:15:50.406Z"
+    "prerelease": "v2.0.0-dev.9",
+    "pre_date": "2026-11-07T21:33:06.724Z"
   },
   "MorpheApp/morphe-patches": {
     "beta": "v1.44.0-dev.1",
@@ -104,8 +104,8 @@
     "blocked": false,
     "host": "github",
     "repo": "ajstrick81/morphe-androidtv-patches",
-    "stable": "v1.50.0",
-    "stable_date": "2026-11-07T14:55:19Z",
+    "stable": "v1.50.3",
+    "stable_date": "2026-11-07T20:54:29Z",
     "prerelease": "pv-v15-fix-260",
     "pre_date": "2026-10-25T23:57:43Z"
   },
