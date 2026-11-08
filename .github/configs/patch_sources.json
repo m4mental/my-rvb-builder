@@ -249,8 +249,8 @@
     "repo": "hxreborn/morphe-patches",
     "stable": "v1.74.0",
     "stable_date": "2026-11-08T05:53:45Z",
-    "prerelease": "v1.75.0-dev.2",
-    "pre_date": "2026-11-08T12:13:57Z"
+    "prerelease": "v1.75.0-dev.4",
+    "pre_date": "2026-11-08T17:57:59Z"
   },
   "icysymmetra/tiktok-patches-for-morphe": {
     "beta": "v0.8.0-dev.11",
@@ -326,8 +326,8 @@
     "repo": "kveld9/kveld-morphe-patches",
     "stable": "v2.10.1",
     "stable_date": "2026-11-02T21:12:06Z",
-    "prerelease": "v2.10.2-experimental.1",
-    "pre_date": "2026-11-06T01:51:11Z"
+    "prerelease": "v2.11.0-experimental.2",
+    "pre_date": "2026-11-08T19:43:40Z"
   },
   "liongalahad/nuviotv-morphe-patches": {
     "beta": "v1.0.0-beta.1",
