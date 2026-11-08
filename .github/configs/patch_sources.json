@@ -104,8 +104,8 @@
     "blocked": false,
     "host": "github",
     "repo": "ajstrick81/morphe-androidtv-patches",
-    "stable": "v1.50.3",
-    "stable_date": "2026-11-07T20:54:29Z",
+    "stable": "v1.51.0",
+    "stable_date": "2026-11-08T00:51:07Z",
     "prerelease": "pv-v15-fix-260",
     "pre_date": "2026-10-25T23:57:43Z"
   },
@@ -247,8 +247,8 @@
     "blocked": false,
     "host": "github",
     "repo": "hxreborn/morphe-patches",
-    "stable": "v1.73.0",
-    "stable_date": "2026-11-07T00:41:02Z",
+    "stable": "v1.74.0",
+    "stable_date": "2026-11-08T05:53:45Z",
     "prerelease": "v1.74.0-dev.3",
     "pre_date": "2026-11-07T15:40:25Z"
   },
