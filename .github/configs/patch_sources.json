@@ -40,8 +40,8 @@
     "repo": "MorpheApp/morphe-patches",
     "stable": "v2.2.0",
     "stable_date": "2026-11-10T14:41:45Z",
-    "prerelease": "v2.2.0-dev.5",
-    "pre_date": "2026-11-10T09:01:34Z"
+    "prerelease": "v2.3.0-dev.1",
+    "pre_date": "2026-11-11T10:57:43Z"
   },
   "Paresh-Maheshwari/paresh-patches": {
     "beta": "v1.20.0-dev.4",
@@ -104,8 +104,8 @@
     "blocked": false,
     "host": "github",
     "repo": "ajstrick81/morphe-androidtv-patches",
-    "stable": "v1.52.1",
-    "stable_date": "2026-11-10T21:05:26Z",
+    "stable": "v1.53.0",
+    "stable_date": "2026-11-11T16:04:59Z",
     "prerelease": "pv-v15-fix-260",
     "pre_date": "2026-10-25T23:57:43Z"
   },
@@ -249,8 +249,8 @@
     "repo": "hxreborn/morphe-patches",
     "stable": "v1.76.0",
     "stable_date": "2026-11-10T19:31:28Z",
-    "prerelease": "v1.76.0-dev.8",
-    "pre_date": "2026-11-10T19:20:59Z"
+    "prerelease": "v1.76.1-dev.1",
+    "pre_date": "2026-11-11T09:51:55Z"
   },
   "icysymmetra/tiktok-patches-for-morphe": {
     "beta": "v0.8.0-dev.11",
