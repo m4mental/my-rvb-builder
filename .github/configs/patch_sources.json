@@ -258,10 +258,10 @@
     "blocked": false,
     "host": "github",
     "repo": "icysymmetra/tiktok-patches-for-morphe",
-    "stable": "v0.9.0",
-    "stable_date": "2026-11-10T09:51:07Z",
-    "prerelease": "v0.10.0-dev.1",
-    "pre_date": "2026-11-10T23:45:49Z"
+    "stable": "v0.10.0",
+    "stable_date": "2026-11-11T21:26:37Z",
+    "prerelease": "v0.10.0-dev.2",
+    "pre_date": "2026-11-11T21:19:28Z"
   },
   "instafel/pc-rel": {
     "beta": "",
@@ -326,8 +326,8 @@
     "repo": "kveld9/kveld-morphe-patches",
     "stable": "v2.10.1",
     "stable_date": "2026-11-02T21:12:06Z",
-    "prerelease": "v2.11.0-experimental.10",
-    "pre_date": "2026-11-11T03:05:57Z"
+    "prerelease": "v2.11.0-experimental.11",
+    "pre_date": "2026-11-11T19:09:28Z"
   },
   "liongalahad/nuviotv-morphe-patches": {
     "beta": "v1.0.0-beta.1",
