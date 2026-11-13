@@ -18,8 +18,8 @@
     "repo": "BholeyKaBhakt/revanced-patches-xtra",
     "stable": "v2.12.0",
     "stable_date": "2026-06-22T17:44:41Z",
-    "prerelease": "v2.12.0-dev.1",
-    "pre_date": "2026-06-19T07:44:04Z"
+    "prerelease": "v2.0.4-dev.1",
+    "pre_date": "2026-05-20T08:17:53Z"
   },
   "IMXEren/mix-patches": {
     "beta": "v1.7.2-dev.1",
@@ -29,8 +29,8 @@
     "repo": "IMXEren/mix-patches",
     "stable": "v1.8.0",
     "stable_date": "2026-10-07T04:17:11.999Z",
-    "prerelease": "v2.0.0-dev.11",
-    "pre_date": "2026-11-12T22:11:30.478Z"
+    "prerelease": "v2.0.0-dev.12",
+    "pre_date": "2026-11-13T16:38:14.476Z"
   },
   "MorpheApp/morphe-patches": {
     "beta": "v1.44.0-dev.1",
@@ -40,8 +40,8 @@
     "repo": "MorpheApp/morphe-patches",
     "stable": "v2.2.0",
     "stable_date": "2026-11-10T14:41:45Z",
-    "prerelease": "v2.3.0-dev.2",
-    "pre_date": "2026-11-12T13:58:32Z"
+    "prerelease": "v2.3.0-dev.3",
+    "pre_date": "2026-11-13T12:34:09Z"
   },
   "Paresh-Maheshwari/paresh-patches": {
     "beta": "v1.20.0-dev.4",
@@ -117,8 +117,8 @@
     "repo": "anddea/revanced-patches",
     "stable": "v4.3.0",
     "stable_date": "2026-09-28T12:26:39Z",
-    "prerelease": "v4.4.0-dev.6",
-    "pre_date": "2026-11-06T16:37:45Z"
+    "prerelease": "v4.4.0-dev.7",
+    "pre_date": "2026-11-13T18:00:13Z"
   },
   "arandomhooman/hoomans-morphe-patches": {
     "beta": "v1.44.0-dev.4",
@@ -249,8 +249,8 @@
     "repo": "hxreborn/morphe-patches",
     "stable": "v1.77.0",
     "stable_date": "2026-11-12T06:00:06Z",
-    "prerelease": "v1.78.0-dev.1",
-    "pre_date": "2026-11-12T21:22:35Z"
+    "prerelease": "v1.78.0-dev.2",
+    "pre_date": "2026-11-13T13:33:10Z"
   },
   "icysymmetra/tiktok-patches-for-morphe": {
     "beta": "v0.8.0-dev.11",
@@ -260,8 +260,8 @@
     "repo": "icysymmetra/tiktok-patches-for-morphe",
     "stable": "v0.10.0",
     "stable_date": "2026-11-11T21:26:37Z",
-    "prerelease": "v0.11.0-dev.4",
-    "pre_date": "2026-11-13T02:19:45Z"
+    "prerelease": "v0.11.0-dev.5",
+    "pre_date": "2026-11-13T16:51:18Z"
   },
   "instafel/pc-rel": {
     "beta": "",
