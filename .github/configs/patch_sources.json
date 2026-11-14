@@ -249,8 +249,8 @@
     "repo": "hxreborn/morphe-patches",
     "stable": "v1.77.0",
     "stable_date": "2026-11-12T06:00:06Z",
-    "prerelease": "v1.78.0-dev.2",
-    "pre_date": "2026-11-13T13:33:10Z"
+    "prerelease": "v1.78.0-dev.3",
+    "pre_date": "2026-11-13T21:45:44Z"
   },
   "icysymmetra/tiktok-patches-for-morphe": {
     "beta": "v0.8.0-dev.11",
@@ -313,10 +313,10 @@
     "blocked": false,
     "host": "github",
     "repo": "kondratjev/morphe-patches",
-    "stable": "v1.28.2",
-    "stable_date": "2026-11-07T17:48:31Z",
-    "prerelease": "v1.28.2-dev.1",
-    "pre_date": "2026-11-07T17:46:11Z"
+    "stable": "v1.29.0",
+    "stable_date": "2026-11-13T20:16:30Z",
+    "prerelease": "v1.29.0-dev.1",
+    "pre_date": "2026-11-13T20:14:31Z"
   },
   "kveld9/kveld-morphe-patches": {
     "beta": "",
