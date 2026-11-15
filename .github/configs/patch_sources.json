@@ -40,8 +40,8 @@
     "repo": "MorpheApp/morphe-patches",
     "stable": "v2.2.0",
     "stable_date": "2026-11-10T14:41:45Z",
-    "prerelease": "v2.3.0-dev.5",
-    "pre_date": "2026-11-14T09:51:20Z"
+    "prerelease": "v2.3.0-dev.7",
+    "pre_date": "2026-11-15T11:13:07Z"
   },
   "Paresh-Maheshwari/paresh-patches": {
     "beta": "v1.20.0-dev.4",
@@ -247,10 +247,10 @@
     "blocked": false,
     "host": "github",
     "repo": "hxreborn/morphe-patches",
-    "stable": "v1.78.1",
-    "stable_date": "2026-11-14T10:46:23Z",
-    "prerelease": "v1.79.0-dev.5",
-    "pre_date": "2026-11-14T14:31:37Z"
+    "stable": "v1.79.0",
+    "stable_date": "2026-11-15T07:52:45Z",
+    "prerelease": "v1.79.0-dev.7",
+    "pre_date": "2026-11-15T07:42:00Z"
   },
   "icysymmetra/tiktok-patches-for-morphe": {
     "beta": "v0.8.0-dev.11",
