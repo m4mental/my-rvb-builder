@@ -324,10 +324,10 @@
     "blocked": false,
     "host": "github",
     "repo": "kveld9/kveld-morphe-patches",
-    "stable": "v2.10.1",
-    "stable_date": "2026-11-02T21:12:06Z",
-    "prerelease": "v2.11.0-experimental.12",
-    "pre_date": "2026-11-13T05:12:01Z"
+    "stable": "v2.11.0",
+    "stable_date": "2026-11-16T01:08:03Z",
+    "prerelease": "v2.11.0-experimental.13",
+    "pre_date": "2026-11-16T00:13:46Z"
   },
   "liongalahad/nuviotv-morphe-patches": {
     "beta": "v1.0.0-beta.1",
