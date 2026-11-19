@@ -172,8 +172,8 @@
     "repo": "crimera/piko",
     "stable": "v3.11.1",
     "stable_date": "2026-11-10T12:59:39Z",
-    "prerelease": "v3.12.0-dev.3",
-    "pre_date": "2026-11-17T18:40:07Z"
+    "prerelease": "v3.12.0-dev.4",
+    "pre_date": "2026-11-19T18:23:16Z"
   },
   "dh6k/morphe-patches": {
     "beta": "v1.6.0-dev.6",
@@ -249,8 +249,8 @@
     "repo": "hxreborn/morphe-patches",
     "stable": "v1.83.0",
     "stable_date": "2026-11-19T08:04:00Z",
-    "prerelease": "v1.83.0-dev.3",
-    "pre_date": "2026-11-19T07:54:10Z"
+    "prerelease": "v1.84.0-dev.1",
+    "pre_date": "2026-11-19T15:24:55Z"
   },
   "icysymmetra/tiktok-patches-for-morphe": {
     "beta": "v0.8.0-dev.11",
