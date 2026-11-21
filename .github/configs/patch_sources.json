@@ -104,8 +104,8 @@
     "blocked": false,
     "host": "github",
     "repo": "ajstrick81/morphe-androidtv-patches",
-    "stable": "v1.57.0",
-    "stable_date": "2026-11-19T23:31:57Z",
+    "stable": "v1.60.0",
+    "stable_date": "2026-11-20T19:12:46Z",
     "prerelease": "pv-v15-fix-260",
     "pre_date": "2026-10-25T23:57:43Z"
   },
@@ -172,8 +172,8 @@
     "repo": "crimera/piko",
     "stable": "v3.11.1",
     "stable_date": "2026-11-10T12:59:39Z",
-    "prerelease": "v3.12.0-dev.4",
-    "pre_date": "2026-11-19T18:23:16Z"
+    "prerelease": "v3.12.0-dev.5",
+    "pre_date": "2026-11-20T23:28:48Z"
   },
   "dh6k/morphe-patches": {
     "beta": "v1.6.0-dev.6",
@@ -249,8 +249,8 @@
     "repo": "hxreborn/morphe-patches",
     "stable": "v1.84.0",
     "stable_date": "2026-11-20T14:00:29Z",
-    "prerelease": "v1.84.0-dev.3",
-    "pre_date": "2026-11-20T09:25:09Z"
+    "prerelease": "v1.85.0-dev.1",
+    "pre_date": "2026-11-20T23:22:04Z"
   },
   "icysymmetra/tiktok-patches-for-morphe": {
     "beta": "v0.8.0-dev.11",
@@ -282,8 +282,8 @@
     "repo": "jasonwu1994/Gboard-patches",
     "stable": "v4.3.0",
     "stable_date": "2026-11-12T23:48:52Z",
-    "prerelease": "v4.4.0-dev.3",
-    "pre_date": "2026-11-19T08:33:32Z"
+    "prerelease": "v4.4.0-dev.5",
+    "pre_date": "2026-11-21T00:56:07Z"
   },
   "jkennethcarino/adobo": {
     "beta": "v1.5.0-dev.2",
