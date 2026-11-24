@@ -16,10 +16,10 @@
     "blocked": false,
     "host": "github",
     "repo": "BholeyKaBhakt/revanced-patches-xtra",
-    "stable": "v2.16.1",
-    "stable_date": "2026-11-23T12:34:53Z",
-    "prerelease": "v2.16.1-dev.1",
-    "pre_date": "2026-11-23T12:31:29Z"
+    "stable": "v2.16.3",
+    "stable_date": "2026-11-24T05:01:36Z",
+    "prerelease": "v2.0.4-dev.1",
+    "pre_date": "2026-05-20T08:17:53Z"
   },
   "IMXEren/mix-patches": {
     "beta": "v1.7.2-dev.1",
@@ -40,8 +40,8 @@
     "repo": "MorpheApp/morphe-patches",
     "stable": "v2.3.0",
     "stable_date": "2026-11-16T13:10:51Z",
-    "prerelease": "v2.4.0-dev.9",
-    "pre_date": "2026-11-23T10:40:33Z"
+    "prerelease": "v2.4.0-dev.11",
+    "pre_date": "2026-11-24T09:49:16Z"
   },
   "Paresh-Maheshwari/paresh-patches": {
     "beta": "v1.20.0-dev.4",
@@ -247,10 +247,10 @@
     "blocked": false,
     "host": "github",
     "repo": "hxreborn/morphe-patches",
-    "stable": "v1.86.0",
-    "stable_date": "2026-11-23T13:00:56Z",
-    "prerelease": "v1.87.0-dev.2",
-    "pre_date": "2026-11-23T23:09:39Z"
+    "stable": "v1.87.0",
+    "stable_date": "2026-11-24T08:23:04Z",
+    "prerelease": "v1.88.0-dev.3",
+    "pre_date": "2026-11-24T11:36:19Z"
   },
   "icysymmetra/tiktok-patches-for-morphe": {
     "beta": "v0.8.0-dev.11",
@@ -321,7 +321,7 @@
   "kveld9/kveld-morphe-patches": {
     "beta": "",
     "beta_date": "",
-    "blocked": false,
+    "blocked": true,
     "host": "github",
     "repo": "kveld9/kveld-morphe-patches",
     "stable": "v2.11.0",
